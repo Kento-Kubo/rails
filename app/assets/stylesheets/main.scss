@@ -1,0 +1,652 @@
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+  width:cover;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+.input1{
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  margin: 15px 0;
+  padding: 0 16px;
+  width: 300px;
+  height: 30px;
+  float: left;
+  margin-left:10px;
+}
+.fa-search {
+  background-color: none;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: block;
+  
+  line-height: 65px;
+  text-align: center;
+  width: 50px;
+  height: 35px;
+  margin-top:15px;
+  }
+
+.top-wrapper{
+  padding: 0 0 0 0;
+  background-size:cover;
+  color:white;
+  height:500px;
+  text-align:center;
+}
+
+.container-search{
+  padding:0 0;
+  border: none;
+  margin:10px auto;
+  width:650px;
+  height:165px;
+  text-align:left;
+  background-color:rgba(34, 49, 52, 0.9);
+  border-radius: 3px  3px;
+  position:relative;
+  
+}
+
+  .searchbox{
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width:100px;
+  height: 40px;
+  
+  margin:10px 0 0 0;
+  box-sizing:border-box;
+  display:inline-block;
+}
+
+.input2{
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width: 300px;
+  height: 28px;
+}
+
+.select2{
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width: 100px;
+  height: 30px;
+  margin-bottom:0px;
+  display:inline-block;
+}
+
+.input3{
+  background: #b5cd60;
+  border: none;
+  width: 160px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  position:absolute;
+  top:115px;
+  left:470px;
+}
+.input3:hover {
+  background: #16aa56;
+}
+.age{
+
+}
+
+.selectschedule{
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:10px;
+  position:absolute;
+  top:50px;
+  
+  
+}
+
+.day-chose{
+ margin-left:0px;
+  margin-left:10px;
+  margin-bottom:5px;
+}
+
+.time-chose1{
+ margin-top:5px;
+  margin-left:10px;
+  margin-bottom:5px;
+}
+.time-chose2{
+ margin-top:5px;
+  margin-left:10px;
+  margin-bottom:5px;
+}
+
+.header-left{
+  padding:0 15px;
+  }
+
+.container h1{
+  opacity:0.8;
+  font-size:50px;
+  letter-spacing:5px;
+}
+
+.btn{
+  padding:8px 24px;
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+
+}
+
+.btn:hover{
+  opacity:1
+}
+
+.fa{
+  font-size:10px;
+  margin-right:5px;
+}
+
+header{
+  height:65px;
+  width:100%;
+  background-color:rgba(34, 49, 52, 0.9);
+  position:fixed;
+  top:0;
+    z-index:10;
+  }
+
+.logo{
+  width:124px;
+  margin-top:20px;
+  float:left;
+}
+
+.mypage{
+  color:white;
+  text-align:center;
+}
+
+.logout{
+  color:white;
+}
+
+.header-left{
+  float:left;
+
+}
+
+.header-right{
+  float:right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display:block;
+  line-height:65px;
+  padding:0 25px;
+  transition:all 0.5s;
+}
+
+.header-right:hover{
+  background-color:rgba(255, 255, 255, 0.5);
+
+}
+
+.top-wrapper{
+margin-top:85px;
+height:165px;
+}
+
+.result-number-left{
+padding-left:50px;
+width:30%;
+display:inline-block;
+float:left;
+}
+
+.number{
+font-size:20px;
+}
+.result-number-right{
+padding-left:0px;
+width:30%;
+display:inline-block;
+float:right;
+}
+
+.teacher-list-top{
+width:1000px;
+margin:0 auto;
+height:50px;
+
+}
+
+.sortby{
+display:inline-block;
+
+}
+.select3{
+  background-color: white;
+  border: solid rgba(34, 49, 52, 0.9) 1px;
+  border-radius: 3px  3px;
+  color: rgba(34, 49, 52, 0.9);
+  width: 135px;
+  height: 30px;
+  display:inline-block;
+  box-sizing:border-box;
+}
+
+/*検索結果開始------------------------------------------------------------------------------*/
+
+.main-part{
+width:100%;
+height:3050px;
+margin:0 0 0 0;
+padding:0 0 0 0;
+float:left;
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+position:relative;
+}
+
+.main-left{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:79.6%;
+height:3040px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+}
+
+.main-right{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:17%;
+height:3040px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:1060px;
+}
+
+.each-teacher-main{
+border:solid rgba(34, 49, 52, 0.1) 1px;
+display:inline-block;
+width:1000px;
+height:300px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 5px 50px;
+float:left;
+position:relative;
+}
+
+.Profile-photo{
+font-size:30px;
+border-radius: 200px  200px;
+margin-top:10px;
+
+}
+
+.evaluation{
+
+margin-top:0px;
+font-size:30px;
+margin-bottom:0;
+}
+
+.lastlogin{
+
+margin-top:0px;
+margin-bottom:0;
+
+}
+
+.input4{
+  background: #b5cd60;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top:5px;
+  
+}
+.input4:hover {
+  background: #16aa56;
+}
+
+.fa-heart{
+  font-size:10px;
+  margin-right:5px;
+}
+
+.each-teacher-left{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:200px;
+height:300px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:0;
+text-align:center;
+}
+
+.each-teacher-center{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:600px;
+height:200px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:200px;
+float:left;
+
+}
+
+.each-teacher-right{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:190px;
+height:200px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:810px;
+text-align:center;
+}
+
+.each-teacher-schedule{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:800px;
+height:100px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:200px;
+left:200px;
+text-align:center;
+
+}
+
+.introduction{
+margin:3px 0;
+}
+
+.name{
+color:#3b5998;
+font-size:30px;
+margin-top:15px;
+}
+
+
+.age{
+display:inline-block;
+margin-left:10px;
+}
+
+.sex{
+display:inline-block;
+}
+
+.speak{
+display:inline-block;
+}
+
+.hobby{
+margin-left:10px;
+margin-bottom:3px;
+}
+
+.intro{
+margin-top:2px;
+margin-left:10px;
+margin-bottom:4px;
+
+}
+
+.free{
+margin-left:17px;
+margin-top:0px;
+overflow: hidden;
+height:70px;
+width:590px;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+text-overflow: hidden;
+
+}
+
+.Num-lesson{
+margin-top:15px;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.lessons{
+font-size:15px;
+}
+.hour-OWN{
+margin-top:0;
+font-size:15px;
+}
+
+.hour-USD{
+margin-top:0;
+margin-bottom:0;
+font-size:20px;
+}
+
+.min-OWN{
+margin-top:0;
+font-size:15px;
+}
+
+.min-USD{
+margin-top:0;
+margin-bottom:0;
+font-size:20px;
+}
+
+.sticky_table{
+position: relative;
+width:200px;
+height:74px;
+border-collapse: collapse;
+border:solid black 1px;
+}
+
+sticky_table tr{
+display:brock;
+box-sizing:border-box;
+border-collapse: collapse;
+border:solid black 1px;
+}
+
+scroll thead tr th{
+
+border:solid black 1px;
+font-size:15px;
+padding:5px 5px;
+}
+
+tr{
+
+}
+
+.scroll thead tr th{
+width:110px;
+padding:0 0;
+margin:0 0;
+
+}
+.scroll{
+  display: block;
+  overflow-x:scroll;
+  width: 590px;
+  height: 93px;
+  border:collapse;
+  position:absolute;
+  top:0;
+  left:200px; 
+  table-layout:fixed;
+  white-space:nowrap;
+  
+
+}
+
+.sticky{
+  
+  width: 200px;
+  height: 60px;
+  border-collapse: collapse;
+  font-size: 20px;
+  margin-left:0;
+  border:black;
+}
+
+.schedule{
+text-decoration:underline;
+}
+
+.title{
+width:120px;
+}
+.your-timezone{
+ font-size:13px;
+}
+
+/*検索結果一覧終了--------------------------------------------------------------------------*/
+/*検索条件一覧開始--------------------------------------------------------------------------*/
+
+.container-for-searching-condition{
+ border:solid rgba(34, 49, 52, 0.1) 1px;
+ height:500px;
+}
+
+.searching-condition1{
+
+margin-top:5px;
+margin-left:0px;
+margin-bottom:1px;
+}
+
+.searching-condition2{
+margin-top:5px;
+margin-left:10px;
+margin-bottom:2px;
+}
+
+.searching-condition3{
+margin-top:5px;
+margin-left:10px;
+margin-bottom:2px;
+}
+
+/*検索条件一覧終了--------------------------------------------------------------------------*/
+/*広告スペース開始--------------------------------------------------------------------------*/
+
+.container-for-Advertisement{
+ border:solid rgba(34, 49, 52, 0.1) 1px;
+ height:500px;
+ margin-top:10px;
+}
+
+.Advertisement{
+margin-top:5px;
+margin-left:0px;
+margin-bottom:1px;
+color:rgba(34, 49, 52, 0.6) 1px;
+}
+
+
+/*広告スペース終了--------------------------------------------------------------------------*/
+/*ページ番号開始----------------------------------------------------------------------------*/
+
+.teacher-list-bottom{
+width:100%;
+margin:0 auto;
+height:20px;
+
+position:absolute;
+top:3340px;
+
+}
+
+.nextpages{
+
+text-align:center;
+}
+
+.pagenumber{
+text-decoration:underline;
+}
+/*ページ番号終了----------------------------------------------------------------------------*/
+/*back to top開始---------------------------------------------------------------------------*/
+
+.back-to-top{
+width:100%;
+height:50px;
+background-color:rgba(34, 49, 52, 0.6);
+  position:absolute;
+  top:3400px;
+  text-align:center;
+  line-height:50px;
+    color:white;
+    display:block;
+
+  transition:all 0.5s;
+	
+}
+.back-to-top:hover{
+  background-color:rgba(34, 49, 52, 0.4);
+
+}
+
+.back-to-top-word{
+ color:white;
+ display:block;
+}
+/*back to top終了---------------------------------------------------------------------------*/
+/*<フッター開始（共通：変えないこと）--------------------------------------------------------->*/
+footer{
+  background-color:rgba(34, 49, 52, 0.9);
+  height: 270px;
+  width:100%;
+  color:white;
+  position:absolute;
+  top:3450px;
+  
+}
+  
+/*<!フッター終了（共通：変えないこと）-------------------------------------------------------->*/

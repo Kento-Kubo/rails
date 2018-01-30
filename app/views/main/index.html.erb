@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>GANJIN</title>
+    </head>
+    
+    <body>
+    
+<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">
+                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                    </a>
+                
+                        <input type="text" id="user" placeholder="Username" class="input1">
+                        
+                        <span class="fa fa-search fa-2x"></span>
+                                        
+                </div>
+                
+                 <div class="header-right">
+                    
+                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/login.html">Log out</a>
+                </div>  
+                    
+                    
+                <div class="header-right">
+                    <a class="mypage" href="#"><span class="fa fa-envelope"></span></a>
+                    
+                </div>  
+                
+                <div class="header-right">
+                    <a class="mypage" href="#"><span class="fa fa-bell"></span></a>
+                    
+                </div> 
+                
+                 <div class="header-right">
+                    <a class="mypage" href="#"><span class="fa fa-user"></span></a>
+                    
+                </div>                     
+                          
+                <div class="header-right">
+                    <a class="mypage" href="#">My page</a>
+                    
+                </div>      
+                                            
+                   
+            </div>
+        </header>
+        
+<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
+<!--検索ボックス開始-------------------------------------------------------------------------->
+        <div class="top-wrapper">
+            <div class="container-search">
+                
+                    <div class="searchbox age">
+                        <select class="select2">
+                            <option value="age">age</option>
+                            <option value="－19">－19</option>
+                            <option value="20－25">20－25</option>
+                            <option value="26－30">26－30</option>
+                            <option value="31－40">31－40</option>
+                            <option value="41－50">41－50</option>
+                            <option value="51－">51－</option>
+                            <option value="any">any</option>
+                        </select>
+                    </div>
+                    
+                    <div class="searchbox sex">
+                        <select class="select2">
+                            <option value="sex">sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="any">any</option>
+                        </select>
+                    </div>  
+                    
+                                
+                    <div class="searchbox cost">
+                        
+                        <select class="select2">
+                            <option value="cost">cost</option>
+                            <option value="－6.0$">－6$</option>
+                            <option value="6.1－7.0$">6.1－7.0$</option>
+                            <option value="7.1－8.0$">7.1－8.0$</option>
+                            <option value="8.1－9.0$">8.1－9.0$</option>
+                            <option value="9.1－10.0$">9.1－10.0$</option>
+                            <option value="10.0$－">10.0$－</option>
+                            <option value="any">any</option>
+                        </select>
+                    </div>  
+                    
+                    <div class="searchbox hobby">
+                        
+                        <input type="text" id"pass" placeholder=" hobby" class="input2">
+                    </div>
+                    
+                    <p class="selectschedule">
+                    	Schedule
+                    </p>
+                    
+                    <p class="day-chose">
+						<input type="checkbox" name="day" value="1">Mon
+						<input type="checkbox" name="day" value="2">Tue
+						<input type="checkbox" name="day" value="3">Wed
+						<input type="checkbox" name="day" value="4">Thu
+						<input type="checkbox" name="day" value="5">Fri
+						<input type="checkbox" name="day" value="6">Sat
+						<input type="checkbox" name="day" value="7">Sun
+						<input type="checkbox" name="day" value="8">Anyday
+					</p>
+					
+					<p class="time-chose1">
+						<input type="checkbox" name="time" value="9" checked="checked">&nbsp;&nbsp;0:00～&nbsp;&nbsp;3:00
+						<input type="checkbox" name="time" value="10">&nbsp;&nbsp;3:00～&nbsp;&nbsp;6:00
+						<input type="checkbox" name="time" value="11">&nbsp;&nbsp;6:00～&nbsp;&nbsp;9:00
+						<input type="checkbox" name="time" value="12">&nbsp;&nbsp;9:00～12:00
+						<input type="checkbox" name="time" value="13">12:00～15:00
+					</p>
+					<p class="time-chose2">
+						<input type="checkbox" name="time" value="14">15:00～18:00
+						<input type="checkbox" name="time" value="15">18:00～21:00
+						<input type="checkbox" name="time" value="15">21:00～24:00
+						<input type="checkbox" name="time" value="16">Anytime
+					</p>
+                    
+                    <input type="submit" value="Search" class="input3">
+            </div>
+        </div>
+<!--検索ボックス終了-------------------------------------------------------------------------->
+<!--検索件数とsort選択開始-------------------------------------------------------------------->       
+        <div class="teacher-list-top">
+            <div class="result-number-left">
+            
+                <p><span class="number">10</span> teachers have been found</p>
+                
+            </div>
+            <div class="result-number-right">
+            
+                <p class="sortby">sort by</p>
+                
+                <select class="select3">
+                    <option value="Relevance">Relevance</option>
+                    <option value="Price:Low to high">Price:Low to high</option>
+                    <option value="Price:High to low">Price:High to low</option>
+                    <option value="Avg. customor review">Avg. customor review</option>
+                    <option value="Newest arrival">Newest arrival</option>
+                </select>
+                
+            </div>
+        </div>  
+<!--検索件数とsort選択終了-------------------------------------------------------------------->
+<!--検索結果開始------------------------------------------------------------------------------>           
+        <div class="main-part">
+            <div class="main-left">
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    	<a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                
+                <div class="each-teacher-main">
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+                
+                <div class="each-teacher-main">
+                    
+                    <div class="each-teacher-left">
+                    
+                        <img class="Profile-photo" src="profile_pic_temp.png" width="175px" height="175px">
+                        <p class="evaluation">✩✩✩✩✩</p>
+                        <p class="lastlogin"><span>Last login&nbsp;&nbsp;:</span>1 min</p>
+                        <input type="submit" value="♥ Favorite" class="input4">
+
+                    </div>
+                    
+					
+                    
+                    <div class="each-teacher-center">
+                    
+                       <a class="to-mypage" href="#">
+                       		<p class="introduction name">Kento Kubo</p>
+                       	</a>
+                       <p class="introduction age"><span>Age&nbsp;:</span>26</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction sex"><span>sex&nbsp;:</span>Male</p>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>
+                       <p class="intro">Introduction&nbsp;:</p>
+                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
+                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
+                        Learn Japanese so hard. </p>
+                    </div>
+                    
+                    <div class="each-teacher-right">
+                    	<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons</span></p>
+                    	
+                    	<span class="cost hr">cost for 1 hour</span>
+                    		<p class="hour-USD">7.1 USD</p>
+                    	<p class="hour-OWN">700 JPY</p>
+                    	
+                    	<span class="cost 30min">trial lesson(20-30min)</span>
+                    		<p class="min-USD">3.0 USD</p>
+                    	<p class="min-OWN">300 JPY</p>
+                    </div>
+                    
+                    <div class="each-teacher-schedule">
+                    	                    	
+                       	<table class="sticky_table" rules="all">
+                       		<tr >
+                       			<td height="49px">Japanese timezone<br>
+      								<span class="your-timezone">(your timezone)</span>
+      							</td>
+      						</tr>
+      						<tr>
+                       			<td height="20px">Availability</td>
+      						</tr>
+      						
+                       	</table>
+                       	
+  						<table class="scroll" rules="all">
+    						<thead>
+    							<tr>
+      								<th height="51px">0:00-1:00<br>
+                    				<span class="your-timezone">(1:00-2:00)</span></th>
+                    				
+      								<th>1:00-2:00<br>
+                    				<span class="your-timezone">(2:00-3:00)</span></th>
+        								
+        							<th>2:00-3:00<br>
+                    				<span class="your-timezone">(3:00-4:00)</span></th>           				
+      							
+      								<th>3:00-4:00<br>
+                    				<span class="your-timezone">(4:00-5:00)</span></th>
+                    				
+                    				<th>4:00-5:00<br>
+                    				<span class="your-timezone">(5:00-6:00)</span></th>
+                    				
+                    				<th>5:00-6:00<br>
+                    				<span class="your-timezone">(6:00-7:00)</span></th> 
+                    				
+                    				<th>6:00-7:00<br>
+                    				<span class="your-timezone">(7:00-8:00)</span></th> 
+                    				  
+                    				<th>7:00-8:00<br>
+                    				<span class="your-timezone">(8:00-9:00)</span></th> 
+                    				
+                    				<th>8:00-9:00<br>
+                    				<span class="your-timezone">(9:00-10:00)</span></th> 
+                    				
+                    				<th>9:00-10:00<br>
+                    				<span class="your-timezone">(10:00-11:00)</span></th> 
+                    				
+                    				<th>10:00-11:00<br>
+                    				<span class="your-timezone">(11:00-12:00)</span></th> 
+                    				
+                    				<th>11:00-12:00<br>
+                    				<span class="your-timezone">(12:00-13:00)</span></th> 
+                    				
+                    				<th>12:00-13:00<br>
+                    				<span class="your-timezone">(13:00-14:00)</span></th> 
+                    				
+                    				<th>13:00-14:00<br>
+                    				<span class="your-timezone">(14:00-15:00)</span></th> 
+                    				
+                    				<th>14:00-15:00<br>
+                    				<span class="your-timezone">(15:00-16:00)</span></th> 
+                    				
+                    				<th>15:00-16:00<br>
+                    				<span class="your-timezone">(16:00-17:00)</span></th> 
+                    				
+                    				<th>16:00-17:00<br>
+                    				<span class="your-timezone">(17:00-18:00)</span></th> 
+                    				
+                    				<th>17:00-18:00<br>
+                    				<span class="your-timezone">(18:00-19:00)</span></th> 
+                    				
+                    				<th>18:00-19:00<br>
+                    				<span class="your-timezone">(19:00-20:00)</span></th> 
+                    				
+                    				<th>19:00-20:00<br>
+                    				<span class="your-timezone">(20:00-21:00)</span></th> 
+                    				
+                    				<th>20:00-21:00<br>
+                    				<span class="your-timezone">(21:00-22:00)</span></th> 
+                    				
+                    				<th>21:00-22:00<br>
+                    				<span class="your-timezone">(22:00-23:00)</span></th> 
+                    				
+                    				<th>22:00-23:00<br>
+                    				<span class="your-timezone">(23:00-24:00)</span></th> 
+                    				
+                    				<th>23:00-24:00<br>
+                    				<span class="your-timezone">(24:00-25:00)</span></th> 
+                    				
+                    				
+                    				
+      							</tr>
+    						</thead>
+    						<tboady>
+    							<tr>
+      						
+      								<td height="20px"><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+      								<td><a class="schedule" href="#">×</a></td>
+
+    							</tr>
+							</tboady>
+						</table>
+                    	
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="main-right">
+            
+            	<div class="container-for-searching-condition">
+                	<p class="searching-condition1">Searching condition</p>
+                	
+                	<p class="searching-condition2"><span>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span>26<span>&nbsp;years old</span></p>
+                	<p class="searching-condition2"><span>Sex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span>any</p>
+                	<p class="searching-condition2"><span>Cost&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span>6.1－7.0$</p>
+                	<p class="searching-condition2"><span>Hobby&nbsp;:&nbsp;</span>camera, travel</p>
+                	
+                	<p class="searching-condition1">Schedule</p>
+                	
+                	<p class="searching-condition3">
+                	
+						<input type="checkbox" name="day" value="1">Monday<br>
+						<input type="checkbox" name="day" value="2">Tuesday<br>
+						<input type="checkbox" name="day" value="3">Wednesday<br>
+						<input type="checkbox" name="day" value="4">Thursday<br>
+						<input type="checkbox" name="day" value="5">Friday<br>
+						<input type="checkbox" name="day" value="6">Saturday<br>
+						<input type="checkbox" name="day" value="7">Sunday<br>
+						<input type="checkbox" name="day" value="8">Anyday
+					</p>
+					
+					<p class="searching-condition3">
+						<input type="checkbox" name="time" value="9" checked="checked">&nbsp;&nbsp;0:00～&nbsp;&nbsp;3:00<br>
+						<input type="checkbox" name="time" value="10">&nbsp;&nbsp;3:00～&nbsp;&nbsp;6:00<br>
+						<input type="checkbox" name="time" value="11">&nbsp;&nbsp;6:00～&nbsp;&nbsp;9:00<br>
+						<input type="checkbox" name="time" value="12">&nbsp;&nbsp;9:00～12:00<br>
+						<input type="checkbox" name="time" value="13">12:00～15:00<br>
+
+						<input type="checkbox" name="time" value="14">15:00～18:00<br>
+						<input type="checkbox" name="time" value="15">18:00～21:00<br>
+						<input type="checkbox" name="time" value="15">21:00～24:00<br>
+						<input type="checkbox" name="time" value="16">Anytime
+					</p>
+                </div>
+                
+                <div class="container-for-Advertisement">
+                	
+                	<p class="Advertisement">Advertisement</p>
+                
+                </div>
+                
+                <div class="container-for-Advertisement">
+                	
+                	<p class="Advertisement">Advertisement</p>
+                
+                </div>
+                
+                <div class="container-for-Advertisement">
+                	
+                	<p class="Advertisement">Advertisement</p>
+                
+                </div>
+                
+                <div class="container-for-Advertisement">
+                	
+                	<p class="Advertisement">Advertisement</p>
+                
+                </div>
+                
+                <div class="container-for-Advertisement">
+                	
+                	<p class="Advertisement">Advertisement</p>
+                
+                </div>
+            </div>
+            
+        </div>
+<!--検索結果終了----------------------------------------------------------------------------->
+<!--ページ番号開始--------------------------------------------------------------------------->
+        <div class="teacher-list-bottom">
+        	<p class="nextpages">
+        	
+        		<a class="pagenumber" href="#">2</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">3</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">4</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">5</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">6</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">7</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">8</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">9</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">10</a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">></a>&nbsp;&nbsp;
+        		<a class="pagenumber" href="#">>></a>
+        		
+        	</p>
+        </div>
+        
+<!--ページ番号終了--------------------------------------------------------------------------->
+<!--トップに戻る開始------------------------------------------------------------------------->
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+
+<!--トップに戻る開始------------------------------------------------------------------------->
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer>
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+
+    </body>
+    </html>
+    
+    
