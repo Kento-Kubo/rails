@@ -1,0 +1,226 @@
+@charset "UTF-8";
+/* line 1, /projects/ganjin/app/assets/stylesheets/home.scss */
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+
+/* line 7, /projects/ganjin/app/assets/stylesheets/home.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 12, /projects/ganjin/app/assets/stylesheets/home.scss */
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background-image: url("/conversation.jpg");
+  background-size: cover;
+  color: white;
+  height: 500px;
+  text-align: center;
+}
+
+/* line 21, /projects/ganjin/app/assets/stylesheets/home.scss */
+.container {
+  padding: 0 15px;
+  margin: auto;
+  width: 1170px;
+  text-align: center;
+}
+
+/* line 28, /projects/ganjin/app/assets/stylesheets/home.scss */
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+/* line 37, /projects/ganjin/app/assets/stylesheets/home.scss */
+.header-left {
+  padding: 0 15px;
+}
+
+/* line 41, /projects/ganjin/app/assets/stylesheets/home.scss */
+.header-left:hover {
+  cursor: pointer;
+}
+
+/* line 46, /projects/ganjin/app/assets/stylesheets/home.scss */
+.container h1 {
+  opacity: 0.8;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+
+/* line 52, /projects/ganjin/app/assets/stylesheets/home.scss */
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+/* line 61, /projects/ganjin/app/assets/stylesheets/home.scss */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* line 66, /projects/ganjin/app/assets/stylesheets/home.scss */
+.sign-up {
+  background-color: #239b76;
+}
+
+/* line 70, /projects/ganjin/app/assets/stylesheets/home.scss */
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+
+/* line 75, /projects/ganjin/app/assets/stylesheets/home.scss */
+.twitter {
+  background-color: #55acee;
+}
+
+/* line 79, /projects/ganjin/app/assets/stylesheets/home.scss */
+.btn:hover {
+  opacity: 1;
+}
+
+/* line 83, /projects/ganjin/app/assets/stylesheets/home.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 88, /projects/ganjin/app/assets/stylesheets/home.scss */
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+/* line 94, /projects/ganjin/app/assets/stylesheets/home.scss */
+.logo {
+  width: 124px;
+  margin-top: 20px;
+  float: left;
+}
+
+/* line 100, /projects/ganjin/app/assets/stylesheets/home.scss */
+.login, teacher {
+  color: white;
+}
+
+/* line 105, /projects/ganjin/app/assets/stylesheets/home.scss */
+.new {
+  padding-top: 0;
+  color: white;
+  height: 65px;
+}
+
+/* line 111, /projects/ganjin/app/assets/stylesheets/home.scss */
+.login1 {
+  padding-top: 0;
+  color: white;
+  height: 65px;
+}
+
+/* line 117, /projects/ganjin/app/assets/stylesheets/home.scss */
+.header-left {
+  float: left;
+}
+
+/* line 122, /projects/ganjin/app/assets/stylesheets/home.scss */
+.header-right {
+  float: right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display: block;
+  line-height: 65px;
+  padding: 0 25px;
+  transition: all 0.5s;
+}
+
+/* line 131, /projects/ganjin/app/assets/stylesheets/home.scss */
+.header-right:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+/* line 137, /projects/ganjin/app/assets/stylesheets/home.scss */
+.login-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢ */
+  display: none;
+}
+
+/* line 149, /projects/ganjin/app/assets/stylesheets/home.scss */
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+/* line 161, /projects/ganjin/app/assets/stylesheets/home.scss */
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+/* line 169, /projects/ganjin/app/assets/stylesheets/home.scss */
+#signup-form, #login-form {
+  width: 100%;
+}
+
+/* line 173, /projects/ganjin/app/assets/stylesheets/home.scss */
+#signup-form h2, #login-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* line 179, /projects/ganjin/app/assets/stylesheets/home.scss */
+#signup-form input, #login-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+/* line 188, /projects/ganjin/app/assets/stylesheets/home.scss */
+#submit-btn {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+/* line 199, /projects/ganjin/app/assets/stylesheets/home.scss */
+.idpass-forget {
+  text-decoration: underline;
+  color: black;
+}

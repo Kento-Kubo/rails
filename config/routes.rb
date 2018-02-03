@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   get 'main/index' => "main#index"
+  
+  get 'user/pass_forgot' => "user#pass_forgot"
+  get 'user/pass_forgot2' => "user#pass_forgot2"
+  get 'user/new' => 'user#new'
+
+  
 
 
   get 'home/top' => "home#top"

@@ -1,0 +1,709 @@
+@charset "UTF-8";
+/* line 1, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+  width: cover;
+}
+
+/* line 9, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 13, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.input1 {
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  margin: 15px 0;
+  padding: 0 16px;
+  width: 300px;
+  height: 30px;
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 25, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.fa-search {
+  background-color: none;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: block;
+  line-height: 65px;
+  text-align: center;
+  width: 50px;
+  height: 35px;
+  margin-top: 15px;
+}
+
+/* line 39, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.top-wrapper {
+  padding: 0 0 0 0;
+  background-size: cover;
+  color: white;
+  height: 500px;
+  text-align: center;
+}
+
+/* line 47, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.container-search {
+  padding: 0 0;
+  border: none;
+  margin: 10px auto;
+  width: 650px;
+  height: 165px;
+  text-align: left;
+  background-color: rgba(34, 49, 52, 0.9);
+  border-radius: 3px  3px;
+  position: relative;
+}
+
+/* line 60, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.searchbox {
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width: 100px;
+  height: 40px;
+  margin: 10px 0 0 0;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* line 72, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.input2 {
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width: 300px;
+  height: 28px;
+}
+
+/* line 81, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.select2 {
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width: 100px;
+  height: 30px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+/* line 92, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.input3 {
+  background: #b5cd60;
+  border: none;
+  width: 160px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  position: absolute;
+  top: 115px;
+  left: 470px;
+}
+
+/* line 105, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.input3:hover {
+  background: #16aa56;
+}
+
+/* line 112, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.selectschedule {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  position: absolute;
+  top: 50px;
+}
+
+/* line 122, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.day-chose {
+  margin-left: 0px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 128, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.time-chose1 {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 133, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.time-chose2 {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 139, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.header-left {
+  padding: 0 15px;
+}
+
+/* line 143, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.container h1 {
+  opacity: 0.8;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+
+/* line 149, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+/* line 158, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.btn:hover {
+  opacity: 1;
+}
+
+/* line 162, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 167, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+/* line 176, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.logo {
+  width: 124px;
+  margin-top: 20px;
+  float: left;
+}
+
+/* line 182, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.mypage {
+  color: white;
+  text-align: center;
+}
+
+/* line 187, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.logout {
+  color: white;
+}
+
+/* line 191, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.header-left {
+  float: left;
+}
+
+/* line 196, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.header-right {
+  float: right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display: block;
+  line-height: 65px;
+  padding: 0 25px;
+  transition: all 0.5s;
+}
+
+/* line 205, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.header-right:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* line 210, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.top-wrapper {
+  margin-top: 85px;
+  height: 165px;
+}
+
+/* line 215, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.result-number-left {
+  padding-left: 50px;
+  width: 30%;
+  display: inline-block;
+  float: left;
+}
+
+/* line 222, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.number {
+  font-size: 20px;
+}
+
+/* line 225, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.result-number-right {
+  padding-left: 0px;
+  width: 30%;
+  display: inline-block;
+  float: right;
+}
+
+/* line 232, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.teacher-list-top {
+  width: 1000px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+/* line 239, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.sortby {
+  display: inline-block;
+}
+
+/* line 243, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.select3 {
+  background-color: white;
+  border: solid rgba(34, 49, 52, 0.9) 1px;
+  border-radius: 3px  3px;
+  color: rgba(34, 49, 52, 0.9);
+  width: 135px;
+  height: 30px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+/*検索結果開始------------------------------------------------------------------------------*/
+/* line 256, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.main-part {
+  width: 100%;
+  height: 3050px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  float: left;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  position: relative;
+}
+
+/* line 266, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.main-left {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  display: inline-block;
+  width: 79.6%;
+  height: 3040px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+/* line 276, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.main-right {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  display: inline-block;
+  width: 17%;
+  height: 3040px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 1060px;
+}
+
+/* line 289, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.each-teacher-main {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  display: inline-block;
+  width: 1000px;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 5px 50px;
+  float: left;
+  position: relative;
+}
+
+/* line 301, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.Profile-photo {
+  font-size: 30px;
+  border-radius: 200px  200px;
+  margin-top: 10px;
+}
+
+/* line 308, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.evaluation {
+  margin-top: 0px;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+/* line 315, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.lastlogin {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+/* line 322, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.input4 {
+  background: #b5cd60;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top: 5px;
+}
+
+/* line 334, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.input4:hover {
+  background: #16aa56;
+}
+
+/* line 338, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.fa-heart {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 343, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.each-teacher-left {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+/* line 357, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.each-teacher-center {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  display: inline-block;
+  width: 600px;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  float: left;
+}
+
+/* line 372, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.each-teacher-right {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  display: inline-block;
+  width: 190px;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 810px;
+  text-align: center;
+}
+
+/* line 386, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.each-teacher-schedule {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  display: inline-block;
+  width: 800px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  text-align: center;
+}
+
+/* line 401, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.introduction {
+  margin: 3px 0;
+}
+
+/* line 405, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.name {
+  color: #3b5998;
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+/* line 412, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.age {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* line 417, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.sex {
+  display: inline-block;
+}
+
+/* line 421, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.speak {
+  display: inline-block;
+}
+
+/* line 425, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.hobby {
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+/* line 430, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.intro {
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+/* line 437, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.free {
+  margin-left: 17px;
+  margin-top: 0px;
+  overflow: hidden;
+  height: 70px;
+  width: 590px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  text-overflow: hidden;
+}
+
+/* line 450, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.Num-lesson {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* line 456, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.lessons {
+  font-size: 15px;
+}
+
+/* line 459, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.hour-OWN {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+/* line 464, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.hour-USD {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+/* line 470, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.min-OWN {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+/* line 475, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.min-USD {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+/* line 481, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.sticky_table {
+  position: relative;
+  width: 200px;
+  height: 74px;
+  border-collapse: collapse;
+  border: solid black 1px;
+}
+
+/* line 489, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+sticky_table tr {
+  display: brock;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border: solid black 1px;
+}
+
+/* line 496, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+scroll thead tr th {
+  border: solid black 1px;
+  font-size: 15px;
+  padding: 5px 5px;
+}
+
+/* line 507, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.scroll thead tr th {
+  width: 110px;
+  padding: 0 0;
+  margin: 0 0;
+}
+
+/* line 513, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.scroll {
+  display: block;
+  overflow-x: scroll;
+  width: 590px;
+  height: 93px;
+  border: collapse;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+/* line 528, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.sticky {
+  width: 200px;
+  height: 60px;
+  border-collapse: collapse;
+  font-size: 20px;
+  margin-left: 0;
+  border: black;
+}
+
+/* line 538, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.schedule {
+  text-decoration: underline;
+}
+
+/* line 542, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.title {
+  width: 120px;
+}
+
+/* line 545, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.your-timezone {
+  font-size: 13px;
+}
+
+/*検索結果一覧終了--------------------------------------------------------------------------*/
+/*検索条件一覧開始--------------------------------------------------------------------------*/
+/* line 552, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.container-for-searching-condition {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 500px;
+}
+
+/* line 557, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.searching-condition1 {
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-bottom: 1px;
+}
+
+/* line 564, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.searching-condition2 {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+
+/* line 570, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.searching-condition3 {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+
+/*検索条件一覧終了--------------------------------------------------------------------------*/
+/*広告スペース開始--------------------------------------------------------------------------*/
+/* line 579, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.container-for-Advertisement {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 500px;
+  margin-top: 10px;
+}
+
+/* line 585, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.Advertisement {
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-bottom: 1px;
+  color: rgba(34, 49, 52, 0.6) 1px;
+}
+
+/*広告スペース終了--------------------------------------------------------------------------*/
+/*ページ番号開始----------------------------------------------------------------------------*/
+/* line 596, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.teacher-list-bottom {
+  width: 100%;
+  margin: 0 auto;
+  height: 20px;
+  position: absolute;
+  top: 3340px;
+}
+
+/* line 606, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.nextpages {
+  text-align: center;
+}
+
+/* line 611, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.pagenumber {
+  text-decoration: underline;
+}
+
+/*ページ番号終了----------------------------------------------------------------------------*/
+/*back to top開始---------------------------------------------------------------------------*/
+/* line 617, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.back-to-top {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(34, 49, 52, 0.6);
+  position: absolute;
+  top: 3400px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  display: block;
+  transition: all 0.5s;
+}
+
+/* line 631, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.back-to-top:hover {
+  background-color: rgba(34, 49, 52, 0.4);
+}
+
+/* line 636, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+.back-to-top-word {
+  color: white;
+  display: block;
+}
+
+/*back to top終了---------------------------------------------------------------------------*/
+/*<フッター開始（共通：変えないこと）--------------------------------------------------------->*/
+/* line 642, /projects/ganjin/app/assets/stylesheets/main/main.scss */
+footer {
+  background-color: rgba(34, 49, 52, 0.9);
+  height: 270px;
+  width: 100%;
+  color: white;
+  position: absolute;
+  top: 3450px;
+}
+
+/*<!フッター終了（共通：変えないこと）-------------------------------------------------------->*/

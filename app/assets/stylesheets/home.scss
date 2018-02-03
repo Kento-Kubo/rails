@@ -3,6 +3,7 @@ body {
   font-family: "Hiragino Kaku Gothic ProN";
 }
 
+
 a {
   text-decoration: none;
 }
@@ -23,6 +24,16 @@ a {
   width:1170px;
   text-align:center;
 }
+
+header{
+  height:65px;
+  width:100%;
+  background-color:rgba(34, 49, 52, 0.9);
+  position:fixed;
+  top:0;
+    z-index:10;
+  }
+
 .header-left{
   padding:0 15px;
   }
@@ -90,6 +101,13 @@ header{
   color:white;
   
 }
+
+.new{
+padding-top:0;
+color:white;
+height:65px;
+}
+
 .login1{
 padding-top:0;
 color:white;
@@ -180,4 +198,6 @@ height:65px;
 
 .idpass-forget{
  text-decoration: underline;
+ color:black;
 }
+

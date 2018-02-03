@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/* line 1, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+body {
+  margin: 0;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 6, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 11, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background-image: url("/conversation.jpg");
+  background-size: cover;
+  color: white;
+  height: 500px;
+  text-align: center;
+}
+
+/* line 20, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.container {
+  padding: 0 15px;
+  margin: auto;
+  width: 1170px;
+  text-align: center;
+}
+
+/* line 26, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.header-left {
+  padding: 0 15px;
+}
+
+/* line 30, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.header-left:hover {
+  cursor: pointer;
+}
+
+/* line 35, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.container h1 {
+  opacity: 0.8;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+
+/* line 41, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 46, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+/* line 52, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.logo img {
+  width: 124px;
+  margin-top: 20px;
+  float: left;
+}
+
+/* line 58, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.login, teacher {
+  color: white;
+}
+
+/* line 62, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.login1 {
+  padding-top: 0;
+  color: white;
+  height: 65px;
+}
+
+/* line 68, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.header-left {
+  float: left;
+}
+
+/* line 73, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.header-right {
+  float: right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display: block;
+  line-height: 65px;
+  padding: 0 25px;
+  transition: all 0.5s;
+}
+
+/* line 82, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.header-right:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* line 91, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.inputbox {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 300px;
+  width: 20%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 3px  3px;
+}
+
+/* line 101, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.IDpass_send_again {
+  text-decoration: underline;
+  color: blue;
+  display: block;
+  transition: all 0.5s;
+  width: 40%;
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+/* line 112, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.IDpass_send_again:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* line 118, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.IDpass_sixnum {
+  width: 90%;
+  font-size: 23px;
+  font-weight: 150;
+  margin: 0px auto;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* line 130, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.input-email {
+  height: 30px;
+  width: 85%;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 10px auto;
+  text-align: left;
+  border-radius: 3px  3px;
+}
+
+/* line 142, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.check {
+  width: 100px;
+  font-size: 19px;
+  font-weight: 100;
+  margin: 10px auto;
+  border-radius: 3px  3px;
+  background: #b5cd60;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  height: 35px;
+  color: white;
+}
+
+/* line 156, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.check:hover {
+  background: #16aa56;
+}
+
+/* line 160, /projects/ganjin/app/assets/stylesheets/user/pass_forgot2.scss */
+.IDpass_sixnum_explain {
+  width: 85%;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 5px auto;
+  text-align: left;
+}
