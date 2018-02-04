@@ -26,15 +26,15 @@
 			</div>
 		</header>
 		
-		<!-- <header2>
-			<% if flash[:notice]%>
-		    <div class="flash">
-		    <h2>Emailログイン</h2>
-		      <%= flash[notice]%>
-		    </div>
-		<% end %>
-		</header2> -->
 		
+    	<% if flash[:notice] %>
+    		<header2>
+                <div class="flash">
+                    <%= flash[:notice] %>
+                </div>
+            </header2>
+        <% end %>
+        
 		
 		<div class="login-modal-wrapper" id="login-modal">
     		<!-- ログインのモーダル部分のHTMLを貼り付けてください -->

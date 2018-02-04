@@ -10,6 +10,17 @@ a {
   text-decoration: none;
 }
 
+header2{
+  height:30px;
+  width:100%;
+  color:white;
+  background-color:orange;
+  position:fixed;
+  top:65px;
+  z-index:10px;
+  text-align:center;
+  }
+
 .input1{
   background-color: white;
   border: none;
@@ -208,7 +219,7 @@ header{
 }
 
 .top-wrapper{
-margin-top:85px;
+margin-top:96px;
 height:165px;
 }
 
