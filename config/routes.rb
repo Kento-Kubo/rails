@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   get 'main/index' => "main#index"
+  post 'login' => "user#login"
   
   get 'user/pass_forgot' => "user#pass_forgot"
   get 'user/pass_forgot2' => "user#pass_forgot2"
   get 'user/new' => 'user#new'
-
-  
-
-
-  get 'home/top' => "home#top"
+  get 'user/top' => "user#top"
+  post 'user/pre_login' => "user#pre_login"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

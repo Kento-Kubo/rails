@@ -24,8 +24,17 @@
             		<a class="login" >日本語を教える</a>
            		</div>		
 			</div>
-			
 		</header>
+		
+		<!-- <header2>
+			<% if flash[:notice]%>
+		    <div class="flash">
+		    <h2>Emailログイン</h2>
+		      <%= flash[notice]%>
+		    </div>
+		<% end %>
+		</header2> -->
+		
 		
 		<div class="login-modal-wrapper" id="login-modal">
     		<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
@@ -36,16 +45,14 @@
       				
       				<div id="login-form">
         				<h2>Emailログイン</h2>
-        				<form action="#">
-          					<input class="form-control" type="text" placeholder="メールアドレス">
-          					<input class="form-control" type="password" placeholder="パスワード"><br>
-          					<div class="idpass-forget"> 
-          					 <%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
-          					</div>
-          					<div id="submit-btn">
-          					 <%= link_to("ログイン","/main/index" ,class:"login1",id:"login-show") %>
-       					    </div>
-       					 </form>
+        				    <%= form_tag("/login") do %>
+              					<input class="form-control" type="text" name="emails" placeholder="メールアドレス" value="<%= @emails %>">
+              					<input class="form-control" type="password" name="password" placeholder="パスワード"><br>
+              					 <div class="idpass-forget"> 
+              					     <%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
+              					 </div>
+              					 <input id="submit-btn" type="submit" value="ログイン">
+           					 <% end %>
       				</div>
     			</div>
 			</div>

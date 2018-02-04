@@ -33,7 +33,16 @@ header{
   top:0;
     z-index:10;
   }
-
+header2{
+  height:30px;
+  width:100%;
+  color:white;
+  background-color:orange;
+  position:fixed;
+  top:65px;
+  z-index:10px;
+  }
+  
 .header-left{
   padding:0 15px;
   }
@@ -185,6 +194,7 @@ height:65px;
   border-radius: 5px;
 }
 
+
 #submit-btn {
   display: inline-block;
   padding: 14px 140px;
@@ -201,3 +211,6 @@ height:65px;
  color:black;
 }
 
+flash{
+    color:white;
+}

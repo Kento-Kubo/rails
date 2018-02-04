@@ -81,8 +81,8 @@ height:65px;
 .signup_main{
 
 border:solid rgba(34, 49, 52, 0.3) 1px;
-height:440px;
-width:70%;
+height:520px;
+width:85%;
 margin:10px auto;
  text-align: center;
  border-radius: 3px  3px;
@@ -98,7 +98,7 @@ width:100%;
 
 .signup_main_2{
 border:solid rgba(34, 49, 52, 0) 1px;
-height:280px;
+height:380px;
 width:100%;
 
 }
@@ -162,7 +162,7 @@ text-align:left;
 box-sizing:border-box;
 float:left;
 margin:0px 0px;
-padding:0px 0px;
+padding:0px 10px;
 position:relative;
 }
 
@@ -251,8 +251,9 @@ font-size:15px;
   opacity:0.8;
   border-radius:4px;
   width:60%;
-box-sizing:border-box;
-text-align:center;
+  box-sizing:border-box;
+  text-align:center;
+  font-size:18px;
 
 
 }
