@@ -5,6 +5,7 @@ class UserController < ApplicationController
   def pass_forgot2
   end
   def new
+    
   end
   def pre_login
   @user = User.new(
@@ -16,6 +17,7 @@ class UserController < ApplicationController
       flash[:notice] = "ユーザー登録が完了しました。ログインしてください。"
       redirect_to("/user/top")
     else
+        @error_message = "登録できませんでした。全ての項目を入力の上,アドレスが既に登録されていないかご確認ください。"
       render("user/new")
     end
   end
