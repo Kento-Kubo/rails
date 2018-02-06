@@ -5,7 +5,7 @@ class UserController < ApplicationController
   def pass_forgot2
   end
   def new
-    
+    @user=User.new
   end
   def pre_login
   @user = User.new(
