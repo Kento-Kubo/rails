@@ -1,5 +1,7 @@
 class UserController < ApplicationController
-  
+  def top
+    @user=User.new
+  end
   def pass_forgot
   end
   def pass_forgot2
@@ -23,11 +25,10 @@ class UserController < ApplicationController
   end
   
   def login
-    # メールアドレスのみを用いて、ユーザーを取得するように書き換えてください
     @user = User.find_by(emails: params[:emails] ,password: params[:password])
-    # if文の条件を&&とauthenticateメソッドを用いて書き換えてください
     if @user 
       flash[:notice] = "ログインしました"
+      session[:user_id]= @user.id
       redirect_to("/main/index")
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
