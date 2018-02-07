@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'main/index' => "main#index"
   post 'login' => "user#login"
+  post 'logout' => 'user#logout'
   
   get 'user/pass_forgot' => "user#pass_forgot"
   get 'user/pass_forgot2' => "user#pass_forgot2"

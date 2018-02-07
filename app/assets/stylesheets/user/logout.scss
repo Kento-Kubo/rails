@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*ヘッダー開始（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+.container{
+  padding:0 15px;
+  margin:auto;
+  width:1170px;
+  text-align:center;
+}
+.header-left{
+  padding:0 15px;
+  }
+  
+.header-left:hover{
+  cursor: pointer;
+
+}
+
+.container h1{
+  opacity:0.8;
+  font-size:50px;
+  letter-spacing:5px;
+}
+
+.fa{
+  font-size:10px;
+  margin-right:5px;
+}
+
+header{
+  height:65px;
+  width:100%;
+  background-color:rgba(34, 49, 52, 0.9);
+  }
+
+.logo{
+  width:124px;
+  margin-top:20px;
+  float:left;
+}
+
+.login,teacher{
+  color:white;
+  
+}
+.login1{
+padding-top:0;
+color:white;
+height:65px;
+}
+
+.header-left{
+  float:left;
+
+}
+
+.header-right{
+  float:right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display:block;
+  line-height:65px;
+  padding:0 25px;
+  transition:all 0.5s;
+}
+
+.header-right:hover{
+  background-color:rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+
+}
+/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+/*入力画面開始-----------------------------------------------------------------------------------------------------------------------*/
+
+.logout_main{
+
+border:solid rgba(34, 49, 52, 0.3) 1px;
+height:420px;
+width:50%;
+margin:10px auto;
+ text-align: center;
+ border-radius: 3px  3px;
+ text-align:center;
+}
+
+.title{
+margin-top:100px;
+
+}
+.to-top{
+background-color:#239b76;
+width:30%;
+margin:30px auto;
+margin-bottom:5px;
+text-align:center;
+
+}
+
+.close{
+
+width:10%;
+margin:0 auto;
+margin-bottom:5px;
+text-align:center;
+color:blue;
+text-decoration:underline;
+
+}
+
+.btn{
+  padding-top:8px;
+  padding-bottom:8px;
+
+  
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+  width:55%;
+box-sizing:border-box;
+
+display:block;
+
+}
+
+ .btn:hover{
+  cursor: pointer;
+
+}
+
+.close:hover{
+  cursor: pointer;
+
+}
+
+/*入力画面終了-----------------------------------------------------------------------------------------------------------------------*/
