@@ -145,7 +145,7 @@ height:65px;
 
 }
 
-.login-modal-wrapper {
+.login-model-wrapper {
   position: fixed;
   top: 0;
   right: 0;
@@ -157,7 +157,7 @@ height:65px;
   display:none;
 }
 
-.modal {
+.model {
   position: absolute;
   top: 20%;
   left: 34%;
@@ -175,6 +175,10 @@ height:65px;
   right: 12px;
   color: rgba(128, 128, 128, 0.46);
   cursor: pointer;
+}
+
+.signup-model-wrapper {
+  display:none;
 }
 
 #signup-form, #login-form {
