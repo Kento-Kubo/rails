@@ -18,16 +18,22 @@
                     <a class="logout" >
                         <img class="logo" >
                     </a>
+                    
                     <div class="search_user">
-                        <span class="fa fa-search fa-2x"></span>
                         <input type="text" id="user" placeholder="Username" class="input1">
+                        <!--- <%= submit_tag '検索' %>
+                        <%= text_field_tag :keywd,'',size:30 %> -->
+                        <span class="fa fa-search fa-2x"></span>
                     </div>
                 </div>
                 
-                 <div class="header-right">
-                    
-                    <a class="logout" >Log out</a>
+                <%= form_tag("/logout", method: "post") do %>
+                  <div class="header-right">
+                  
+                    <a class="logout" type="submit">logout</a>
                 </div>  
+                <% end %>
+                 
                     
                     
                 <div class="header-right">
@@ -48,7 +54,12 @@
                 <div class="header-right">
                     <a class="mypage" href="#">My page</a>
                     
-                </div>      
+                </div> 
+                
+                <div class="header-right">
+                    <a class="mypage" href="#">id:<%= session[:user_id] %></a>
+                    
+                </div> 
                                             
                    
             </div>

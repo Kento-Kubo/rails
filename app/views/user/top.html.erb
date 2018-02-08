@@ -26,6 +26,13 @@
 			</div>
 		</header>
 		
+		<% if @error_message %>
+		  <header2>
+              <div class="form-error">
+                <%= @error_message %>
+              </div>
+          </header2>
+        <% end %>
 		
     	<% if flash[:notice] %>
     		<header2>
@@ -60,6 +67,7 @@
 			
 			
 <!トップ開始-------------------------------------------------------------------------------->
+		
 		<div class="top-wrapper">
 			<div class="container">
 			
