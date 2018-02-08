@@ -33,18 +33,24 @@ header2{
   float: left;
   margin-left:10px;
 }
+.search_user{
+  display:inline-block;
+  position:relative;
+}
 .fa-search {
+  position:absolute;
+  right:5px;
+  top:25px;
   background-color: none;
   border-radius: 3px 0px 0px 3px;
-  border-right: 3px solid #434a52;
+  // border-right: 3px solid #434a52;
   color: #606468;
-  display: block;
-  
-  line-height: 65px;
+  // display: block;
+  // line-height: 65px;
   text-align: center;
-  width: 50px;
-  height: 35px;
-  margin-top:15px;
+  // width: 50px;
+  // height: 35px;
+  // margin-top:15px;
   }
 
 .top-wrapper{
