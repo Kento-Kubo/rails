@@ -9,7 +9,16 @@ a {
 
 header2{
   margin-left:380px;
-  }
+  height:30px;
+  width:55%;
+  color:white;
+  background-color:red;
+  position:fixed;
+  top:65px;
+  z-index:10px;
+  text-align:center;
+}
+
 /*
   header font in users_layout.scss
 */
