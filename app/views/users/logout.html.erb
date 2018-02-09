@@ -1,36 +1,7 @@
-<html>
-	
-	<head>
-		<meta charset="utf-8">
-		<title>SAMURAI</title>
-		<link rel="stylesheet" href="logout.css">
-		<link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<% content_for :specific_css_js do %>
 		<%= stylesheet_link_tag "users/logout", :media => "all" %>
-	</head>
-	
-	<body>
-<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
-		<header>
-			<div class="container">
-				<div class="header-left">
-					<img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-				</div>
-				
-				<div class="header-right">
-            		<div class="login1" id="login-show">ログイン</div>
-           		</div>
-           		
-           		<div class="header-right">
-            		<a class="login" href="file:///C:/Users/kento/Desktop/our%20servise/login.html">日本語を教える</a>
-           		</div>		
-           			
-           			
-			</div>
-						
-		</header>
-		
-<!--ヘッダー終了（共通：変えないこと）------------------------------------------------------------------->   
+<% end %>
+
 <!--入力画面開始----------------------------------------------------------------------------------------->   
 		<div class="logout_main">
 			
@@ -45,7 +16,5 @@
 <!--入力画面終了----------------------------------------------------------------------------------------->   
 	
 		
-		<script src="Landing.js"></script>
+		<!--<script src="Landing.js"></script>-->
 	
-	</body>
-	</html>

@@ -1,121 +1,74 @@
-<html>
-	
-	<head>
-		<meta charset="utf-8">
-		<title>SAMURAI</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<% content_for :specific_css_js do %>
 		<%= stylesheet_link_tag "users/new", :media => "all" %>
-	</head>
-	
-	<body>
-<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
-		<header>
-			<div class="container">
-				<div class="header-left">
-					<img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-				</div>
-				
-				<div class="header-right">
-            		<div class="login1" id="login-show">ログイン</div>
-           		</div>
-           		
-           		<div class="header-right">
-            		<a class="login" href="file:///C:/Users/kento/Desktop/our%20servise/login.html">日本語を教える</a>
-           		</div>		
-           			
-           			
-			</div>
-						
-		</header>
-		
-<!--ヘッダー終了（共通：変えないこと）------------------------------------------------------------------->   
+<% end %>
+
+
 <!--入力画面開始----------------------------------------------------------------------------------------->   
-		<% if @error_message %>
-		  <header2>
-              <div class="form-error">
-                <%= @error_message %>
-              </div>
-          </header2>
-        <% end %>
+	<% if @error_message %>
+	  <header2>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+      </header2>
+    <% end %>
+	
+	<div class="signup_main">
+		<div class="signup_main_1">
+			<p>ganjin ID(無料)を登録する。</p>
+		</div>
 		
-		<div class="signup_main">
-			<div class="signup_main_1">
-			
-				<p>ganjin ID(無料)を登録する。</p>
-						
+		<div class="signup_main_2">
+			<div class="signup_main_2_right">
+					<a class="btn facebook">
+						<span class="fa fa-facebook"></span>
+						facebookを使って登録
+					</a>
+					
+					<a class="btn twitter">
+						<span class="fa fa-twitter"></span>
+						twitterを使って登録
+					</a>
+					
+					<p class="explain">facebookやtwitterアカウントを使うと、メールアドレス・生年月日・性別の入力が簡単になります。</p>
 			</div>
-			
-			<div class="signup_main_2">
-			
-    			<div class="signup_main_2_right">
-    					
-    					<a class="btn facebook">
-    						<span class="fa fa-facebook"></span>
-    										
-    					facebookを使って登録</a>
-    					
-    					<a class="btn twitter">
-    						<span class="fa fa-twitter"></span>
-    										
-    					twitterを使って登録</a>
-    					
-    					<p class="explain">facebookやtwitterアカウントを使うと、メールアドレス・生年月日・性別の入力が簡単になります。</p>
-    			</div>
-			
-			
-			
-			
-			    <%= form_tag("/user/pre_login") do %>
-    				<div class="signup_main_2_left">
-    					
-    					<div class="register kubun">
-    					
-    						<div class="register-left">
-    							区分
-    						</div>
-    						
-    						<div class="register-right">
-    							<INPUT type="radio" name="kubun" value="先生" checked>先生&nbsp;&nbsp;&nbsp;&nbsp;
-    							<INPUT type="radio" name="kubun" value="生徒" >生徒
-    						</div>
-    					
-    					</div>
-    					
-    					<div class="register name">
-    					
-    						<div class="register-left">
-    							名前
-    						</div>
-    						
-    						<div class="register-right">
-    							 <input type="text" name="name"  class="input name">
-    						</div>
-    						
-    					</div>
-    					
-    					<div class="register sex">
-    					
-    						<div class="register-left">
-    							性別
-    						</div>
-    						
-    						<div class="register-right">
-    							
-    							
-    							<INPUT type="radio" name="sex" value="男性" checked>男性&nbsp;&nbsp;&nbsp;&nbsp;
-    							<INPUT type="radio" name="sex" value="女性" >女性
-    						</div>
-    					
-    					</div>
-    					
-    					<div class="register birth">
-    					
-    						<div class="register-left">
-    							生年月日
-    						</div>
-    						
-    						<div class="register-right">
-    							<select class="select">
+		
+		    <%= form_tag("/user/pre_login") do %>
+				<div class="signup_main_2_left">
+					<div class="register kubun">
+						<div class="register-left">
+							区分
+						</div>
+						<div class="register-right">
+							<INPUT type="radio" name="kubun" value="先生" checked>先生&nbsp;&nbsp;&nbsp;&nbsp;
+							<INPUT type="radio" name="kubun" value="生徒" >生徒
+						</div>
+					</div>
+					
+					<div class="register name">
+						<div class="register-left">
+							名前
+						</div>
+						<div class="register-right">
+						    <input type="text" name="name"  class="input name">
+						</div>
+					</div>
+					
+					<div class="register sex">
+						<div class="register-left">
+							性別
+						</div>
+						<div class="register-right">
+							<INPUT type="radio" name="sex" value="男性" checked>男性&nbsp;&nbsp;&nbsp;&nbsp;
+							<INPUT type="radio" name="sex" value="女性" >女性
+						</div>
+					</div>
+					
+					<div class="register birth">
+						<div class="register-left">
+							生年月日
+						</div>
+						<div class="register-right">
+							<select class="select">
                                 <option value="1990">1990</option>
                                 <option value="1991">1991</option>
                                 <option value="1992">1992</option>
@@ -125,8 +78,8 @@
                                 <option value="1996">1996</option>
                                 <option value="1997">1997</option>
                             </select>年
-                            
-                            	<select class="select">
+                        
+                        	<select class="select">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -140,8 +93,8 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>月
-                            
-                            	<select class="select">
+                        
+                        	<select class="select">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -154,7 +107,7 @@
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
-                                 <option value="13">13</option>
+                                <option value="13">13</option>
                                 <option value="14">14</option>
                                 <option value="15">15</option>
                                 <option value="16">16</option>
@@ -173,88 +126,66 @@
                                 <option value="29">29</option>
                                 <option value="30">30</option>
                                 <option value="31">31</option>
-                               
                             </select>日
-    						</div>
-    						
-    					</div>
-    					
-    					<div class="register skype">
-    					
-    						<div class="register-left">
-    							Skype ID
-    						</div>
-    						
-    						<div class="register-right">
-    							 <input type="skype"  class="input id">
-    						</div>
-    						
-    					</div>
-    					
-    					<div class="register email">
-    					
-    						<div class="register-left">
-    							Email 
-    						</div>
-    						
-    						<div class="register-right">
-    							 <input type="emails" name="emails"  class="input id">
-    						</div>
-    						
-    					</div>
-    					
-    					<div class="register email2">
-    					
-    						<div class="register-left">
-    							Email (confirmation)
-    						</div>
-    						
-    						<div class="register-right">
-    							 <input type="skype"  class="input id">
-    						</div>
-    						
-    					</div>
-    					
-    					<div class="register birth">
-    					
-    						<div class="register-left">
-    							パスワード
-    						</div>
-    						
-    						<div class="register-right">
-    							 <input type="password" name="password"  class="input name">
-    						</div>
-    						
-    					</div>
-    					
-    					<div class="register birth">
-    					
-    						<div class="register-left">
-    							パスワード（確認）
-    						</div>
-    						
-    						<div class="register-right">
-    							 <input type="password" name="password2"  class="input name">
-    						</div>
-    					</div>
-    					<div class="signup_main_3">
-    			
-    					   <p class="explain2"><a class="contract"  href="#">ganjin利用規約</a>を一読の上、同意される方のみ「同意して確認画面へ進む」ボタンを押してください。</p>
-    			
-    			           <input class="btn1"type="submit" value="同意して確認画面へ進む">
-			            </div>
-    				</div>
-    				
-			     <% end %>
-    			</div>
-    			
-    			
+						</div>
+					</div>
+					
+					<div class="register skype">
+						<div class="register-left">
+							Skype ID
+						</div>
+						<div class="register-right">
+							 <input type="skype"  class="input id">
+						</div>
+					</div>
+					
+					<div class="register email">
+						<div class="register-left">
+							Email 
+						</div>
+						<div class="register-right">
+							 <input type="emails" name="emails"  class="input id">
+						</div>
+					</div>
+					
+					<div class="register email2">
+						<div class="register-left">
+							Email (confirmation)
+						</div>
+						<div class="register-right">
+						    <input type="skype"  class="input id">
+						</div>
+					</div>
+					
+					<div class="register birth">
+						<div class="register-left">
+							パスワード
+						</div>
+						<div class="register-right">
+							 <input type="password" name="password"  class="input name">
+						</div>
+					</div>
+					
+					<div class="register birth">
+						<div class="register-left">
+							パスワード（確認）
+						</div>
+						<div class="register-right">
+							 <input type="password" name="password2"  class="input name">
+						</div>
+					</div>
+					
+					<div class="signup_main_3">
+					   <p class="explain2"><a class="contract"  href="#">ganjin利用規約</a>を一読の上、同意される方のみ「同意して確認画面へ進む」ボタンを押してください。</p>
+			           <input class="btn1"type="submit" value="同意して確認画面へ進む">
+		            </div>
+				</div>
+				
 		</div>
+			
+	</div>
 		
 <!--入力画面終了----------------------------------------------------------------------------------------->   
 	
 		
 		<!--<script src="Landing.js"></script>-->
-	
-	</body>
-	</html>

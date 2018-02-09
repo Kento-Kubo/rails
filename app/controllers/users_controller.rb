@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  layout "users_layout"
+
   def top
     @user=User.new
   end
