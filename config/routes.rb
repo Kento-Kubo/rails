@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'main/index' => "main#index"
+   get 'main/mypage_student' => "main#mypage_student"
   post 'login' => "user#login"
   post 'logout' => 'user#logout'
   

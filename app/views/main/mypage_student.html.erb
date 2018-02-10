@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>GANJIN</title>
+        <link rel="stylesheet" href="each_student.css">
+        <link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <%= stylesheet_link_tag "main/mypage_student", :media => "all" %>
+        
+	</head>
+    
+    <body>
+    
+<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">
+                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                    </a>
+                
+                        <input type="text" id="user" placeholder="Username" class="input1">
+                        
+                        <span class="fa fa-search fa-2x"></span>
+                                        
+                </div>
+                
+ 
+                
+                 <div class="header-right">
+                    
+                
+                	<ul id="normal" class="dropmenu">
+
+						
+
+						<li><a href="#"><span class="fa fa-cog"></a>
+
+  					 		 <ul>
+
+   							   <li><a href="#">プロフィール編集</a></li>
+
+    							  <li><a href="#">アカウント情報編集</a></li>
+
+     							 <li><a href="#">よくあるお問い合わせ</a></li>
+
+     							 <li><a href="#" id="logout-show">ログアウト</a></li>
+
+   							 </ul>
+
+  						</li>
+  						
+  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-bell"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-user"></a></li>
+  						
+  						<li><a href="#">My page</a></li>
+					</ul>
+                                            
+                   
+          	  </div>
+        </header>
+        
+        
+        <!--ログアウトモーダル開始------------------------------------------------------>   
+
+        	<div class="logout-modal-wrapper" id="logout-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="logout-form">
+        				<h2>ログアウトしますか？</h2>
+        				<form action="#">
+          					<div id="submit-btn1">はい</div>
+          					<a id="submit-btn2"  href="#">いいえ</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--ログアウトモーダル終了------------------------------------------------------>   
+        
+        
+<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
+
+<!--main開始------------------------------------------------------------------------------------->   
+		<div class="main" >
+			
+				<!--Introduction開始------------------------------------------------------------->   
+				<div class="introduction">
+					<div class="introduction-left">
+						 <img class="Profile-photo" src="/conversation.jpg" >
+					</div>
+					
+					<div class="introduction-right">
+							<p class="teacher-name">Kento Kubo</p>
+							
+							<table class="table-introduction">
+  								<tr>
+    								<td class="title">Learning:</td>
+    								<td class="contents">Japanese</td>
+    								<td class="contents">大阪弁</td>
+  								</tr>
+  								<tr>
+    								<td class="contents">Country:</td>
+    								<td class="contents">Thailand</td>
+  								</tr>
+  							
+							</table>
+
+					</div>
+				</div>
+				<!--Introduction終了------------------------------------------------------------->
+				
+				<!--status開始------------------------------------------------------------->   
+				<div class="status">
+					<div class="status-left">
+						<p class="lessons1">You have taken</p>					
+						<p class="lessons-no">154</p>
+						<p class="lessons2">Lessons</p>
+					</div>
+
+					<div class="status-center">
+
+						<p class="lessons1">You have studied for</p>					
+						<p class="lessons-hour">128.5</p>
+						<p class="lessons2">hour</p>
+
+					</div>
+															
+					<div class="status-right">
+
+						<p class="credit1">Credit in your wallet</p>
+						<p class="credit-no">100</p>
+						<a class="credit2">Do you want to buy addtional credit?</a>
+						
+					</div>
+				</div>
+				<!--status終了------------------------------------------------------------->
+
+				<!--schedule開始------------------------------------------------------------->
+				<div class="schedule-title">
+					Your upcoming lessons
+				
+				</div>
+				
+				<div class="schedule">
+					<div class="schedule-not">
+						<i class="fa fa-2x fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;<p class="no-lessons">No lessons are scheduled.</p>
+						<br>
+						<a class="lesson-book">Do you want to book new lessons?</a>
+					</div>
+				
+					<div class="schedule-each">
+						<div class="schedule-each-left">
+							<img class="Profile-photo-teacher" src="profile_pic_temp.png" >
+						</div>
+						
+						<div class="schedule-each-center">
+							<p class="teacher-name">Asaki Daisuke</p>
+							<p class="date">2018 February 10th</p>
+							<p class="from">From <span class="time">10:00 am</span></p>
+							<p class="note">The time schedule is shown in your time-zone.</p>					
+						</div>
+						
+						<div class="schedule-each-right">
+							<a class="check-teacher btn">Teacher's page</a>
+							<br>
+							<a class="cancel btn">cancel this lesson</a>							
+						</div>
+					</div>
+					
+					<div class="schedule-each">
+						<div class="schedule-each-left">
+							<img class="Profile-photo-teacher" src="profile_pic_temp.png" >
+						</div>
+						
+						<div class="schedule-each-center">
+							<p class="teacher-name">Asaki Daisuke</p>
+							<p class="date">2018 February 10th</p>
+							<p class="from">From <span class="time">10:00 am</span></p>
+							<p class="note">The time schedule is shown in your time-zone.</p>					
+						</div>
+						
+						<div class="schedule-each-right">
+							<a class="check-teacher btn">Teacher's page</a>
+							<br>
+							<a class="cancel btn">cancel this lesson</a>							
+						</div>
+					</div>
+					
+					<div class="schedule-each">
+						<div class="schedule-each-left">
+							<img class="Profile-photo-teacher" src="/conversation.jpg" >
+						</div>
+						
+						<div class="schedule-each-center">
+							<p class="teacher-name">Asaki Daisuke</p>
+							<p class="date">2018 February 10th</p>
+							<p class="from">From <span class="time">10:00 am</span></p>
+							<p class="note">The time schedule is shown in your time-zone.</p>					
+						</div>
+						
+						<div class="schedule-each-right">
+							<a class="check-teacher btn">Teacher's page</a>
+							<br>
+							<a class="cancel btn">cancel this lesson</a>							
+						</div>
+					</div>
+				</div>				
+				<!--schedule終了------------------------------------------------------------->
+					
+				<!--favorite開始------------------------------------------------------------->
+				<div class="favorite-title">
+					Your favorite teacher
+				
+				</div>
+				
+				<div class="favorite">
+				    <div class="favorite-not">
+						<i class="fa fa-2x fa-heart"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+						<p class="no-favorite">No favorite teachers are found. </p>
+						<br>
+						<a class="favorite-find">Do you want to find new teachers?</a>
+					</div>
+					
+    				<div class="favorite-each">
+						<img class="Profile-photo-teacher" src="/conversation.jpg">
+						<p class="teacher-name-favorite">Asaki Daisuke</p>
+						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
+					    
+					</div>
+					
+					<div class="favorite-each">
+						<img class="Profile-photo-teacher" src="/conversation.jpg">
+						<p class="teacher-name-favorite">Asaki Daisuke</p>
+						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
+					    
+					</div>
+					
+					<div class="favorite-each">
+						<img class="Profile-photo-teacher" src="/conversation.jpg">
+						<p class="teacher-name-favorite">Asaki Daisuke</p>
+						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
+					    
+					</div>
+					
+					<div class="favorite-each">
+						<img class="Profile-photo-teacher" src="/conversation.jpg">
+						<p class="teacher-name-favorite">Asaki Daisuke</p>
+						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
+					    
+					</div>
+					
+					<div class="favorite-each">
+						<img class="Profile-photo-teacher" src="/conversation.jpg">
+						<p class="teacher-name-favorite">Asaki Daisuke</p>
+						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
+					    
+					</div>
+					
+					<div class="favorite-each">
+						<img class="Profile-photo-teacher" src="/conversation.jpg">
+						<p class="teacher-name-favorite">Asaki Daisuke</p>
+						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
+					    
+					</div>
+					
+				</div>				
+				<!--favorite終了------------------------------------------------------------->
+				<!--受講履歴開始-------------------------------------------------------------->
+				<div class="past-schedule-title">
+					history of your lessons
+				
+				</div>
+				
+				<div class="past-schedule">
+					<div class="past-schedule-not">
+						<i class="fa fa-2x fa-history"></i>&nbsp;&nbsp;&nbsp;&nbsp;<p class="past-no-lessons">No histories </p>
+						<br>
+						<a class="lesson-book">Do you want to book new lessons?</a>
+					</div>
+				
+					<table class="history-table" rules="all">
+                        <tr class="table-top">
+                            
+                            <td>Booking date</td>
+                            <td>Lesson date</td>
+                            <td>Teacher name</td>
+                            <td>Hour</td>
+                            <td>cost</td>
+                        </tr>
+                        
+                        <tr class="history-data">
+                            
+                            <td>2018.Jan.30</td>
+                            <td>2018.2.10</td>
+                            <td>Asaki Daisuke</td>
+                            <td>1.0</td>
+                            <td>8 $</td>
+                        </tr> 
+                        
+                        <tr class="history-data">
+                            
+                            <td>2018.Jan.30</td>
+                            <td>2018.2.10</td>
+                            <td>Asaki Daisuke</td>
+                            <td>1.0</td>
+                            <td>8 $</td>
+                        </tr> 
+                        
+                         <tr class="history-data">
+                            
+                            <td>2018.Jan.30</td>
+                            <td>2018.2.10</td>
+                            <td>Asaki Daisuke</td>
+                            <td>1.0</td>
+                            <td>8 $</td>
+                        </tr>  
+                        
+                        <tr class="history-data">
+                            
+                            <td>2018.Jan.30</td>
+                            <td>2018.2.10</td>
+                            <td>Asaki Daisuke</td>
+                            <td>1.0</td>
+                            <td>8 $</td>
+                        </tr> 
+                        
+                         <tr class="history-total">
+                            
+                            <td class="borderless" ></td>
+                            <td class="borderless"></td>
+                            <td class="total">Total</td>
+                            <td>4.0</td>
+                            <td>32 $</td>
+                        </tr>                        
+                    </table>
+					
+					
+				</div>				
+				<!--受講履歴終了----------------------------------------------------------------->
+		</div>
+<!--main終了------------------------------------------------------------------------------------->   
+
+<!--トップに戻る開始----------------------------------------------------------------------------->
+		
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+
+<!--トップに戻る終了（共通：変えないこと）------------------------------------------------------>
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer id="footer">
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+
+		<script src="each_student.js"></script>
+    </body>
+    </html>
+    
+    
