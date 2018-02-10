@@ -20,15 +20,4 @@ Rails.application.config.assets.precompile += %w( users/logout.scss )
 Rails.application.config.assets.precompile += %w( users/top.js )
 
 
-<<<<<<< HEAD
-Rails.application.config.assets.precompile += %w( home.scss )
-Rails.application.config.assets.precompile += %w( main/main.scss )
-Rails.application.config.assets.precompile += %w( user/pass_forgot.scss )
-Rails.application.config.assets.precompile += %w( user/pass_forgot2.scss )
-Rails.application.config.assets.precompile += %w( home.js )
-Rails.application.config.assets.precompile += %w( user/new.scss )
-Rails.application.config.assets.precompile += %w( user/logout.scss )
-Rails.application.config.assets.precompile += %w( main/mypage_student.scss )
-=======
 
->>>>>>> bed38a53c8fc28a568b99e1b34d264345ccc98f9
