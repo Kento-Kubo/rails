@@ -31,29 +31,24 @@ $(function() {　//←消さないこと
 //サインアップモーダル表示コード開始---------------------------------------------------------
 
   $('#signup-show').click(function(){
-    
-    $('#signup-modal').fadeIn();
-    
+    $('#signup-model').fadeIn();
   })
   	  
-    $('.close-modal').click(function(){
-    
-    $('#signup-modal').fadeOut();
-    
+  $('.close-model').click(function(){
+    $('#signup-model').fadeOut();
   })
-  	  
-    if($('#signup-modal').is(':hidden')){
-        
-    }else{
-    	$(document).on('click', function(e) {
-    		if(!$(e.target).closest('#signup-modal').length && !$(e.target).closest('#signup-show').length){
-        		$('#signup-modal').fadeOut();
-    		}else{
-    	 
-        		$('#signup-modal').fadeOut();
-        	}
+  /*	  
+  if($('#signup-model').is(':hidden')){
+  }else{
+    $(document).on('click', function(e) {
+    	if(!$(e.target).closest('#signup-model').length && !$(e.target).closest('#signup-show').length){
+        $('#signup-model').fadeOut();
+    	}else{
+        $('#signup-model').fadeOut();
+      }
 		})
 	}
+	*/
 //サインアップモーダル表示コード開始---------------------------------------------------------
 
 });//←消さないこと
