@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>GANJIN</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <%= stylesheet_link_tag "main/main", :media => "all" %>
+        <%= stylesheet_link_tag "main/index", :media => "all" %>
     </head>
     
     
@@ -12,14 +12,18 @@
         <header>
             <div class="container">
                 <div class="header-left">
-                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">
-                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                    
+                    <a class="logout" >
+                        <img class="logo" >
                     </a>
-                
+                    
+                    <div class="search_user">
                         <input type="text" id="user" placeholder="Username" class="input1">
-                        
+                        <!--- <%= submit_tag '検索' %>
+                        <%= text_field_tag :keywd,'',size:30 %> -->
+
                         <span class="fa fa-search fa-2x"></span>
-                                        
+                    </div>
                 </div>
                 
  

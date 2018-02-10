@@ -1,0 +1,89 @@
+<% content_for :specific_css_js do %>
+	<%= stylesheet_link_tag "users/top", :media => "all" %>
+    <%= javascript_include_tag 'users/top' %>
+<% end %>
+
+	<% if @error_message %>
+		<header2>
+            <div class="form-error">
+                <%= @error_message %>
+            </div>
+        </header2>
+    <% end %>
+		
+   	<% if flash[:notice] %>
+    	<header2>
+            <div class="flash">
+             	<%= flash[:notice] %>
+            </div>
+        </header2>
+    <% end %>
+        
+	<div class="login-model-wrapper" id="login-model">
+    	<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
+    	<div class="model">
+		 	<div class="close-model">
+				<i class="fa fa-2x fa-times"></i>
+  			</div>
+  		
+  			<div id="login-form">
+				<h2>Emailログイン</h2>
+				
+				<%= form_tag("/login") do %>
+	  				<input class="form-control" type="text" name="emails" placeholder="メールアドレス" value="<%= @emails %>">
+	  				<input class="form-control" type="password" name="password" placeholder="パスワード"><br>
+      				<div class="idpass-forget"> 
+      					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
+      				</div>
+      				<input id="submit-btn" type="submit" value="ログイン">
+   				<% end %>
+  			</div>
+		</div>
+	</div>
+		
+<!--トップ開始-------------------------------------------------------------------------------->
+		
+	<div class="top-wrapper">
+		<div class="container">
+		
+			<h1>Learn Japanese</h1>
+			
+			<div class="btn-wrapper">
+				<a class="btn sign-up" id="signup-show">Sign up</a>
+				
+				<p>or sign up with</p>
+				
+				<a class="btn facebook">
+					<span class="fa fa-facebook"></span>facebook
+				</a>
+				
+				<a class="btn twitter">
+				<span class="fa fa-twitter"></span>twitter
+				</a>
+			</div>
+		</div>
+	</div>
+<!--トップ終了-------------------------------------------------------------------------------->	
+
+<!--サインアップモーダル開始---------------------------------------------------->
+	<div class="signup-model-wrapper" id="signup-model">
+		<div class="model">
+			<div class="close-model">
+    			<i class="fa fa-2x fa-times"></i>
+  			</div>
+  				
+  			<div id="signup-form">
+				<h2>新規登録</h2>
+				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
+				<form action="#">
+  					<input class="form-control" type="text" placeholder="メールアドレス">
+  					<div id="submit-btn">メール送信</div>
+   				</form>
+  			</div>
+		</div>
+	</div>
+<!--サインアップモーダル終了---------------------------------------------------->	
+	<div class="lesson-wrapper"></div>
+	<div class="message-wrapper"></div>
+	
+	<footer></footer>

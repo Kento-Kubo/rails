@@ -1,0 +1,19 @@
+<% content_for :specific_css_js do %>
+	<%= stylesheet_link_tag 'users/pass_forgot2', :media => "all" %>
+<% end %>
+
+	<div class="inputbox">
+	
+		<h1 class="IDpass_sixnum">６桁の認証番号を入力してください。</h1>
+		
+		<h2 class="IDpass_sixnum_explain">入力頂いたメールアドレスまたは電話番号に６桁の認証番号をお送り致しました。</h2>
+
+		<input class="input-email" type="text"  placeholder="６桁の認証番号 ">
+		
+		<!--<input class="check" type="submit" value="次へ進む"> -->
+	    <%= link_to("submit","/user/top" ,class:"check") %>
+	    <!--<span class="IDpass_send_again">再送する</span> -->
+		<%= link_to("再送する","/user/pass_forgot2" ,class:"IDpass_send_again") %>
+	</div>
+	
+	<!--<script src="Landing.js"></script>-->
