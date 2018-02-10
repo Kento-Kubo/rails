@@ -10,6 +10,36 @@ a {
   text-decoration: none;
 }
 
+/*ヘッダー開始（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+header{
+  height:65px;
+  width:100%;
+  background-color:rgba(34, 49, 52, 0.9);
+  position:fixed;
+  top:0;
+    z-index:10;
+  }
+
+.logo{
+  width:124px;
+  margin-top:20px;
+  float:left;
+}
+
+.mypage{
+  color:white;
+  text-align:center;
+}
+
+.logout{
+  color:white;
+}
+
+.header-left{
+  float:left;
+
+}
+
 header2{
   height:30px;
   width:100%;
@@ -20,6 +50,7 @@ header2{
   z-index:10px;
   text-align:center;
   }
+
 
 .input1{
   background-color: white;
@@ -60,6 +91,165 @@ header2{
   height:500px;
   text-align:center;
 }
+
+.header-right{
+  float:right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display:block;
+  line-height:65px;
+  padding:0 25px;
+  transition:all 0.5s;
+  
+}
+
+.dropmenu{
+  *zoom: 1;
+  list-style-type: none;
+  margin: 0px auto 30px;
+  padding: 0;
+  margin-right:0px;
+  position:relative;
+}
+.dropmenu:before, .dropmenu:after{
+  content: "";
+  display: table;
+}
+.dropmenu:after{
+  clear: both;
+}
+.dropmenu li{
+ 
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
+.dropmenu li a{
+  display: block;
+  margin: 0;
+  background: none;
+  color: #fff;
+  width:65px;
+  padding:0 10px;
+  transition:all 0.5s;
+  text-decoration: none;
+  margin-right:0px;
+}
+
+.dropmenu li a:hover{
+  background-color:rgba(255, 255, 255, 0.5);
+
+}
+
+.dropmenu li ul{
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  overflow:visible;
+}
+.dropmenu li ul li{
+
+  width: 280px;
+}
+.dropmenu li ul li a{
+  padding: 3px 15px;
+  background: rgba(34, 49, 52, 0.9);
+  text-align: left;
+  width: 280px;
+    font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+
+}
+
+.dropmenu li ul li:hover{
+  background-color:rgba(34, 49, 52, 0.9);
+}
+
+
+#normal li ul{
+  display: none;
+}
+#normal li:hover ul{
+  display: block;
+}
+
+.fa{
+  font-size:20px;
+  margin-right:5px;
+}
+
+/*--ログアウトモーダル開始---------------------------------------------------------------------------------*/   
+
+.logout-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display:none;
+}
+
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+ #logout-form {
+  width: 100%;
+}
+
+#logout-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+
+
+#submit-btn1, #submit-btn2 {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+  width:30%;
+}
+
+.idpass-forget{
+ text-decoration: underline;
+}
+
+/*--ログアウトモーダル終了---------------------------------------------------------------------------------*/   
+
+
+
+/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+
 
 .container-search{
   padding:0 0;
@@ -177,56 +367,14 @@ header2{
 }
 
 .fa{
-  font-size:20px;
+  font-size:10px;
   margin-right:5px;
 }
 
-header{
-  height:65px;
-  width:100%;
-  background-color:rgba(34, 49, 52, 0.9);
-  position:fixed;
-  top:0;
-    z-index:10;
-  }
 
-.logo{
-  width:124px;
-  margin-top:20px;
-  float:left;
-}
-
-.mypage{
-  color:white;
-  text-align:center;
-}
-
-.logout{
-  color:white;
-}
-
-.header-left{
-  float:left;
-
-}
-
-.header-right{
-  float:right;
-  /*background-color:rgba(255, 255, 255, 0.3);*/
-  display:block;
-  line-height:65px;
-  padding:0 25px;
-  transition:all 0.5s;
-  color:white;
-}
-
-.header-right:hover{
-  background-color:rgba(255, 255, 255, 0.5);
-
-}
 
 .top-wrapper{
-margin-top:96px;
+margin-top:85px;
 height:165px;
 }
 
@@ -533,7 +681,7 @@ margin:0 0;
   overflow-x:scroll;
   width: 590px;
   height: 93px;
-  border:collapse;
+  border:collapllapse;
   position:absolute;
   top:0;
   left:200px; 
@@ -667,4 +815,4 @@ footer{
   
 }
   
-/*<!フッター終了（共通：変えないこと）-------------------------------------------------------->*/
+/*<!フッター終了（共通：変えないこと）------------------------------------->*/

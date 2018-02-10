@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-    <html>
+<html>
     
     <head>
         <meta charset="utf-8">
         <title>GANJIN</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <%= stylesheet_link_tag "main/main", :media => "all" %>
+        <%= stylesheet_link_tag "main/index", :media => "all" %>
     </head>
     
-    <body>
     
 <!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
-        
         <header>
             <div class="container">
                 <div class="header-left">
+                    
                     <a class="logout" >
                         <img class="logo" >
                     </a>
@@ -23,48 +21,60 @@
                         <input type="text" id="user" placeholder="Username" class="input1">
                         <!--- <%= submit_tag '検索' %>
                         <%= text_field_tag :keywd,'',size:30 %> -->
+
                         <span class="fa fa-search fa-2x"></span>
                     </div>
                 </div>
                 
-                <%= form_tag("/logout", method: "post") do %>
-                  <div class="header-right">
-                  
-                    <a class="logout" type="submit">logout</a>
-                </div>  
-                <% end %>
-                 
-                    
-                    
-                <div class="header-right">
-                    <a class="mypage" href="#"><span class="fa fa-envelope"></span></a>
-                    
-                </div>  
-                
-                <div class="header-right">
-                    <a class="mypage" href="#"><span class="fa fa-bell"></span></a>
-                    
-                </div> 
+ 
                 
                  <div class="header-right">
-                    <a class="mypage" href="#"><span class="fa fa-user"></span></a>
                     
-                </div>                     
-                          
-                <div class="header-right">
-                    <a class="mypage" href="#">My page</a>
-                    
-                </div> 
                 
-                <div class="header-right">
-                    <a class="mypage" href="#">id:<%= session[:user_id] %></a>
-                    
-                </div> 
+                	<ul id="normal" class="dropmenu">
+						
+						<li><a href="#"><span class="fa fa-cog"></a>
+  					 		 <ul>
+   							   <li><a href="#">プロフィール編集</a></li>
+    							  <li><a href="#">アカウント情報編集</a></li>
+     							 <li><a href="#">よくあるお問い合わせ</a></li>
+     							 <li><a href="#" id="logout-show">ログアウト</a></li>
+   							 </ul>
+  						</li>
+  						
+  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-bell"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-user"></a></li>
+  						
+  						<li><a href="#">My page</a></li>
+					</ul>
                                             
                    
-            </div>
+          	  </div>
         </header>
         
+        
+        <!--ログアウトモーダル開始------------------------------------------------------>   
+
+        	<div class="logout-modal-wrapper" id="logout-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="logout-form">
+        				<h2>ログアウトしますか？</h2>
+        				<form action="#">
+          					<div id="submit-btn1">はい</div>
+          					<a id="submit-btn2"  href="#">いいえ</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--ログアウトモーダル終了------------------------------------------------------>   
 <!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
 <!--検索ボックス開始-------------------------------------------------------------------------->
         <% if flash[:notice] %>
@@ -2021,7 +2031,6 @@
 			<a class="back-to-top-word" href="#">Back to top</a>
 		
 		</div>
-
 <!--トップに戻る開始------------------------------------------------------------------------->
 <!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
          <footer>
@@ -2030,7 +2039,6 @@
        			 Progate
       		</div>
       
-
       		<div class="footer-list">
         		<ul>
           			<li>会社概要</li>
@@ -2041,8 +2049,4 @@
     	</footer>
     	
 <!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
-
     </body>
-    </html>
-    
-    

@@ -1,0 +1,17 @@
+<% content_for :specific_css_js do %>
+	<%= stylesheet_link_tag "users/pass_forgot", :media => "all" %>
+	<%= javascript_include_tag 'users/top' %>
+<% end %>
+
+	<div class="inputbox">
+	
+		<h1 class="IDpass_title">ganjin登録の際に入力されたメールアドレスまたは、電話番号をご入力ください。</h2>
+		<input class="input-email" type="text"  placeholder=" メールアドレスまたは電話番号">
+		<div class="check">
+			<%= link_to("送信","/user/pass_forgot2") %>
+		</div>
+	</div>
+	
+
+	
+	<!--<script src="Landing.js"></script>-->
