@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user=User.new
   end
   def pass_forgot
-    UserMailer.email_test().deliver_later
+    Usermailer.email_test().deliver_now
 
   end
   def pass_forgot2
