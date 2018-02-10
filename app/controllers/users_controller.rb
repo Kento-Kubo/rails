@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       redirect_to("/user/top")
     else
         @error_message = "登録できませんでした。全ての項目を入力の上,アドレスが既に登録されていないかご確認ください。"
-      render("user/new")
+      render("users/new")
     end
   end
   
