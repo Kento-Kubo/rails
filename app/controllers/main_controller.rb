@@ -3,5 +3,7 @@ class MainController < ApplicationController
   end
   def mypage_student
   end
-
+  def logout
+  end
+  
 end
