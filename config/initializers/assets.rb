@@ -10,12 +10,13 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
+Rails.application.config.assets.precompile += %w( main/index.scss )
+Rails.application.config.assets.precompile += %w( users/users_layout.scss )
+Rails.application.config.assets.precompile += %w( users/top.scss )
+Rails.application.config.assets.precompile += %w( users/pass_forgot.scss )
+Rails.application.config.assets.precompile += %w( users/pass_forgot2.scss )
+Rails.application.config.assets.precompile += %w( users/new.scss )
+Rails.application.config.assets.precompile += %w( users/logout.scss )
+Rails.application.config.assets.precompile += %w( users/top.js )
 
-Rails.application.config.assets.precompile += %w( home.scss )
-Rails.application.config.assets.precompile += %w( main/main.scss )
-Rails.application.config.assets.precompile += %w( user/pass_forgot.scss )
-Rails.application.config.assets.precompile += %w( user/pass_forgot2.scss )
-Rails.application.config.assets.precompile += %w( home.js )
-Rails.application.config.assets.precompile += %w( user/new.scss )
-Rails.application.config.assets.precompile += %w( user/logout.scss )
 
