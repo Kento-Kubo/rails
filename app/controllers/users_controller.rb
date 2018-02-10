@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     @user=User.new
   end
   def pass_forgot
+    UserMailer.email_test().deliver_later
+
   end
   def pass_forgot2
   end
@@ -23,7 +25,7 @@ class UsersController < ApplicationController
       redirect_to("/user/top")
     else
         @error_message = "登録できませんでした。全ての項目を入力の上,アドレスが既に登録されていないかご確認ください。"
-      render("user/new")
+      render("users/new")
     end
   end
   
@@ -37,7 +39,7 @@ class UsersController < ApplicationController
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @emails = params[:emails]
       @password = params[:password]
-      render("user/top")
+      render("users/top")
     end
   
   end
