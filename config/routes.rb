@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   get 'main/index' => "main#index"
-
+  get 'main/mypage_student' => "main#mypage_student"
+  
+  
   post 'login' => "users#login"
   post 'logout' => 'users#logout'
-  get 'users/pass_forgot' => "users#pass_forgot"
-  get 'users/pass_forgot2' => "users#pass_forgot2"
-  get 'users/new' => 'users#new'
-  get 'users/top' => "users#top"
-  post 'users/pre_login' => "users#pre_login"
+  
+  get 'user/pass_forgot' => "users#pass_forgot"
+  get 'user/pass_forgot2' => "users#pass_forgot2"
+  get 'user/new' => 'users#new'
+  get 'user/top' => "users#top"
+  post 'user/pre_login' => "users#pre_login"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

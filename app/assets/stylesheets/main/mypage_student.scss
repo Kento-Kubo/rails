@@ -1,0 +1,752 @@
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+
+
+
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/*ヘッダー開始（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+header{
+  height:65px;
+  width:100%;
+  background-color:rgba(34, 49, 52, 0.9);
+  position:fixed;
+  top:0;
+    z-index:10;
+  }
+
+.logo{
+  width:124px;
+  margin-top:20px;
+  float:left;
+}
+
+.mypage{
+  color:white;
+  text-align:center;
+}
+
+.logout{
+  color:white;
+}
+
+.header-left{
+  float:left;
+
+}
+
+
+
+
+.input1{
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  margin: 15px 0;
+  padding: 0 16px;
+  width: 300px;
+  height: 30px;
+  float: left;
+  margin-left:10px;
+}
+.fa-search {
+  background-color: none;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: inline-block;
+    font-size:20px;
+  line-height: 65px;
+  text-align: center;
+  width: 50px;
+  height: 35px;
+  
+  }
+
+.top-wrapper{
+  padding: 0 0 0 0;
+  background-size:cover;
+  color:white;
+  height:500px;
+  text-align:center;
+}
+
+.header-right{
+  float:right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display:block;
+  line-height:65px;
+  padding:0 25px;
+  transition:all 0.5s;
+  
+}
+
+.dropmenu{
+  *zoom: 1;
+  list-style-type: none;
+  margin: 0px auto 30px;
+  padding: 0;
+  margin-right:0px;
+  position:relative;
+}
+.dropmenu:before, .dropmenu:after{
+  content: "";
+  display: table;
+}
+.dropmenu:after{
+  clear: both;
+}
+.dropmenu li{
+ 
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
+.dropmenu li a{
+  display: block;
+  margin: 0;
+  background: none;
+  color: #fff;
+  width:65px;
+  padding:0 10px;
+  transition:all 0.5s;
+  text-decoration: none;
+  margin-right:0px;
+}
+
+.dropmenu li a:hover{
+  background-color:rgba(255, 255, 255, 0.5);
+
+}
+
+.dropmenu li ul{
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  overflow:visible;
+}
+.dropmenu li ul li{
+
+  width: 280px;
+}
+.dropmenu li ul li a{
+  padding: 3px 15px;
+  background: rgba(34, 49, 52, 0.9);
+  text-align: left;
+  width: 280px;
+    font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+
+}
+
+.dropmenu li ul li:hover{
+  background-color:rgba(34, 49, 52, 0.9);
+}
+
+
+#normal li ul{
+  display: none;
+}
+#normal li:hover ul{
+  display: block;
+}
+
+.fa{
+ 
+  margin-right:5px;
+}
+
+/*--ログアウトモーダル開始---------------------------------------------------------------------------------*/   
+
+.logout-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display:none;
+}
+
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+ #logout-form {
+  width: 100%;
+}
+
+#logout-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+
+
+#submit-btn1, #submit-btn2 {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+  width:30%;
+}
+
+.idpass-forget{
+ text-decoration: underline;
+}
+
+/*--ログアウトモーダル終了---------------------------------------------------------------------------------*/   
+
+
+
+/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+
+ .main{
+ width:700px;
+ margin:0px auto;
+ margin-top:100px;
+ 
+ 
+ }
+
+				/*--Introduction開始------------------------------------------------------------*/   
+				.introduction{
+				width:100%;
+				border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+				margin-top:5px;
+				height:200px;
+				}
+				
+				.introduction-left{
+				width:32.7%;
+				border:solid rgba(34, 49, 52, 0.1) 1px;				
+				float:left;
+				height:200px;
+				}
+			
+				.introduction-right{
+				width:66%;
+				border:solid rgba(34, 49, 52, 0.1) 1px;				
+				float:left;
+				height:200px;
+				margin-left:4.5px;
+				}			
+			
+				.teacher-name{
+				color:#3b5998;
+				font-size:30px;
+				margin-top:5px;
+				margin-bottom:1%;
+				margin-left:1%;
+
+				}
+				
+				.title{
+				margin-right:0;
+				}
+		
+				.table-introduction{
+					margin-left:3%;
+					width:60%;
+				}
+		
+				.Introduction-title{
+				font-weight:bold;
+				margin-left:1%;
+				}
+				
+				.contents{
+					width:20%;
+				
+					text-align:left;
+								
+				}
+				
+				.Profile-photo{
+				width:100%;
+				}
+		
+
+				/*--Introduction終了------------------------------------------------------------*/
+		
+				/*--status開始------------------------------------------------------------*/
+					.status{
+						width:100%;
+						border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+						margin-top:5px;
+						height:150px;
+					
+					}
+					
+					.status-left{
+						width:32.9%;
+						border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+						float:left;	
+						height:150px;
+			 			background-color:rgba(34, 49, 52, 0.1);
+			 			text-align:center;
+					}
+					
+					.status-center{
+						width:32.9%;
+						border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+						float:left;	
+						height:150px;
+						margin:0 4.5px;
+			 			background-color:rgba(34, 49, 52, 0.1);					}					
+					
+					.status-right{
+						width:32.9%;
+						border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+						float:left;
+						height:150px;
+			 			background-color:rgba(34, 49, 52, 0.1);					}					
+		
+		
+					.lessons-no, .lessons-hour{
+					display:inline-block;
+					font-size:70px;
+					margin-top:0px;
+					margin-bottom:0px;
+					padding:0;
+					color:#b5cd60;
+					text-align:center;
+					width:100%;
+					}
+					
+					.lessons1{
+					display:inline-block;
+					font-size:15px;
+					margin-bottom:0px;
+					width:100%;	
+					padding-left:10px;	
+					text-align:left;		
+					}	
+					
+					.lessons2{
+					display:inline-block;
+					font-size:15px;
+					margin-top:0px;
+					width:95%;
+					text-align:right;	
+					margin-right:10px;
+									
+					}
+					
+					.credit-no{
+					display:inline-block;
+					font-size:70px;
+					margin-top:0px;
+					margin-bottom:0px;
+					padding:0;
+					color:#b5cd60;
+					text-align:center;
+					width:100%;
+					}
+					
+					.credit1{
+					display:inline-block;
+					font-size:15px;
+					margin-bottom:0px;
+					width:100%;	
+					padding-left:10px;				
+					}	
+					
+					.credit2{
+					display:inline-block;
+					font-size:13px;
+					text-decoration:underline;
+					color:blue;
+					width:100%;
+					padding:0 auto;
+					text-align:center;					
+					}
+					
+					.credit2:hover{
+					cursor:pointer;
+					
+					}				
+				/*--status終了------------------------------------------------------------*/
+			
+				/*--schedule開始------------------------------------------------------------*/
+					.schedule-title{
+						width:100%;
+						border:none;/*solid rgba(34, 49, 52, 0.1) 1px;*/
+						margin-top:5px;
+						height:40px;
+						line-height:40px;
+						padding-left:20px;
+						font-weight:bold;
+						font-size:20px;					
+					}	
+					.schedule{
+						width:100%;
+						border:solid rgba(34, 49, 52, 0.2) 1px;
+						margin-top:5px;
+						
+					
+					}	
+					
+					.schedule-not{
+					text-align:center;
+					margin:50px 0px;
+					}
+					
+					.fa-calendar{
+					display:inline-block;
+					color:rgba(34, 49, 52, 0.9);
+					}
+					
+					.no-lessons{
+					display:inline-block;
+					color:rgba(34, 49, 52, 0.9);
+					font-size:20px;
+					}
+					
+					.lesson-book{
+					margin:20px 0px;
+					cursor:pointer;
+					text-decoration:underline;
+					color:blue;
+					}
+					.schedule-each{
+					width:100%;
+					border:solid rgba(34, 49, 52, 0.1) 1px;
+					height:150px;
+					margin-top:5px;
+					
+					}		
+
+					.schedule-each-left{
+						width:20%;
+						border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+						float:left;	
+						height:150px;
+			 			text-align:center;
+			 			display:inline-block;
+			 			margin:0 10px;
+					}
+					
+					.schedule-each-center{
+						width:43%;
+						border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+						float:left;	
+						height:150px;
+						display:inline-block;
+			 			}					
+					
+					.schedule-each-right{
+						width:30%;
+						border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+						float:left;
+						height:150px;
+						display:inline-block;
+						margin-left:10px;
+						text-align:center;
+			 			}
+			 			
+			 		.Profile-photo-teacher{
+			 		width:100%;
+			 		border-radius:100px;
+			 		
+			 		}
+			 		
+			 		.date, .time, teacher-name{
+			 		margin-top:2px;
+			 		margin-bottom:0px;
+			 		}
+
+			 		.date{
+			 		font-size:20px;
+			 		margin-left:10px;
+			 		margin-top:5px;
+			 		}
+			 		
+			 		.time{
+			 		font-size:20px;
+			 		margin-left:5px;
+			 		
+			 		}
+			 		
+			 		.from, .note{
+			 		margin-top:2px;
+			 		font-size:15px;
+			 		margin-left:10px;			 		}
+
+					.note{
+			 		background-color:rgba(34, 49, 52, 0.1);
+			 		margin-left:0px;
+			 		padding-left:10px;
+			 		padding-right:10px;
+			 		}
+			 		
+			 		.btn{
+  						padding:8px 24px;
+  						color:white;
+  						display:inline-block;
+  						width:65%;
+  						border-radius:4px;
+
+					}
+
+					.btn:hover{
+ 					 opacity:1
+					}
+					
+					.check-teacher{
+						background: #b5cd60;
+						margin-top:15px;
+						text-align:center;
+					}
+					
+					.cancel{
+						background: rgba(255, 0, 0, 0.6);
+						margin-top:5px;
+						text-align:center;
+					}
+
+				/*--schedule終了------------------------------------------------------------*/
+
+				/*--favorite開始------------------------------------------------------------*/
+					.favorite-title{
+						width:100%;
+						border:none;/*solid rgba(34, 49, 52, 0.1) 1px;*/
+						margin-top:5px;
+						height:40px;
+						line-height:40px;
+						padding-left:20px;
+						font-weight:bold;
+						font-size:20px;					
+					}	
+					.favorite{
+						width:100%;
+						border:solid rgba(34, 49, 52, 0.3) 1px;
+						margin-top:5px;
+						
+					
+					}	
+					
+					.favorite-not{
+					text-align:center;
+					margin:50px 0px;
+					
+					}
+					
+					.fa-calendar{
+					display:inline-block;
+					color:rgba(34, 49, 52, 0.9);
+					}
+					
+					.no-favorite{
+					display:inline-block;
+					color:rgba(34, 49, 52, 0.9);
+					font-size:20px;
+					}
+					
+					.favorite-find{
+					margin:20px 0px;
+					cursor:pointer;
+					text-decoration:underline;
+					color:blue;
+					}
+					
+					.favorite-each{
+					width:23.7%;
+					border:solid rgba(34, 49, 52, 0.1) 1px;
+					height:200px;
+					margin-top:1%;
+					display:inline-block;
+					margin-right:0.5%;
+                    cursor:pointer;
+					transition:all 0.5s;
+					}	
+					
+					.favorite-each:hover{
+					transform: scale( 1.05 );
+                         }
+
+	
+					
+					.Profile-photo-teacher{
+					  
+				    width:100%;
+				    margin-top:5px;
+
+					}
+					
+					.teacher-name-favorite{
+					    text-align:center;
+					    margin-top:2px;
+					    color:#3b5998;
+					    font-size:18px;
+					    }
+					    
+					.teacher-lesson-no-favorite{
+					      text-align:center;
+				          color:#b5cd60;
+                          font-size:18px;
+					}
+					
+					.lessons, .teacher-sex{
+					    color:rgba(34, 49, 52, 0.9);
+					    font-size:14px;
+					}
+					
+
+				/*--favorite終了------------------------------------------------------------*/
+                /*--受講履歴開始-------------------------------------------------------------*/
+					.past-schedule-title{
+						width:100%;
+						border:none;/*solid rgba(34, 49, 52, 0.1) 1px;*/
+						margin-top:5px;
+						height:40px;
+						line-height:40px;
+						padding-left:20px;
+						font-weight:bold;
+						font-size:20px;					
+					}	
+					.past-schedule{
+						width:100%;
+						border:solid rgba(34, 49, 52, 0.2) 1px;
+						margin-top:5px;
+						
+					
+					}	
+					
+					.past-schedule-not{
+					text-align:center;
+					margin:50px 0px;
+					}
+					
+					.fa-history{
+					display:inline-block;
+					color:rgba(34, 49, 52, 0.9);
+					}
+					
+					.past-no-lessons{
+					display:inline-block;
+					color:rgba(34, 49, 52, 0.9);
+					font-size:20px;
+					}
+					
+					.past-lesson-book{
+					margin:20px 0px;
+					cursor:pointer;
+					text-decoration:underline;
+					color:blue;
+					}
+					
+	                .history-table{
+	                    
+	                    width:100%;
+	                    text-align:center;
+	                    border-collapse: collapse; 
+	                    
+	                    border-radius: 6px 0 0 0;
+	                    border:rgba(34, 49, 52, 0.9);
+	                }
+	                
+	                .table-top{
+	                    background:  rgba(135, 206, 250, 0.5);
+                        border-radius: 6px;
+	                }
+	                
+
+	                
+                    .history-data{
+                        background: #f5f5f5;
+                        border: solid #808080　2px ;
+                        box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+                        font-size:13px;
+                    }	                
+	                .history-data:hover{
+                        background: #fbf8e9;
+                  }	 
+
+                    .borderless{
+                       border:none; 
+                    }
+				/*--受講履歴終了--------------------------------------------------------------*/
+		
+/*--メイン終了---------------------------------------------------------------------------------*/   
+
+
+
+
+
+
+/*back to top開始（共通：変えないこと）--------------------------------------------------------*/
+
+.back-to-top{
+  width:100%;
+  height:50px;
+  background-color:rgba(34, 49, 52, 0.6);
+  text-align:center;
+  line-height:50px;
+    color:white;
+    display:block;
+
+  transition:all 0.5s;
+  margin-top:50px;
+
+}
+
+.back-to-top:hover{
+  background-color:rgba(34, 49, 52, 0.4);
+}
+
+.back-to-top-word{
+
+ color:white;
+ display:block;
+ 
+}
+
+/*back to top終了（共通：変えないこと）--------------------------------------------------------*/
+/*<フッター開始（共通：変えないこと）---------------------------------------------------------*/
+footer{
+  background-color:rgba(34, 49, 52, 0.9);
+  height: 270px;
+  width:100%;
+  color:white;
+
+  
+}
+  
+/*フッター終了（共通：変えないこと）-------------------------------------------------------*/
