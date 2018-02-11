@@ -80,7 +80,7 @@
   					<div id="submit-btn">メール送信</div>
    				</form>-->
 				
-				<%= form_for @user, url: user_new_path, html: {method: "get"} do |f| %>
+				<%= form_for @user, url: email_authentication_path do |f| %>
 				  <%= f.text_field :emails, class:"form-control", placeholder: "メールアドレス"%>
 				  <%= f.submit "メール送信", id:"submit-btn" %>
 				<% end %>

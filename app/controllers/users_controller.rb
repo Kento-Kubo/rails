@@ -5,8 +5,19 @@ class UsersController < ApplicationController
   def top
     @user=User.new
   end
+  
+  def email_authentication  
+    @user = User.new(
+      emails: params[:user][:emails],
+    )
+    Usermailer.authentication_email(@user).deliver_now
+    flash[:notice] = "A confirmation email has been sent to your email address. 
+        Please click on the link in the email in order to activate your account."
+    redirect_to("/user/top")
+  end
+  
   def pass_forgot
-    Usermailer.email_test().deliver_now
+    # Usermailer.email_test().deliver_now
 
   end
   def pass_forgot2
@@ -15,7 +26,7 @@ class UsersController < ApplicationController
     @user=User.new
   end
   def pre_login
-  @user = User.new(
+    @user = User.new(
       name: params[:name],
       emails: params[:emails],
       password: params[:password]
