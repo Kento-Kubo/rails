@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'logout' => 'users#logout'
   post 'email_authentication' => 'users#email_authentication'
   post 'user/pass_forgot' => "users#pass_forgot"
+  post 'user/pass_forgot2' => "users#pass_forgot2"
 
   get 'user/pass_forgot' => "users#pass_forgot"
   get 'user/pass_forgot2' => "users#pass_forgot2"
