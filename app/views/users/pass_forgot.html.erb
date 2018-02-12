@@ -3,13 +3,29 @@
 	<%= javascript_include_tag 'users/top' %>
 <% end %>
 
+	<% if @error_message %>
+		<header2>
+            <div class="form-error">
+                <%= @error_message %>
+            </div>
+        </header2>
+    <% end %>
+
 	<div class="inputbox">
 	
 		<h1 class="IDpass_title">ganjin登録の際に入力されたメールアドレスまたは、電話番号をご入力ください。</h2>
-		<input class="input-email" type="text"  placeholder=" メールアドレスまたは電話番号">
-		<div class="check">
-			<%= link_to("送信","/user/pass_forgot2") %>
-		</div>
+		<!--<input class="input-email" type="text"  placeholder=" メールアドレスまたは電話番号">-->
+		<!--<div class="check">-->
+		<!--	<%= link_to("送信","/user/pass_forgot2") %>-->
+		<!--</div>-->
+
+		<%= form_tag(url: user_pass_forgot_path, method: "post") do %>
+  			<%= text_field_tag :email_or_tel,nil,{ class:"input-email", placeholder: "メールアドレスまたは電話番号"} %>
+  			<div class="check">
+				<%= submit_tag "送信"%>
+			</div>
+		<% end %>
+		
 	</div>
 	
 
