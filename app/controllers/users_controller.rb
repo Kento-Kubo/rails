@@ -20,21 +20,21 @@ class UsersController < ApplicationController
     # 入力はメールか電話番号の判断は、今データベースで電話番号の行がないからあとでかく
     # トークンって必要？
     if request.post?
-=begin      
+#=begin      
     #This part is for testing only(no real data in database yet)
         @user = User.new(
             emails: 'abc@gmail.com'
         )
           session[:email]= @user.emails
           redirect_to("/user/pass_forgot2")
-=end
-      @user=User.find_by(emails: params[:email_or_tel])
-      if @user
-        session[:email]= @user.emails
-        redirect_to("/user/pass_forgot2")
-      else
-        @error_message = "email or number does not exist."
-      end
+#=end
+#      @user=User.find_by(emails: params[:email_or_tel])
+#      if @user
+#        session[:email]= @user.emails
+#        redirect_to("/user/pass_forgot2")
+#      else
+#        @error_message = "email or number does not exist."
+#      end
     
     end
   end
@@ -78,14 +78,17 @@ class UsersController < ApplicationController
     if @user 
       flash[:notice] = "ログインしました"
       session[:user_id]= @user.id
-      redirect_to("/main/index")
+      redirect_to("/main/index/#{@user.id}")
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @emails = params[:emails]
       @password = params[:password]
       render("users/top")
+end
+    
+    def logout
+        session[:user_id] = nil
     end
-  
   end
   
 end

@@ -41,10 +41,11 @@
    							   <li><a href="#">プロフィール編集</a></li>
     					       <li><a href="#">アカウント情報編集</a></li>
      						   <li><a href="#">よくあるお問い合わせ</a></li>
-     						   <!--<li><a id="logout-show"><%= link_to("ログアウト","/logout", method: :post) %></a></li>-->
-     						   <li><%= form_tag("/logout") do %>
-     						   <input  type="submit" value="ログアウト">
-     						   <% end %></li>
+     						   <!--id="logout-show"-->
+     						   <li><%= link_to("ログアウト","/logout",method: :post) %></li>
+     						   <!--<li><%= form_tag("/logout") do %>
+     						   <%= submit_tag "ログアウト"%>
+     						   <% end %></li>-->
    							 </ul>
   						</li>
   						

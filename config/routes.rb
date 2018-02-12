@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'main/index' => "main#index"
+  get 'main/index/:id' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
   
   post 'login' => "users#login"
-  post 'logout' => 'users#logout'
+  get 'logout' => 'users#logout'
   post 'email_authentication' => 'users#email_authentication'
   post 'user/pass_forgot' => "users#pass_forgot"
   post 'user/pass_forgot2' => "users#pass_forgot2"
