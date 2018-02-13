@@ -2,18 +2,24 @@ Rails.application.routes.draw do
   get 'main/index' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
+<<<<<<< HEAD
   get 'main/teacher_profile_edit' => "main#teacher_profile_edit"
   get 'main/teacher_account_edit' => "main#teacher_account_edit"
   get 'main/student_account_edit' => "main#student_account_edit"
    get 'main/teacher_faq' => "main#teacher_faq"
   post 'login' => "user#login"
   post 'logout' => 'user#logout'
+=======
+>>>>>>> ec78394a2057e381e773df0695142c39aa04a63e
   
-  get 'user/pass_forgot' => "user#pass_forgot"
-  get 'user/pass_forgot2' => "user#pass_forgot2"
-  get 'user/new' => 'user#new'
-  get 'user/top' => "user#top"
-  post 'user/pre_login' => "user#pre_login"
+  post 'login' => "users#login"
+  post 'logout' => 'users#logout'
+  
+  get 'user/pass_forgot' => "users#pass_forgot"
+  get 'user/pass_forgot2' => "users#pass_forgot2"
+  get 'user/new' => 'users#new'
+  get 'user/top' => "users#top"
+  post 'user/pre_login' => "users#pre_login"
 
 
 

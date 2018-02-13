@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     )
     if @user.save
       flash[:notice] = "ユーザー登録が完了しました。ログインしてください。"
-      redirect_to("/users/top")
+      redirect_to("/user/top")
     else
         @error_message = "登録できませんでした。全ての項目を入力の上,アドレスが既に登録されていないかご確認ください。"
       render("users/new")
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @emails = params[:emails]
       @password = params[:password]
-      render("users/top")
+      render("user/top")
     end
   
   end
