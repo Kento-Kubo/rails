@@ -22,6 +22,15 @@ Rails.application.config.assets.precompile += %w( main/mypage_student.scss )
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss )
 Rails.application.config.assets.precompile += %w( main/student_profile_edit.scss )
 Rails.application.config.assets.precompile += %w( main/student_profile_edit.js )
+Rails.application.config.assets.precompile += %w( main/teacher_profile_edit.scss )
+Rails.application.config.assets.precompile += %w( main/teacher_profile_edit.js )
+Rails.application.config.assets.precompile += %w( main/teacher_account_edit.scss )
+Rails.application.config.assets.precompile += %w( main/teacher_account_edit.js )
+Rails.application.config.assets.precompile += %w( main/student_account_edit.scss )
+Rails.application.config.assets.precompile += %w( main/student_account_edit.js )
+Rails.application.config.assets.precompile += %w( main/teacher_faq.scss )
+Rails.application.config.assets.precompile += %w( main/teacher_faq.js )
+
 
 
 
