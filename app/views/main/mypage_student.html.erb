@@ -111,6 +111,11 @@
     								<td class="contents">Country:</td>
     								<td class="contents">Thailand</td>
   								</tr>
+  							    <tr>
+  							        <%= form_tag("/main/student_profile_edit", method: "get") do %>
+  							        <input class="edit_btn" type="submit" value="edit" >
+  							        <% end %>
+  							    </tr>
   							
 							</table>
 

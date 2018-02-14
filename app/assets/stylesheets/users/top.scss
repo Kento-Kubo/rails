@@ -10,17 +10,6 @@ header{
   position:fixed;
 }
 
-header2{
-  height:30px;
-  width:100%;
-  color:white;
-  background-color:orange;
-  position:fixed;
-  top:65px;
-  z-index:10px;
-  text-align:center;
-}
-
 /*
     header font in users_layout.scss
 */
@@ -124,7 +113,7 @@ height:65px;
 #signup-form input, #login-form input {
   width: 320px;
   margin-bottom: 20px;
-  font-size: 12px;
+  font-size: 15px;
   padding: 12px 12px;
   border: 1px solid #d0d5d8;
   border-radius: 5px;

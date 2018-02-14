@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'main/index' => "main#index"
+  get 'main/index/:id' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
 <<<<<<< HEAD
@@ -13,14 +13,16 @@ Rails.application.routes.draw do
 >>>>>>> ec78394a2057e381e773df0695142c39aa04a63e
   
   post 'login' => "users#login"
-  post 'logout' => 'users#logout'
-  
+  get 'logout' => 'users#logout'
+  post 'email_authentication' => 'users#email_authentication'
+  post 'user/pass_forgot' => "users#pass_forgot"
+  post 'user/pass_forgot2' => "users#pass_forgot2"
+
   get 'user/pass_forgot' => "users#pass_forgot"
   get 'user/pass_forgot2' => "users#pass_forgot2"
   get 'user/new' => 'users#new'
   get 'user/top' => "users#top"
   post 'user/pre_login' => "users#pre_login"
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

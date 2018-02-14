@@ -75,10 +75,16 @@
   			<div id="signup-form">
 				<h2>新規登録</h2>
 				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
-				<form action="#">
+				<!--<form action="#">
   					<input class="form-control" type="text" placeholder="メールアドレス">
   					<div id="submit-btn">メール送信</div>
-   				</form>
+   				</form>-->
+				
+				<%= form_tag(email_authentication_path, method: "post") do %>
+  					<%= text_field_tag :emails,nil,{ class:"form-control", placeholder: "メールアドレス"} %>
+  					<%= submit_tag "メール送信", id:"submit-btn"%>
+				<% end %>
+				
   			</div>
 		</div>
 	</div>
