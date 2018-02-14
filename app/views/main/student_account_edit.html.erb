@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>GANJIN</title>
+        <link rel="stylesheet" href="teacher_edit_profile.css">
+        <link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		 <%= stylesheet_link_tag "main/student_profile_edit", :media => "all" %>
+         <%= javascript_include_tag 'main/student_profile_edit' %>
+	</head>
+    
+    <body>
+    
+<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">
+                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                    </a>
+                
+                        <input type="text" id="user" placeholder="Username" class="input1">
+                        
+                        <span class="fa fa-search fa-2x"></span>
+                                        
+                </div>
+                
+ 
+                
+                 <div class="header-right">
+                    
+                
+                	<ul id="normal" class="dropmenu">
+
+						
+
+						<li><a href="#"><span class="fa fa-cog"></a>
+
+  					 		 <ul>
+
+   							   <li><a href="#">プロフィール編集</a></li>
+
+    							  <li><a href="#">アカウント情報編集</a></li>
+
+     							 <li><a href="#">よくあるお問い合わせ</a></li>
+
+     							 <li><a href="#" id="logout-show">ログアウト</a></li>
+
+   							 </ul>
+
+  						</li>
+  						
+  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-bell"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-user"></a></li>
+  						
+  						<li><a href="#">My page</a></li>
+					</ul>
+                                            
+                   
+          	  </div>
+        </header>
+        
+        
+        <!--ログアウトモーダル開始------------------------------------------------------>   
+
+        	<div class="logout-modal-wrapper" id="logout-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="logout-form">
+        				<h2>ログアウトしますか？</h2>
+        				<form action="#">
+          					<div id="submit-btn1">はい</div>
+          					<a id="submit-btn2"  href="#">いいえ</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--ログアウトモーダル終了------------------------------------------------------>   
+        
+        
+<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   <!--main開始------------------------------------------------------------------------------------->   
+		<div class="edit_profile_main">
+			<div class="edit_profile_main_1">
+			
+				<p>プロフィール情報を更新する</p>
+						
+			</div>
+			
+			<div class="edit_profile_main_2">
+			
+				
+					
+
+					
+					
+					
+					<div class="register username">
+					
+						<div class="register-left">
+							ユーザーネーム
+						</div>
+						
+						<div class="register-right">
+							 <input type="text"  class="input name">
+						</div>
+						
+					</div>
+
+					
+					<div class="register-photo">
+					
+						<div class="register-left-photo">
+							プロフィール写真
+						</div>
+						
+						<div class="register-right-photo">
+							 <img class="profile-photo" src="profile_pic_temp.png" height="150px">
+							<br>
+							 <input type="submit"  class="input3 photo" value="プロフィール写真のアップロード">　
+						</div>
+						
+					</div>
+					
+								
+					
+					
+					<div class="register">
+					
+						<div class="register-left">
+							言語（方言）
+						</div>
+						
+						<div class="register-right">
+							 <input type="text"  class="input language">
+						</div>
+						
+					</div>
+					
+					
+					
+					<div class="register-hobby">
+					
+						<div class="register-left-hobby">
+							趣味
+						</div>
+						
+
+						<div class="register-right-hobby">
+							
+							
+							 <input type="text"  class="input cost1">
+								<br><br>
+							<div class="hobby-list">
+								<p class="tag">snowboard<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">travel<span class="delete">×</span></p><p class="tag">sex<span class="delete">×</span></p><p class="tag">music<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p><p class="tag">camera<span class="delete">×</span></p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="register-introduction">
+					
+						<div class="register-left-introduction">
+							自己紹介
+						</div>
+						
+						<div class="register-right-introduction">
+							 <textarea class="input-introduction"></textarea>
+						</div>
+						
+					</div>
+
+
+
+					
+					<div class="register cost">
+					
+						<div class="register-left">
+							１時間あたりの価格
+						</div>
+						
+						<div class="register-right">
+							 <input type="text"  class="input cost1"><p class="yen">円</p>
+						</div>
+						
+					</div>
+					
+					<div class="register cost">
+					
+						<div class="register-left">
+							30分あたりの価格
+						</div>
+						
+						<div class="register-right">
+							 <input type="text"  class="input cost2"><p class="yen">円</p>
+						</div>
+						
+					</div>
+					
+					<div class="register birth">
+					
+						<div class="register-left">
+							パスワード
+						</div>
+						
+						<div class="register-right">
+							 <input type="password"  class="input name">
+						</div>
+						
+					</div>
+					
+				
+					
+			
+				
+			
+				
+			</div>
+			
+			<div class="edit_profile_main_3">
+			
+
+			
+			<a class="btn1">プロフィール情報を変更する</a>
+			
+			</div>
+		</div>
+
+<!--トップに戻る開始----------------------------------------------------------------------------->
+		
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+
+<!--トップに戻る終了（共通：変えないこと）------------------------------------------------------>
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer id="footer">
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+
+		<script src="teacher_edit_profile.js"></script>
+    </body>
+    </html>
+    
+    
