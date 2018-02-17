@@ -61,6 +61,11 @@ class UsersController < ApplicationController
   def pre_login
     @user = User.new(
       name: params[:name],
+      sex: params[:sex],
+      birthday_year: params[:birthday_year],
+      birthday_month: params[:birthday_month],
+      birthday_day: params[:birthday_day],
+      skype: params[:skype],
       emails: params[:emails],
       password: params[:password]
     )
@@ -68,7 +73,7 @@ class UsersController < ApplicationController
       flash[:notice] = "ユーザー登録が完了しました。ログインしてください。"
       redirect_to("/user/top")
     else
-        @error_message = "登録できませんでした。全ての項目を入力の上,アドレスが既に登録されていないかご確認ください。"
+        @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render("users/new")
     end
   end

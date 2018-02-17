@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'user/new' => 'users#new'
   get 'user/top' => "users#top"
   post 'user/pre_login' => "users#pre_login"
+  post 'user/account_edit' => 'users#account_edit'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
