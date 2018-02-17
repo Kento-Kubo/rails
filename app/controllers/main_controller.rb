@@ -15,4 +15,6 @@ class MainController < ApplicationController
   end
   def teacher_faq
   end
+  def student_faq
+  end
  end

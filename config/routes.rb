@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'main/teacher_account_edit' => "main#teacher_account_edit"
   get 'main/student_account_edit' => "main#student_account_edit"
   get 'main/teacher_faq' => "main#teacher_faq"
-  get 'main/teacher_faq' => "main#teacher_faq"
+  get 'main/student_faq' => "main#student_faq"
 
   
   post 'login' => "users#login"
