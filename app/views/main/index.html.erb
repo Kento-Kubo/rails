@@ -38,8 +38,8 @@
 						    
 						<li><a ><span class="fa fa-cog"></a>
   					 		 <ul>
-   							   <li><a href="#">プロフィール編集</a></li>
-    					       <li><a href="#">アカウント情報編集</a></li>
+   							   <li><%= link_to("プロフィール編集","/main/student_profile_edit") %></li>
+    					       <li><%= link_to("アカウント情報編集","/main/student_account_edit") %></li>
      						   <li><a href="#">よくあるお問い合わせ</a></li>
      						   <!--id="logout-show"-->
      						   <li><%= link_to("ログアウト","/logout",method: :post) %></li>
