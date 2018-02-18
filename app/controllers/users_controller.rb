@@ -69,7 +69,12 @@ class UsersController < ApplicationController
       emails: params[:emails],
       password: params[:password]
     )
-    if @user.save
+    password = params[:password]
+    password_confirmation = params[:password2]
+    if password != password_confirmation
+        @error_message = "パスワードと確認用パスワードが一致しません。"
+        render("users/new")
+    elsif @user.save
       flash[:notice] = "ユーザー登録が完了しました。ログインしてください。"
       redirect_to("/user/top")
     else
