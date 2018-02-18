@@ -10,6 +10,7 @@ class MainController < ApplicationController
   def teacher_profile_edit
   end
   def teacher_account_edit
+    @user=find_by[id: params[:id]]
   end
   def student_account_edit
   end

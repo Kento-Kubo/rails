@@ -94,11 +94,35 @@ class UsersController < ApplicationController
       @emails = params[:emails]
       @password = params[:password]
       render("users/top")
-end
+    end
+  end
     
     def logout
         session[:user_id] = nil
     end
-  end
+    
+    def account_edit 
+        @user = User.find_by(id:params[:id])
+        @user.name = params[:name]
+        @user.emails = params[:emails]
+        @user.sex = params[:sex]
+        @user.birthday_year = params[:birthday_year]
+        @user.birthday_month = params[:birthday_month]
+        @user.birthday_day = params[:birthday_day]
+
+        @user.password = params[:password]
+        password = params[:password]
+        password_confirmation = params[:password2]
+        if password != password_confirmation
+        @error_message = "パスワードと確認用パスワードが一致しません。"
+        render("main/student_account_edit")
+        elsif @user.save
+          flash[:notice] = "ユーザー情報を編集しました"
+          redirect_to("/main/index/#{@user.id}")
+        else
+          @error_message = "編集できませんでした。全ての項目を入力されていることを確認してください。あるいは名前もしくはメールアドレスが二重登録されています。"
+          render("main/student_account_edit")
+        end
+    end
   
 end

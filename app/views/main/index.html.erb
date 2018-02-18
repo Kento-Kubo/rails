@@ -35,11 +35,11 @@
                     
                 
                 	<ul id="normal" class="dropmenu">
-						    
+						<% current_user = User.find_by(id:session[:user_id])%>    
 						<li><a ><span class="fa fa-cog"></a>
   					 		 <ul>
    							   <li><%= link_to("プロフィール編集","/main/student_profile_edit") %></li>
-    					       <li><%= link_to("アカウント情報編集","/main/student_account_edit") %></li>
+    					       <li><%= link_to("アカウント情報編集","/main/student_account_edit/#{current_user.id}") %></li>
      						   <li><%= link_to("よくあるお問い合わせ","/main/student_faq") %></li>
      						   <!--id="logout-show"-->
      						   <li><%= link_to("ログアウト","/logout",method: :post) %></li>
@@ -57,7 +57,7 @@
   						
   						<li><%= link_to("My page","/main/mypage_student") %></li>
 
-  						<% current_user = User.find_by(id:session[:user_id])%>
+  						
   					    <li><a><div class="current_user"><%= current_user.name%>さん</a></li>
 					</ul>
                                      
