@@ -6,7 +6,7 @@ class MainController < ApplicationController
    def logout
    end
    def student_profile_edit
-<<<<<<< HEAD
+
    end  
    def teacher_profile_edit
    end
@@ -16,8 +16,11 @@ class MainController < ApplicationController
    end
    def teacher_faq
    end
-=======
+   def student_faq
+   end
+    def student_write_review
+   end   
+   def student_write_review_confirm
    end   
 
->>>>>>> ec78394a2057e381e773df0695142c39aa04a63e
 end

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>GANJIN</title>
+        <link rel="stylesheet" href="teacher_edit_profile.css">
+        <link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		 <%= stylesheet_link_tag "main/student_write_review", :media => "all" %>
+         <%= javascript_include_tag 'main/student_write_review' %>
+	</head>
+    
+    <body>
+    
+<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">
+                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                    </a>
+                
+                        <input type="text" id="user" placeholder="Username" class="input1">
+                        
+                        <span class="fa fa-search fa-2x"></span>
+                                        
+                </div>
+                
+ 
+                
+                 <div class="header-right">
+                    
+                
+                	<ul id="normal" class="dropmenu">
+
+						
+
+						<li><a href="#"><span class="fa fa-cog"></a>
+
+  					 		 <ul>
+
+   							   <li><a href="#">プロフィール編集</a></li>
+
+    							  <li><a href="#">アカウント情報編集</a></li>
+
+     							 <li><a href="#">よくあるお問い合わせ</a></li>
+
+     							 <li><a href="#" id="logout-show">ログアウト</a></li>
+
+   							 </ul>
+
+  						</li>
+  						
+  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-bell"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-user"></a></li>
+  						
+  						<li><a href="#">My page</a></li>
+					</ul>
+                                            
+                   
+          	  </div>
+        </header>
+        
+        
+        <!--ログアウトモーダル開始------------------------------------------------------>   
+
+        	<div class="logout-modal-wrapper" id="logout-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="logout-form">
+        				<h2>ログアウトしますか？</h2>
+        				<form action="#">
+          					<div id="submit-btn1">はい</div>
+          					<a id="submit-btn2"  href="#">いいえ</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--ログアウトモーダル終了------------------------------------------------------>   
+        
+        
+<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   <!--main開始------------------------------------------------------------------------------------->   
+		<div class="student_write_review_main">
+			<div class="student_write_review_main_1">
+			
+				<p>Write a review about this teacher</p>
+						
+			</div>
+			
+			<div class="student_write_review_main_2">
+			
+                <div class="student_write_review_main_2_left">
+					<img class="Profile-photo-teacher" src="profile_pic_temp.png" >
+				</div>
+						
+				<div class="student_write_review_main_2_center">
+					<p class="teacher-name">Asaki Daisuke</p>
+					<p class="date">2018 February 10th</p>
+					<p class="hour">1.0 hour</p>
+					<p class="note">You have taken this teacher's class <span class="class-times">3</span> times</p>					
+				</div>
+						
+								
+			</div>
+			
+           
+            <table class="student_write_review_main_3" rules="all">
+                <tr>
+                    <td class="table-left"><p class="rating-pointer-1">required</p><p class="rating-pointer-2">OK</p>Rating</td>
+                    <td class="table-right">
+                        
+                        <p class="star-1">★</p>
+                        <p class="star-2">★</p>
+                        <p class="star-3">★</p>
+                        <p class="star-4">★</p>
+                        <p class="star-5">★</p>
+                        
+                        <p class="rating">Click the star and rate this teacher</p>
+                        <p class="rating-1">Disgusting</p>
+                        <p class="rating-2">unsatisfied</p>
+                        <p class="rating-3">Normal</p>
+                        <p class="rating-4">Satisfied</p>
+                        <p class="rating-5">Wanna have sex with</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-left"><p class="rating-pointer-1-">required</p><p class="rating-pointer-2-">OK</p>Comment</td>
+                    <td class="table-right">
+                    <textarea name="textarea" class="review_honbun" placeholder="Write your review here. How did you feel with this teacher's lesson?"></textarea>
+                    <p class="count-words" id="inputlength">0文字</p>
+                    </td>
+                </tr>
+                
+            </table>
+            
+             <input type="submit" value="Submit" class="input3">
+            
+		</div>
+
+<!--トップに戻る開始----------------------------------------------------------------------------->
+		
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+
+<!--トップに戻る終了（共通：変えないこと）------------------------------------------------------>
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer id="footer">
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+
+		
+    </body>
+    </html>
+    
+    

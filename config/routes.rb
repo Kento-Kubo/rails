@@ -2,15 +2,17 @@ Rails.application.routes.draw do
   get 'main/index' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
-<<<<<<< HEAD
+
   get 'main/teacher_profile_edit' => "main#teacher_profile_edit"
   get 'main/teacher_account_edit' => "main#teacher_account_edit"
   get 'main/student_account_edit' => "main#student_account_edit"
-   get 'main/teacher_faq' => "main#teacher_faq"
+  get 'main/teacher_faq' => "main#teacher_faq"
+  get 'main/student_faq' => "main#student_faq"  
+  get 'main/student_write_review' => "main#student_write_review" 
+  get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
   post 'login' => "user#login"
   post 'logout' => 'user#logout'
-=======
->>>>>>> ec78394a2057e381e773df0695142c39aa04a63e
+
   
   post 'login' => "users#login"
   post 'logout' => 'users#logout'
