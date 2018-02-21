@@ -3,15 +3,17 @@ Rails.application.routes.draw do
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
 
+
   get 'main/teacher_profile_edit' => "main#teacher_profile_edit"
   get 'main/teacher_account_edit' => "main#teacher_account_edit"
-  get 'main/student_account_edit' => "main#student_account_edit"
+  get 'main/student_account_edit/:id' => "main#student_account_edit"
   get 'main/teacher_faq' => "main#teacher_faq"
-  get 'main/student_faq' => "main#student_faq"  
+  get 'main/student_faq' => "main#student_faq"
   get 'main/student_write_review' => "main#student_write_review" 
   get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
   post 'login' => "user#login"
   post 'logout' => 'user#logout'
+
 
   
   post 'login' => "users#login"
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   get 'user/new' => 'users#new'
   get 'user/top' => "users#top"
   post 'user/pre_login' => "users#pre_login"
+  post 'user/account_edit/:id' => 'users#account_edit'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
