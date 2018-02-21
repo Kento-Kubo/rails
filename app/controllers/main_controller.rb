@@ -1,6 +1,23 @@
 class MainController < ApplicationController
   def index
-  end
+   end  
+   def teacher_profile_edit
+   end
+   def teacher_account_edit
+   end
+   def student_account_edit
+   end
+   def teacher_faq
+   end
+
+   def student_faq
+   end
+    def student_write_review
+   end   
+   def student_write_review_confirm
+   end   
+
+
   def mypage_student
   end
   def logout
@@ -19,3 +36,4 @@ class MainController < ApplicationController
   def student_faq
   end
  end
+
