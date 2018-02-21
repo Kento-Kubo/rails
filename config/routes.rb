@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   get 'main/student_faq' => "main#student_faq"
   get 'main/student_write_review' => "main#student_write_review" 
   get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
-  post 'login' => "user#login"
-  post 'logout' => 'user#logout'
 
 
   
