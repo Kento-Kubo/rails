@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>GANJIN</title>
+        <link rel="stylesheet" href="teacher_edit_account.css">
+        <link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		 <%= stylesheet_link_tag "main/student_account_edit_confirm", :media => "all" %>
+         <%= javascript_include_tag 'main/student_account_edit_confirm' %>
+	</head>
+    
+    <body>
+    
+<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">
+                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                    </a>
+                
+                        <input type="text" id="user" placeholder="Username" class="input1">
+                        
+                        <span class="fa fa-search fa-2x"></span>
+                                        
+                </div>
+                
+ 
+                
+                 <div class="header-right">
+                    
+                
+                	<ul id="normal" class="dropmenu">
+
+						
+
+						<li><a href="#"><span class="fa fa-cog"></a>
+
+  					 		 <ul>
+
+   							   <li><a href="#">プロフィール編集</a></li>
+
+    							  <li><a href="#">アカウント情報編集</a></li>
+
+     							 <li><a href="#">よくあるお問い合わせ</a></li>
+
+     							 <li><a href="#" id="logout-show">ログアウト</a></li>
+
+   							 </ul>
+
+  						</li>
+  						
+  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-bell"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-user"></a></li>
+  						
+  						<li><a href="#">My page</a></li>
+					</ul>
+                                            
+                   
+          	  </div>
+        </header>
+        
+        
+        <!--ログアウトモーダル開始------------------------------------------------------>   
+
+        	<div class="logout-modal-wrapper" id="logout-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="logout-form">
+        				<h2>ログアウトしますか？</h2>
+        				<form action="#">
+          					<div id="submit-btn1">はい</div>
+          					<a id="submit-btn2"  href="#">いいえ</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--ログアウトモーダル終了------------------------------------------------------>   
+         <!--完了モーダル開始------------------------------------------------------>   
+
+        	<div class="complete-modal-wrapper" id="complete-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="complete-form">
+        				<h2 class="sentence">正常にアカウント情報を変更しました。</h2>
+        				<form action="#">
+          					
+          					<a id="submit-btn2"  href="#">トップに戻る</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--完了モーダル終了------------------------------------------------------>  
+        
+<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
+<!--main開始------------------------------------------------------------------------------------->   
+		<div class="edit_account_main_confirm">
+			<div class="edit_account_main_confirm_1">
+			
+				<p>アカウント情報を更新する</p>
+						
+			</div>
+			
+			<div class="edit_account_main_confirm_2">
+			
+				
+					
+
+					
+					
+					
+
+					<div class="register name">
+					
+						<div class="register-left">
+							氏名
+						</div>
+						
+						<div class="register-right">
+							 <div  class="input2 name">アホ</div>　<div class="input22 name" >aho</div>
+						</div>
+						
+					</div>
+					
+					<div class="register mail">
+					
+						<div class="register-left">
+							メールアドレス
+						</div>
+						
+						<div class="register-right">
+							 <div class="input name">ahobokekasu@kuso.bitch</div>
+						</div>
+						
+					</div>		
+					
+					<div class="register sex">
+					
+						<div class="register-left">
+							性別
+						</div>
+						
+
+						<div class="register-right">
+							
+							
+							<div>男性</div>
+
+						</div>
+					
+					</div>
+					
+					<div class="register birth">
+					
+						<div class="register-left">
+							生年月日
+						</div>
+						
+						<div class="register-right">
+							
+                            <div>1991年XX月YY日</div>
+                       
+						
+					    </div>
+					
+					
+					
+					
+				
+					
+			
+				
+			
+				
+			</div>
+			<br>
+			<div class="edit_account_main_confirm_3">
+			
+			
+			<input class="btn1" value="アカウント情報を変更する" id="complete-show">
+			
+			</div>
+		</div>
+    </div>
+<!--トップに戻る開始----------------------------------------------------------------------------->
+		
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+
+<!--トップに戻る終了（共通：変えないこと）------------------------------------------------------>
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer id="footer">
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+
+		<script src="teacher_edit_account.js"></script>
+    </body>
+    </html>
+    
+    
