@@ -1,0 +1,23 @@
+<% content_for :specific_css_js do %>
+
+<% end %>
+
+	<% if @error_message %>
+		<header2>
+            <div class="form-error">
+                <%= @error_message %>
+            </div>
+        </header2>
+    <% end %>
+
+	<div class="inputbox">
+		
+		<%= form_for @user, url: user_edit_info_path do |f| %>
+		  Name:<%= f.text_field :name, placeholder: @user.name%>
+		  Email:<%= f.text_field :emails, placeholder: @user.emails%>
+          Password:<%= f.password_field :password %>
+          Password(Confirmation):<%= f.password_field :password_confirmation %>
+		  <%= f.submit "Save Edit"%>
+		<% end %>
+		
+	</div>

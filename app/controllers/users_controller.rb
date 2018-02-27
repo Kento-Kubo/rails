@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   layout "users_layout"
 
   def top
@@ -17,8 +16,6 @@ class UsersController < ApplicationController
   end
   
   def pass_forgot
-    # 入力はメールか電話番号の判断は、今データベースで電話番号の行がないからあとでかく
-    # トークンって必要？
     if request.post?
 =begin      
     #This part is for testing only(no real data in database yet)
@@ -28,7 +25,7 @@ class UsersController < ApplicationController
           session[:email]= @user.emails
           redirect_to("/user/pass_forgot2")
 =end
-      @user=User.find_by(emails: params[:email_or_tel])
+      @user=User.find_by(emails: params[:email])
       if @user
         session[:email]= @user.emails
         redirect_to("/user/pass_forgot2")
@@ -46,7 +43,7 @@ class UsersController < ApplicationController
     
     else #request comes from submit token
       if params[:token] == session[:token]
-        redirect_to("/user/top")
+        redirect_to("/user/edit_info")
         # トークンが合ってたら、パスワードを設定し直す画面に移動すべき
       else
         @error_message = "wrong token"
@@ -54,8 +51,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit_info
+    @user=User.find_by(emails: session[:email])
+    if request.patch?
+        @user.update(password:params[:password])
+        redirect_to("/user/top")
+    end
+
+  end
+  
   def new
-    @user=User.new
+    # @user=User.new
   end
   
   def pre_login

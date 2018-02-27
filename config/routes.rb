@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   post 'email_authentication' => 'users#email_authentication'
   post 'user/pass_forgot' => "users#pass_forgot"
   post 'user/pass_forgot2' => "users#pass_forgot2"
+  patch 'user/edit_info' => "users#edit_info"
 
   get 'user/pass_forgot' => "users#pass_forgot"
   get 'user/pass_forgot2' => "users#pass_forgot2"
+  get 'user/edit_info' => "users#edit_info"
   get 'user/new' => 'users#new'
   get 'user/top' => "users#top"
   post 'user/pre_login' => "users#pre_login"
