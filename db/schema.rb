@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217133935) do
+ActiveRecord::Schema.define(version: 20180304005927) do
 
   create_table "teachers", force: :cascade do |t|
     t.text     "name"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20180217133935) do
     t.integer  "birthday_year"
     t.integer  "birthday_month"
     t.integer  "birthday_day"
+    t.integer  "language"
+    t.integer  "hobby"
   end
 
 end

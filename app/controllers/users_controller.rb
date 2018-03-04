@@ -109,7 +109,8 @@ class UsersController < ApplicationController
         @user.birthday_year = params[:birthday_year]
         @user.birthday_month = params[:birthday_month]
         @user.birthday_day = params[:birthday_day]
-
+        @user.language: params[:language],
+        @user.hobby: params[:hobby],
         @user.password = params[:password]
         password = params[:password]
         password_confirmation = params[:password2]
