@@ -109,20 +109,42 @@ class UsersController < ApplicationController
         @user.birthday_year = params[:birthday_year]
         @user.birthday_month = params[:birthday_month]
         @user.birthday_day = params[:birthday_day]
-        @user.language: params[:language],
-        @user.hobby: params[:hobby],
-        @user.password = params[:password]
+        #@user.language= params[:language],
+        #@user.hobby= params[:hobby],
+        password_current = params[:password0]
         password = params[:password]
         password_confirmation = params[:password2]
-        if password != password_confirmation
-        @error_message = "パスワードと確認用パスワードが一致しません。"
-        render("main/student_account_edit")
+        if password_current
+                if password_current != @user.password
+                    @error_message = "type correct password first"
+                    render("main/student_account_edit")
+                elsif password != password_confirmation
+                    @error_message = "new password and confirm password is not same"
+                    render("main/student_account_edit")
+                elsif @user.save
+                  @user.password = params[:password]
+                    if @user.save
+                        flash[:notice] = "ユーザー情報を編集しました"
+                        redirect_to("/main/student_account/#{@user.id}")
+                    else
+                         @error_message = "something wrong with the new password.try again"
+                         render("main/student_account_edit")
+                    end
+                    
+                else
+                  @error_message = "couldn't edit. information of username and email birthday must be filled and have to be uniqe."
+                  render("main/student_account_edit")
+                end
+            
+        elsif password
+            @error_message = "if you want to renew your password,type correct password first." 
+            render("main/student_account_edit")
         elsif @user.save
-          flash[:notice] = "ユーザー情報を編集しました"
-          redirect_to("/main/index/#{@user.id}")
+            flash[:notice] = "ユーザー情報を編集しました"
+            redirect_to("/main/index/#{@user.id}")
         else
-          @error_message = "編集できませんでした。全ての項目を入力されていることを確認してください。あるいは名前もしくはメールアドレスが二重登録されています。"
-          render("main/student_account_edit")
+            @error_message = "couldn't edit. information of username and email birthday must be filled and have to be uniqe."
+            render("main/student_account_edit")
         end
     end
   

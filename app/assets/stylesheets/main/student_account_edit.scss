@@ -23,14 +23,14 @@ header{
     z-index:10;
   }
 header2{
-  margin-left:380px;
+  margin-left:300px;
   height:30px;
   width:55%;
   color:white;
   background-color:red;
   position:fixed;
   top:65px;
-  z-index:10px;
+  z-index:100;
   text-align:center;
 }
 .logo{
@@ -252,7 +252,7 @@ header2{
 .edit_profile_main{
 
 border:solid rgba(34, 49, 52, 0.3) 1px;
-height:550px;
+height:500px;
 width:50%;
 margin:10px auto;
  text-align: center;
@@ -289,7 +289,7 @@ border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
 height:100px;
 width:100%;
  text-align: center;
- margin-top: 80px;
+ margin-top: 20px;
 }
 
 .edit_profile_main_1 p{
@@ -311,7 +311,7 @@ box-sizing:border-box;
 
 .register_password_change{
     margin-top:20px;
-    margin-left: 65px;
+   
     text-align: left;
 }
 

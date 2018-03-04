@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="teacher_edit_account.css">
         <link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		 <%= stylesheet_link_tag "main/student_account_edit_confirm", :media => "all" %>
-         <%= javascript_include_tag 'main/student_account_edit_confirm' %>
+		 <%= stylesheet_link_tag "main/student_account", :media => "all" %>
+         <%= javascript_include_tag 'main/student_account' %>
 	</head>
     
     <body>
@@ -30,7 +30,7 @@
  
                 
                  <div class="header-right">
-                    
+                    <% current_user = User.find_by(id:session[:user_id])%>
                 
                 	<ul id="normal" class="dropmenu">
 
@@ -107,6 +107,15 @@
         
 <!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
 <!--main開始------------------------------------------------------------------------------------->   
+		<% if flash[:notice] %>
+    		<header2>
+                <div class="flash">
+                    <%= flash[:notice] %>
+                </div>
+            </header2>
+        <% end %>
+		
+		
 		<div class="edit_account_main_confirm">
 			<div class="edit_account_main_confirm_1">
 			
@@ -126,11 +135,11 @@
 					<div class="register name">
 					
 						<div class="register-left">
-							氏名
+							name
 						</div>
 						
 						<div class="register-right">
-							 <div  class="input2 name">アホ</div>　<div class="input22 name" >aho</div>
+							 <div  class="input2 name"><%= current_user.name%></div>　<div class="input22 name" ><%= current_user.name%></div>
 						</div>
 						
 					</div>
@@ -138,11 +147,11 @@
 					<div class="register mail">
 					
 						<div class="register-left">
-							メールアドレス
+							email
 						</div>
 						
 						<div class="register-right">
-							 <div class="input name">ahobokekasu@kuso.bitch</div>
+							 <div class="input name"><%= current_user.emails%></div>
 						</div>
 						
 					</div>		
@@ -150,14 +159,14 @@
 					<div class="register sex">
 					
 						<div class="register-left">
-							性別
+							sex
 						</div>
 						
 
 						<div class="register-right">
 							
 							
-							<div>男性</div>
+							<div><%= current_user.sex%></div>
 
 						</div>
 					
@@ -166,32 +175,24 @@
 					<div class="register birth">
 					
 						<div class="register-left">
-							生年月日
+							birthday
 						</div>
 						
 						<div class="register-right">
 							
-                            <div>1991年XX月YY日</div>
+                            <div><%= current_user.birthday_month%>/<%= current_user.birthday_day%>/<%= current_user.birthday_year%></div>
                        
 						
 					    </div>
 					
-					
-					
-					
-				
-					
-			
-				
-			
-				
+	
 			</div>
 			<br>
 			<div class="edit_account_main_confirm_3">
 			
 			
-			<input class="btn1" value="アカウント情報を変更する" id="complete-show">
-			
+			<!--<input class="btn1" value="アカウント情報を変更する" id="complete-show">-->
+			<%= link_to("edit your account","/main/student_account_edit/#{current_user.id}" ,class:"btn1") %>
 			</div>
 		</div>
     </div>
