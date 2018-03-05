@@ -24,8 +24,8 @@ class UsersController < ApplicationController
         )
           session[:email]= @user.emails
           redirect_to("/user/pass_forgot2")
-<<<<<<< HEAD
-=end
+# =end
+=begin
       @user=User.find_by(emails: params[:email])
       if @user
         session[:email]= @user.emails
@@ -33,17 +33,7 @@ class UsersController < ApplicationController
       else
         @error_message = "email or number does not exist."
       end
-=======
-#=end
-#      @user=User.find_by(emails: params[:email_or_tel])
-#      if @user
-#        session[:email]= @user.emails
-#        redirect_to("/user/pass_forgot2")
-#      else
-#        @error_message = "email or number does not exist."
-#      end
->>>>>>> 30b3d2c9ace57cfe998b08d0a1f29b14ed425c45
-    
+=end
     end
   end
   
@@ -140,6 +130,15 @@ class UsersController < ApplicationController
           @error_message = "編集できませんでした。全ての項目を入力されていることを確認してください。あるいは名前もしくはメールアドレスが二重登録されています。"
           render("main/student_account_edit")
         end
+    end
+    
+    # @user = User.new(user_params)
+
+    private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
     end
   
 end

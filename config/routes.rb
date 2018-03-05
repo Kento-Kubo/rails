@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'main/index/:id' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
@@ -20,6 +22,12 @@ Rails.application.routes.draw do
   
   post 'login' => "users#login"
   get 'logout' => 'users#logout'
+  
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
+  
   post 'email_authentication' => 'users#email_authentication'
   post 'user/pass_forgot' => "users#pass_forgot"
   post 'user/pass_forgot2' => "users#pass_forgot2"
@@ -32,6 +40,7 @@ Rails.application.routes.draw do
   get 'user/top' => "users#top"
   post 'user/pre_login' => "users#pre_login"
   post 'user/account_edit/:id' => 'users#account_edit'
+  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.
