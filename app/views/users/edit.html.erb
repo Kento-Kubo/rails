@@ -14,7 +14,7 @@
 		
 		<%= form_for @user do |f| %>
 		  Name:<%= f.text_field :name, placeholder: @user.name%>
-		  Email:<%= f.text_field :emails, placeholder: @user.emails%>
+		  Email:<%= f.text_field :email, placeholder: @user.email%>
           Password:<%= f.password_field :password %>
           Password(Confirmation):<%= f.password_field :password_confirmation %>
 		  <%= f.submit "Save Edit"%>

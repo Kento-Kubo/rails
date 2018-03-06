@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 
     validates :name, {presence: true ,uniqueness:true, length: { maximum: 50 }}
     # validates :skype, {presence: true }
-    # validates :emails, {presence: true, format: { with: VALID_EMAIL_REGEX },length: { maximum: 255},uniqueness: { case_sensitive: false }}
-    validates :emails, {presence: true,length: { maximum: 255},uniqueness: { case_sensitive: false }}
+    # validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX },length: { maximum: 255},uniqueness: { case_sensitive: false }}
+    validates :email, {presence: true,length: { maximum: 255},uniqueness: { case_sensitive: false }}
 
     # validates :password, {presence: true }
     # validates_confirmation_of :password

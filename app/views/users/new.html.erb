@@ -34,7 +34,7 @@
 			
 			<%= form_for @user do |form| %>
   				Name: <%= form.text_field :name %>
-  				Email: <%= form.text_field :emails %>
+  				Email: <%= form.text_field :email %>
   				Password: <%= form.text_field :password %>
   				Password Confirmation: <%= form.text_field :password_confirmation %>
 
@@ -156,7 +156,7 @@
 							Email 
 						</div>
 						<div class="register-right">
-							 <input type="emails" name="emails"  class="input id" value="<%= @user.emails %>" >
+							 <input type="email" name="email"  class="input id" value="<%= @user.email %>" >
 						</div>
 					</div>
 					
