@@ -30,17 +30,17 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  
-  # patch 'user/edit_info' => "users#edit_info"
+  resources :users
+  root 'users#top'
+
 
   # get 'user/edit_info' => "users#edit_info"
   # get 'user/new' => 'users#new'
   # get 'user/top' => "users#top"
   # post 'user/pre_login' => "users#pre_login"
   # post 'user/account_edit/:id' => 'users#account_edit'
-  resources :users
-
-
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

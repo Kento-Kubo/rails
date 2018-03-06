@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
   layout "users_layout"
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-
+  def top
+      @user = User.new
+      if request.post?
+        redirect_to new_user_path
+      end
+  end
+  
   def index #show all users
       @user = User.all
   end
@@ -20,6 +26,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # Handle a successful save.
+      log_in @user
       redirect_to @user
     else
       render 'new'

@@ -29,14 +29,24 @@
   			<div id="login-form">
 				<h2>Emailログイン</h2>
 				
-				<%= form_tag("/login") do %>
-	  				<input class="form-control" type="text" name="emails" placeholder="メールアドレス" value="<%= @emails %>">
-	  				<input class="form-control" type="password" name="password" placeholder="パスワード"><br>
-      				<div class="idpass-forget"> 
+				<%= form_for(:session, url: login_path) do |f| %>
+			    	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>
+			      	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>
+					<div class="idpass-forget"> 
       					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
       				</div>
-      				<input id="submit-btn" type="submit" value="ログイン">
+			      	<%= f.submit "ログイン", id:"submit-btn" %>
    				<% end %>
+
+				
+				<!--<%= form_tag("/login") do %>-->
+	  	<!--			<input class="form-control" type="text" name="email" placeholder="メールアドレス" value="<%= @email %>">-->
+	  	<!--			<input class="form-control" type="password" name="password" placeholder="パスワード"><br>-->
+    <!--  				<div class="idpass-forget"> -->
+    <!--  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
+    <!--  				</div>-->
+    <!--  				<input id="submit-btn" type="submit" value="ログイン">-->
+   	<!--			<% end %>-->
   			</div>
 		</div>
 	</div>
@@ -80,10 +90,16 @@
   					<div id="submit-btn">メール送信</div>
    				</form>-->
 				
-				<%= form_tag(email_authentication_path, method: "post") do %>
-  					<%= text_field_tag :emails,nil,{ class:"form-control", placeholder: "メールアドレス"} %>
-  					<%= submit_tag "メール送信", id:"submit-btn"%>
+				<%= form_for @user do |form| %>
+	  				<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
+ 					<%= form.submit "メール送信", id:"submit-btn"%>
 				<% end %>
+
+				
+				<!--<%= form_tag(new_user_path, method: "post") do %>-->
+  		<!--			<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
+  		<!--			<%= submit_tag "メール送信", id:"submit-btn"%>-->
+				<!--<% end %>-->
 				
   			</div>
 		</div>
