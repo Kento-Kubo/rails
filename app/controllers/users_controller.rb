@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   layout "users_layout"
   before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
+
   def top
       @user = User.new
-      if request.post?
-        redirect_to new_user_path
-      end
   end
   
   def index #show all users
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def new #create registration form
-    @user = User.new
+      @user=User.new
   end
 
   def edit #edit profile
@@ -25,9 +25,8 @@ class UsersController < ApplicationController
   def create #save new user
     @user = User.new(user_params)
     if @user.save
-      # Handle a successful save.
       log_in @user
-      redirect_to @user
+      redirect_to('/main/index')
     else
       render 'new'
     end
@@ -50,9 +49,22 @@ class UsersController < ApplicationController
     def find_user
       @user = User.find(params[:id])
     end
+    
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+    
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+    
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
     end
 
 
@@ -75,20 +87,7 @@ class UsersController < ApplicationController
         Please click on the link in the email in order to activate your account."
     redirect_to("/user/top")
   end
-  
-  def edit_info
-    @user=User.find_by(emails: session[:email])
-    if request.patch?
-        @user.update(password:params[:password])
-        redirect_to("/user/top")
-    end
 
-  end
-  
-  def new
-    # @user=User.new
-  end
-  
   def pre_login
     @user = User.new(
       name: params[:name],

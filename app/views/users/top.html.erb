@@ -90,7 +90,7 @@
   					<div id="submit-btn">メール送信</div>
    				</form>-->
 				
-				<%= form_for @user do |form| %>
+				<%= form_for @user ,url: new_user_path do |form| %>
 	  				<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
  					<%= form.submit "メール送信", id:"submit-btn"%>
 				<% end %>

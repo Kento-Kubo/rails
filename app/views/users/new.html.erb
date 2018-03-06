@@ -11,7 +11,17 @@
           </div>
       </header2>
     <% end %>
-	
+	<div>
+		<!--use form_for for all form options below-->
+		<%= form_for @user do |form| %>
+  			Name: <%= form.text_field :name %>
+  			Email: <%= form.text_field :email %>
+  			Password: <%= form.text_field :password %>
+  			Password Confirmation: <%= form.text_field :password_confirmation %>
+
+ 			<%= form.submit %>
+		<% end %>
+	</div>
 	<div class="signup_main">
 		<div class="signup_main_1">
 			<p>ganjin ID(無料)を登録する。</p>
@@ -31,15 +41,7 @@
 					
 					<p class="explain">facebookやtwitterアカウントを使うと、メールアドレス・生年月日・性別の入力が簡単になります。</p>
 			</div>
-			
-			<%= form_for @user do |form| %>
-  				Name: <%= form.text_field :name %>
-  				Email: <%= form.text_field :email %>
-  				Password: <%= form.text_field :password %>
-  				Password Confirmation: <%= form.text_field :password_confirmation %>
 
- 				<%= form.submit %>
-			<% end %>
 <!--	
 		    <%= form_tag("/user/pre_login") do %>
 				<div class="signup_main_2_left">

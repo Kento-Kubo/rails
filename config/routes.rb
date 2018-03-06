@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  get 'main/index/:id' => "main#index"
+  # get 'main/index/:id' => "main#index"
+  get 'main/index' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
   get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :users
+  post   'users/new',   to: 'users#new'
   root 'users#top'
 
 
