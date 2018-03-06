@@ -23,26 +23,21 @@ Rails.application.routes.draw do
 
 
   
-  post 'login' => "users#login"
-  get 'logout' => 'users#logout'
+  # post 'login' => "users#login"
+  # get 'logout' => 'users#logout'
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
   
-  post 'email_authentication' => 'users#email_authentication'
-  post 'user/pass_forgot' => "users#pass_forgot"
-  post 'user/pass_forgot2' => "users#pass_forgot2"
-  patch 'user/edit_info' => "users#edit_info"
+  # patch 'user/edit_info' => "users#edit_info"
 
-  get 'user/pass_forgot' => "users#pass_forgot"
-  get 'user/pass_forgot2' => "users#pass_forgot2"
-  get 'user/edit_info' => "users#edit_info"
-  get 'user/new' => 'users#new'
-  get 'user/top' => "users#top"
-  post 'user/pre_login' => "users#pre_login"
-  post 'user/account_edit/:id' => 'users#account_edit'
+  # get 'user/edit_info' => "users#edit_info"
+  # get 'user/new' => 'users#new'
+  # get 'user/top' => "users#top"
+  # post 'user/pre_login' => "users#pre_login"
+  # post 'user/account_edit/:id' => 'users#account_edit'
   resources :users
 
 
