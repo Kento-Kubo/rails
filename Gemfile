@@ -47,6 +47,7 @@ group :development do
   gem 'rb-readline'
   gem 'font-awesome-sass'  
   gem 'font-awesome-rails'
+  gem 'bcrypt'
 
 end
 

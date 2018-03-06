@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
+
+  get 'sessions/new'
+
   get 'main/index/:id' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/student_profile_edit' => "main#student_profile_edit"
@@ -18,20 +23,24 @@ Rails.application.routes.draw do
 
 
   
-  post 'login' => "users#login"
-  get 'logout' => 'users#logout'
-  post 'email_authentication' => 'users#email_authentication'
-  post 'user/pass_forgot' => "users#pass_forgot"
-  post 'user/pass_forgot2' => "users#pass_forgot2"
+  # post 'login' => "users#login"
+  # get 'logout' => 'users#logout'
+  
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
-  get 'user/pass_forgot' => "users#pass_forgot"
-  get 'user/pass_forgot2' => "users#pass_forgot2"
-  get 'user/new' => 'users#new'
-  get 'user/top' => "users#top"
-  post 'user/pre_login' => "users#pre_login"
-  post 'user/account_edit/:id' => 'users#account_edit'
+  resources :users
+  root 'users#top'
 
 
+  # get 'user/edit_info' => "users#edit_info"
+  # get 'user/new' => 'users#new'
+  # get 'user/top' => "users#top"
+  # post 'user/pre_login' => "users#pre_login"
+  # post 'user/account_edit/:id' => 'users#account_edit'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
