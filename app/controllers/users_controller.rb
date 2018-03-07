@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
-  layout "users_layout"
+  # layout "users_layout"
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
 
   def top
       @user = User.new
+      print current_user
+      print "yay"
   end
   
   def index #show all users
@@ -25,18 +27,21 @@ class UsersController < ApplicationController
   def create #save new user
     @user = User.new(user_params)
     if @user.save
+      flash[:notice] = "ユーザー登録が完了しました。"
       log_in @user
       redirect_to('/main/index')
     else
+      @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'new'
     end
   end
   
   def update #save edit profile
     if @user.update(user_params)
+      flash[:notice] = "ユーザー情報を編集しました"
       redirect_to user_path
     else
-      flash.now[:alert] = 'user profile could not be updated.'
+      @error_message = "Failed to save changes."
       render :edit
     end
   end

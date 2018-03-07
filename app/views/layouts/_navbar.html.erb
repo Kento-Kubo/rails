@@ -1,0 +1,86 @@
+<header>
+    <% if logged_in? %>
+<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    
+                    <a class="logout" >
+                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                    </a>
+                    
+                    <div class="search_user">
+                        <input type="text" id="user" placeholder="Username" class="input1">
+                        <!--- <%= submit_tag '検索' %>
+                        <%= text_field_tag :keywd,'',size:30 %> -->
+
+                        <span class="fa fa-search fa-2x"></span>
+                        
+                    </div>
+                </div>
+                
+                 <div class="header-right">
+                
+                	<ul id="normal" class="dropmenu">
+						<% current_user = User.find_by(id:session[:user_id])%>    
+						<li><a ><span class="fa fa-cog"></a>
+  					 		 <ul>
+   							   <li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>
+    					       <li><%= link_to("account edit","/main/student_account_edit/#{current_user.id}") %></li>
+     						   <li><%= link_to("よくあるお問い合わせ","/main/student_faq") %></li>
+     						   <!--id="logout-show"-->
+     						   <li><%= link_to("ログアウト","/logout",:method => :delete) %></li>
+     						   <!--<li><%= form_tag("/logout") do %>
+     						   <%= submit_tag "ログアウト"%>
+     						   <% end %></li>-->
+   							 </ul>
+  						</li>
+  						
+  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-bell"></a></li>
+  						
+  						<li><a href="#"><span class="fa fa-user"></a></li>
+  						
+  						<li><%= link_to("My page","/main/mypage_student") %></li>
+
+  						
+  					    <li><a><div class="current_user"><%= current_user.name%>さん</a></li>
+					</ul>
+          	  </div>
+    
+    <% else %>
+        <div class="container">
+    		<div class="header-left">
+    			<img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+    		</div>
+    		
+    		<div class="header-right">
+        		<div class="login1" id="login-show">ログイン</div>
+       		</div>
+       		
+       		<div class="header-right">
+        		<a class="login">日本語を教える</a>
+       		</div>		
+    	</div>
+    <% end %>
+</header>
+        <!--ログアウトモーダル開始------------------------------------------------------>   
+
+        	<div class="logout-modal-wrapper" id="logout-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="logout-form">
+        				<h2>ログアウトしますか？</h2>
+        				<form action="#">
+          					<div id="submit-btn1">はい</div>
+          					<a id="submit-btn2"  href="#">いいえ</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--ログアウトモーダル終了------------------------------------------------------> 

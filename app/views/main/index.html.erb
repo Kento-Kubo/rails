@@ -9,80 +9,80 @@
     
     
 <!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
-        <header>
-            <div class="container">
-                <div class="header-left">
+<!--        <header>-->
+<!--            <div class="container">-->
+<!--                <div class="header-left">-->
                     
-                    <a class="logout" >
-                        <img class="logo" >
-                    </a>
+<!--                    <a class="logout" >-->
+<!--                        <img class="logo" >-->
+<!--                    </a>-->
                     
-                    <div class="search_user">
-                        <input type="text" id="user" placeholder="Username" class="input1">
+<!--                    <div class="search_user">-->
+<!--                        <input type="text" id="user" placeholder="Username" class="input1">-->
                         <!--- <%= submit_tag '検索' %>
-                        <%= text_field_tag :keywd,'',size:30 %> -->
+<!--                        <%= text_field_tag :keywd,'',size:30 %> -->-->
 
-                        <span class="fa fa-search fa-2x"></span>
+<!--                        <span class="fa fa-search fa-2x"></span>-->
                         
-                    </div>
+<!--                    </div>-->
                     
                     
-                </div>
+<!--                </div>-->
                 
  
                 
-                 <div class="header-right">
+<!--                 <div class="header-right">-->
                     
                 
-                	<ul id="normal" class="dropmenu">
-						<% current_user = User.find_by(id:session[:user_id])%>    
-						<li><a ><span class="fa fa-cog"></a>
-  					 		 <ul>
-   							   <li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>
-    					       <li><%= link_to("account edit","/main/student_account_edit/#{current_user.id}") %></li>
-     						   <li><%= link_to("よくあるお問い合わせ","/main/student_faq") %></li>
+<!--                	<ul id="normal" class="dropmenu">-->
+<!--						<% current_user = User.find_by(id:session[:user_id])%>    -->
+<!--						<li><a ><span class="fa fa-cog"></a>-->
+<!--  					 		 <ul>-->
+<!--   							   <li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>-->
+<!--    					       <li><%= link_to("account edit","/main/student_account_edit/#{current_user.id}") %></li>-->
+<!--     						   <li><%= link_to("よくあるお問い合わせ","/main/student_faq") %></li>-->
      						   <!--id="logout-show"-->
-     						   <li><%= link_to("ログアウト","/logout",method: :post) %></li>
+<!--     						   <li><%= link_to("ログアウト","/logout",method: :post) %></li>-->
      						   <!--<li><%= form_tag("/logout") do %>
-     						   <%= submit_tag "ログアウト"%>
-     						   <% end %></li>-->
-   							 </ul>
-  						</li>
+<!--     						   <%= submit_tag "ログアウト"%>-->
+<!--     						   <% end %></li>-->-->
+<!--   							 </ul>-->
+<!--  						</li>-->
   						
-  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+<!--  						<li><a href="#"><span class="fa fa-envelope"></a></li>-->
   						
-  						<li><a href="#"><span class="fa fa-bell"></a></li>
+<!--  						<li><a href="#"><span class="fa fa-bell"></a></li>-->
   						
-  						<li><a href="#"><span class="fa fa-user"></a></li>
+<!--  						<li><a href="#"><span class="fa fa-user"></a></li>-->
   						
-  						<li><%= link_to("My page","/main/mypage_student") %></li>
+<!--  						<li><%= link_to("My page","/main/mypage_student") %></li>-->
 
   						
-  					    <li><a><div class="current_user"><%= current_user.name%>さん</a></li>
-					</ul>
+<!--  					    <li><a><div class="current_user"><%= current_user.name%>さん</a></li>-->
+<!--					</ul>-->
                                      
                    
-          	  </div>
-        </header>
+<!--          	  </div>-->
+<!--        </header>-->
         
         
         <!--ログアウトモーダル開始------------------------------------------------------>   
 
-        	<div class="logout-modal-wrapper" id="logout-modal">
-    			<div class="modal">
-    				 <div class="close-modal">
-        				<i class="fa fa-2x fa-times"></i>
-      			     </div>
+<!--        	<div class="logout-modal-wrapper" id="logout-modal">-->
+<!--    			<div class="modal">-->
+<!--    				 <div class="close-modal">-->
+<!--        				<i class="fa fa-2x fa-times"></i>-->
+<!--      			     </div>-->
       				
-      				 <div id="logout-form">
-        				<h2>ログアウトしますか？</h2>
-        				<form action="#">
-          					<div id="submit-btn1">はい</div>
-          					<a id="submit-btn2"  href="#">いいえ</a>
-       					 </form>
-      				</div>
-    			</div>
-			</div>
+<!--      				 <div id="logout-form">-->
+<!--        				<h2>ログアウトしますか？</h2>-->
+<!--        				<form action="#">-->
+<!--          					<div id="submit-btn1">はい</div>-->
+<!--          					<a id="submit-btn2"  href="#">いいえ</a>-->
+<!--       					 </form>-->
+<!--      				</div>-->
+<!--    			</div>-->
+<!--			</div>-->
 
         <!--ログアウトモーダル終了------------------------------------------------------>   
 <!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   

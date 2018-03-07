@@ -35,7 +35,7 @@
 					<div class="idpass-forget"> 
       					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
       				</div>
-			      	<%= f.submit "ログイン", id:"submit-btn" %>
+			      	<%= f.submit "ログイン", class:"submit-btn" %>
    				<% end %>
 
 				
@@ -98,7 +98,7 @@
 				
 				<!--<%= form_tag(new_user_path, method: "post") do %>-->
   		<!--			<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
-  		<!--			<%= submit_tag "メール送信", id:"submit-btn"%>-->
+  		<!--			<%= submit_tag "メール送信", class:"submit-btn"%>-->
 				<!--<% end %>-->
 				
   			</div>
