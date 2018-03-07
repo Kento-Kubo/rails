@@ -20,7 +20,7 @@
 		<!--</div>-->
 
 		<%= form_tag(url: user_pass_forgot_path, method: "post") do %>
-  			<%= text_field_tag :email_or_tel,nil,{ class:"input-email", placeholder: "メールアドレスまたは電話番号"} %>
+  			<%= text_field_tag :email,nil,{ class:"input-email", placeholder: "メールアドレスまたは電話番号"} %>
   			<div class="check">
 				<%= submit_tag "送信"%>
 			</div>
