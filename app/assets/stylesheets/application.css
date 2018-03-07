@@ -25,24 +25,28 @@ header{
     z-index:10;
   }
 
-.logo{
-  width:124px;
-  margin-top:20px;
-  float:left;
+.header-right{
+  float:right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display:block;
+  line-height:65px;
+  padding:0 25px;
+  transition:all 0.5s;
 }
 
-.mypage{
-  color:white;
-  text-align:center;
-}
+.header-right:hover{
+  /*background-color:rgba(255, 255, 255, 0.5);*/
+  cursor: pointer;
 
-.logout{
-  color:white;
 }
 
 .header-left{
   float:left;
+  padding:0 15px;
+}
 
+.header-left:hover{
+  cursor: pointer;
 }
 
 header2{
@@ -57,6 +61,32 @@ header2{
   }
 
 
+.logo{
+  width:124px;
+  margin-top:20px;
+  float:left;
+}
+
+.mypage{
+  color:white;
+  text-align:center;
+}
+
+.login,teacher{
+  color:white;
+  
+}
+
+.login1{
+padding-top:0;
+color:white;
+height:65px;
+}
+
+.logout{
+  color:white;
+}
+
 .input1{
   background-color: white;
   border: none;
@@ -69,43 +99,27 @@ header2{
   float: left;
   margin-left:10px;
 }
+
 .search_user{
   display:inline-block;
   position:relative;
 }
+
 .fa-search {
   position:absolute;
   right:5px;
   top:20px;
   background-color: none;
   border-radius: 3px 0px 0px 3px;
-  /*// border-right: 3px solid #434a52;*/
+  // border-right: 3px solid #434a52;
   color: #606468;
-  /*// display: block;*/
-  /*// line-height: 65px;*/
+  // display: block;
+  // line-height: 65px;
   text-align: center;
-  /*// width: 50px;*/
-  /*// height: 35px;*/
-  /*// margin-top:15px;*/
+  // width: 50px;
+  // height: 35px;
+  // margin-top:15px;
   }
-
-.top-wrapper{
-  padding: 0 0 0 0;
-  background-size:cover;
-  color:white;
-  height:500px;
-  text-align:center;
-}
-
-.header-right{
-  float:right;
-  /*background-color:rgba(255, 255, 255, 0.3);*/
-  display:block;
-  line-height:65px;
-  padding:0 25px;
-  transition:all 0.5s;
-  
-}
 
 .dropmenu{
   *zoom: 1;
@@ -153,6 +167,7 @@ current_user{
   text-decoration: none;
   margin-right:0px;
 }
+
 .dropmenu li a:hover{
   background-color:rgba(255, 255, 255, 0.5);
 
@@ -194,13 +209,27 @@ current_user{
 }
 
 .fa{
-  font-size:20px;
+  font-size:10px;
   margin-right:5px;
+}
+
+
+.container{
+  padding:0 15px;
+  margin:auto;
+  width:1170px;
+  text-align:center;
+}
+
+.container h1{
+  opacity:0.8;
+  font-size:50px;
+  letter-spacing:5px;
 }
 
 /*--ログアウトモーダル開始---------------------------------------------------------------------------------*/   
 
-.logout-modal-wrapper {
+.logout-model-wrapper {
   position: fixed;
   top: 0;
   right: 0;
@@ -212,7 +241,7 @@ current_user{
   display:none;
 }
 
-.modal {
+.model {
   position: absolute;
   top: 20%;
   left: 34%;
@@ -242,7 +271,16 @@ current_user{
   margin-bottom: 40px;
 }
 
-
+.submit-btn {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
 
 #submit-btn1, #submit-btn2 {
   display: inline-block;
@@ -258,41 +296,22 @@ current_user{
 
 .idpass-forget{
  text-decoration: underline;
+ color:black;
 }
 
 /*--ログアウトモーダル終了---------------------------------------------------------------------------------*/   
 
-
+/*login model-----------------------------------------------------------*/
+.login-model-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢ */
+  display:none;
+}
 
 /*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
-
-
-.container-search{
-  padding:0 0;
-  border: none;
-  margin:10px auto;
-  width:650px;
-  height:165px;
-  text-align:left;
-  background-color:rgba(34, 49, 52, 0.9);
-  border-radius: 3px  3px;
-  position:relative;
-  
-}
-
-  .searchbox{
-  border: none;
-  border-radius: 3px  3px;
-  color: #a9a9a9;
-  width:100px;
-  height: 40px;
-  
-  margin:10px 0 0 0;
-  box-sizing:border-box;
-  display:inline-block;
-}
-.fa{
-  font-size:10px;
-  margin-right:5px;
-}
-

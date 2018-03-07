@@ -18,39 +18,7 @@
             </div>
         </header2>
     <% end %>
-        
-	<div class="login-model-wrapper" id="login-model">
-    	<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
-    	<div class="model">
-		 	<div class="close-model">
-				<i class="fa fa-2x fa-times"></i>
-  			</div>
-  		
-  			<div id="login-form">
-				<h2>Emailログイン</h2>
-				
-				<%= form_for(:session, url: login_path) do |f| %>
-			    	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>
-			      	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>
-					<div class="idpass-forget"> 
-      					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
-      				</div>
-			      	<%= f.submit "ログイン", class:"submit-btn" %>
-   				<% end %>
-
-				
-				<!--<%= form_tag("/login") do %>-->
-	  	<!--			<input class="form-control" type="text" name="email" placeholder="メールアドレス" value="<%= @email %>">-->
-	  	<!--			<input class="form-control" type="password" name="password" placeholder="パスワード"><br>-->
-    <!--  				<div class="idpass-forget"> -->
-    <!--  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
-    <!--  				</div>-->
-    <!--  				<input id="submit-btn" type="submit" value="ログイン">-->
-   	<!--			<% end %>-->
-  			</div>
-		</div>
-	</div>
-		
+   
 <!--トップ開始-------------------------------------------------------------------------------->
 		
 	<div class="top-wrapper">
@@ -85,14 +53,10 @@
   			<div id="signup-form">
 				<h2>新規登録</h2>
 				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
-				<!--<form action="#">
-  					<input class="form-control" type="text" placeholder="メールアドレス">
-  					<div id="submit-btn">メール送信</div>
-   				</form>-->
 				
 				<%= form_for @user ,url: new_user_path do |form| %>
 	  				<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
- 					<%= form.submit "メール送信", id:"submit-btn"%>
+ 					<%= form.submit "メール送信", class:"submit-btn"%>
 				<% end %>
 
 				
