@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
       redirect_to('/main/index')
     else
       # Create an error message.
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      redirect_to root_url,:notice => "Invalid login. Try again" 
     end
   end
   def destroy
