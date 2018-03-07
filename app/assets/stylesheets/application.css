@@ -77,6 +77,25 @@ header2{
   
 }
 
+#login-form {
+  width: 100%;
+}
+
+#login-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+#login-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
 .login1{
 padding-top:0;
 color:white;

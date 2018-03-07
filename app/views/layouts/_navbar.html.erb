@@ -7,10 +7,6 @@
                     <%= link_to image_tag("https://prog-8.com/images/html/advanced/main_logo.png",:class => 'logo'),
                             {action: 'top', controller: 'users'},{class:'logout'}%>
                     
-                    <!--<a class="logout">-->
-                    <!--<img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">-->
-                    <!--</a>-->
-                    
                     <div class="search_user">
                         <input type="text" id="user" placeholder="Username" class="input1">
                         <!--- <%= submit_tag '検索' %>
@@ -49,7 +45,8 @@
     <% else %>
         <div class="container">
     		<div class="header-left">
-    			<img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+    			 <%= link_to image_tag("https://prog-8.com/images/html/advanced/main_logo.png",:class => 'logo'),
+                            {action: 'top', controller: 'users'},{class:'logout'}%>
     		</div>
     		
     		<div class="header-right">
