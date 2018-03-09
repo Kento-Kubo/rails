@@ -96,7 +96,9 @@
 			
 			
 			<!--<input class="btn1" value="アカウント情報を変更する" id="complete-show">-->
-			<%= link_to("edit your account","/main/student_account_edit/#{current_user.id}" ,class:"btn1") %>
+			<!--<%= link_to("edit your account","/main/student_account_edit/#{current_user.id}" ,class:"btn1") %>-->
+   	       	<%= link_to("edit your account",edit_user_path(current_user),class:"btn1") %>
+
 			</div>
 		</div>
     </div>
