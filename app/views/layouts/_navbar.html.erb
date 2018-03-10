@@ -22,8 +22,10 @@
 						<% current_user = User.find_by(id:session[:user_id])%>    
 						<li><a ><span class="fa fa-cog"></a>
   					 		 <ul>
-   							   <li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>
-    					       <li><%= link_to("account edit","/main/student_account_edit/#{current_user.id}") %></li>
+   							   <!--<li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>-->
+     					       <li><%= link_to("account",user_path(current_user)) %></li>
+    					       <!--<li><%= link_to("account edit","/main/student_account_edit/#{current_user.id}") %></li>-->
+       					       <li><%= link_to("account edit",edit_user_path(current_user)) %></li>
      						   <li><%= link_to("よくあるお問い合わせ","/main/student_faq") %></li>
      						   <!--id="logout-show"-->
      						   <li><%= link_to("ログアウト","/logout",:method => :delete) %></li>
