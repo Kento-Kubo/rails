@@ -34,17 +34,6 @@
 	<%= form_for @user do |form| %>
 
 				<div class="signup_main_2_left">
-					<div class="register kubun">
-						<div class="register-left">
-							区分
-						</div>
-						<div class="register-right">
-							<!--<INPUT type="radio" name="kubun" value="先生" checked>先生&nbsp;&nbsp;&nbsp;&nbsp;-->
-							<!--<INPUT type="radio" name="kubun" value="生徒" >生徒-->
-							<%= form.radio_button :teacher, 1, :checked => true %>先生&nbsp;&nbsp;&nbsp;&nbsp;
-							<%= form.radio_button :teacher, 0 %>生徒
-						</div>
-					</div>
 					
 					<div class="register name">
 						<div class="register-left">

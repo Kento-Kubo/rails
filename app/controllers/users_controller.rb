@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def create #save new user
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "ユーザー登録が完了しました。"
+      flash[:notice] = "Your account is registered"
       log_in @user
       redirect_to('/main/index')
     else

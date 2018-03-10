@@ -27,13 +27,13 @@ Rails.application.routes.draw do
   # post 'login' => "users#login"
   # get 'logout' => 'users#logout'
   
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   resources :users
-  post   'users/new',   to: 'users#new'
-  root 'users#top'
+  post   'users/new' => 'users#new'
+  root   'users#top'
 
 
   # get 'user/edit_info' => "users#edit_info"
