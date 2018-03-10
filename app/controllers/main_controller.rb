@@ -20,6 +20,7 @@ class MainController < ApplicationController
        #def teacher_account_edit_confirm
        #end
        def student_account_edit
+        @user = User.find_by(id:session[:user_id])
        end
        def student_account_edit_confirm
        end

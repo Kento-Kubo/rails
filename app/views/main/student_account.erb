@@ -30,7 +30,7 @@
 						</div>
 						
 						<div class="register-right">
-							 <div  class="input2 name"><%= current_user.name%></div>　<div class="input22 name" ><%= current_user.name%></div>
+							 <div  class="input2 name"><%= current_user.name%></div>　<!--<div class="input22 name" ><%= current_user.name%></div>-->
 						</div>
 						
 					</div>
@@ -57,7 +57,13 @@
 						<div class="register-right">
 							
 							
-							<div><%= current_user.sex%></div>
+							<div>
+							<% if current_user.sex %>
+							 male
+							<% else %>
+							 female
+							<% end%>
+							</div>
 
 						</div>
 					
@@ -75,6 +81,20 @@
                        
 						
 					    </div>
+					 </div>
+					 
+					 <div class="register birth">
+					
+						<div class="register-left">
+							skype ID
+						</div>
+						
+						<div class="register-right">
+							
+                            <div><%= current_user.skype%></div>
+    
+					    </div>
+					  </div>
 					
 	
 			</div>
