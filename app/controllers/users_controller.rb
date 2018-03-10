@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   # layout "users_layout"
+  before_action :forbid_login_user, only: [:create, :top]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
+  before_action :set_current_user
 
   def top
       @user = User.new
@@ -28,8 +30,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Your account is registered"
-      log_in @user
-      redirect_to('/main/index')
+      redirect_to root_url
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'new'
@@ -69,7 +70,10 @@ class UsersController < ApplicationController
     
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless @user == current_user
+      if @user =! current_user
+      flash[:notice] = "You are not allowed to access this page"
+      redirect_to(root_url) 
+      end
     end
 
 
