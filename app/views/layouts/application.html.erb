@@ -15,6 +15,15 @@
 </head>
 <body>
 <%= render :partial => "layouts/navbar" %>
+
+<% if flash[:notice] %>
+	<header2>
+        <div class="flash">
+            <%= flash[:notice] %>
+        </div>
+    </header2>
+<% end %>
+		
 <%= yield %>
 
 </body>

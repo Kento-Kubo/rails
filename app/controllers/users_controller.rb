@@ -17,15 +17,15 @@ class UsersController < ApplicationController
   end
   
   def show #show profile
-  
+    
   end
 
   def new #create registration form
-      
+      @user=User.new
   end
 
   def edit #edit profile
-    @user=User.new
+    @user = User.find_by(id:session[:user_id])
   end
   
   def create #save new user
@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   end
   
   def update #save edit profile
+  @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to user_path
