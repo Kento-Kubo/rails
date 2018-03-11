@@ -40,7 +40,40 @@ class UsersController < ApplicationController
   end
   
   def update #save edit profile
-  @user = User.find(params[:id])
+      @user = User.find(params[:id])
+      #if password_current
+        #if password_current != @user.password
+            #@error_message = "type correct password first"
+            #render :edit
+        #elsif password != password_confirmation
+            #@error_message = "new password and confirm password is not same"
+            #render :edit
+        #elsif @user.update(user_params)
+            #flash[:notice] = "your account is editted"
+           # redirect_to user_path
+         # else
+           # @error_message = "something wrong with the new password.try again"
+        #    render :edit
+        #  end
+                        
+      #  else
+      #      @error_message = "couldn't edit. information of username and email birthday must be filled and have to be uniqe."
+     #       render :edit
+      #  end
+                
+    #  elsif password
+    #    @error_message = "if you want to renew your password,type correct password first." 
+     #   render :edit
+     # elsif @user.update(user_params)
+    #    flash[:notice] = "ユーザー情報を編集しました"
+    #    redirect_to user_path
+    #  else
+    #    @error_message = "couldn't edit. information of username and email birthday must be filled and have to be uniqe."
+     #   render :edit
+     # end
+   # end
+        
+        
     if @user.update(user_params)
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to user_path
