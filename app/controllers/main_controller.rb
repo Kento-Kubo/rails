@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-<<<<<<< HEAD
+
   end
    def mypage_student
    end
@@ -8,8 +8,6 @@ class MainController < ApplicationController
    end
    def student_profile_edit
 
-=======
->>>>>>> 9398f27f780384afd9537bcd944beaf6036516f2
    end  
    def student_profile_edit_confirm
 
@@ -36,9 +34,9 @@ class MainController < ApplicationController
    def student_write_review_confirm
    end   
 
-<<<<<<< HEAD
+
 end
-=======
+
 
   def mypage_student
   end
@@ -58,5 +56,3 @@ end
   def student_faq
   end
  end
->>>>>>> 9398f27f780384afd9537bcd944beaf6036516f2
-
