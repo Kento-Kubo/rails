@@ -17,13 +17,15 @@ class UsersController < ApplicationController
   end
   
   def show #show profile
+  
   end
 
   def new #create registration form
-      @user=User.new
+      
   end
 
   def edit #edit profile
+    @user=User.new
   end
   
   def create #save new user
