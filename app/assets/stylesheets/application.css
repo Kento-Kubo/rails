@@ -14,3 +14,327 @@
  *= require font-awesome
 
  */
+
+/*ヘッダー開始（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+header{
+  height:65px;
+  width:100%;
+  background-color:rgba(34, 49, 52, 0.9);
+  position:fixed;
+  top:0;
+    z-index:10;
+  }
+
+.header-right{
+  float:right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display:block;
+  line-height:65px;
+  padding:0 25px;
+  transition:all 0.5s;
+}
+
+.header-right:hover{
+  /*background-color:rgba(255, 255, 255, 0.5);*/
+  cursor: pointer;
+
+}
+
+.header-left{
+  float:left;
+  padding:0 15px;
+}
+
+.header-left:hover{
+  cursor: pointer;
+}
+
+header2{
+  height:30px;
+  width:100%;
+  color:white;
+  background-color:orange;
+  position:fixed;
+  top:65px;
+  z-index:10px;
+  text-align:center;
+  }
+
+
+.logo{
+  width:124px;
+  margin-top:20px;
+  float:left;
+}
+
+.mypage{
+  color:white;
+  text-align:center;
+}
+
+.login,teacher{
+  color:white;
+  
+}
+
+#login-form {
+  width: 100%;
+}
+
+#login-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+#login-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+.login1{
+padding-top:0;
+color:white;
+height:65px;
+}
+
+.logout{
+  color:white;
+}
+
+.input1{
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  margin: 15px 0;
+  padding: 0 16px;
+  width: 300px;
+  height: 30px;
+  float: left;
+  margin-left:10px;
+}
+
+.search_user{
+  display:inline-block;
+  position:relative;
+}
+
+.fa-search {
+  position:absolute;
+  right:5px;
+  top:20px;
+  background-color: none;
+  border-radius: 3px 0px 0px 3px;
+  // border-right: 3px solid #434a52;
+  color: #606468;
+  // display: block;
+  // line-height: 65px;
+  text-align: center;
+  // width: 50px;
+  // height: 35px;
+  // margin-top:15px;
+  }
+
+.dropmenu{
+  *zoom: 1;
+  list-style-type: none;
+  margin: 0px auto 30px;
+  padding: 0;
+  margin-right:0px;
+  position:relative;
+}
+.dropmenu:before, .dropmenu:after{
+  content: "";
+  display: table;
+}
+.dropmenu:after{
+  clear: both;
+}
+.dropmenu li{
+ 
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
+.dropmenu li a{
+  display: block;
+  margin: 0;
+  background: none;
+  color: #fff;
+  width:65px;
+  padding:0 10px;
+  transition:all 0.5s;
+  text-decoration: none;
+  margin-right:0px;
+}
+
+current_user{
+  display: block;
+  margin: 0;
+  background: none;
+  color: #fff;
+  width:65px;
+  padding:0 10px;
+  transition:all 0.5s;
+  text-decoration: none;
+  margin-right:0px;
+}
+
+.dropmenu li a:hover{
+  background-color:rgba(255, 255, 255, 0.5);
+
+}
+
+.dropmenu li ul{
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  overflow:visible;
+}
+.dropmenu li ul li{
+
+  width: 280px;
+}
+.dropmenu li ul li a{
+  padding: 3px 15px;
+  background: rgba(34, 49, 52, 0.9);
+  text-align: left;
+  width: 280px;
+    font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+
+}
+
+.dropmenu li ul li:hover{
+  background-color:rgba(34, 49, 52, 0.9);
+}
+
+
+#normal li ul{
+  display: none;
+}
+#normal li:hover ul{
+  display: block;
+}
+
+.fa{
+  font-size:10px;
+  margin-right:5px;
+}
+
+
+.container{
+  padding:0 15px;
+  margin:auto;
+  width:1170px;
+  text-align:center;
+}
+
+.container h1{
+  opacity:0.8;
+  font-size:50px;
+  letter-spacing:5px;
+}
+
+/*--ログアウトモーダル開始---------------------------------------------------------------------------------*/   
+
+.logout-model-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display:none;
+}
+
+.model {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+ #logout-form {
+  width: 100%;
+}
+
+#logout-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+#submit-btn1, #submit-btn2 {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+  width:30%;
+}
+
+.idpass-forget{
+ text-decoration: underline;
+ color:black;
+}
+
+/*--ログアウトモーダル終了---------------------------------------------------------------------------------*/   
+
+/*login model-----------------------------------------------------------*/
+.login-model-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢ */
+  display:none;
+}
+
+/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+
+flash{
+    color:white;
+}

@@ -9,16 +9,20 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-
+Rails.application.config.assets.precompile += %w( navbar.js )
 Rails.application.config.assets.precompile += %w( main/index.scss )
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss)
-Rails.application.config.assets.precompile += %w( users/users_layout.scss )
 Rails.application.config.assets.precompile += %w( users/top.scss )
 Rails.application.config.assets.precompile += %w( users/pass_forgot.scss )
 Rails.application.config.assets.precompile += %w( users/pass_forgot2.scss )
 Rails.application.config.assets.precompile += %w( users/new.scss )
 Rails.application.config.assets.precompile += %w( users/logout.scss )
 Rails.application.config.assets.precompile += %w( users/top.js )
+Rails.application.config.assets.precompile += %w( users/edit.scss )
+Rails.application.config.assets.precompile += %w( users/edit.js )
+Rails.application.config.assets.precompile += %w( users/show.scss )
+Rails.application.config.assets.precompile += %w( users/show.js )
+
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss )
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss )
 Rails.application.config.assets.precompile += %w( main/student_profile_edit.scss )
@@ -33,6 +37,7 @@ Rails.application.config.assets.precompile += %w( main/teacher_account_edit.scss
 Rails.application.config.assets.precompile += %w( main/teacher_account_edit.js )
 Rails.application.config.assets.precompile += %w( main/teacher_account_edit_confirm.scss )
 Rails.application.config.assets.precompile += %w( main/teacher_account_edit_confirm.js )
+<<<<<<< HEAD
 Rails.application.config.assets.precompile += %w( main/student_account_edit.scss )
 Rails.application.config.assets.precompile += %w( main/student_account_edit.js )
 
@@ -43,6 +48,8 @@ Rails.application.config.assets.precompile += %w( main/teacher_faq.js )
 Rails.application.config.assets.precompile += %w( main/student_faq.scss )
 Rails.application.config.assets.precompile += %w( main/student_faq.js )
 
+=======
+>>>>>>> 620cf10ec23e4ed9b77a4fc19cb8000ee4dbe637
 Rails.application.config.assets.precompile += %w( main/faq.scss )
 Rails.application.config.assets.precompile += %w( main/faq.js )
 

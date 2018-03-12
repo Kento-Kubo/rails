@@ -1,0 +1,135 @@
+<!--originally "student account.erb"-->
+<% content_for :specific_css_js do %>
+	<%= stylesheet_link_tag "users/show", :media => "all" %>     
+	<%= javascript_include_tag 'users/show' %>
+<% end %>
+         <!--完了モーダル開始------------------------------------------------------>   
+
+        	<div class="complete-modal-wrapper" id="complete-modal">
+    			<div class="modal">
+    				 <div class="close-modal">
+        				<i class="fa fa-2x fa-times"></i>
+      			     </div>
+      				
+      				 <div id="complete-form">
+        				<h2 class="sentence">正常にアカウント情報を変更しました。</h2>
+        				<form action="#">
+          					
+          					<a id="submit-btn2"  href="#">トップに戻る</a>
+       					 </form>
+      				</div>
+    			</div>
+			</div>
+
+        <!--完了モーダル終了------------------------------------------------------>  
+        
+<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
+<!--main開始------------------------------------------------------------------------------------->   
+		
+		<div class="edit_account_main_confirm">
+			<div class="edit_account_main_confirm_1">
+			
+				<p>アカウント情報を更新する</p>
+						
+			</div>
+			
+			<div class="edit_account_main_confirm_2">
+			
+
+					<div class="register name">
+					
+						<div class="register-left">
+							name
+						</div>
+						
+						<div class="register-right">
+							 <div  class="input2 name"><%= current_user.name%></div>　<div class="input22 name" ><%= current_user.name%></div>
+						</div>
+						
+					</div>
+					
+					<div class="register mail">
+					
+						<div class="register-left">
+							email
+						</div>
+						
+						<div class="register-right">
+							 <div class="input name"><%= current_user.email%></div>
+						</div>
+						
+					</div>		
+					
+					<div class="register sex">
+					
+						<div class="register-left">
+							sex
+						</div>
+						
+
+						<div class="register-right">
+							
+							
+							<div><%= current_user.sex%></div>
+
+						</div>
+					
+					</div>
+					
+					<div class="register birth">
+					
+						<div class="register-left">
+							birthday
+						</div>
+						
+						<div class="register-right">
+							
+                            <div><%= current_user.birthday%></div>
+                       
+						
+					    </div>
+					
+	
+			</div>
+			<br>
+			<div class="edit_account_main_confirm_3">
+			
+			
+			<!--<input class="btn1" value="アカウント情報を変更する" id="complete-show">-->
+			<!--<%= link_to("edit your account","/main/student_account_edit/#{current_user.id}" ,class:"btn1") %>-->
+   	       	<%= link_to("edit your account",edit_user_path(current_user),class:"btn1") %>
+
+			</div>
+		</div>
+    </div>
+<!--トップに戻る開始----------------------------------------------------------------------------->
+		
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+
+<!--トップに戻る終了（共通：変えないこと）------------------------------------------------------>
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer id="footer">
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+
+		<!--<script src="teacher_edit_account.js"></script>-->
+    
+    

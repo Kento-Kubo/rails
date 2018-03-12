@@ -1,15 +1,13 @@
 body {
   margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN";
+  // font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+
 }
 
 a {
   text-decoration: none;
 }
-header{
-  position:fixed;
-}
-
 /*
     header font in users_layout.scss
 */
@@ -53,10 +51,6 @@ header{
   opacity:1
 }
 
-.fa{
-  font-size:10px;
-  margin-right:5px;
-}
 
 .new{
 padding-top:0;
@@ -64,53 +58,21 @@ color:white;
 height:65px;
 }
 
-.login-model-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  /* display: none;‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢ */
-  display:none;
-}
-
-.model {
-  position: absolute;
-  top: 20%;
-  left: 34%;
-  background-color: #e6ecf0;
-  padding: 20px 0 40px;
-  border-radius: 10px;
-  width: 450px;
-  height: auto;
-  text-align: center;
-}
-
-.fa-times {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  color: rgba(128, 128, 128, 0.46);
-  cursor: pointer;
-}
-
 .signup-model-wrapper {
   display:none;
 }
 
-#signup-form, #login-form {
+#signup-form{
   width: 100%;
 }
 
-#signup-form h2, #login-form h2 {
+#signup-form h2 {
   color: #5f5d60;
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
 
-#signup-form input, #login-form input {
+#signup-form input{
   width: 320px;
   margin-bottom: 20px;
   font-size: 15px;
@@ -119,23 +81,3 @@ height:65px;
   border-radius: 5px;
 }
 
-
-#submit-btn {
-  display: inline-block;
-  padding: 14px 140px;
-  background-color: #5dca88;
-  border: none;
-  border-radius: 3px;
-  color: white;
-  margin: 10px auto;
-  cursor: pointer;
-}
-
-.idpass-forget{
- text-decoration: underline;
- color:black;
-}
-
-flash{
-    color:white;
-}
