@@ -4,7 +4,7 @@
                 <div class="header-left">
             
                     <%= link_to image_tag("https://prog-8.com/images/html/advanced/main_logo.png",:class => 'logo'),
-                            {action: 'top', controller: 'users'},{class:'logout'}%>
+                            {action: 'index', controller: 'main'},{class:'logout'}%>
                     <div class="search_user">
                         <input type="text" id="user" placeholder="Username" class="input1">
                         <!--- <%= submit_tag '検索' %>
@@ -18,7 +18,7 @@
                  <div class="header-right">
                 
                 	<ul id="normal" class="dropmenu"> 
-						<li><a ><span class="fa fa-cog"></a>
+						<li><a><span class="fa fa-cog"></a>
   					 		 <ul>
    							   <!--<li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>-->
      					       <li><%= link_to("account",user_path(current_user)) %></li>
@@ -33,11 +33,11 @@
    							 </ul>
   						</li>
   						
-  						<li><a href="#"><span class="fa fa-envelope"></a></li>
+  						<li><a href="#" ><span class="fa fa-envelope"></a></li>
   						<li><a href="#"><span class="fa fa-bell"></a></li>
   						<li><a href="#"><span class="fa fa-user"></a></li>
-  						<li><%= link_to("My page","/main/mypage_student") %></li>
-  					    <li><a><div class="current_user"><%= current_user.name%>さん</div></a></li>
+  						<!--<li><%= link_to("My page","/main/mypage_student") %></li>----->  
+  					    <li><%= link_to current_user.name,"/main/mypage_student",class: current_user %></li>
 					</ul>
           	     </div>
             </div>

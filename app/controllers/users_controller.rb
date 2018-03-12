@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Your account is registered"
-      redirect_to root_url
+      redirect_to("/users/top")
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'new'
@@ -89,7 +89,7 @@ class UsersController < ApplicationController
   
   private
     def find_user
-      @user = User.find(params[:id])
+      @user = User.find_by(id: params[:id])
     end
     
     def user_params
