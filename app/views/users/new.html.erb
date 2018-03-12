@@ -13,7 +13,7 @@
 	
 	<div class="signup_main">
 		<div class="signup_main_1">
-			<p>ganjin ID(無料)を登録する。</p>
+			<p>Register account information</p>
 		</div>
 		
 		<div class="signup_main_2">
@@ -34,21 +34,10 @@
 	<%= form_for @user do |form| %>
 
 				<div class="signup_main_2_left">
-					<div class="register kubun">
-						<div class="register-left">
-							区分
-						</div>
-						<div class="register-right">
-							<!--<INPUT type="radio" name="kubun" value="先生" checked>先生&nbsp;&nbsp;&nbsp;&nbsp;-->
-							<!--<INPUT type="radio" name="kubun" value="生徒" >生徒-->
-							<%= form.radio_button :teacher, 1, :checked => true %>先生&nbsp;&nbsp;&nbsp;&nbsp;
-							<%= form.radio_button :teacher, 0 %>生徒
-						</div>
-					</div>
 					
 					<div class="register name">
 						<div class="register-left">
-							ユーザーネーム
+							username
 						</div>
 						<div class="register-right">
 						    <!--<input type="name" name="name"  class="input name" value="<%= @user.name %>">-->
@@ -58,7 +47,7 @@
 					
 					<div class="register sex">
 						<div class="register-left">
-							性別
+							sex
 						</div>
 						<div class="register-right">
 							<%= form.radio_button :sex, 1, :checked => true %>男性&nbsp;&nbsp;&nbsp;&nbsp

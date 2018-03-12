@@ -37,7 +37,7 @@ Rails.application.config.assets.precompile += %w( main/teacher_account_edit.scss
 Rails.application.config.assets.precompile += %w( main/teacher_account_edit.js )
 Rails.application.config.assets.precompile += %w( main/teacher_account_edit_confirm.scss )
 Rails.application.config.assets.precompile += %w( main/teacher_account_edit_confirm.js )
-<<<<<<< HEAD
+
 Rails.application.config.assets.precompile += %w( main/student_account_edit.scss )
 Rails.application.config.assets.precompile += %w( main/student_account_edit.js )
 
@@ -48,8 +48,6 @@ Rails.application.config.assets.precompile += %w( main/teacher_faq.js )
 Rails.application.config.assets.precompile += %w( main/student_faq.scss )
 Rails.application.config.assets.precompile += %w( main/student_faq.js )
 
-=======
->>>>>>> 620cf10ec23e4ed9b77a4fc19cb8000ee4dbe637
 Rails.application.config.assets.precompile += %w( main/faq.scss )
 Rails.application.config.assets.precompile += %w( main/faq.js )
 

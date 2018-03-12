@@ -1,25 +1,23 @@
 <header>
-    <% if logged_in? %>
+    <% if @current_user %>
             <div class="container">
                 <div class="header-left">
             
                     <%= link_to image_tag("https://prog-8.com/images/html/advanced/main_logo.png",:class => 'logo'),
                             {action: 'top', controller: 'users'},{class:'logout'}%>
-                    
                     <div class="search_user">
                         <input type="text" id="user" placeholder="Username" class="input1">
                         <!--- <%= submit_tag '検索' %>
                         <%= text_field_tag :keywd,'',size:30 %> -->
 
-                        <span class="fa fa-search"></span>
+                        <!--<span class="fa fa-search"></span>-->
                         
                     </div>
                 </div>
                 
                  <div class="header-right">
                 
-                	<ul id="normal" class="dropmenu">
-						<% current_user = User.find_by(id:session[:user_id])%>    
+                	<ul id="normal" class="dropmenu"> 
 						<li><a ><span class="fa fa-cog"></a>
   					 		 <ul>
    							   <!--<li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>-->

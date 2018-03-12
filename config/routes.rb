@@ -7,23 +7,18 @@ Rails.application.routes.draw do
   # get 'main/index/:id' => "main#index"
   get 'main/index' => "main#index"
   get 'main/mypage_student' => "main#mypage_student"
+
   get 'main/student_profile_edit' => "main#student_profile_edit"
-<<<<<<< HEAD
+
 
   get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
 
 
 
-
-=======
-  get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
-
-
->>>>>>> 620cf10ec23e4ed9b77a4fc19cb8000ee4dbe637
   get 'main/teacher_profile_edit' => "main#teacher_profile_edit"
   get 'main/teacher_profile_edit_confirm' => "main#teacher_profile_edit_confirm"
   get 'main/teacher_account_edit' => "main#teacher_account_edit"
-<<<<<<< HEAD
+
 
   get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
   get 'main/student_account_edit' => "main#student_account_edit"
@@ -31,28 +26,41 @@ Rails.application.routes.draw do
 
   get 'main/student_account_edit/:id' => "main#student_account_edit"
 
-=======
+
   get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
+
+  get 'main/student_account/:id' => "main#student_account"
+
+  get 'main/teacher_faq' => "main#teacher_faq"
+
+  #get 'main/student_profile_edit' => "main#student_profile_edit"
+  #get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
+
+
+  #get 'main/teacher_profile_edit' => "main#teacher_profile_edit"
+  #get 'main/teacher_profile_edit_confirm' => "main#teacher_profile_edit_confirm"
+  #get 'main/teacher_account_edit' => "main#teacher_account_edit"
+  #get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
   get 'main/student_account_edit/:id' => "main#student_account_edit"
   get 'main/student_account/:id' => "main#student_account"
->>>>>>> 620cf10ec23e4ed9b77a4fc19cb8000ee4dbe637
-  get 'main/teacher_faq' => "main#teacher_faq"
+  #get 'main/teacher_faq' => "main#teacher_faq"
+
   get 'main/student_faq' => "main#student_faq"
-  get 'main/student_write_review' => "main#student_write_review" 
-  get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
+  #get 'main/student_write_review' => "main#student_write_review" 
+  #get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
 
 
   
   # post 'login' => "users#login"
   # get 'logout' => 'users#logout'
   
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   resources :users
-  post   'users/new',   to: 'users#new'
-  root 'users#top'
+  post   'users/new' => 'users#new'
+  root   'users#top'
 
 
   # get 'user/edit_info' => "users#edit_info"
