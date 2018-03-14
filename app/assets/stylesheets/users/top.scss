@@ -11,9 +11,18 @@ a {
 /*
     header font in users_layout.scss
 */
-.top-wrapper{
+.top-wrapper-1{
   padding: 180px 0 100px 0;
   background-image: url("/conversation.jpg");
+  background-size:cover;
+  color:white;
+  height:500px;
+  text-align:center;
+}
+
+.top-wrapper-2{
+  padding: 180px 0 100px 0;
+  background-image: url("/teacher_top.jpg");
   background-size:cover;
   color:white;
   height:500px;
