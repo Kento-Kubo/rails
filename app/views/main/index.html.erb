@@ -132,10 +132,22 @@
                         <%= link_to user.name, "/main/mypage_teacher", class: "introduction name" %>
                         <p class="introduction age"><span>Age&nbsp;:</span>26</p> <!--保留、要計算 -->
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <p class="introduction sex"><span>sex&nbsp;:</span><%= user.sex %></p>
+                       <p class="introduction sex"><span>sex&nbsp;:</span>
+                       <% if user.sex %>
+                         <%= "Male" %>
+                       <% else %>
+                        <%= "Female" %>
+                        <% end %>
+                       </p>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>  <!--保留、要計算 -->
-                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留、要計算 -->
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>
+                       <% if user.language == nil %>
+                         <%= "" %>
+                       <% else %>
+                        <%= user.language %>
+                        <% end %>
+                       </p>  
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留-->
                        <p class="intro">Introduction&nbsp;:</p>
                        <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
