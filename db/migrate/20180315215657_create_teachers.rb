@@ -1,7 +1,10 @@
 class CreateTeachers < ActiveRecord::Migration
   def change
     create_table :teachers do |t|
-      t.text :name
+      t.string :name
+      t.string :emails
+    
+      
 
       t.timestamps null: false
     end

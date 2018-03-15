@@ -20,7 +20,7 @@
     <% end %>
    
 <!--トップ開始-------------------------------------------------------------------------------->
-		
+<!--生徒用開始---------------------------	---->	
 	<div class="top-wrapper-1">
 		<div class="container">
 		
@@ -41,11 +41,14 @@
 			</div>
 		</div>
 	</div>
-	
+<!--生徒用終了---------------------------	---->
+
+<!--先生用先生開始---------------------------	---->
 		<div class="top-wrapper-2">
 		<div class="container">
 		
 			<h1>Teach Japanese</h1>
+			
 			
 			<div class="btn-wrapper">
 				<a class="btn sign-up" id="signup-show">Sign up</a>
@@ -62,9 +65,10 @@
 			</div>
 		</div>
 	</div>
+<!--先生用終了---------------------------	---->
 <!--トップ終了-------------------------------------------------------------------------------->	
 
-<!--サインアップモーダル開始---------------------------------------------------->
+<!--生徒用サインアップモーダル開始---------------------------------------------------->
 	<div class="signup-model-wrapper" id="signup-model">
 		<div class="model">
 			<div class="close-model">
@@ -79,17 +83,32 @@
 	  				<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
  					<%= form.submit "メール送信", class:"submit-btn"%>
 				<% end %>
-
-				
-				<!--<%= form_tag(new_user_path, method: "post") do %>-->
-  		<!--			<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
-  		<!--			<%= submit_tag "メール送信", class:"submit-btn"%>-->
-				<!--<% end %>-->
-				
+			
   			</div>
 		</div>
 	</div>
-<!--サインアップモーダル終了---------------------------------------------------->	
+<!--生徒用サインアップモーダル終了---------------------------------------------------->	
+
+<!--先生用サインアップモーダル開始---------------------------------------------------->
+	<div class="signup-model-wrapper" id="signup-model">
+		<div class="model">
+			<div class="close-model">
+    			<i class="fa fa-2x fa-times"></i>
+  			</div>
+  				
+  			<div id="signup-form">
+				<h2>新規登録</h2>
+				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
+				
+				<%= form_for @user ,url: new_user_path do |form| %>
+	  				<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
+ 					<%= form.submit "メール送信", class:"submit-btn"%>
+				<% end %>
+			
+  			</div>
+		</div>
+	</div>
+<!--用サインアップモーダル終了---------------------------------------------------->	
 	<div class="lesson-wrapper"></div>
 	<div class="message-wrapper"></div>
 	

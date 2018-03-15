@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'teacher/index'
+
+  get 'student/index'
+
+  get 'teacher/index'
+
   get 'password_resets/new'
   get 'password_resets/edit'
 
