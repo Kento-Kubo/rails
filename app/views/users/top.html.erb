@@ -27,7 +27,7 @@
 			<h1>Learn Japanese</h1>
 			
 			<div class="btn-wrapper">
-				<a class="btn sign-up" id="signup-show">Sign up</a>
+				<a class="btn sign-up" id="signup-show-students">Sign up</a>
 				
 				<p>or sign up with</p>
 				
@@ -40,6 +40,7 @@
 				</a>
 			</div>
 		</div>
+		
 	</div>
 <!--生徒用終了---------------------------	---->
 
@@ -51,7 +52,7 @@
 			
 			
 			<div class="btn-wrapper">
-				<a class="btn sign-up" id="signup-show">Sign up</a>
+				<a class="btn sign-up" id="signup-show-teachers">Sign up</a>
 				
 				<p>or sign up with</p>
 				
@@ -69,13 +70,13 @@
 <!--トップ終了-------------------------------------------------------------------------------->	
 
 <!--生徒用サインアップモーダル開始---------------------------------------------------->
-	<div class="signup-model-wrapper" id="signup-model">
-		<div class="model">
+	
+		<div id="model">
 			<div class="close-model">
     			<i class="fa fa-2x fa-times"></i>
   			</div>
   				
-  			<div id="signup-form">
+  			<div id="signup-form-students">
 				<h2>新規登録</h2>
 				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
 				
@@ -86,29 +87,32 @@
 			
   			</div>
 		</div>
-	</div>
+		
+		
+	
 <!--生徒用サインアップモーダル終了---------------------------------------------------->	
 
 <!--先生用サインアップモーダル開始---------------------------------------------------->
-	<div class="signup-model-wrapper" id="signup-model">
-		<div class="model">
+	
+		<!--<div id="model-1">
 			<div class="close-model">
     			<i class="fa fa-2x fa-times"></i>
   			</div>
   				
-  			<div id="signup-form">
+  			<div id="signup-form-teachers">
 				<h2>新規登録</h2>
 				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
 				
 				<%= form_for @user ,url: new_user_path do |form| %>
 	  				<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
- 					<%= form.submit "メール送信", class:"submit-btn"%>
+ 					<%= form.submit "メール送信", class:"submit-btn" %>
 				<% end %>
 			
   			</div>
 		</div>
-	</div>
+	
 <!--用サインアップモーダル終了---------------------------------------------------->	
+
 	<div class="lesson-wrapper"></div>
 	<div class="message-wrapper"></div>
 	
