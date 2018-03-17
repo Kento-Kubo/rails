@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   post   'users/new' => 'users#new'
   root   'users#top'
 
+  resources :teachers
+  post   'teachers/new' => 'teachers#new'
+
 
   # get 'user/edit_info' => "users#edit_info"
   # get 'user/new' => 'users#new'

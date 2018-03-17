@@ -115,7 +115,7 @@
         <div class="main-part">
             <div class="main-left">
                 
-                <% @users.each do |user| %>
+                <% @teachers.each do |teacher| %>
                 <div class="each-teacher-main">
                     <div class="each-teacher-left">
                     
@@ -129,10 +129,10 @@
 					
                     
                     <div class="each-teacher-center">
-                        <%= link_to user.name, "/main/mypage_teacher", class: "introduction name" %>
+                        <%= link_to teacher.name, "/teachers/show", class: "introduction name" %>
                         <p class="introduction age"><span>Age&nbsp;:</span>26</p> <!--保留、要計算 -->
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <p class="introduction sex"><span>sex&nbsp;:</span><%= user.sex %></p>
+                       <p class="introduction sex"><span>sex&nbsp;:</span><%= teacher.sex %></p>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>  <!--保留、要計算 -->
                        <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留、要計算 -->

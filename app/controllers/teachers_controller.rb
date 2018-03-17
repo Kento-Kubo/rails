@@ -1,11 +1,11 @@
-class TeacherController < ApplicationController
-def top
+class TeachersController < ApplicationController
+  def top
       @teacher = Teacher.new
       print current_teacher
       print "yay"
   end
   
-  def index #show all users
+  def index #show all teachers
       @teacher = Teacher.all
   end
   
@@ -21,7 +21,7 @@ def top
     @teacher = Teacher.find_by(id:session[:teacher_id])
   end
   
-  def create #save new user
+  def create #save new teacher
     @teacher = Teacher.new(teacher_params)
     if @teacher.save
       flash[:notice] = "Your account is registered"
@@ -46,7 +46,7 @@ def top
     end
   end
   
-  def destroy #delete user
+  def destroy #delete teacher
   end
   
   
@@ -74,3 +74,4 @@ def top
       redirect_to(root_url) 
       end
     end
+end
