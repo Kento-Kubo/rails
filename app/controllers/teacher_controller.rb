@@ -1,12 +1,12 @@
 class TeacherController < ApplicationController
 def top
       @teacher = Teacher.new
-      print current_user
+      print current_teacher
       print "yay"
   end
   
   def index #show all users
-      @user = User.all
+      @teacher = Teacher.all
   end
   
   def show #show profile
@@ -14,16 +14,16 @@ def top
   end
 
   def new #create registration form
-      @user=User.new
+      @teacher=Teacher.new
   end
 
   def edit #edit profile
-    @user = User.find_by(id:session[:user_id])
+    @teacher = Teacher.find_by(id:session[:teacher_id])
   end
   
   def create #save new user
-    @user = User.new(user_params)
-    if @user.save
+    @teacher = Teacher.new(teacher_params)
+    if @teacher.save
       flash[:notice] = "Your account is registered"
       redirect_to root_path
     else
@@ -33,13 +33,13 @@ def top
   end
   
   def update #save edit profile
-      @user = User.find(params[:id])
+      @teacher = Teacher.find(params[:id])
 
         
         
-    if @user.update(user_params)
+    if @teacher.update(teacher_params)
       flash[:notice] = "ユーザー情報を編集しました"
-      redirect_to user_path
+      redirect_to teacher_path
     else
       @error_message = "Failed to save changes."
       render :edit
@@ -51,25 +51,25 @@ def top
   
   
   private
-    def find_user
-      @user = User.find_by(id: params[:id])
+    def find_teacher
+      @teacher = Teacher.find_by(id: params[:id])
     end
     
-    def user_params
-      params.require(:user).permit(:name, :email, :skype, :birthday,:sex, :teacher, :password,
+    def teacher_params
+      params.require(:teacher).permit(:name, :email, :skype, :birthday,:sex, :teacher, :password,
                                    :password_confirmation)
     end
     
-    def logged_in_user
+    def logged_in_teacher
       unless logged_in?
         flash[:danger] = "Please log in."
         redirect_to login_url
       end
     end
     
-    def correct_user
-      @user = User.find(params[:id])
-      if @user =! current_user
+    def correct_teacher
+      @teacher = Teacher.find(params[:id])
+      if @teacher =! current_teacher
       flash[:notice] = "You are not allowed to access this page"
       redirect_to(root_url) 
       end
