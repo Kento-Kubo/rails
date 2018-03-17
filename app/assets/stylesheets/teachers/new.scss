@@ -1,0 +1,227 @@
+body {
+  margin: 0;
+  font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
+
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+header2{
+  margin-left:380px;
+  height:30px;
+  width:55%;
+  color:white;
+  background-color:red;
+  position:fixed;
+  top:65px;
+  z-index:10px;
+  text-align:center;
+}
+
+/*
+  header font in users_layout.scss
+*/
+/*入力画面開始-----------------------------------------------------------------------------------------------------------------------*/
+
+.signup_main{
+
+border:solid rgba(34, 49, 52, 0.3) 1px;
+height:40
+0px;
+width:85%;
+margin:10px auto;
+ text-align: center;
+ border-radius: 3px  3px;
+margin-top:80px;
+}
+
+.signup_main_1{
+border:solid rgba(34, 49, 52, 0.3) 1px;
+height:50px;
+width:100%;
+ text-align: left;
+ margin-bottom:10px;
+}
+
+.signup_main_2{
+border:solid rgba(34, 49, 52, 0) 1px;
+height:380px;
+width:100%;
+
+}
+
+.signup_main_2_left{
+border:none;            /*solid rgba(34, 49, 52, 0.3) 1px;*/
+height:250px;
+width:67%;
+float:left;
+}
+
+.signup_main_2_right{
+border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
+height:250px;
+width:32%;
+float:right;
+}
+.signup_main_3{
+border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
+height:100px;
+width:100%;
+ text-align: center;
+}
+
+.signup_main_1 p{
+font-size:20px;
+line-height:50px;
+  padding:0 25px;
+margin-top:0px;
+
+}
+
+.register{
+border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
+height:40px;
+width:100%;
+text-align:left;
+line-height:40px;
+box-sizing:border-box;
+}
+
+
+
+.register-left{
+border:solid rgba(34, 49, 52, 0.1) 1px;
+height:40px;
+width:29%;
+text-align:left;
+line-height:40px;
+box-sizing:border-box;
+float:left;
+margin-left:5%;
+padding-left:3%;
+}
+
+.register-right{
+border:solid rgba(34, 49, 52, 0.1) 1px;
+height:40px;
+width:66%;
+text-align:left;
+box-sizing:border-box;
+float:left;
+margin:0px 0px;
+padding:0px 10px;
+position:relative;
+}
+
+.input{
+height:25px;
+border-radius: 3px  3px;
+line-height:40px;
+margin:0px 0px;
+padding:0px 0px;
+width:45%;
+position:absolute;
+top:5px;
+}
+
+.select{
+border-radius: 3px  3px;
+height:25px;
+
+}
+
+
+.btn{
+  padding-top:8px;
+  padding-bottom:8px;
+  padding-left:24px;
+  
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+  width:75%;
+box-sizing:border-box;
+text-align:left;
+display:block;
+
+}
+
+ .btn:hover{
+  cursor: pointer;
+
+}
+
+.facebook{
+  background-color:#3b5998;
+  margin-right:10px;
+  margin-bottom:5px;
+}
+
+.twitter{
+  background-color:#55acee;
+    margin-right:10px;
+      margin-bottom:5px;
+}
+
+.btn:hover{
+  opacity:1;
+}
+
+.fa{
+  font-size:10px;
+  margin-right:5px;
+}
+
+.explain{
+
+width:96%;
+text-align:left;
+margin-top:0px;
+font-size:12px;
+
+}
+
+.explain2{
+
+
+margin-top:10px;
+font-size:15px;
+
+}
+
+.btn1{
+  padding:8px 24px;
+    background-color:#239b76;
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+  width:60%;
+  box-sizing:border-box;
+  text-align:center;
+  font-size:18px;
+
+
+}
+
+ .btn1:hover{
+  cursor: pointer;
+
+}
+
+.contract{
+
+text-decoration:underline;
+color:blue;
+}
+
+.contract:hover{
+  cursor: pointer;
+  display:inline-block;
+
+}

@@ -3,6 +3,7 @@ class MainController < ApplicationController
   def index
    #データベースより全先生データ取得
     @users = User.all
+    @teachers = Teacher.all
     #年齢計算
     
     #
