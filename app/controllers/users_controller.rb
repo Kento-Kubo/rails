@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   # layout "users_layout"
-  before_action :forbid_login_user, only: [:create, :top]
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  # before_action :forbid_login_user, only: [:create, :top]
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :set_current_user
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_current_user
 
   def top
       @user = User.new
@@ -72,8 +72,14 @@ class UsersController < ApplicationController
      #   render :edit
      # end
    # end
-        
-        
+
+    if !params[:user][:password].empty?
+      if !@user.authenticate(params[:user][:password_check])
+        @error_message = "wrong password"
+        return render :edit
+      end
+    end
+    
     if @user.update(user_params)
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to user_path
@@ -81,6 +87,7 @@ class UsersController < ApplicationController
       @error_message = "Failed to save changes."
       render :edit
     end
+  
   end
   
   def destroy #delete user

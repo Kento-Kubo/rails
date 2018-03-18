@@ -115,7 +115,7 @@
         <div class="main-part">
             <div class="main-left">
                 
-                <% @users.each do |user| %>
+                <% @teachers.each do |teacher| %>
                 <div class="each-teacher-main">
                     <div class="each-teacher-left">
                     
@@ -129,10 +129,11 @@
 					
                     
                     <div class="each-teacher-center">
-                        <%= link_to user.name, "/main/mypage_teacher", class: "introduction name" %>
+                        <%= link_to teacher.name, "/teachers/show", class: "introduction name" %>
                         <p class="introduction age"><span>Age&nbsp;:</span>26</p> <!--保留、要計算 -->
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        <p class="introduction sex"><span>sex&nbsp;:</span>
+
                        <% if user.sex %>
                          <%= "Male" %>
                        <% else %>
@@ -148,14 +149,9 @@
                         <% end %>
                        </p>  
                        <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留-->
+
                        <p class="intro">Introduction&nbsp;:</p>
-                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
-                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. </p>
+                       <p class="free"><%=teacher.profile %> </p>
                     </div>
                     
                     <div class="each-teacher-right">
@@ -304,7 +300,7 @@
             
             <div class="main-right">
             
-            	<div class="container-for-searching-condition">
+            	<!--<div class="container-for-searching-condition">
                 	<p class="searching-condition1">Searching condition</p>
                 	
                 	<p class="searching-condition2"><span>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span>26<span>&nbsp;years old</span></p>
@@ -338,7 +334,7 @@
 						<input type="checkbox" name="time" value="15">21:00～24:00<br>
 						<input type="checkbox" name="time" value="16">Anytime
 					</p>
-                </div>
+                </div>-->
                 
                 <div class="container-for-Advertisement">
                 	

@@ -1,0 +1,135 @@
+<% content_for :specific_css_js do %>
+		<%= stylesheet_link_tag "teachers/new", :media => "all" %>
+<% end %>
+
+<!--入力画面開始----------------------------------------------------------------------------------------->   
+	<% if @error_message %>
+	  <header2>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+      </header2>
+    <% end %>
+	
+	<div class="signup_main">
+		<div class="signup_main_1">
+			<p>Register account information</p>
+		</div>
+		
+		<div class="signup_main_2">
+			
+	<%= form_for @teacher do |form| %>
+				<div class="signup_main_2_left">
+					
+					<div class="register name">
+						<div class="register-left">
+							name
+						</div>
+						<div class="register-right">
+						    <%= form.text_field :name, class: 'input name'%>
+						</div>
+					</div>
+					
+					<div class="register sex">
+						<div class="register-left">
+							sex
+						</div>
+						<div class="register-right">
+							<%= form.radio_button :sex, 1, :checked => true %>男性&nbsp;&nbsp;&nbsp;&nbsp
+							<%= form.radio_button :sex, 0 %>女性
+
+						</div>
+					</div>
+					
+					<div class="register birth">
+						<div class="register-left">
+							生年月日
+						</div>
+						<div class="register-right" name="birthday">
+							<%= form.date_field :birthday %>
+
+						  
+						</div>
+					</div>
+					
+					<div class="register hobby">
+						<div class="register-left">
+							Hobby
+						</div>
+						<div class="register-right">
+ 						    <%= form.text_field :hobby, class: 'input id'%>
+						</div>
+					</div>
+					
+					<div class="register lunguage">
+						<div class="register-left">
+							Your language
+						</div>
+						<div class="register-right">
+ 						    <!--<%= form.text_field :language, class: 'input id'%>-->
+		                    <%= form.select 'language', options_for_select(["日本語","韓国語","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990", "1991", "1992", "1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003"]),class:"select" %>				
+						</div>
+					</div>
+					
+					<div class="register introduction">
+						<div class="register-left-profile">
+							Your Profile
+						</div>
+						<div class="register-right-profile">
+ 						    <%= form.text_area :profile, class:"textarea" %>
+						</div>
+					</div>
+					
+					<div class="register skype">
+						<div class="register-left">
+							Skype ID
+						</div>
+						<div class="register-right">
+ 						    <%= form.text_field :skype, class: 'input id'%>
+							 
+						</div>
+					</div>
+					
+					<div class="register email">
+						<div class="register-left">
+							Email 
+						</div>
+						<div class="register-right">
+ 						    <%= form.text_field :email, class: 'input id'%>
+						</div>
+					</div>
+					
+					<div class="register birth">
+						<div class="register-left">
+							パスワード
+						</div>
+						<div class="register-right">
+							
+ 						    <%= form.text_field :password, class: 'input name'%>
+
+						</div>
+					</div>
+					
+					<div class="register birth">
+						<div class="register-left">
+							パスワード（確認）
+						</div>
+						<div class="register-right">
+							 
+ 						    <%= form.text_field :password_confirmation, class: 'input name'%>
+
+						</div>
+					</div>
+					
+					<div class="signup_main_3">
+					   <p class="explain2"><a class="contract"  href="#">ganjin利用規約</a>を一読の上、同意される方のみ「同意して確認画面へ進む」ボタンを押してください。</p>
+			            <%= form.submit "同意して確認画面へ進む", class: 'btn1' %>
+		            </div>
+				</div>
+			<% end %>
+		</div>
+			
+	</div>
+		
+<!--入力画面終了----------------------------------------------------------------------------------------->   
+	
