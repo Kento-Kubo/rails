@@ -128,53 +128,35 @@
 				<!--Introduction開始------------------------------------------------------------->   
 				<div class="introduction">
 
-							<p class="teacher-name">Kento Kubo</p>
+							<p class="teacher-name"><%=@teacher.name%></p>
 							
 							<table class="table-introduction">
   								<tr>
     								<td class="title">AGE</td>
-    								<td>26</td>
+    								<td><%=Date.today.year-@teacher.birthday.year%></td>
+    							
   								</tr>
   								<tr>
     								<td class="title">SEX</td>
-    								<td>male</td>
+    								<td><% if @teacher.sex %>
+            							 male
+            							<% else %>
+            							 female
+            							<% end%></td>
   								</tr>
   								<tr>
     								<td class="title">LANGUAGE</td>
-    								<td>大阪弁</td>
+    								<td><%=@teacher.language%></td>
   								</tr>
   								<tr>
     								<td class="title">HOBBY</td>
-    								<td>snowboard</td>
-    								<td>,camera</td>
-    								<td>,traveling</td>
-    								<td>,snowboard</td>
-    								<td>,camera</td>
-    								<td>,traveling</td>
+    								<td><%=@teacher.hobby%></td>
   								</tr>  
 							</table>
 
 					<hr width=95%>
 					<p class="Introduction-title">INTRODUCTION</p>
-						<p class="Introduction-contentes">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
-                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.</p>
+						<p class="Introduction-contentes"><%=@teacher.profile%></p>
                     <div id="schedule"></div> <!--マーキング-->
 					<br>
 					<br>
@@ -205,16 +187,14 @@
 						<table class="table-schedule"  style="border-color:rgba(34, 49, 52, 0.3)" rules="all">
   								<tr>
     								<td class="title-schedule-left lefttop"></td>
-    								<td class="title-schedule">4th</td>
-    								<td class="title-schedule">5th</td>
-    								<td class="title-schedule">6th</td>
-    								<td class="title-schedule">7th</td>
-    								<td class="title-schedule">8th</td>
-    								<td class="title-schedule">9th</td>
-    								<td class="title-schedule">10th</td>
+    								<% (1..7).each do |num|%>
+    								<td class="title-schedule"><%=Date.today.day+num%></t>
+    								<% end %>
+    	
   								</tr>
   								<tr class="time1">
-    								<td class="title-schedule-left">0:00-0:30</td>
+  								    <%　time = Time.local(2015,3,14,00,00,00) %>
+    								<td class="title-schedule-left"><%=Time.local(2000,1,01,0,00,00).strftime("%H:%M")%></td>
     								<td></td>
     								<td></td>
     								<td><p class="reserved">reserved</p></td>

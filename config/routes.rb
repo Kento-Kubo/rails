@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
   resources :teachers
   post   'teachers/new' => 'teachers#new'
+  get    'teachers/:id/show' => 'teachers#show'
 
 
   # get 'user/edit_info' => "users#edit_info"

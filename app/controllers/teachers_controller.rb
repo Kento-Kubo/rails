@@ -10,7 +10,8 @@ class TeachersController < ApplicationController
   end
   
   def show #show profile
-    
+    @teacher = Teacher.find(params[:id])
+    td = Date.today
   end
 
   def new #create registration form
