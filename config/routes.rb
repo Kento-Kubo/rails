@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #get 'main/teacher_profile_edit' => "main#teacher_profile_edit"
   #get 'main/teacher_profile_edit_confirm' => "main#teacher_profile_edit_confirm"
   #get 'main/teacher_account_edit' => "main#teacher_account_edit"
-  #get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
+  get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
   get 'main/student_account_edit/:id' => "main#student_account_edit"
   get 'main/student_account/:id' => "main#student_account"
   #get 'main/teacher_faq' => "main#teacher_faq"
