@@ -9,6 +9,16 @@ class MainController < ApplicationController
     #
     
   end
+   def index2
+   #データベースより全先生データ取得
+    @users = User.all
+    @teachers = Teacher.all
+    #年齢計算
+    
+    #
+    
+  end
+ 
   
   def teacher_account_edit
     @user=find_by[id: params[:id]]

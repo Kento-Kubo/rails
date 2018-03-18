@@ -18,7 +18,6 @@ a {
   color:white;
   height:500px;
   text-align:center;
-
 }
 
 .top-wrapper-2{
@@ -62,53 +61,31 @@ a {
 }
 
 
-.container{
-z-index:0;
-
-}
-
 .new{
 padding-top:0;
 color:white;
 height:65px;
 }
 
+.signup-model-wrapper {
+  display:none;
+}
 
-
-#model{
+#signup-form{
   width: 100%;
 }
 
-#model h2 {
+#signup-form h2 {
   color: #5f5d60;
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
 
-#model input{
+#signup-form input{
   width: 320px;
   margin-bottom: 20px;
   font-size: 15px;
   padding: 12px 12px;
   border: 1px solid #d0d5d8;
   border-radius: 5px;
-}
-
-#model{
-position:fixed;
-　　z-index: 2;
-display:none;
-}
-
-
-#model-bg{
-　　width:100%;
-　　height:1000px;
-　　background-color:rgba(34, 49, 52, 0.9);
-　　position:fixed;
-　　top:0;
-　　left:0;
-　　z-index: 1;
-    
-    
 }
