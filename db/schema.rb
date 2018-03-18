@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20180317060907) do
 
-
   create_table "teachers", force: :cascade do |t|
     t.text     "name"
     t.datetime "created_at",      null: false
@@ -27,7 +26,6 @@ ActiveRecord::Schema.define(version: 20180317060907) do
     t.string   "language"
     t.string   "profile"
   end
-
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
