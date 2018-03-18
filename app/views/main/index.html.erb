@@ -133,14 +133,23 @@
                         <p class="introduction age"><span>Age&nbsp;:</span><%=Date.today.year-@teacher.birthday.year%></p> <!--保留、要計算 -->
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        <p class="introduction sex"><span>sex&nbsp;:</span>
-                       <% if teacher.sex %>
-							 male
-							<% else %>
-							 female
-							<% end%></p>
+
+                       <% if user.sex %>
+                         <%= "Male" %>
+                       <% else %>
+                        <%= "Female" %>
+                        <% end %>
+                       </p>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <p class="introduction speak"><span>Speak&nbsp;:</span><%=teacher.language%></p>  <!--保留、要計算 -->
-                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span><%=teacher.hobby%></p>  <!--保留、要計算 -->
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>
+                       <% if user.language == nil %>
+                         <%= "" %>
+                       <% else %>
+                        <%= user.language %>
+                        <% end %>
+                       </p>  
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留-->
+
                        <p class="intro">Introduction&nbsp;:</p>
                        <p class="free"><%=teacher.profile %> </p>
                     </div>

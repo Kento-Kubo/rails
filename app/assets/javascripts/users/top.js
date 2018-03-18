@@ -35,7 +35,6 @@ $(function() {　//←消さないこと
   })
   /*	  
   if($('#signup-model').is(':hidden')){
-
   }else{
     $(document).on('click', function(e) {
     	if(!$(e.target).closest('#signup-model').length && !$(e.target).closest('#signup-show').length){
