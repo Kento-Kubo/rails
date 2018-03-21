@@ -133,11 +133,10 @@
                         <p class="introduction age"><span>Age&nbsp;:</span><%= Date.today.year - teacher.birthday.year %></p> <!--保留、要計算 -->
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        <p class="introduction sex"><span>sex&nbsp;:</span>
-
-                       <% if teacher.sex %>
-                         <%= "Male" %>
+                       <% if teacher.sex ==nil %>
+                         Male
                        <% else %>
-                          <%= "Female" %>
+                         Female
                        <% end %>
                        </p>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
