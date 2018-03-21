@@ -189,7 +189,8 @@ text-align:center;
 
 .blank{
 text-align:center;
- width:83px;
+ width:74px;
+ box-sizing:border-box;
 }
 
 
@@ -210,6 +211,14 @@ font-size:14px
 .fixed{
 width:100%;
 }
+
+.fixed-table{
+width:100%;
+margin:0 0;
+padding:0 0;
+}
+
+
 
 .schedule-row-color{
 background-color:rgba(135, 206, 250, 0.2);

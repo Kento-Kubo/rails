@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'lessons/index'
+
+  get 'class/index'
+
   get 'teacher/index'
 
   get 'student/index'
@@ -45,7 +49,7 @@ Rails.application.routes.draw do
   resources :teachers
   post   'teachers/new' => 'teachers#new'
   get    'teachers/:id/show' => 'teachers#show'
-
+  
 
   # get 'user/edit_info' => "users#edit_info"
   # get 'user/new' => 'users#new'

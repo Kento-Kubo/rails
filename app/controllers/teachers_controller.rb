@@ -24,9 +24,11 @@ class TeachersController < ApplicationController
   
   def create #save new teacher
     @teacher = Teacher.new(teacher_params)
+    
     if @teacher.save
+    session[:teacher_id]=@teacher.id
       flash[:notice] = "Your account is registered"
-      redirect_to root_path
+      redirect_to("/teachers/#{@teacher.id}")
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'new'
