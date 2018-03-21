@@ -130,22 +130,22 @@
                     
                     <div class="each-teacher-center">
                         <%= link_to teacher.name, "/teachers/#{teacher.id}/show", class: "introduction name" %>
-                        <p class="introduction age"><span>Age&nbsp;:</span><%=Date.today.year-@teacher.birthday.year%></p> <!--保留、要計算 -->
+                        <p class="introduction age"><span>Age&nbsp;:</span><%= Date.today.year - teacher.birthday.year %></p> <!--保留、要計算 -->
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        <p class="introduction sex"><span>sex&nbsp;:</span>
 
-                       <% if user.sex %>
+                       <% if teacher.sex %>
                          <%= "Male" %>
                        <% else %>
-                        <%= "Female" %>
-                        <% end %>
+                          <%= "Female" %>
+                       <% end %>
                        </p>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        <p class="introduction speak"><span>Speak&nbsp;:</span>
-                       <% if user.language == nil %>
+                       <% if teacher.language == nil %>
                          <%= "" %>
                        <% else %>
-                        <%= user.language %>
+                        <%= teacher.language %>
                         <% end %>
                        </p>  
                        <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留-->

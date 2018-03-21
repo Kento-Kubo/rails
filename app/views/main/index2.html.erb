@@ -113,21 +113,25 @@
         </div>  
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>           
+        <% n = @teachers.count / 3 + 1 %>
+        <% (1..n).each do |x|%> 
         <div class="main-part">
           <div class="fixed" >
             <table class="fixed-table" rules="all">
             
               <tr>
-                  <td class="blank">
+                  
+                  <td class="blank">   
       			  </td>
+      			  <% @teachers.(3).each do |teacher|%>
       			  <td class="teacher-info">
-      			  <img class="Profile-photo" src="profile_pic_temp.png"><br>
-      			  Kento Kubo<br>
+      			  <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
+      			  <%= link_to teacher.name, "/teachers/#{teacher.id}/show", class: "introduction name" %><br>
       			  1 lesson:4$<br>
       			  ★★★★★<br>
-      			  hobby:camera
+      			  hobby:<%= teacher.hobby %>
       			  </td>
-      			  <td class="teacher-info">
+      			  <!--<td class="teacher-info">
       			  <img class="Profile-photo" src="profile_pic_temp.png"><br>
       			  Asaki Daisuke<br>
       			  1 lesson:6$<br>
@@ -140,28 +144,37 @@
       			  1 lesson:1$<br>
       			  ★☆☆☆☆<br>
       			  hobby:monkey
-      			  </td>
+      			  </td>-->
+      			  <%end%>
       		  </tr>
       		 </table> 
       	   </div>
       	    
       	   <div class="scrolled" >
             <table rules="all" class="scrolled-table">
-      		  <tr >
-      		      <td class="schedule-row-color" width="100px">0:00 - 0:30</td>
+                <% (0..23).each do |num|%>
+      		        <tr >
+      		                        <td class="schedule-row-color" ><%=0 + num%>:00 - <%=0 + num%>:30</td>
                     
                     				<td class="schedule-row-color" width="200px"></td>
                     				<td class="schedule-row-color" width="200px"></td>
                     				<td class="schedule-row-color" width="200px"></td>
                     </tr >	
-                    <td width="100px">0:30 - 1:00</td>
+                    <tr >           
+                                    <td ><%=0 + num%>:30 - <%=1 + num%>:00</td>
                     
                     				<td width="200px"></td>
                     				<td width="200px"></td>
                     				<td width="200px"></td>
                     </tr >
-                    			
-                    <tr >				
+                <% end %>
+    	
+                
+                    
+                    
+                    
+                    
+                    <!--<tr >				
       								<td class="schedule-row-color">1:00 - 1:30</td>
         							
                     				<td class="schedule-row-color"></td>
@@ -176,6 +189,11 @@
                     				<td></td>
                     				<td></td>
                     </tr >				
+                    
+                    
+                    
+                    
+                    
                     <tr >				
         								
         							<td class="schedule-row-color">2:00 - 2:30</td>           				
@@ -496,7 +514,7 @@
                     				<td class="schedule-row-color"></td>
                     				<td class="schedule-row-color"></td>
                   				
-              </tr>   		
+                    </tr>   		
                     <tr >				
                     				<td>23:30 - 24:00</td> 
                     				
@@ -504,12 +522,13 @@
                     				<td></td>
                     				<td></td>
                   				
-              </tr>     						
+                    </tr>   -->  						
          </table>
         </div>
          
             
         </div>
+        <%end%>
 <!--検索結果終了----------------------------------------------------------------------------->
 <!--ページ番号開始--------------------------------------------------------------------------->
         <div class="teacher-list-bottom">
