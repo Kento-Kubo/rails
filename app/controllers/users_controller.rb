@@ -22,6 +22,12 @@ class UsersController < ApplicationController
 
   def new #create registration form
       @user=User.new
+      @user .teacher = false
+  end
+  
+  def new2 #create registration form
+      @user=User.new
+      @user.teacher = true
   end
 
   def edit #edit profile
@@ -30,6 +36,7 @@ class UsersController < ApplicationController
   
   def create #save new user
     @user = User.new(user_params)
+    
     if @user.save
       flash[:notice] = "Your account is registered"
       redirect_to root_path
@@ -39,6 +46,7 @@ class UsersController < ApplicationController
     end
   end
   
+   
   def update #save edit profile
       @user = User.find(params[:id])
       #if password_current
@@ -103,6 +111,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :skype, :birthday,:sex, :teacher, :password,
                                    :password_confirmation)
     end
+    
+    
     
     def logged_in_user
       unless logged_in?

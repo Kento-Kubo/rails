@@ -1,12 +1,12 @@
 class TeachersController < ApplicationController
   def top
-      @teacher = Teacher.new
+      @teacher = User.new
       print current_teacher
       print "yay"
   end
   
   def index #show all teachers
-      @teacher = Teacher.all
+      @teacher = User.all
   end
   
   def show #show profile
@@ -24,7 +24,7 @@ class TeachersController < ApplicationController
   
   def create #save new teacher
     @teacher = Teacher.new(teacher_params)
-    
+    @teacher.teacher = true
     if @teacher.save
     session[:teacher_id]=@teacher.id
       flash[:notice] = "Your account is registered"

@@ -3,7 +3,7 @@ class MainController < ApplicationController
   def index
    #データベースより全先生データ取得
     @users = User.all
-    @teachers = Teacher.all
+    @teachers = User.where(teacher: true)
     #年齢計算
     
     #
@@ -12,10 +12,11 @@ class MainController < ApplicationController
    def index2
    #データベースより全先生データ取得
     @users = User.all
-    @teachers = Teacher.all
+    #@teachers = Teacher.all
+    @teachers = User.where(teacher: true)
     #年齢計算
     
-    #
+    
     
   end
  

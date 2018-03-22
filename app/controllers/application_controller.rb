@@ -4,7 +4,15 @@ class ApplicationController < ActionController::Base
    before_action :set_current_user
   
   def set_current_user
+  user= User.find_by(id:session[:user_id])
+  teacher = Teacher.find_by(id:session[:teacher_id])
+  if user
     @current_user = User.find_by(id:session[:user_id])
+    
+  elsif teacher
+    @current_user = Teacher.find_by(id:session[:teacher_id])
+  end
+  
   end
   
   def authenticate_user

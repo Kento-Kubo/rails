@@ -157,9 +157,59 @@
       	    
       	   <div class="scrolled" >
             <table rules="all" class="scrolled-table">
-                <% (0..23).each do |num|%>
+                <% require "date" %>
+                
+
+
+                <% t = DateTime.now %>
+                
+                
+                <% if 0 <= t.min && t.min < 15 %>
+                            
       		        <tr >
-      		                        <td class="schedule-row-color" ><%=0 + num%>:00 - <%=0 + num%>:30</td>
+      		                        <td class="schedule-row-color" ><%= t.hour %>:30 - <%= t.hour + 1 %>:00</td>
+                    
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				
+                    </tr >	
+                     <% hour = t.hour + 1 %> 
+                     <% min = 0 %>
+                     
+                 <% elsif 15 <= t.min && t.min < 45 %>   
+                
+        		    <tr >
+      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:00 - <%= t.hour + 1 %>:30</td>
+                    
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				
+                    </tr >	
+                    <% hour = t.hour + 1 %> 
+                    <% min = 30 %>
+                    
+                <% elsif 45 <= t.min && t.min < 0 %>   
+                
+        		    <tr >
+      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:30 - <%= t.hour + 2 %>:00</td>
+                    
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				
+                    </tr >
+                    
+                    <% hour = t.hour + 2 %> 
+                    <% min = 00 %>
+                    
+                <% end %>
+                
+                
+    	        <% (0..22).each do |num|%>
+      		        <tr >
+      		                        <td class="schedule-row-color" ><%= t.hour + num %>:00 - <%= t.hour + num %>:30</td>
                     
                     				<td class="schedule-row-color" width="200px"></td>
                     				<td class="schedule-row-color" width="200px"></td>
@@ -167,7 +217,7 @@
                     				
                     </tr >	
                     <tr >           
-                                    <td ><%=0 + num%>:30 - <%=1 + num%>:00</td>
+                                    <td ><%= t.hour + num%>:30 - <%= t.hour + 1 + num%>:00</td>
                     
                     				<td width="200px"></td>
                     				<td width="200px"></td>
@@ -175,7 +225,6 @@
                     				
                     </tr >
                 <% end %>
-    	
                 
                     
                     
