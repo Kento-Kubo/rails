@@ -22,7 +22,6 @@ class SessionsController < ApplicationController
   
   
 =begin
-
   def login
     @user = User.find_by(emails: params[:emails] ,password: params[:password])
     if @user 

@@ -44,6 +44,8 @@ Rails.application.routes.draw do
 
   resources :users
   post   'users/new' => 'users#new'
+  post   'users/new2' => 'users#new2'
+  post   'users/create2' => 'users#create2'
   root   'users#top'
 
   resources :teachers

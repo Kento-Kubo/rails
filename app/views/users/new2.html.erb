@@ -31,8 +31,9 @@
 					<p class="explain">facebookやtwitterアカウントを使うと、メールアドレス・生年月日・性別の入力が簡単になります。</p>
 			</div>
 			
+	
 	<%= form_for @user do |form| %>
-	    <%= form.radio_button :teacher, 1, :checked => false, class: 'teacher' %>
+	        <%= form.radio_button :teacher, 1, :checked => true, class: 'teacher' %>
 				<div class="signup_main_2_left">
 					
 					<div class="register name">
