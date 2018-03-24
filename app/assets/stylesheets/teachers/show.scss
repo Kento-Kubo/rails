@@ -112,16 +112,17 @@ header{
   text-align: center;
 
 }
-.dropmenu li a{
-  display: block;
-  margin: 0;
-  background: none;
-  color: #fff;
-  width:65px;
-  padding:0 10px;
-  transition:all 0.5s;
-  text-decoration: none;
-  margin-right:0px;
+
+
+.dropmenu li a {
+    display: block;
+    margin: 0;
+    background: none;
+    color: #fff;
+    padding: 0 20px;
+    transition: all 0.5s;
+    text-decoration: none;
+    margin-right: 0px;
 }
 
 .dropmenu li a:hover{
