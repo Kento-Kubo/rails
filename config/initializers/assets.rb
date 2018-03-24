@@ -11,6 +11,8 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( navbar.js )
 Rails.application.config.assets.precompile += %w( main/index.scss )
+Rails.application.config.assets.precompile += %w( main/index2.scss )
+
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss)
 Rails.application.config.assets.precompile += %w( users/top.scss )
 Rails.application.config.assets.precompile += %w( users/pass_forgot.scss )
@@ -24,6 +26,9 @@ Rails.application.config.assets.precompile += %w( users/show.scss )
 Rails.application.config.assets.precompile += %w( users/show.js )
 
 Rails.application.config.assets.precompile += %w( teachers/new.scss )
+Rails.application.config.assets.precompile += %w( teachers/show.scss )
+Rails.application.config.assets.precompile += %w( teachers/show.js )
+
 
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss )
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss )

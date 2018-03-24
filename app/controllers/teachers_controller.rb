@@ -1,16 +1,17 @@
 class TeachersController < ApplicationController
   def top
-      @teacher = Teacher.new
+      @teacher = User.new
       print current_teacher
       print "yay"
   end
   
   def index #show all teachers
-      @teacher = Teacher.all
+      @teacher = User.all
   end
   
   def show #show profile
-    
+    @teacher = Teacher.find(params[:id])
+    td = Date.today
   end
 
   def new #create registration form
@@ -23,9 +24,11 @@ class TeachersController < ApplicationController
   
   def create #save new teacher
     @teacher = Teacher.new(teacher_params)
+    @teacher.teacher = true
     if @teacher.save
+    session[:teacher_id]=@teacher.id
       flash[:notice] = "Your account is registered"
-      redirect_to root_path
+      redirect_to("/teachers/#{@teacher.id}")
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'new'
@@ -57,7 +60,7 @@ class TeachersController < ApplicationController
     
     def teacher_params
       params.require(:teacher).permit(:name, :email, :skype, :birthday,:sex, :teacher, :password,
-                                   :password_confirmation)
+                                   :password_confirmation,:hobby,:language,:profile)
     end
     
     def logged_in_teacher

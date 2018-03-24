@@ -3,12 +3,23 @@ class MainController < ApplicationController
   def index
    #データベースより全先生データ取得
     @users = User.all
-    @teachers = Teacher.all
+    @teachers = User.where(teacher: true)
     #年齢計算
     
     #
     
   end
+   def index2
+   #データベースより全先生データ取得
+    @users = User.all
+    #@teachers = Teacher.all
+    @teachers = User.where(teacher: true)
+    #年齢計算
+    
+    
+    
+  end
+ 
   
   def teacher_account_edit
     @user=find_by[id: params[:id]]

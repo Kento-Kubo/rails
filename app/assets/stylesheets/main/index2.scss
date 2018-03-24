@@ -1,0 +1,332 @@
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+  width:cover;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-search{
+  padding:0 0;
+  border: none;
+  margin:10px auto;
+  width:650px;
+  height:165px;
+  text-align:left;
+  background-color:rgba(34, 49, 52, 0.9);
+  border-radius: 3px  3px;
+  position:relative;
+  
+}
+
+  .searchbox{
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width:100px;
+  height: 40px;
+  
+  margin:10px 0 0 0;
+  box-sizing:border-box;
+  display:inline-block;
+}
+
+.input2{
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width: 300px;
+  height: 28px;
+}
+
+.select2{
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  width: 100px;
+  height: 30px;
+  margin-bottom:0px;
+  display:inline-block;
+}
+
+.input3{
+  background: #b5cd60;
+  border: none;
+  width: 160px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  position:absolute;
+  top:115px;
+  left:470px;
+}
+.input3:hover {
+  background: #16aa56;
+}
+.age{
+
+}
+
+.selectschedule{
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:10px;
+  position:absolute;
+  top:50px;
+  
+  
+}
+
+.day-chose{
+ margin-left:0px;
+  margin-left:10px;
+  margin-bottom:5px;
+}
+
+.time-chose1{
+ margin-top:5px;
+  margin-left:10px;
+  margin-bottom:5px;
+}
+.time-chose2{
+ margin-top:5px;
+  margin-left:10px;
+  margin-bottom:5px;
+}
+
+.header-left{
+  padding:0 15px;
+  }
+
+.container h1{
+  opacity:0.8;
+  font-size:50px;
+  letter-spacing:5px;
+}
+
+.btn{
+  padding:8px 24px;
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+
+}
+
+.btn:hover{
+  opacity:1
+}
+
+.top-wrapper{
+margin-top:85px;
+height:165px;
+}
+
+.result-number-left{
+padding-left:50px;
+width:30%;
+display:inline-block;
+float:left;
+}
+
+.number{
+font-size:20px;
+}
+.result-number-right{
+padding-left:0px;
+width:30%;
+display:inline-block;
+float:right;
+}
+
+.teacher-list-top{
+width:1000px;
+margin:0 auto;
+height:50px;
+
+}
+
+.sortby{
+display:inline-block;
+
+}
+.select3{
+  background-color: white;
+  border: solid rgba(34, 49, 52, 0.9) 1px;
+  border-radius: 3px  3px;
+  color: rgba(34, 49, 52, 0.9);
+  width: 135px;
+  height: 30px;
+  display:inline-block;
+  box-sizing:border-box;
+}
+
+/*検索結果開始------------------------------------------------------------------------------*/
+
+.main-part{
+width:700px;
+ margin:0px auto 100px;
+ border:solid rgba(34, 49, 52, 0.1) 1px;
+ 
+ }
+		
+.Profile-photo{
+width:130px;
+}
+
+.teacher-info{
+text-align:center;
+ width:200px;
+}
+
+.blank{
+text-align:center;
+ width:74px;
+ box-sizing:border-box;
+}
+
+
+.scrolled{
+width:100%;
+height:450px;
+overflow-y:scroll;
+}
+.scrolled-table tr{
+text-align:center;
+height:30px;
+}
+
+.scrolled-table td{
+font-size:14px
+}
+
+.fixed{
+width:100%;
+}
+
+.fixed-table{
+width:100%;
+margin:0 0;
+padding:0 0;
+}
+
+
+
+.schedule-row-color{
+background-color:rgba(135, 206, 250, 0.2);
+
+
+}
+
+/*検索結果一覧終了--------------------------------------------------------------------------*/
+/*検索条件一覧開始--------------------------------------------------------------------------*/
+
+.container-for-searching-condition{
+ border:solid rgba(34, 49, 52, 0.1) 1px;
+ height:500px;
+}
+
+.searching-condition1{
+
+margin-top:5px;
+margin-left:0px;
+margin-bottom:1px;
+}
+
+.searching-condition2{
+margin-top:5px;
+margin-left:10px;
+margin-bottom:2px;
+}
+
+.searching-condition3{
+margin-top:5px;
+margin-left:10px;
+margin-bottom:2px;
+}
+
+/*検索条件一覧終了--------------------------------------------------------------------------*/
+/*広告スペース開始--------------------------------------------------------------------------*/
+
+.container-for-Advertisement{
+ border:solid rgba(34, 49, 52, 0.1) 1px;
+ height:500px;
+ margin-top:10px;
+}
+
+.Advertisement{
+margin-top:5px;
+margin-left:0px;
+margin-bottom:1px;
+color:rgba(34, 49, 52, 0.6) 1px;
+}
+
+
+/*広告スペース終了--------------------------------------------------------------------------*/
+/*ページ番号開始----------------------------------------------------------------------------*/
+
+.teacher-list-bottom{
+width:100%;
+margin:0 auto;
+height:20px;
+
+position:absolute;
+top:3340px;
+
+}
+
+.nextpages{
+
+text-align:center;
+}
+
+.pagenumber{
+text-decoration:underline;
+}
+/*ページ番号終了----------------------------------------------------------------------------*/
+/*back to top開始---------------------------------------------------------------------------*/
+
+.back-to-top{
+width:100%;
+height:50px;
+background-color:rgba(34, 49, 52, 0.6);
+  position:absolute;
+  top:3400px;
+  text-align:center;
+  line-height:50px;
+    color:white;
+    display:block;
+
+  transition:all 0.5s;
+	
+}
+.back-to-top:hover{
+  background-color:rgba(34, 49, 52, 0.4);
+
+}
+
+.back-to-top-word{
+ color:white;
+ display:block;
+}
+/*back to top終了---------------------------------------------------------------------------*/
+/*<フッター開始（共通：変えないこと）--------------------------------------------------------->*/
+footer{
+  background-color:rgba(34, 49, 52, 0.9);
+  height: 270px;
+  width:100%;
+  color:white;
+  position:absolute;
+  top:3450px;
+  
+}
+  
+/*<!フッター終了（共通：変えないこと）------------------------------------->*/

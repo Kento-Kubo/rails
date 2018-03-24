@@ -129,21 +129,28 @@
 					
                     
                     <div class="each-teacher-center">
-                        <%= link_to teacher.name, "/teachers/show", class: "introduction name" %>
-                        <p class="introduction age"><span>Age&nbsp;:</span>26</p> <!--保留、要計算 -->
+                        <%= link_to teacher.name, "/teachers/#{teacher.id}/show", class: "introduction name" %>
+                        <p class="introduction age"><span>Age&nbsp;:</span><%= Date.today.year - teacher.birthday.year %></p> <!--保留、要計算 -->
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <p class="introduction sex"><span>sex&nbsp;:</span><%= teacher.sex %></p>
+                       <p class="introduction sex"><span>sex&nbsp;:</span>
+                       <% if teacher.sex ==nil %>
+                         Male
+                       <% else %>
+                         Female
+                       <% end %>
+                       </p>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <p class="introduction speak"><span>Speak&nbsp;:</span>Japanese (Osaka)</p>  <!--保留、要計算 -->
-                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留、要計算 -->
+                       <p class="introduction speak"><span>Speak&nbsp;:</span>
+                       <% if teacher.language == nil %>
+                         <%= "" %>
+                       <% else %>
+                        <%= teacher.language %>
+                        <% end %>
+                       </p>  
+                       <p class="introduction hobby"><span>Hobby&nbsp;&nbsp;:</span>Snowboard, Camera, Travel</p>  <!--保留-->
+
                        <p class="intro">Introduction&nbsp;:</p>
-                       <p class="free">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
-                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. </p>
+                       <p class="free"><%=teacher.profile %> </p>
                     </div>
                     
                     <div class="each-teacher-right">
@@ -292,7 +299,7 @@
             
             <div class="main-right">
             
-            	<div class="container-for-searching-condition">
+            	<!--<div class="container-for-searching-condition">
                 	<p class="searching-condition1">Searching condition</p>
                 	
                 	<p class="searching-condition2"><span>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span>26<span>&nbsp;years old</span></p>
@@ -326,7 +333,7 @@
 						<input type="checkbox" name="time" value="15">21:00～24:00<br>
 						<input type="checkbox" name="time" value="16">Anytime
 					</p>
-                </div>
+                </div>-->
                 
                 <div class="container-for-Advertisement">
                 	

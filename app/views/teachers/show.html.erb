@@ -1,0 +1,1176 @@
+<% content_for :specific_css_js do %>
+	<%= stylesheet_link_tag "teachers/show", :media => "all" %>     
+	<%= javascript_include_tag 'teachers/show' %>
+<% end %>  
+
+<!--main開始------------------------------------------------------------------------------------->   
+		<div class="main" >
+			
+				<!--profile開始------------------------------------------------------------------>   
+				<div class="profile" >
+					
+					<div class="profile-left">
+					
+						<img class="profile-photo" src="IMG_1920.JPG" id="profile-photo-show">
+					
+					</div>
+		
+					<div class="profile-right">
+						<div class="profile-right-box">
+							
+							<a class="box users" href="#review">						
+								<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons with&nbsp;&nbsp;</span>90<span class="lessons">&nbsp;&nbsp;students</span><i class="fa fa-users fa-2x"></i></p>
+							</a>
+                    		
+                    		<a class="box comments" href="#schedule">
+                    			<p class="hour-USD"><span class="lessons">Cost for 1 hour &nbsp;&nbsp;</span>7.1<span class="lessons">&nbsp;&nbsp;USD</span><i class="fa fa-comments fa-2x"></i></p>
+                    		</a>
+                    		<a class="box clock" href="#schedule">
+                    			<p class="min-USD">
+                    				<span class="lessons">Trial (20-30 min)&nbsp;&nbsp;</span>
+                    				3.0
+                    				<span class="lessons">&nbsp;&nbsp;USD</span>
+                    				<i class="fa fa-clock-o fa-2x"></i>
+                    			</p>
+							</a>
+
+                    		<a class="box rating" href="#review">
+                    			<span class="lessons">Evaluation by students</span>
+                    			<p class="evaluation">
+                    			
+                    				4.1
+                       			</p>
+							</a>		
+							
+							 <div class="box2 rating2">
+                    			<span class="lessons1">4.1 out of 5 stars</span>
+                    			
+                    				<div class="star">
+                    			    	<p class="evaluation5">5.0</p><div class="outside"><div class="inside5"></div></div><p class="evaluation5_right"><span =class"percentage5">51</span>%</p>
+                    				</div>
+                    				
+                    				<div class="star">
+                    			    	<p class="evaluation4">4.0</p><div class="outside"><div class="inside4"></div></div><p class="evaluation4_right"><span =class"percentage5">28</span>%</p>
+                    				</div>
+
+                    				<div class="star">
+                    			    	<p class="evaluation3">3.0</p><div class="outside"><div class="inside3"></div></div><p class="evaluation3_right"><span =class"percentage5">4</span>%</p>
+                    				</div>
+                    				
+                    				<div class="star">
+                    			    	<p class="evaluation2">2.0</p><div class="outside"><div class="inside2"></div></div><p class="evaluation2_right"><span =class"percentage5">7</span>%</p>
+                    				</div>
+                    				
+                    				<div class="star">
+                    			    	<p class="evaluation1">1.0</p><div class="outside"><div class="inside1"></div></div><p class="evaluation1_right"><span =class"percentage5">10</span>%</p>
+                    				</div>         
+                    				
+                    				           				
+                    				           				                    				                    				                   			
+                    			<!--progress利用（不採用）
+                    			<p class="star">
+                    			                    				<a class="evaluation5" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">5.0</a>
+                    				<label ><progress value="51" max="100" class="progress"><span>51</span>%</progress>（51%）	</label >
+                    			</p>
+                    			
+                    			<p class="star">
+                    				<a class="evaluation4" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">4.0</a>
+                    				<label ><progress value="28" max="100" class="progress"><span>28</span>%</progress>（28%）	</label >
+                    			</p>
+                    			
+                       			<p class="star">
+                    				<a class="evaluation3" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">3.0</a>
+                    				<label ><progress value="4" max="100" class="progress"><span>4</span>%</progress>（4%）	</label >
+                    			</p>
+                    			
+                    			<p class="star">
+                    				<a class="evaluation2" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">2.0</a>
+                    				<label ><progress value="7" max="100" class="progress"><span>7</span>%</progress>（7%）	</label >
+                    			</p>
+   
+                    			<p class="star">
+                    				<a class="evaluation1" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">1.0</a>
+                    				<label ><progress value="10" max="100" class="progress"><span>10</span>%</progress>（10%）	</label >
+                    			</p>   -->    
+                    						               			
+							</div>						
+							
+							<div class="box3">
+									I LOVE ANIME!!! LET'S TALK!!!
+                    		</div>
+                    <!--<div class="exchange-rate">
+                    	<p class="exchange-rate-title">EXCAHGE RATE</p>
+                    	<p class="exchange-rate-explain">以下の交換レートを用いて計算しています。</p>
+                    
+                    </div>-->
+						</div>
+					</div>
+		
+				</div>
+				<!--profile終了------------------------------------------------------------------>   
+				
+				<!--profile phot modal開始------------------------------------------------------->   
+				<div class="profile-photo-modal-wrapper" id="profile-photo-modal">
+    				<div class="modal-photo">
+    				 	<div class="close-modal">
+        					<i class="fa fa-2x fa-times"></i>
+      					</div>
+      					
+      					<img class="profile-photo-modal" src="IMG_1920.JPG">
+      					
+    				</div>
+				</div>
+				
+					
+
+
+				<!--profile phot modal終了------------------------------------------------------->   
+				<!--Introduction開始------------------------------------------------------------->   
+				<div class="introduction">
+
+							<p class="teacher-name"><%=@teacher.name%></p>
+							
+							<table class="table-introduction">
+  								<tr>
+    								<td class="title">AGE</td>
+    								<td><%=Date.today.year-@teacher.birthday.year%></td>
+    							
+  								</tr>
+  								<tr>
+    								<td class="title">SEX</td>
+    								<td><% if @teacher.sex %>
+            							 male
+            							<% else %>
+            							 female
+            							<% end%></td>
+  								</tr>
+  								<tr>
+    								<td class="title">LANGUAGE</td>
+    								<td><%=@teacher.language%></td>
+  								</tr>
+  								<tr>
+    								<td class="title">HOBBY</td>
+    								<td><%=@teacher.hobby%></td>
+  								</tr>  
+							</table>
+
+					<hr width=95%>
+					<p class="Introduction-title">INTRODUCTION</p>
+						<p class="Introduction-contentes"><%=@teacher.profile%></p>
+                    <div id="schedule"></div> <!--マーキング-->
+					<br>
+					<br>
+					<br>
+					<br>
+
+
+				</div>
+				<!--Introduction終了------------------------------------------------------------->
+		
+						<hr class="line" width=95%>
+				<!--スケジュール開始------------------------------------------------------------->   
+				<div class="schedule">
+					<p class="schedule-title">
+						SCHEDULE &nbsp;&nbsp;&nbsp;&nbsp; (All schedules in the table blow are shown in your time-zone.)
+					</p>
+					<div class="schedule-timeselect">
+						<p class="time-all" id="time-all">all schedule</p>
+						<p class="time1-btn" id="time1">0:00 - 6:00</p>
+						<p class="time2-btn" id="time2">6:00 - 12:00</p>
+						<p class="time3-btn" id="time3">12:00 - 18:00</p>
+						<p class="time4-btn" id="time4">18:00 - 24:00</p>
+
+								
+					</div>
+		
+					<div class="schedule-table">
+						<table class="table-schedule"  style="border-color:rgba(34, 49, 52, 0.3)" rules="all">
+  								<tr>
+    								<td class="title-schedule-left lefttop"></td>
+    								<% (1..7).each do |num|%>
+    								<td class="title-schedule"><%=Date.today.day+num%></t>
+    								<% end %>
+    	
+  								</tr>
+  								<tr class="time1">
+  								    <%　time = Time.local(2015,3,14,00,00,00) %>
+    								<td class="title-schedule-left"><%=Time.local(2000,1,01,0,00,00).strftime("%H:%M")%></td>
+    								<td></td>
+    								<td></td>
+    								<td><p class="reserved">reserved</p></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>
+  								<tr class="time1">
+    								<td class="title-schedule-left schedule-row-color">0:30-1:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>
+  								<tr class="time1">
+    								<td class="title-schedule-left">1:00-1:30</td>
+    								<td></td>
+    								<td></td>
+    								<td><a class="available">available</a></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left schedule-row-color">1:30-2:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left">2:00-2:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left schedule-row-color">2:30-3:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left">3:00-3:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left schedule-row-color">3:30-4:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left">4:00-4:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left schedule-row-color">4:30-5:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left">5:00-5:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time1">
+    								<td class="title-schedule-left schedule-row-color">5:30-6:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left">6:00-6:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left schedule-row-color">6:30-7:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left">7:00-7:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left schedule-row-color">7:30-8:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left">8:00-8:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left schedule-row-color">8:30-9:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>    		
+  								<tr class="time2">
+    								<td class="title-schedule-left">9:00-9:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left schedule-row-color">9:30-10:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>    			
+  								<tr class="time2">
+    								<td class="title-schedule-left">10:00-10:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left schedule-row-color">10:30-11:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>    								
+  								<tr class="time2">
+    								<td class="title-schedule-left">11:00-11:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time2">
+    								<td class="title-schedule-left schedule-row-color">11:30-12:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left">12:00-12:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left schedule-row-color">12:30-13:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								
+  								<tr class="time3">
+    								<td class="title-schedule-left">13:00-13:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left schedule-row-color">13:30-14:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left">14:00-14:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left schedule-row-color">14:30-15:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left">15:00-15:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left schedule-row-color">15:30-16:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left">16:00-16:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left schedule-row-color">16:30-17:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left">17:00-17:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time3">
+    								<td class="title-schedule-left schedule-row-color">17:30-18:00</td>
+     								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time4">
+    								<td class="title-schedule-left">18:00-18:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+   								<tr class="time4">
+    								<td class="title-schedule-left schedule-row-color">18:30-19:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time4">
+    								<td class="title-schedule-left">19:00-19:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+  								<tr class="time4">
+    								<td class="title-schedule-left schedule-row-color">19:30-20:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr>  
+  								<tr class="time4">
+    								<td class="title-schedule-left">20:00-20:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+   								<tr class="time4">
+    								<td class="title-schedule-left schedule-row-color">20:30-21:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr> 								  								
+  								<tr class="time4">
+    								<td class="title-schedule-left">21:00-21:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+   								<tr class="time4">
+    								<td class="title-schedule-left schedule-row-color">21:30-22:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr> 								  								
+  								<tr class="time4">
+    								<td class="title-schedule-left">22:00-22:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+   								<tr class="time4">
+    								<td class="title-schedule-left schedule-row-color">22:30-23:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr> 								  								
+  								<tr class="time4">
+    								<td class="title-schedule-left">23:00-23:30</td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+    								<td></td>
+  								</tr>  
+   								<tr class="time4">
+    								<td class="title-schedule-left schedule-row-color">23:30-24:00</td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+    								<td class="schedule-row-color"></td>
+  								</tr> 								  								
+  								
+  								  								  								
+							</table>
+							<div id="review"></div> <!--マーキング-->
+					</div>		
+		
+				</div>
+				<!--スケジュール終了------------------------------------------------------------->
+					<hr class="line" width=95%>		
+				<!--レビュー開始----------------------------------------------------------------->   
+				<div class="review">
+					<p class="reviw-title">
+						REVIEWS
+					</p>
+					
+				  <div class="review-unit-1">
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>
+															
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>
+					
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>
+					
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>					
+					
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>					
+					
+				  </div>
+				  
+				  <div class="review-unit-2">
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>					
+		
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>					
+		
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>					
+		
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>					
+		
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>
+					
+				  </div>
+				  
+				  
+				   <div class="review-unit-3">
+				  
+				  					
+		
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
+							<!--<div class="wrap">　 ←【保留】
+  								<span class="rate rate0"></span>
+  								<span class="rate rate1"></span>
+   								<span class="rate rate1-5"></span>
+  								<span class="rate rate2"></span>
+  								<span class="rate rate2-5"></span>
+   								<span class="rate rate3"></span>
+    							<span class="rate rate3-5"></span>
+    							<span class="rate rate4"></span>
+    							<span class="rate rate4-5"></span>
+    							<span class="rate rate5"></span>
+							</div>---> 
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at 2018.2.4
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
+							I don't like this guy.I don't like this guy.I don't like this guy.
+							
+						</div>						
+					
+					</div>					
+		
+				  </div>
+				
+					
+					<div class="read-more">
+						Read more reviews
+					</div>
+				</div>
+				<!--レビュー終了-----------------------------------------------------------------> 
+		
+
+			
+		</div>
+<!--main終了------------------------------------------------------------------------------------->   
+
+<!--トップに戻る開始----------------------------------------------------------------------------->
+		
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+
+<!--トップに戻る終了（共通：変えないこと）------------------------------------------------------>
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer id="footer">
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+
+		<script src="each_teacher.js"></script>
+    </body>
+    </html>
