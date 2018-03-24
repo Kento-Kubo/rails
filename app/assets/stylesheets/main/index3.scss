@@ -172,58 +172,298 @@ display:inline-block;
 /*検索結果開始------------------------------------------------------------------------------*/
 
 .main-part{
-width:700px;
- margin:0px auto 100px;
- border:solid rgba(34, 49, 52, 0.1) 1px;
- 
- }
-		
+width:100%;
+height:3050px;
+margin:0 0 0 0;
+padding:0 0 0 0;
+float:left;
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+position:relative;
+}
+
+.main-left{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:79.6%;
+height:3040px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+}
+
+.main-right{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:17%;
+height:3040px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:1060px;
+}
+
+.each-teacher-main{
+border:solid rgba(34, 49, 52, 0.1) 1px;
+display:inline-block;
+width:1000px;
+height:300px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 5px 50px;
+float:left;
+position:relative;
+}
+
 .Profile-photo{
-width:130px;
+font-size:30px;
+border-radius: 200px  200px;
+margin-top:10px;
+
 }
 
-.teacher-info{
+.evaluation{
+
+margin-top:0px;
+font-size:30px;
+margin-bottom:0;
+}
+
+.lastlogin{
+
+margin-top:0px;
+margin-bottom:0;
+
+}
+
+.input4{
+  background: #b5cd60;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top:5px;
+  
+}
+.input4:hover {
+  background: #16aa56;
+}
+
+.fa-heart{
+  font-size:10px;
+  margin-right:5px;
+}
+
+.each-teacher-left{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:200px;
+height:300px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:0;
 text-align:center;
- width:200px;
 }
 
-.blank{
+.each-teacher-center{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:600px;
+height:200px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:200px;
+float:left;
+
+}
+
+.each-teacher-right{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:190px;
+height:200px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:0;
+left:810px;
 text-align:center;
- width:85px;
- box-sizing:border-box;
 }
 
-
-.scrolled{
-width:100%;
-height:450px;
-overflow-y:scroll;
-}
-.scrolled-table tr{
+.each-teacher-schedule{
+border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
+display:inline-block;
+width:800px;
+height:100px;
+box-sizing:border-box;
+padding:0 0 0 0;
+margin:0 0 0 0;
+position:absolute;
+top:200px;
+left:200px;
 text-align:center;
-height:30px;
+
 }
 
-.scrolled-table td{
-font-size:14px
+.introduction{
+margin:3px 0;
 }
 
-.fixed{
+.name{
+color:#3b5998;
+font-size:30px;
+margin-top:15px;
 width:100%;
+display:block;
 }
 
-.fixed-table{
-width:100%;
-margin:0 0;
+
+.age{
+display:inline-block;
+margin-left:10px;
+}
+
+.sex{
+display:inline-block;
+}
+
+.speak{
+display:inline-block;
+}
+
+.hobby{
+margin-left:10px;
+margin-bottom:3px;
+}
+
+.intro{
+margin-top:2px;
+margin-left:10px;
+margin-bottom:4px;
+
+}
+
+.free{
+margin-left:17px;
+margin-top:0px;
+overflow: hidden;
+height:70px;
+width:590px;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+text-overflow: hidden;
+
+}
+
+.Num-lesson{
+margin-top:15px;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.lessons{
+font-size:15px;
+}
+.hour-OWN{
+margin-top:0;
+font-size:15px;
+}
+
+.hour-USD{
+margin-top:0;
+margin-bottom:0;
+font-size:20px;
+}
+
+.min-OWN{
+margin-top:0;
+font-size:15px;
+}
+
+.min-USD{
+margin-top:0;
+margin-bottom:0;
+font-size:20px;
+}
+
+.sticky_table{
+position: relative;
+width:200px;
+height:74px;
+border-collapse: collapse;
+border:solid black 1px;
+}
+
+sticky_table tr{
+display:brock;
+box-sizing:border-box;
+border-collapse: collapse;
+border:solid black 1px;
+}
+
+scroll thead tr th{
+
+border:solid black 1px;
+font-size:15px;
+padding:5px 5px;
+}
+
+tr{
+
+}
+
+.scroll thead tr th{
+width:110px;
 padding:0 0;
+margin:0 0;
+
+}
+.scroll{
+  display: block;
+  overflow-x:scroll;
+  width: 590px;
+  height: 93px;
+  border:collapllapse;
+  position:absolute;
+  top:0;
+  left:200px; 
+  table-layout:fixed;
+  white-space:nowrap;
+  
+
 }
 
+.sticky{
+  
+  width: 200px;
+  height: 60px;
+  border-collapse: collapse;
+  font-size: 20px;
+  margin-left:0;
+  border:black;
+}
 
+.schedule{
+text-decoration:underline;
+}
 
-.schedule-row-color{
-background-color:rgba(135, 206, 250, 0.2);
-
-
+.title{
+width:120px;
+}
+.your-timezone{
+ font-size:13px;
 }
 
 /*検索結果一覧終了--------------------------------------------------------------------------*/
