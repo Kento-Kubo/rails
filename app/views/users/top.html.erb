@@ -139,14 +139,24 @@
   		<div id="login-form">
 			<h2>studentログイン</h2>
 			
-			<%= form_for(:session, url: login_path) do |f| %>
-		    	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>
-		      	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>
+			<!--<%= form_for(:session, url: login_student_path) do |f| %>-->
+		 <!--   	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>-->
+		 <!--     	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>-->
+			<!--	<div class="idpass-forget"> -->
+  	<!--				<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
+  	<!--			</div>-->
+		 <!--     	<%= f.submit "ログイン", class:"submit-btn" %>-->
+   <!--			<% end %>-->
+   			
+   			<%= form_tag(login_student_path, method: "post") do %>
+  				<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>
+				<%= password_field_tag :password,nil,{ class:"form-control", placeholder: "パスワード"} %>
 				<div class="idpass-forget"> 
   					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
   				</div>
-		      	<%= f.submit "ログイン", class:"submit-btn" %>
-   			<% end %>
+  				<%= submit_tag "ログイン", class:"submit-btn"%>
+			<% end %>
+			
   		</div>
 	</div>
 </div>
@@ -162,14 +172,24 @@
   		<div id="login-form">
 			<h2>teacherログイン</h2>
 			
-			<%= form_for(:session, url: login_path) do |f| %>
-		    	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>
-		      	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>
+			<!--<%= form_for(:session, url: login_teacher_path) do |f| %>-->
+		 <!--   	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>-->
+		 <!--     	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>-->
+			<!--	<div class="idpass-forget"> -->
+  	<!--				<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
+  	<!--			</div>-->
+		 <!--     	<%= f.submit "ログイン", class:"submit-btn" %>-->
+   <!--			<% end %>-->
+   
+   
+   		<%= form_tag(login_teacher_path, method: "post") do %>
+  				<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>
+				<%= password_field_tag :password,nil,{ class:"form-control", placeholder: "パスワード"} %>
 				<div class="idpass-forget"> 
   					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
   				</div>
-		      	<%= f.submit "ログイン", class:"submit-btn" %>
-   			<% end %>
+  				<%= submit_tag "ログイン", class:"submit-btn"%>
+			<% end %>
   		</div>
 	</div>
 </div>

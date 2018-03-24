@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
 
-  get 'sessions/new'
+  # get 'sessions/new'
 
   # get 'main/index/:id' => "main#index"
   get 'main/index' => "main#index"
@@ -39,7 +39,8 @@ Rails.application.routes.draw do
   # get 'logout' => 'users#logout'
   
   get    '/login' => 'sessions#new'
-  post   '/login' => 'sessions#create'
+  post   '/login_student' => 'sessions#create_student'
+  post   '/login_teacher' => 'sessions#create_teacher'
   delete '/logout' => 'sessions#destroy'
 
   resources :users

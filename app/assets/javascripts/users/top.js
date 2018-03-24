@@ -11,7 +11,8 @@ $(function() {　//←消さないこと
   })
   
   $('.close-model').click(function(){
-    $('#login-model').fadeOut();
+    $('#login-model-teacher').fadeOut();
+    $('#login-model-student').fadeOut();
   })
 /*
   if($('#login-model').is(':hidden')){

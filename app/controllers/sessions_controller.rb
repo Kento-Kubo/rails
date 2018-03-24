@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
   
   def create_student
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in (user,false)
+    user = User.find_by(email: params[:email].downcase)
+    if user && user.authenticate(params[:password])
+      log_in(user,0)
       flash[:notice] = "Login succeeded"
       redirect_to('/main/index')
     else
@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
   end
   
   def create_teacher
-    user = Teacher.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in (user,true)
+    user = Teacher.find_by(email: params[:email].downcase)
+    if user && user.authenticate(params[:password])
+      log_in(user,1)
       flash[:notice] = "Login succeeded"
       redirect_to('/main/index')
     else
