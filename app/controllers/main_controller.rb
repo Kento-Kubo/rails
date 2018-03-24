@@ -25,7 +25,7 @@ class MainController < ApplicationController
     @user=find_by[id: params[:id]]
   end
  
-      before_action :authenticate_user
+      # before_action :authenticate_user
 
        def student_account_edit
         @user = User.find_by(id:session[:user_id])

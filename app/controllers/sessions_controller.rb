@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
   def new
   end
-  def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in user
+  
+  def create_student
+    user = User.find_by(email: params[:email].downcase)
+    if user && user.authenticate(params[:password])
+      log_in(user,0)
       flash[:notice] = "Login succeeded"
       redirect_to('/main/index')
     else
@@ -12,6 +13,19 @@ class SessionsController < ApplicationController
       redirect_to root_url,:notice => "Invalid login. Try again" 
     end
   end
+  
+  def create_teacher
+    user = Teacher.find_by(email: params[:email].downcase)
+    if user && user.authenticate(params[:password])
+      log_in(user,1)
+      flash[:notice] = "Login succeeded"
+      redirect_to('/main/index')
+    else
+      # Create an error message.
+      redirect_to root_url,:notice => "Invalid login. Try again" 
+    end
+  end
+  
   def destroy
     log_out
     redirect_to root_url
