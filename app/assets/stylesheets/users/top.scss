@@ -35,7 +35,8 @@ a {
   display:inline-block;
   opacity:0.8;
   border-radius:4px;
-
+  margin-top: 10px;
+  font-size:20px;
 }
 
 
@@ -48,6 +49,10 @@ a {
 .sign-up{
   background-color:#239b76;
 }
+
+.log-in{
+  background-color:#239b76;
+ }
 
 .facebook{
   background-color:#3b5998;
@@ -68,6 +73,7 @@ padding-top:0;
 color:white;
 height:65px;
 }
+
 
 .signup-model-wrapper {
   display:none;

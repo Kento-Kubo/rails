@@ -27,7 +27,7 @@
 			<h1>Teach Japanese</h1>
 			
 			<div class="btn-wrapper">
-				<a class="btn login" id="login-show-teacher">Login</a>
+				<a class="btn log-in" id="login-show-teacher">Login</a>
 			</div>
 			<div class="btn-wrapper">
 				<a class="btn sign-up" id="signup-show-teacher">Sign up</a>
@@ -65,7 +65,7 @@
     <!--                 <input type="submit" value="新規登録">-->
 				<!--<% end %>-->
 				
-				<%= form_for @teacher ,url: new_teacher_path do |form| %>-->
+				<%= form_for @teacher ,url: new_teacher_path do |form| %>
   					<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
  					<%= form.submit "メール送信", class:"submit-btn"%>
 				<% end %>
