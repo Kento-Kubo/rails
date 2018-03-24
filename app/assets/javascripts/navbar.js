@@ -2,13 +2,13 @@ $(function() {　//←消さないこと
   
 //ログインモーダル表示コード開始---------------------------------------------------------
 
-  $('#login-show').click(function(){
-    $('#login-model').fadeIn();
-  })
+  // $('#login-show').click(function(){
+  //   $('#login-model').fadeIn();
+  // })
   	  
-  $('.close-model').click(function(){
-    $('#login-model').fadeOut();
-  })
+  // $('.close-model').click(function(){
+  //   $('#login-model').fadeOut();
+  // })
 /*
   if($('#login-model').is(':hidden')){
         

@@ -119,6 +119,55 @@
 		</div>
 	</div>
 <!--先生サインアップモーダル終了---------------------------------------------------->	
+
+
+<!--student ログインモーダル開始------------------------------------------------------>   
+<div class="login-model-wrapper" id="login-model-student">
+	<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
+	<div class="model">
+	 	<div class="close-model">
+			<i class="fa fa-2x fa-times"></i>
+  		</div>
+  	
+  		<div id="login-form">
+			<h2>studentログイン</h2>
+			
+			<%= form_for(:session, url: login_path) do |f| %>
+		    	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>
+		      	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>
+				<div class="idpass-forget"> 
+  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
+  				</div>
+		      	<%= f.submit "ログイン", class:"submit-btn" %>
+   			<% end %>
+  		</div>
+	</div>
+</div>
+	
+<!--teacher ログインモーダル開始------------------------------------------------------>   
+<div class="login-model-wrapper" id="login-model-teacher">
+	<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
+	<div class="model">
+	 	<div class="close-model">
+			<i class="fa fa-2x fa-times"></i>
+  		</div>
+  	
+  		<div id="login-form">
+			<h2>teacherログイン</h2>
+			
+			<%= form_for(:session, url: login_path) do |f| %>
+		    	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>
+		      	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>
+				<div class="idpass-forget"> 
+  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
+  				</div>
+		      	<%= f.submit "ログイン", class:"submit-btn" %>
+   			<% end %>
+  		</div>
+	</div>
+</div>
+	
+
 	<div class="lesson-wrapper"></div>
 	<div class="message-wrapper"></div>
 	
