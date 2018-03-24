@@ -1,16 +1,16 @@
 class TeachersController < ApplicationController
+  before_action :logged_in_teacher, only: [:edit, :update]
+  before_action :correct_teacher,   only: [:edit, :update]
+  before_action :find_teacher, only: [:show, :edit, :update, :destroy]
   def top
-      @teacher = User.new
-      print current_teacher
-      print "yay"
+      @teacher = Teacher.new
   end
   
   def index #show all teachers
-      @teacher = User.all
+      @teacher = Teacher.all
   end
   
   def show #show profile
-    @teacher = Teacher.find(params[:id])
     td = Date.today
   end
 
@@ -19,7 +19,6 @@ class TeachersController < ApplicationController
   end
 
   def edit #edit profile
-    @teacher = Teacher.find_by(id:session[:teacher_id])
   end
   
   def create #save new teacher
@@ -27,7 +26,7 @@ class TeachersController < ApplicationController
     @teacher.teacher = true
     if @teacher.save
     flash[:notice] = "Your account is registered"
-      redirect_to root_path
+    redirect_to teachers_top_path
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'new'
@@ -35,10 +34,6 @@ class TeachersController < ApplicationController
   end
   
   def update #save edit profile
-      @teacher = Teacher.find(params[:id])
-
-        
-        
     if @teacher.update(teacher_params)
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to teacher_path
