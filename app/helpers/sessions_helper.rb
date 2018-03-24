@@ -1,11 +1,7 @@
 module SessionsHelper
-  def log_in(user,teacher)
+  def log_in(user,true_or_false)
     session[:user_id] = user.id
-    if teacher
-      session[:teacher] = true
-    else
-      session[:teacher]=false
-    end
+    session[:teacher] = true_or_false
   end
 
   def current_user

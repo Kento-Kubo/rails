@@ -46,29 +46,29 @@
 		</div>
 	</div>
 	
-	<div class="top-wrapper-2">
-		<div class="container">
+	<!--<div class="top-wrapper-2">-->
+	<!--	<div class="container">-->
 		
-			<h1>Teach Japanese</h1>
+	<!--		<h1>Teach Japanese</h1>-->
 			
-			<div class="btn-wrapper">
-				<a class="btn login" id="login-show-teacher">Login</a>
-			</div>
-			<div class="btn-wrapper">
-				<a class="btn sign-up" id="signup-show-teacher">Sign up</a>
+	<!--		<div class="btn-wrapper">-->
+	<!--			<a class="btn login" id="login-show-teacher">Login</a>-->
+	<!--		</div>-->
+	<!--		<div class="btn-wrapper">-->
+	<!--			<a class="btn sign-up" id="signup-show-teacher">Sign up</a>-->
 				
 				<!--<p>or sign up with</p>
 				
-				<a class="btn facebook">
-					<span class="fa fa-facebook"></span>facebook
-				</a>
+	<!--			<a class="btn facebook">-->
+	<!--				<span class="fa fa-facebook"></span>facebook-->
+	<!--			</a>-->
 				
-				<a class="btn twitter">
-				<span class="fa fa-twitter"></span>twitter
-				</a>-->
-			</div>
-		</div>
-	</div>
+	<!--			<a class="btn twitter">-->
+	<!--			<span class="fa fa-twitter"></span>twitter-->
+	<!--			</a>-->-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--</div>-->
 <!--トップ終了-------------------------------------------------------------------------------->	
 
 <!--生徒サインアップモーダル開始---------------------------------------------------->
@@ -99,22 +99,22 @@
 <!--生徒サインアップモーダル終了---------------------------------------------------->	
 <!--先生サインアップモーダル開始---------------------------------------------------->
 
-	<div class="signup-model-wrapper" id="signup-model-teacher">
-		<div class="model">
-			<div class="close-model">
-    			<i class="fa fa-2x fa-times"></i>
-  			</div>
+<!--	<div class="signup-model-wrapper" id="signup-model-teacher">-->
+<!--		<div class="model">-->
+<!--			<div class="close-model">-->
+<!--    			<i class="fa fa-2x fa-times"></i>-->
+<!--  			</div>-->
   				
-  			<div id="signup-form">
-				<h2>先生として新規登録</h2>
-				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
+<!--  			<div id="signup-form">-->
+<!--				<h2>先生として新規登録</h2>-->
+<!--				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>-->
 				
-                <%= form_tag ("/users/new2") do %>
+<!--                <%= form_tag ("/users/new2") do %>-->
 	  			
  					
- 					 <input name="email" value="<%= @user.email %>">
-                     <input type="submit" value="新規登録">
-				<% end %>
+<!-- 					 <input name="email" value="<%= @user.email %>">-->
+<!--                     <input type="submit" value="新規登録">-->
+<!--				<% end %>-->
 
 				
 				<!--<%= form_tag(new_user_path, method: "post") do %>-->
@@ -122,9 +122,9 @@
   		<!--			<%= submit_tag "メール送信", class:"submit-btn"%>-->
 				<!--<% end %>-->
 				
-  			</div>
-		</div>
-	</div>
+<!--  			</div>-->
+<!--		</div>-->
+<!--	</div>-->
 <!--先生サインアップモーダル終了---------------------------------------------------->	
 
 
@@ -162,15 +162,15 @@
 </div>
 	
 <!--teacher ログインモーダル開始------------------------------------------------------>   
-<div class="login-model-wrapper" id="login-model-teacher">
+<!--<div class="login-model-wrapper" id="login-model-teacher">-->
 	<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
-	<div class="model">
-	 	<div class="close-model">
-			<i class="fa fa-2x fa-times"></i>
-  		</div>
+<!--	<div class="model">-->
+<!--	 	<div class="close-model">-->
+<!--			<i class="fa fa-2x fa-times"></i>-->
+<!--  		</div>-->
   	
-  		<div id="login-form">
-			<h2>teacherログイン</h2>
+<!--  		<div id="login-form">-->
+<!--			<h2>teacherログイン</h2>-->
 			
 			<!--<%= form_for(:session, url: login_teacher_path) do |f| %>-->
 		 <!--   	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>-->
@@ -182,17 +182,17 @@
    <!--			<% end %>-->
    
    
-   		<%= form_tag(login_teacher_path, method: "post") do %>
-  				<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>
-				<%= password_field_tag :password,nil,{ class:"form-control", placeholder: "パスワード"} %>
-				<div class="idpass-forget"> 
-  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
-  				</div>
-  				<%= submit_tag "ログイン", class:"submit-btn"%>
-			<% end %>
-  		</div>
-	</div>
-</div>
+<!--   		<%= form_tag(login_teacher_path, method: "post") do %>-->
+<!--  				<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
+<!--				<%= password_field_tag :password,nil,{ class:"form-control", placeholder: "パスワード"} %>-->
+<!--				<div class="idpass-forget"> -->
+<!--  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
+<!--  				</div>-->
+<!--  				<%= submit_tag "ログイン", class:"submit-btn"%>-->
+<!--			<% end %>-->
+<!--  		</div>-->
+<!--	</div>-->
+<!--</div>-->
 	
 
 	<div class="lesson-wrapper"></div>
