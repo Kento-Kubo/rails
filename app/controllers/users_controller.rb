@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def new #create registration form
       @user=User.new
+      
       @user .teacher = false
   end
   
@@ -36,7 +37,6 @@ class UsersController < ApplicationController
   
   def create #save new user
     @user = User.new(user_params)
-    
     if @user.save
       flash[:notice] = "Your account is registered"
       redirect_to root_path

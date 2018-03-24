@@ -159,11 +159,9 @@
             <table rules="all" class="scrolled-table">
                 <% require "date" %>
                 
-
-
                 <% t = DateTime.now %>
                 
-                
+
                 <% if 0 <= t.min && t.min < 15 %>
                             
       		        <tr >
@@ -206,8 +204,8 @@
                     
                 <% end %>
                 
-                
-    	        <% (0..22).each do |num|%>
+                <% iteration = 24 - t.hour %>
+    	        <% (0..iteration).each do |num|%>
       		        <tr >
       		                        <td class="schedule-row-color" ><%= t.hour + num %>:00 - <%= t.hour + num %>:30</td>
                     
