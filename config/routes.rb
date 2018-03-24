@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'lessons/index'
+  #get 'lessons/index'
 
-  get 'class/index'
+  #get 'class/index'
 
-  get 'teacher/index'
+  #get 'teacher/index'
 
-  get 'student/index'
+  #get 'student/index'
 
-  get 'teacher/index'
+  #get 'teacher/index'
 
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # get 'main/index/:id' => "main#index"
   get 'main/index' => "main#index"
-  get 'main/index2' => "main#index2"
+  #get 'main/index2' => "main#index2"
   get 'main/mypage_student' => "main#mypage_student"
   #get 'main/student_profile_edit' => "main#student_profile_edit"
   #get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
@@ -44,7 +44,7 @@ Rails.application.routes.draw do
 
   resources :users
   post   'users/new' => 'users#new'
-  post   'users/new2' => 'users#new2'
+  #post   'users/new2' => 'users#new2'
   post   'users/create2' => 'users#create2'
   root   'users#top'
 
