@@ -13,7 +13,7 @@ class MainController < ApplicationController
    #データベースより全先生データ取得
     @users = User.all
     #@teachers = Teacher.all
-    @teachers = User.where(teacher: true)
+    @teachers = Teacher.all
     #年齢計算
     
     
