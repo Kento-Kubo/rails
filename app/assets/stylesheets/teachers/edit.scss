@@ -4,6 +4,8 @@ body {
   font-family: 'Open Sans', Arial, sans-serif;
   font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 
+
+
 }
 
 a {
@@ -11,57 +13,11 @@ a {
 }
 
 
-/*--完了モーダル開始---------------------------------------------------------------------------------*/   
-
-.complete-modal-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  /* display: none;を追加してください */
-  display:none;
-}
-
-.modal {
-  position: absolute;
-  top: 20%;
-  left: 34%;
-  background-color: #e6ecf0;
-  padding: 20px 0 40px;
-  border-radius: 10px;
-  width: 450px;
-  height: auto;
-  text-align: center;
-}
-
- #complete-form {
-  width: 100%;
-}
-
-#post-ete-form h2 {
-  color: #5f5d60;
-  letter-spacing: 1px;
-  margin-bottom: 40px;
-}
-
-.sentence{
-    font-size:15px;
-}
-
-/*--完了モーダル終了---------------------------------------------------------------------------------*/   
-
-
-
-/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
-
 	
-.edit_account_main_confirm{
+.edit_profile_main{
 
 border:solid rgba(34, 49, 52, 0.3) 1px;
-height:400px;
+height:500px;
 width:50%;
 margin:10px auto;
  text-align: center;
@@ -71,7 +27,7 @@ margin:10px auto;
 
 }
 
-.edit_account_main_confirm_1{
+.edit_profile_main_1{
 border:solid rgba(34, 49, 52, 0.3) 1px;
 height:50px;
 width:100%;
@@ -79,28 +35,29 @@ width:100%;
  margin-bottom:10px;
 }
 
-.edit_account_main_confirm_2{
+.edit_profile_main_2{
 border:solid rgba(34, 49, 52, 0) 1px;
-height:250px;
+height:330px;
 width:85%;
 margin:5px auto;
 }
 
 
-.edit_account_main_confirm_2_right{
+.edit_profile_main_2_right{
 border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
-height:250px;
+height:300px;
 width:32%;
 float:right;
 }
-.edit_account_main_confirm_3{
+.edit_profile_main_3{
 border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
 height:100px;
 width:100%;
  text-align: center;
+ margin-top: 20px;
 }
 
-.edit_account_main_confirm_1 p{
+.edit_profile_main_1 p{
 font-size:20px;
 line-height:50px;
   padding:0 25px;
@@ -117,7 +74,11 @@ line-height:40px;
 box-sizing:border-box;
 }
 
-
+.register_password_change{
+    margin-top:20px;
+   
+    text-align: left;
+}
 
 .register-left{
 border:solid rgba(34, 49, 52, 0.1) 1px;
@@ -148,10 +109,11 @@ color:black;
 height:25px;
 border-radius: 3px  3px;
 line-height:40px;
-margin:0px 0px;
+margin:0px 10px;
 padding:0px 0px;
 width:45%;
 position:absolute;
+top:5px;
 display:inline-block;
 }
 
@@ -161,8 +123,9 @@ border-radius: 3px  3px;
 line-height:40px;
 margin:0px 0px;
 padding:0px 0px;
-
-
+width:45%;
+position:absolute;
+top:5px;
 display:inline-block;
 }
 .input22{
@@ -171,8 +134,9 @@ border-radius: 3px  3px;
 line-height:40px;
 margin:0px 0px;
 padding:0px 0px;
-
-
+width:20%;
+position:absolute;
+top:5px;
 display:inline-block;
 }
 

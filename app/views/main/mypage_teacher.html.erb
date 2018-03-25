@@ -1,92 +1,6 @@
-<!DOCTYPE html>
-    <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <title>GANJIN</title>
-        <link rel="stylesheet" href="each_teacher.css">
-        <link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-	</head>
-    
-    <body>
-    
-<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
-        <header>
-            <div class="container">
-                <div class="header-left">
-                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">
-                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-                    </a>
-                
-                        <input type="text" id="user" placeholder="Username" class="input1">
-                        
-                        <span class="fa fa-search fa-2x"></span>
-                                        
-                </div>
-                
- 
-                
-                 <div class="header-right">
-                    
-                
-                	<ul id="normal" class="dropmenu">
-
-						
-
-						<li><a href="#"><span class="fa fa-cog"></a>
-
-  					 		 <ul>
-
-   							   <li><a href="#">プロフィール編集</a></li>
-
-    							  <li><a href="#">アカウント情報編集</a></li>
-
-     							 <li><a href="#">よくあるお問い合わせ</a></li>
-
-     							 <li><a href="#" id="logout-show">ログアウト</a></li>
-
-   							 </ul>
-
-  						</li>
-  						
-  						<li><a href="#"><span class="fa fa-envelope"></a></li>
-  						
-  						<li><a href="#"><span class="fa fa-bell"></a></li>
-  						
-  						<li><a href="#"><span class="fa fa-user"></a></li>
-  						
-  						<li><a href="#">My page</a></li>
-					</ul>
-                                            
-                   
-          	  </div>
-        </header>
-        
-        
-        <!--ログアウトモーダル開始------------------------------------------------------>   
-
-        	<div class="logout-modal-wrapper" id="logout-modal">
-    			<div class="modal">
-    				 <div class="close-modal">
-        				<i class="fa fa-2x fa-times"></i>
-      			     </div>
-      				
-      				 <div id="logout-form">
-        				<h2>ログアウトしますか？</h2>
-        				<form action="#">
-          					<div id="submit-btn1">はい</div>
-          					<a id="submit-btn2"  href="#">いいえ</a>
-       					 </form>
-      				</div>
-    			</div>
-			</div>
-
-        <!--ログアウトモーダル終了------------------------------------------------------>   
-        
-        
-<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
+<% content_for :specific_css_js do %>
+	<%= stylesheet_link_tag "main/mypage_teacher", :media => "all" %>     
+<% end %>  
 
 <!--main開始------------------------------------------------------------------------------------->   
 		<div class="main" >
@@ -213,53 +127,35 @@
 				<!--Introduction開始------------------------------------------------------------->   
 				<div class="introduction">
 
-							<p class="teacher-name">Kento Kubo</p>
+							<p class="teacher-name"><%=current_user.name%></p>
 							
 							<table class="table-introduction">
   								<tr>
     								<td class="title">AGE</td>
-    								<td>26</td>
+    								<td><%=Date.today.year-current_user.birthday.year-1%></td>
+    							
   								</tr>
   								<tr>
     								<td class="title">SEX</td>
-    								<td>male</td>
+    								<td><% if current_user.sex %>
+            							 male
+            							<% else %>
+            							 female
+            							<% end%></td>
   								</tr>
   								<tr>
     								<td class="title">LANGUAGE</td>
-    								<td>大阪弁</td>
+    								<td><%=current_user.language%></td>
   								</tr>
   								<tr>
     								<td class="title">HOBBY</td>
-    								<td>snowboard</td>
-    								<td>,camera</td>
-    								<td>,traveling</td>
-    								<td>,snowboard</td>
-    								<td>,camera</td>
-    								<td>,traveling</td>
+    								<td><%=current_user.hobby%></td>
   								</tr>  
 							</table>
 
 					<hr width=95%>
 					<p class="Introduction-title">INTRODUCTION</p>
-						<p class="Introduction-contentes">Hi, I'm Kento. Learn Japanese so hard. Learn Japanese so hard. 
-                       Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard.
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard. Learn Japanese so hard. Learn Japanese so hard. 
-                        Learn Japanese so hard.</p>
+						<p class="Introduction-contentes"><%=current_user.profile%></p>
                     <div id="schedule"></div> <!--マーキング-->
 					<br>
 					<br>
@@ -290,16 +186,14 @@
 						<table class="table-schedule"  style="border-color:rgba(34, 49, 52, 0.3)" rules="all">
   								<tr>
     								<td class="title-schedule-left lefttop"></td>
-    								<td class="title-schedule">4th</td>
-    								<td class="title-schedule">5th</td>
-    								<td class="title-schedule">6th</td>
-    								<td class="title-schedule">7th</td>
-    								<td class="title-schedule">8th</td>
-    								<td class="title-schedule">9th</td>
-    								<td class="title-schedule">10th</td>
+    								<% (1..7).each do |num|%>
+    								<td class="title-schedule"><%=Date.today.day+num%></t>
+    								<% end %>
+    	
   								</tr>
   								<tr class="time1">
-    								<td class="title-schedule-left">0:00-0:30</td>
+  								    <%　time = Time.local(2015,3,14,00,00,00) %>
+    								<td class="title-schedule-left"><%=Time.local(2000,1,01,0,00,00).strftime("%H:%M")%></td>
     								<td></td>
     								<td></td>
     								<td><p class="reserved">reserved</p></td>
@@ -1279,5 +1173,3 @@
 		<script src="each_teacher.js"></script>
     </body>
     </html>
-    
-    

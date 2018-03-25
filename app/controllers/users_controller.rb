@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   # end
 
   def edit #edit profile
+    @user = current_user
   end
   
   def create #save new user
@@ -112,7 +113,7 @@ class UsersController < ApplicationController
     end
     
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by(params[:id])
       if @user =! current_user
       flash[:notice] = "You are not allowed to access this page"
       redirect_to(root_url) 

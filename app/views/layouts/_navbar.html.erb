@@ -21,9 +21,19 @@
 						<li><a><span class="fa fa-cog"></a>
   					 		 <ul>
    							   <!--<li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>-->
-     					       <li><%= link_to("account",user_path(current_user)) %></li>
+     					       <li><%if session[:teacher]%>
+     					       <%= link_to("acount",teacher_path(current_user)) %>
+     					       <%else%>
+     					       <%= link_to("account",user_path(current_user)) %>
+     					       <%end%>
+     					       </li>
     					       <!--<li><%= link_to("account edit","/main/student_account_edit/#{current_user.id}") %></li>-->
-       					       <li><%= link_to("account edit",edit_user_path(current_user)) %></li>
+       					       <li><%if session[:teacher]%>
+       					       <%= link_to("account edit",edit_teacher_path(current_user)) %>
+       					       <%else%>
+       					       <%= link_to("account edit",edit_user_path(current_user)) %>
+     					       <%end%>
+       					       </li>
      						   <li><%= link_to("よくあるお問い合わせ","/main/student_faq") %></li>
      						   <!--id="logout-show"-->
      						   <li><%= link_to("ログアウト","/logout",:method => :delete) %></li>
@@ -37,10 +47,13 @@
   						<li><a href="#"><span class="fa fa-bell"></a></li>
   						<li><a href="#"><span class="fa fa-user"></a></li>
   						<!--<li><%= link_to("My page","/main/mypage_student") %></li>----->  
+  						
   					    <li><%if is_teacher?%>
   					    <%= link_to current_user.name,teacher_path(current_user),class: current_user %>
+
   					    <%else%>
-  					    <%= link_to current_user.name,"/main/mypage_student",class: current_user %>
+  					    
+  					    <%= link_to current_user.name,"/main/mypage_student"%>
   					    <%end%>
   					    </li>
 					</ul>
