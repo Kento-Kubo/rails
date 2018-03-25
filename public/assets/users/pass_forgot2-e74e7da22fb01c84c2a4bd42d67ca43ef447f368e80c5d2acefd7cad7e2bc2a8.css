@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+body {
+  margin: 0;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 6, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+header {
+  position: static;
+}
+
+/*
+  header font in users_layout.scss
+*/
+/* line 17, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.inputbox {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 300px;
+  width: 20%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 3px  3px;
+}
+
+/* line 26, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.IDpass_send_again {
+  text-decoration: underline;
+  color: blue;
+  display: block;
+  transition: all 0.5s;
+  width: 40%;
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+/* line 37, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.IDpass_send_again:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* line 43, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.IDpass_sixnum {
+  width: 90%;
+  font-size: 23px;
+  font-weight: 150;
+  margin: 0px auto;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* line 55, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.input-email {
+  height: 30px;
+  width: 85%;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 10px auto;
+  text-align: left;
+  border-radius: 3px  3px;
+}
+
+/* line 67, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.check {
+  width: 100px;
+  font-size: 19px;
+  font-weight: 100;
+  margin: 10px auto;
+  border-radius: 3px  3px;
+  background: #b5cd60;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  height: 35px;
+  color: white;
+}
+
+/* line 81, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.check:hover {
+  background: #16aa56;
+}
+
+/* line 85, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot2.scss */
+.IDpass_sixnum_explain {
+  width: 85%;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 5px auto;
+  text-align: left;
+}
