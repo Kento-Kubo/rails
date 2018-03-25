@@ -58,22 +58,22 @@
 				<h2>先生として新規登録</h2>
 				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
 				
-    <!--            <%= form_tag ("/users/new2") do %>-->
+    <!--            <%#= form_tag ("/users/new2") do %>-->
 	  			
  					
- 			<!--		 <input name="email" value="<%= @teacher.email %>">-->
+ 			<!--		 <input name="email" value="<%#= @teacher.email %>">-->
     <!--                 <input type="submit" value="新規登録">-->
-				<!--<% end %>-->
+				<!--<%# end %>-->
 				
 				<%= form_for @teacher ,url: new_teacher_path do |form| %>
   					<%= form.text_field :email,{ class:"form-control", placeholder: "メールアドレス"} %>
  					<%= form.submit "メール送信", class:"submit-btn"%>
 				<% end %>
 				
-				<!--<%= form_tag(new_teacher_path, method: "post") do %>-->
-  		<!--			<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
-  		<!--			<%= submit_tag "メール送信", class:"submit-btn"%>-->
-				<!--<% end %>-->
+				<!--<%#= form_tag(new_teacher_path, method: "post") do %>-->
+  		<!--			<%#= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
+  		<!--			<%#= submit_tag "メール送信", class:"submit-btn"%>-->
+				<!--<%# end %>-->
 				
   			</div>
 		</div>
@@ -92,14 +92,14 @@
   		<div id="login-form">
 			<h2>teacherログイン</h2>
 			
-			<!--<%= form_for(:session, url: login_teacher_path) do |f| %>-->
-		 <!--   	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>-->
-		 <!--     	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>-->
+			<!--<%#= form_for(:session, url: login_teacher_path) do |f| %>-->
+		 <!--   	<%#= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>-->
+		 <!--     	<%#= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>-->
 			<!--	<div class="idpass-forget"> -->
-  	<!--				<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
+  	<!--				<%#= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
   	<!--			</div>-->
-		 <!--     	<%= f.submit "ログイン", class:"submit-btn" %>-->
-   <!--			<% end %>-->
+		 <!--     	<%#= f.submit "ログイン", class:"submit-btn" %>-->
+   <!--			<%# end %>-->
    
    
    		<%= form_tag(login_teacher_path, method: "post") do %>
