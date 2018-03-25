@@ -1,0 +1,821 @@
+@charset "UTF-8";
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+a {
+  text-decoration: none;
+}
+
+/*ヘッダー開始（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+/* line 16, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+/* line 25, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.logo {
+  width: 124px;
+  margin-top: 20px;
+  float: left;
+}
+
+/* line 31, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.mypage {
+  color: white;
+  text-align: center;
+}
+
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.logout {
+  color: white;
+}
+
+/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.header-left {
+  float: left;
+}
+
+/* line 48, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.input1 {
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  margin: 15px 0;
+  padding: 0 16px;
+  width: 300px;
+  height: 30px;
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 60, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.fa-search {
+  background-color: none;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: block;
+  line-height: 65px;
+  text-align: center;
+  width: 50px;
+  height: 35px;
+  margin-top: 15px;
+}
+
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.top-wrapper {
+  padding: 0 0 0 0;
+  background-size: cover;
+  color: white;
+  height: 500px;
+  text-align: center;
+}
+
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.header-right {
+  float: right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display: block;
+  line-height: 65px;
+  padding: 0 25px;
+  transition: all 0.5s;
+}
+
+/* line 92, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu {
+  *zoom: 1;
+  list-style-type: none;
+  margin: 0px auto 30px;
+  padding: 0;
+  margin-right: 0px;
+  position: relative;
+}
+
+/* line 100, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu:before, .dropmenu:after {
+  content: "";
+  display: table;
+}
+
+/* line 104, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu:after {
+  clear: both;
+}
+
+/* line 107, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu li {
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu li a {
+  display: block;
+  margin: 0;
+  background: none;
+  color: #fff;
+  width: 65px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  text-decoration: none;
+  margin-right: 0px;
+}
+
+/* line 127, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* line 132, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu li ul {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+/* line 142, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu li ul li {
+  width: 280px;
+}
+
+/* line 146, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu li ul li a {
+  padding: 3px 15px;
+  background: rgba(34, 49, 52, 0.9);
+  text-align: left;
+  width: 280px;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 155, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.dropmenu li ul li:hover {
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+/* line 160, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#normal li ul {
+  display: none;
+}
+
+/* line 163, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#normal li:hover ul {
+  display: block;
+}
+
+/* line 167, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/*--ログアウトモーダル開始---------------------------------------------------------------------------------*/
+/* line 174, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.logout-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display: none;
+}
+
+/* line 186, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+/* line 198, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+/* line 206, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#logout-form {
+  width: 100%;
+}
+
+/* line 210, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#logout-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* line 218, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#submit-btn1, #submit-btn2 {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+  width: 30%;
+}
+
+/* line 230, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.idpass-forget {
+  text-decoration: underline;
+}
+
+/*--ログアウトモーダル終了---------------------------------------------------------------------------------*/
+/*--完了モーダル開始---------------------------------------------------------------------------------*/
+/* line 238, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.complete-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display: none;
+}
+
+/* line 250, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+/* line 262, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+/* line 270, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#complete-form {
+  width: 100%;
+}
+
+/* line 274, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#post-ete-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* line 282, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+#submit-btn1, #submit-btn2 {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+  width: 30%;
+}
+
+/* line 294, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.idpass-forget {
+  text-decoration: underline;
+}
+
+/* line 298, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.sentence {
+  font-size: 15px;
+}
+
+/*--完了モーダル終了---------------------------------------------------------------------------------*/
+/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+/* line 307, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.main {
+  width: 700px;
+  margin: 0px auto;
+  margin-top: 100px;
+  border: solid black 1px;
+  height: 1000px;
+}
+
+/* line 318, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.edit_profile_main_confirm {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 1100px;
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 3px  3px;
+  margin-top: 100px;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 331, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.edit_profile_main_confirm_1 {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 50px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* line 339, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.edit_profile_main_confirm_2 {
+  border: solid rgba(34, 49, 52, 0) 1px;
+  height: 250px;
+  width: 85%;
+  margin: 5px auto;
+}
+
+/* line 347, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.edit_profile_main_confirm_2_right {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 250px;
+  width: 32%;
+  float: right;
+}
+
+/* line 353, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.edit_profile_main_confirm_3 {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 360, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.edit_profile_main_confirm_1 p {
+  font-size: 20px;
+  line-height: 50px;
+  padding: 0 25px;
+  margin-top: 0px;
+}
+
+/* line 368, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+/* line 379, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-left {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 40px;
+  width: 29%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+}
+
+/* line 391, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-right {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 40px;
+  width: 66%;
+  text-align: left;
+  box-sizing: border-box;
+  float: left;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  position: relative;
+  color: black;
+}
+
+/* line 404, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-photo {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 230px;
+  width: 100%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+/* line 415, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-left-photo {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 230px;
+  width: 29%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+}
+
+/* line 427, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-right-photo {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 230px;
+  width: 66%;
+  box-sizing: border-box;
+  float: left;
+  margin: 0px 0px;
+  position: relative;
+}
+
+/* line 439, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-hobby {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  width: 100%;
+  text-align: left;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+/* line 449, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-left-hobby {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  width: 29%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+  height: 200px;
+}
+
+/* line 461, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-right-hobby {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  width: 66%;
+  height: 200px;
+  box-sizing: border-box;
+  float: left;
+  margin: 0px 0px;
+  position: relative;
+}
+
+/* line 472, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-introduction {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 230px;
+  width: 100%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+/* line 483, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-left-introduction {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 230px;
+  width: 29%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+}
+
+/* line 495, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.register-right-introduction {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 230px;
+  width: 66%;
+  box-sizing: border-box;
+  float: left;
+  margin: 0px 0px;
+  position: relative;
+}
+
+/* line 507, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.input-introduction {
+  height: 200px;
+  border-radius: 3px  3px;
+  margin: 0px 0px;
+  width: 95%;
+  position: absolute;
+  top: 5px;
+  vertical-align: top;
+}
+
+/* line 517, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.input {
+  height: 25px;
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 45%;
+  position: absolute;
+  top: 5px;
+  display: inline-block;
+}
+
+/* line 529, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.input2 {
+  height: 25px;
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 20%;
+  position: absolute;
+  top: 5px;
+  display: inline-block;
+}
+
+/* line 540, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.input22 {
+  height: 25px;
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 20%;
+  position: absolute;
+  top: 5px;
+  display: inline-block;
+}
+
+/* line 552, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.select {
+  border-radius: 3px  3px;
+  height: 25px;
+}
+
+/* line 559, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width: 55%;
+  box-sizing: border-box;
+  text-align: left;
+  display: block;
+}
+
+/* line 575, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* line 580, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 586, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.twitter {
+  background-color: #55acee;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 592, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.btn:hover {
+  opacity: 1;
+}
+
+/* line 596, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 601, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.explain {
+  width: 96%;
+  text-align: left;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+/* line 610, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.explain2 {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* line 618, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.btn1 {
+  padding: 8px 24px;
+  background-color: #239b76;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width: 60%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* line 632, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.btn1:hover {
+  cursor: pointer;
+}
+
+/* line 637, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.contract {
+  text-decoration: underline;
+  color: blue;
+}
+
+/* line 643, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.contract:hover {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* line 650, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.profile-photo {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* line 655, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.input3 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 663, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.hobby-list {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  width: 95%;
+  margin: 2px auto;
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* line 674, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.tag {
+  height: 20px;
+  position: relative;
+  background: rgba(34, 49, 52, 0.6);
+  margin: 0px 0px;
+  padding: 0px 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 1.5px;
+  color: white;
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* line 690, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.tag:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 3px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* line 701, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.tag:before {
+  content: "";
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 3px solid rgba(34, 49, 52, 0.6);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* line 713, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.delete {
+  display: inline-block;
+  margin: 0px 0px;
+  float: right;
+  margin-right: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: 15px;
+}
+
+/* line 725, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.delete:hover {
+  cursor: pointer;
+}
+
+/* line 730, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.yen {
+  display: inline-block;
+  width: 90%;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  text-align: left;
+  padding: 0px 0px;
+  margin: 0 0;
+  margin-left: 1%;
+}
+
+/* line 740, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.cost1, .cost2 {
+  display: inline-block;
+}
+
+/*--メイン終了---------------------------------------------------------------------------------*/
+/*back to top開始（共通：変えないこと）--------------------------------------------------------*/
+/* line 753, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.back-to-top {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(34, 49, 52, 0.6);
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  display: block;
+  transition: all 0.5s;
+  margin-top: 0px;
+  position: absolute;
+  top: 1400px;
+}
+
+/* line 769, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.back-to-top:hover {
+  background-color: rgba(34, 49, 52, 0.4);
+}
+
+/* line 773, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+.back-to-top-word {
+  color: white;
+  display: block;
+}
+
+/*back to top終了（共通：変えないこと）--------------------------------------------------------*/
+/*<フッター開始（共通：変えないこと）---------------------------------------------------------*/
+/* line 782, /home/ubuntu/workspace/app/assets/stylesheets/main/teacher_profile_edit_confirm.scss */
+footer {
+  background-color: rgba(34, 49, 52, 0.9);
+  height: 270px;
+  width: 100%;
+  color: white;
+  position: absolute;
+  top: 1450px;
+}
+
+/*フッター終了（共通：変えないこと）-------------------------------------------------------*/

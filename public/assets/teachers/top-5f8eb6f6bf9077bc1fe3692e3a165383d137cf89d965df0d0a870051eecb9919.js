@@ -2,12 +2,13 @@ $(function() {　//←消さないこと
   
 //ログインモーダル表示コード開始---------------------------------------------------------
 
-  $('#login-show-student').click(function(){
-    $('#login-model-student').fadeIn();
+  
+  $('#login-show-teacher').click(function(){
+    $('#login-model-teacher').fadeIn();
   })
   
   $('.close-model').click(function(){
-    $('#login-model-student').fadeOut();
+    $('#login-model-teacher').fadeOut();
   })
 /*
   if($('#login-model').is(':hidden')){
@@ -43,9 +44,9 @@ $(function() {　//←消さないこと
  // })
   
 //サインアップモーダル表示コード終わり---------------------------------------------------------
-
-//生徒用サインアップモーダル表示コード開始---------------------------------------------------------
-$("#signup-show-student").click(function(){
+  
+//先生用サインアップモーダル表示コード開始---------------------------------------------------------
+$("#signup-show-teacher").click(function(){
       //body内の最後に<div id="modal-bg"></div>を挿入
     // $("body").append('<div id="modal-bg"></div>');
  
@@ -53,14 +54,13 @@ $("#signup-show-student").click(function(){
     modalResize();
  
     //モーダルウィンドウを表示
-        $("#signup-model-student").fadeIn("slow");
+        $("#signup-model-teacher").fadeIn("slow");
  
     //画面のどこかをクリックしたらモーダルを閉じる
      $('.close-model').click(function(){
-   $('#signup-model-student').fadeOut();
+   $('#signup-model-teacher').fadeOut();
  })
   
-      
     //画面の左上からmodal-mainの横幅・高さを引き、その値を2で割ると画面中央の位置が計算できます
      $(window).resize(modalResize);
       function modalResize(){
@@ -72,14 +72,16 @@ $("#signup-show-student").click(function(){
            var ch = $(".model").outerHeight();
  
         //取得した値をcssに追加する
-            $("#signup-model-student").css({
+            $("#signup-model-teacher").css({
                 "left": ((w - cw)/2) + "px",
                 "top": ((h - ch)/3) + "px"
           });
      }
    });
    
- //生徒用サインアップモーダル表示コード終わり---------------------------------------------------------
+ //先生遠征用サインアップモーダル表示コード終わり---------------------------------------------------------
+
 
 
 });//←消さないこと
+;

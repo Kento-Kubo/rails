@@ -1,23 +1,7 @@
 <% content_for :specific_css_js do %>
-	<%= stylesheet_link_tag "users/top", :media => "all" %>
-    <%= javascript_include_tag 'users/top' %>
+	<%= stylesheet_link_tag "teachers/top", :media => "all" %>
+    <%= javascript_include_tag 'teachers/top' %>
 <% end %>
-
-	<% if @error_message %>
-		<header2>
-            <div class="form-error">
-                <%= @error_message %>
-            </div>
-        </header2>
-    <% end %>
-		
-   	<% if flash[:notice] %>
-    	<header2>
-            <div class="flash">
-             	<%= flash[:notice] %>
-            </div>
-        </header2>
-    <% end %>
    
 <!--トップ開始-------------------------------------------------------------------------------->
 	

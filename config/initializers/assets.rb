@@ -29,6 +29,8 @@ Rails.application.config.assets.precompile += %w( teachers/new.scss )
 Rails.application.config.assets.precompile += %w( teachers/show.scss )
 Rails.application.config.assets.precompile += %w( teachers/show.js )
 Rails.application.config.assets.precompile += %w( teachers/edit.scss )
+Rails.application.config.assets.precompile += %w( teachers/top.js )
+Rails.application.config.assets.precompile += %w( teachers/top.scss )
 
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss )
 Rails.application.config.assets.precompile += %w( main/mypage_teacher.scss )

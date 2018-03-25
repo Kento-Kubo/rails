@@ -1,0 +1,101 @@
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+body {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* line 8, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 13, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.top-wrapper-2 {
+  padding: 180px 0 100px 0;
+  background-image: url("/teacher_top.jpg");
+  background-size: cover;
+  color: white;
+  height: 500px;
+  text-align: center;
+}
+
+/* line 22, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+/* line 34, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.sign-up {
+  background-color: #239b76;
+}
+
+/* line 43, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.log-in {
+  background-color: #239b76;
+}
+
+/* line 47, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+
+/* line 52, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.twitter {
+  background-color: #55acee;
+}
+
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.btn:hover {
+  opacity: 1;
+}
+
+/* line 61, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.new {
+  padding-top: 0;
+  color: white;
+  height: 65px;
+}
+
+/* line 68, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+.signup-model-wrapper {
+  display: none;
+}
+
+/* line 72, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+#signup-form {
+  width: 100%;
+}
+
+/* line 76, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+#signup-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+#signup-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+/* line 91, /home/ubuntu/workspace/app/assets/stylesheets/teachers/top.scss */
+#signup-model-teacher {
+  position: fixed;
+}

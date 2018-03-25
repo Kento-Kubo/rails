@@ -1,0 +1,1025 @@
+@charset "UTF-8";
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+a {
+  text-decoration: none;
+}
+
+/*ヘッダー開始（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+/* line 16, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+/* line 25, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.logo {
+  width: 124px;
+  margin-top: 20px;
+  float: left;
+}
+
+/* line 31, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.mypage {
+  color: white;
+  text-align: center;
+}
+
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.logout {
+  color: white;
+}
+
+/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.header-left {
+  float: left;
+}
+
+/* line 48, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.input1 {
+  background-color: white;
+  border: none;
+  border-radius: 3px  3px;
+  color: #a9a9a9;
+  margin: 15px 0;
+  padding: 0 16px;
+  width: 300px;
+  height: 30px;
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 60, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.fa-search {
+  background-color: none;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: block;
+  line-height: 65px;
+  text-align: center;
+  width: 50px;
+  height: 35px;
+  margin-top: 15px;
+}
+
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.top-wrapper {
+  padding: 0 0 0 0;
+  background-size: cover;
+  color: white;
+  height: 500px;
+  text-align: center;
+}
+
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.header-right {
+  float: right;
+  /*background-color:rgba(255, 255, 255, 0.3);*/
+  display: block;
+  line-height: 65px;
+  padding: 0 25px;
+  transition: all 0.5s;
+}
+
+/* line 92, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu {
+  *zoom: 1;
+  list-style-type: none;
+  margin: 0px auto 30px;
+  padding: 0;
+  margin-right: 0px;
+  position: relative;
+}
+
+/* line 100, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu:before, .dropmenu:after {
+  content: "";
+  display: table;
+}
+
+/* line 104, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu:after {
+  clear: both;
+}
+
+/* line 107, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu li {
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 117, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu li a {
+  display: block;
+  margin: 0;
+  background: none;
+  color: #fff;
+  padding: 0 20px;
+  transition: all 0.5s;
+  text-decoration: none;
+  margin-right: 0px;
+}
+
+/* line 128, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* line 133, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu li ul {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+/* line 143, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu li ul li {
+  width: 280px;
+}
+
+/* line 147, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu li ul li a {
+  padding: 3px 15px;
+  background: rgba(34, 49, 52, 0.9);
+  text-align: left;
+  width: 280px;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 156, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.dropmenu li ul li:hover {
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+/* line 161, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+#normal li ul {
+  display: none;
+}
+
+/* line 164, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+#normal li:hover ul {
+  display: block;
+}
+
+/* line 168, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/*--ログアウトモーダル開始---------------------------------------------------------------------------------*/
+/* line 175, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.logout-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display: none;
+}
+
+/* line 187, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+/* line 199, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+/* line 207, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+#logout-form {
+  width: 100%;
+}
+
+/* line 211, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+#logout-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* line 219, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+#submit-btn1, #submit-btn2 {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+  width: 30%;
+}
+
+/* line 231, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.idpass-forget {
+  text-decoration: underline;
+}
+
+/*--ログアウトモーダル終了---------------------------------------------------------------------------------*/
+/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+/* line 241, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.main {
+  width: 700px;
+  margin: 0px auto;
+  margin-top: 100px;
+}
+
+/*--profile開始-----------------------------------------------------------------*/
+/* line 250, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile {
+  width: 100%;
+  height: 450px;
+  /*border:solid black 1px;*/
+}
+
+/* line 258, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile-left {
+  width: 50%;
+  height: 450px;
+  /*border:solid black 1px;*/
+  float: left;
+}
+
+/* line 266, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile-photo {
+  width: 100%;
+}
+
+/* line 270, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile-photo:hover {
+  cursor: pointer;
+}
+
+/* line 277, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile-right {
+  width: 49%;
+  height: 450px;
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  float: right;
+  background-color: white;
+}
+
+/* line 286, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile-right-box {
+  margin-top: 0px;
+  width: 100%;
+  display: block;
+  background-color: white;
+}
+
+/* line 299, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.box {
+  box-sizing: border-box;
+  width: 32.46%;
+  text-align: center;
+  background-color: rgba(34, 49, 52, 0.1);
+  display: inline-block;
+  /*border:solid rgba(34, 49, 52, 0.1) 1px;*/
+  padding-top: 10px;
+}
+
+/* line 310, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.box:hover {
+  cursor: pointer;
+}
+
+/* line 313, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.rating {
+  margin-top: 1%;
+}
+
+/* line 317, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.box2 {
+  box-sizing: border-box;
+  width: 66.3%;
+  text-align: center;
+  background-color: rgba(34, 49, 52, 0.1);
+  display: inline-block;
+  /*border:solid rgba(34, 49, 52, 0.1) 1px;*/
+  padding-top: 2px;
+  float: right;
+  margin-top: 1%;
+  margin-right: 0.1%;
+}
+
+/* line 331, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.box3 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: rgba(34, 49, 52, 0.1);
+  /*border:solid rgba(34, 49, 52, 0.1) 1px;*/
+  padding-top: 2px;
+  float: right;
+  margin-top: 1%;
+  margin-right: 0.1%;
+  line-height: 40px;
+}
+
+/* line 347, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.teacher-name {
+  color: #3b5998;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+/* line 353, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.Num-lesson {
+  margin-top: 0px;
+  font-size: 17px;
+  color: #b5cd60;
+  width: 95%;
+  box-sizing: border-box;
+  height: 100px;
+  border-radius: 3px 0px 0px 3px;
+  display: inline-block;
+  border: none;
+  /*solid black 1px;*/
+}
+
+/* line 366, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.lessons {
+  font-size: 13px;
+  color: rgba(34, 49, 52, 0.9);
+}
+
+/* line 370, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.hour-OWN {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* line 378, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.hour-USD {
+  margin-top: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 17px;
+  color: #b5cd60;
+  width: 95%;
+  box-sizing: border-box;
+  height: 100px;
+  border-radius: 3px 3px;
+  display: inline-block;
+  border: none;
+  /*solid black 1px;*/
+  margin: 0px auto;
+}
+
+/* line 393, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.min-OWN {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* line 399, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.min-USD {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  font-size: 17px;
+  color: #b5cd60;
+  width: 95%;
+  box-sizing: border-box;
+  height: 100px;
+  border-radius: 3px 0px 0px 3px;
+  display: inline-block;
+  border: none;
+  /*solid black 1px;*/
+}
+
+/* line 414, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.evaluation {
+  margin-bottom: 0;
+  font-size: 40px;
+  color: #b5cd60;
+  width: 95%;
+  box-sizing: border-box;
+  height: 100px;
+  border-radius: 3px 3px;
+  display: inline-block;
+  border: none;
+  /*solid black 1px;*/
+  margin: 0px auto;
+  margin-top: 10px;
+}
+
+/* line 429, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.cost {
+  margin-left: 5%;
+}
+
+/* line 433, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.fa-users, .fa-comments, .fa-clock-o {
+  margin: 10px auto;
+  width: 100%;
+}
+
+/* line 438, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.star {
+  margin-top: 0px;
+  margin-bottom: 0;
+  height: 18px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  padding-top: 0px;
+}
+
+/* line 450, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.evaluation5, .evaluation4, .evaluation3, .evaluation2, .evaluation1 {
+  text-decoration: underline;
+  color: blue;
+  width: 10%;
+  float: left;
+  margin-top: 0px;
+  margin-left: 2.5%;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+/* line 462, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.evaluation5_right, .evaluation4_right, .evaluation3_right, .evaluation2_right, .evaluation1_right {
+  width: 10%;
+  float: left;
+  margin-top: 0px;
+  margin-left: 2.5%;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+/* line 472, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.evaluation5, .evaluation4, .evaluation3, .evaluation2, .evaluation1:hover {
+  cursor: pointer;
+}
+
+/* line 476, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.outside {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  width: 65%;
+  height: 12px;
+  background-color: white;
+  margin-top: 0px;
+  float: left;
+  margin-left: 2%;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+/* line 488, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.inside5, .inside4, .inside3, .inside2, .inside1 {
+  background-color: #b5cd60;
+  border: solid black 1px;
+  height: 12px;
+  margin-top: 0px;
+  border: none;
+  margin-bottom: 0px;
+}
+
+/* line 497, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.inside5 {
+  width: 51%;
+}
+
+/* line 501, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.inside4 {
+  width: 28%;
+}
+
+/* line 505, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.inside3 {
+  width: 7%;
+}
+
+/* line 509, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.inside2 {
+  width: 4%;
+}
+
+/* line 513, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.inside1 {
+  width: 10%;
+}
+
+/* line 517, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.lessons1 {
+  font-size: 12px;
+  color: rgba(34, 49, 52, 0.9);
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* line 525, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.percentage5, .percentage4, .percentage3, .percentage2, .percentage1 {
+  margin-left: 0%;
+  font-size: 10px;
+}
+
+/*--profile終了-----------------------------------------------------------------*/
+/*--ログインモーダル開始---------------------------------------------------------------------------------*/
+/* line 540, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile-photo-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display: none;
+  text-align: center;
+}
+
+/* line 553, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.modal-photo {
+  position: absolute;
+  top: 10%;
+  left: 27.5%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 45%;
+  height: 650px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 567, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+/* line 575, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.profile-photo-modal {
+  width: 100%;
+  margin-top: 50px;
+}
+
+/*--ログインモーダル終了---------------------------------------------------------------------------------*/
+/*--Introduction開始------------------------------------------------------------*/
+/* line 584, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.teacher-name {
+  color: #3b5998;
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 1%;
+  margin-left: 1%;
+}
+
+/* line 594, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.title {
+  width: 20%;
+}
+
+/* line 598, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.table-introduction {
+  margin-left: 3%;
+}
+
+/* line 602, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.Introduction-title {
+  font-weight: bold;
+  margin-left: 1%;
+}
+
+/* line 607, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.Introduction-contentes {
+  width: 96%;
+  display: block;
+  /*border:solid black 1px;*/
+  margin: 0px auto;
+  margin-bottom: 10px;
+}
+
+/* line 616, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.introduction {
+  width: 100%;
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  margin-top: 5px;
+}
+
+/*--Introduction終了------------------------------------------------------------*/
+/* line 624, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.line {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/*--スケジュール開始------------------------------------------------------------*/
+/* line 630, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.schedule {
+  width: 100%;
+  height: 800px;
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+}
+
+/* line 636, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.schedule-title {
+  width: 99%;
+  height: 20px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;	*/
+  margin-left: 1%;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
+
+/* line 647, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.schedule-timeselect {
+  width: 95%;
+  height: 40px;
+  margin: 0 auto;
+  border: none;
+}
+
+/* line 656, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.time-all, .time1-btn, .time2-btn, .time3-btn, .time4-btn {
+  margin-left: 3%;
+  float: left;
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+}
+
+/* line 665, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.time2, .time3, .time4 {
+  display: none;
+}
+
+/* line 671, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.time1-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 675, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.time2-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 679, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.time3-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 683, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.time4-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 687, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.time-all:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 692, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.table-schedule {
+  border: solid rgba(34, 49, 52, 0.9) 1px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 697, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.title-schedule {
+  width: 12%;
+  height: 30px;
+  background-color: rgba(34, 49, 52, 0.1);
+}
+
+/* line 703, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.lefttop {
+  width: 16%;
+  height: 30px;
+  background-color: rgba(34, 49, 52, 0.1);
+}
+
+/* line 709, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.title-schedule-left {
+  width: 16%;
+  height: 30px;
+}
+
+/* line 714, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.schedule-row-color {
+  background-color: rgba(135, 206, 250, 0.2);
+  height: 30px;
+}
+
+/* line 719, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.reserved {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  margin: 0px auto;
+  border-radius: 5px;
+  background-color: rgba(34, 49, 52, 0.6);
+  color: white;
+  padding: 1px 1px;
+}
+
+/* line 728, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.available {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  margin: 0px auto;
+  border-radius: 5px;
+  background-color: #b5cd60;
+  color: rgba(34, 49, 52, 0.9);
+  padding: 1px 8px;
+}
+
+/* line 737, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.available:hover {
+  cursor: pointer;
+}
+
+/*--スケジュール終了------------------------------------------------------------*/
+/*--レビュー開始----------------------------------------------------------------*/
+/* line 743, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.review {
+  width: 100%;
+  height: 1000px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+}
+
+/* line 751, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.reviw-title {
+  width: 99%;
+  height: 20px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  margin-left: 1%;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+/* line 762, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.each-review {
+  width: 100%;
+  height: 150px;
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  margin-top: 2px;
+}
+
+/* line 769, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.each-review-left {
+  width: 20%;
+  height: 150px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+}
+
+/* line 779, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.students-profile-photo {
+  width: 90%;
+  border-radius: 100px;
+  margin-top: 5%;
+}
+
+/* line 787, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.each-review-right1 {
+  width: 30%;
+  height: 30px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  float: left;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 13px;
+}
+
+/* line 797, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.students-evaluation, .students-name {
+  font-size: 25px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* line 802, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.students-name {
+  font-size: 13px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/*//レート評価 変数  ←【保留】
+var(starFull)= 16px;//星1個の幅
+$starHalf: $starFull / 2;//星半分（0.5）の幅
+
+$rate1: $starFull;//星1
+$rate1-5: $starFull + $starHalf;//星1.5
+$rate2: $starFull * 2;//星2
+$rate2-5: ($starFull * 2) + $starHalf;//星2.5
+$rate3: $starFull * 3;//星3
+$rate3-5: ($starFull * 3) + $starHalf;//星3.5
+$rate4: $starFull * 4;//星4
+$rate4-5: ($starFull * 4) + $starHalf;//星4.5
+$rate5 :$starFull * 5;//星5
+
+.rate{
+  position: relative;
+  display: inline-block;
+  width: $starFull * 5;
+  height: $starFull;
+  font-size: $starFull;
+  &:before,&:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '★★★★★';
+    display: inline-block;
+    height: $starFull;
+    line-height: $starFull;
+  }
+  &:before{
+  color: #ddd;
+  }
+  &:after{
+  color: #ffa500;
+  overflow: hidden;
+  white-space: nowrap;//これがないと改行されて星の半分（0.5）が表現できなくなる
+  }
+}
+.rate0:after{//星0
+  width: 0;
+}
+.rate1:after{//星1
+  width: $rate1;
+}
+.rate1-5:after{//星1.5
+  width: $rate1-5;
+}
+.rate2:after{//星2
+  width: $rate2;
+}
+.rate2-5:after{//星2.5
+  width: $rate2-5;
+}
+.rate3:after{//星3
+  width: $rate3;
+}
+.rate3-5:after{//星3.5
+  width: $rate3-5;
+}
+.rate4:after{//星4
+  width: $rate4;
+}
+.rate4-5:after{//星4.5
+  width: $rate4-5;
+}
+.rate5:after{//星5
+  width: $rate5;
+}
+
+
+
+.wrap{
+  width: 80px;
+  margin: 0 auto;
+  height:20px;
+ 					border:solid rgba(34, 49, 52, 0.9) 1px;	 
+}	*/
+/* line 885, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.each-review-right2 {
+  width: 25%;
+  height: 20px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  float: right;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 13px;
+}
+
+/* line 896, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.each-review-right3 {
+  width: 80%;
+  height: 100px;
+  border: none;
+  /*solid rgba(34, 49, 52, 0.9) 1px;*/
+  float: left;
+  margin-top: 5px;
+  padding-top: 0;
+  font-size: 13px;
+}
+
+/* line 907, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.read-more {
+  width: 100%;
+  height: 25px;
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  background-color: rgba(34, 49, 52, 0.1);
+  margin-top: 2px;
+  text-align: center;
+  line-height: 25px;
+  display: block;
+  margin-: 0px;
+}
+
+/* line 919, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.read-more:hover {
+  cursor: pointer;
+}
+
+/* line 923, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.review-unit-2, .review-unit-3 {
+  display: none;
+}
+
+/*--レビュー終了----------------------------------------------------------------*/
+/*--右半分終了-------------------------------------------------------------------------*/
+/*--メイン終了---------------------------------------------------------------------------------*/
+/*back to top開始（共通：変えないこと）--------------------------------------------------------*/
+/* line 946, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.back-to-top {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(34, 49, 52, 0.6);
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  display: block;
+  transition: all 0.5s;
+  margin-top: 0px;
+  position: absolute;
+  top: 4000px;
+}
+
+/* line 962, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.back-to-top:hover {
+  background-color: rgba(34, 49, 52, 0.4);
+}
+
+/* line 966, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+.back-to-top-word {
+  color: white;
+  display: block;
+}
+
+/*back to top終了（共通：変えないこと）--------------------------------------------------------*/
+/*<フッター開始（共通：変えないこと）---------------------------------------------------------*/
+/* line 975, /home/ubuntu/workspace/app/assets/stylesheets/teachers/show.scss */
+footer {
+  background-color: rgba(34, 49, 52, 0.9);
+  height: 270px;
+  width: 100%;
+  color: white;
+  position: absolute;
+  top: 4050px;
+}
+
+/*フッター終了（共通：変えないこと）-------------------------------------------------------*/

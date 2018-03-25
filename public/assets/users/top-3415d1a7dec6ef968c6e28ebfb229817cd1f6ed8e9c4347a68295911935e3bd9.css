@@ -1,0 +1,104 @@
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+body {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* line 8, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+a {
+  text-decoration: none;
+}
+
+/*
+    header font in users_layout.scss
+*/
+/* line 14, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.top-wrapper-1 {
+  padding: 180px 0 100px 0;
+  background-image: url("/conversation.jpg");
+  background-size: cover;
+  color: white;
+  height: 500px;
+  text-align: center;
+}
+
+/* line 24, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* line 41, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.sign-up {
+  background-color: #239b76;
+}
+
+/* line 45, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.log-in {
+  background-color: #239b76;
+}
+
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+
+/* line 54, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.twitter {
+  background-color: #55acee;
+}
+
+/* line 58, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.btn:hover {
+  opacity: 1;
+}
+
+/* line 63, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.new {
+  padding-top: 0;
+  color: white;
+  height: 65px;
+}
+
+/* line 70, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+.signup-model-wrapper {
+  display: none;
+}
+
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+#signup-form {
+  width: 100%;
+}
+
+/* line 78, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+#signup-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* line 84, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+#signup-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+/* line 94, /home/ubuntu/workspace/app/assets/stylesheets/users/top.scss */
+#signup-model-student {
+  position: fixed;
+}

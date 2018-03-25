@@ -8,18 +8,16 @@ body {
 a {
   text-decoration: none;
 }
-/*
-    header font in users_layout.scss
-*/
-.top-wrapper-1{
+
+
+.top-wrapper-2{
   padding: 180px 0 100px 0;
-  background-image: url("/conversation.jpg");
+  background-image: url("/teacher_top.jpg");
   background-size:cover;
   color:white;
   height:500px;
   text-align:center;
 }
-
 
 .btn{
   padding:8px 24px;
@@ -90,8 +88,6 @@ height:65px;
   border-radius: 5px;
 }
 
-
-#signup-model-student{
+#signup-model-teacher{
     position:fixed;
 }
-
