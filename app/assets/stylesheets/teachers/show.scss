@@ -2,8 +2,7 @@ body {
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN";
   font-family: 'Open Sans', Arial, sans-serif;
-
-
+  font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 
 }
 
@@ -12,167 +11,9 @@ a {
 }
 
 
-/*ヘッダー開始（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
-header{
-  height:65px;
-  width:100%;
-  background-color:rgba(34, 49, 52, 0.9);
-  position:fixed;
-  top:0;
-    z-index:10;
-  }
+/*--完了モーダル開始---------------------------------------------------------------------------------*/   
 
-.logo{
-  width:124px;
-  margin-top:20px;
-  float:left;
-}
-
-.mypage{
-  color:white;
-  text-align:center;
-}
-
-.logout{
-  color:white;
-}
-
-.header-left{
-  float:left;
-
-}
-
-
-
-
-.input1{
-  background-color: white;
-  border: none;
-  border-radius: 3px  3px;
-  color: #a9a9a9;
-  margin: 15px 0;
-  padding: 0 16px;
-  width: 300px;
-  height: 30px;
-  float: left;
-  margin-left:10px;
-}
-.fa-search {
-  background-color: none;
-  border-radius: 3px 0px 0px 3px;
-  border-right: 3px solid #434a52;
-  color: #606468;
-  display: block;
-  
-  line-height: 65px;
-  text-align: center;
-  width: 50px;
-  height: 35px;
-  margin-top:15px;
-  }
-
-.top-wrapper{
-  padding: 0 0 0 0;
-  background-size:cover;
-  color:white;
-  height:500px;
-  text-align:center;
-}
-
-.header-right{
-  float:right;
-  /*background-color:rgba(255, 255, 255, 0.3);*/
-  display:block;
-  line-height:65px;
-  padding:0 25px;
-  transition:all 0.5s;
-  
-}
-
-.dropmenu{
-  *zoom: 1;
-  list-style-type: none;
-  margin: 0px auto 30px;
-  padding: 0;
-  margin-right:0px;
-  position:relative;
-}
-.dropmenu:before, .dropmenu:after{
-  content: "";
-  display: table;
-}
-.dropmenu:after{
-  clear: both;
-}
-.dropmenu li{
- 
-  float: right;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-
-}
-
-
-.dropmenu li a {
-    display: block;
-    margin: 0;
-    background: none;
-    color: #fff;
-    padding: 0 20px;
-    transition: all 0.5s;
-    text-decoration: none;
-    margin-right: 0px;
-}
-
-.dropmenu li a:hover{
-  background-color:rgba(255, 255, 255, 0.5);
-
-}
-
-.dropmenu li ul{
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  width:100%;
-  overflow:visible;
-}
-.dropmenu li ul li{
-
-  width: 280px;
-}
-.dropmenu li ul li a{
-  padding: 3px 15px;
-  background: rgba(34, 49, 52, 0.9);
-  text-align: left;
-  width: 280px;
-    font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
-
-}
-
-.dropmenu li ul li:hover{
-  background-color:rgba(34, 49, 52, 0.9);
-}
-
-
-#normal li ul{
-  display: none;
-}
-#normal li:hover ul{
-  display: block;
-}
-
-.fa{
-  font-size:10px;
-  margin-right:5px;
-}
-
-/*--ログアウトモーダル開始---------------------------------------------------------------------------------*/   
-
-.logout-modal-wrapper {
+.complete-modal-wrapper {
   position: fixed;
   top: 0;
   right: 0;
@@ -196,744 +37,224 @@ header{
   text-align: center;
 }
 
-.fa-times {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  color: rgba(128, 128, 128, 0.46);
-  cursor: pointer;
-}
-
- #logout-form {
+ #complete-form {
   width: 100%;
 }
 
-#logout-form h2 {
+#post-ete-form h2 {
   color: #5f5d60;
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
 
-
-
-#submit-btn1, #submit-btn2 {
-  display: inline-block;
-  padding: 14px 140px;
-  background-color: #5dca88;
-  border: none;
-  border-radius: 3px;
-  color: white;
-  margin: 10px auto;
-  cursor: pointer;
-  width:30%;
+.sentence{
+    font-size:15px;
 }
 
-.idpass-forget{
- text-decoration: underline;
-}
-
-/*--ログアウトモーダル終了---------------------------------------------------------------------------------*/   
+/*--完了モーダル終了---------------------------------------------------------------------------------*/   
 
 
 
 /*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
 
- .main{
- width:700px;
- margin:0px auto;
+	
+.edit_account_main_confirm{
+
+border:solid rgba(34, 49, 52, 0.3) 1px;
+height:400px;
+width:50%;
+margin:10px auto;
+ text-align: center;
+ border-radius: 3px  3px;
  margin-top:100px;
- 
- 
- }
-				
-				/*--profile開始-----------------------------------------------------------------*/   
-				.profile{
-				
-					width:100%;
-					height:450px;
-		 			/*border:solid black 1px;*/
-			
-				}
-				
-				.profile-left{
-					width:50%;
-					height:450px;
-		 			/*border:solid black 1px;*/
-		 			float:left;
-				}
-				
-				
-				.profile-photo{
-					width:	100%;
-				}
-				
-				.profile-photo:hover{
-				cursor:pointer;
-				}
-				.teacher-name{
-			
-				}
-				
-				.profile-right{
-					width:49%;
-					height:450px;
-					border:solid rgba(34, 49, 52, 0.1) 1px;
-		 			float:right;
-					background-color:white;
+   font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 
-				}
-				
-				.profile-right-box{
-					margin-top:0px;
-					width:100%;
-					display:block;
-		 			background-color:white;
+}
 
-					
-				}
-				
-				.photo-modal-css{
-			
-				}
-				
-				.box{
-					box-sizing:border-box;
-					width:32.46%;
-					text-align:center;
-		 			background-color:rgba(34, 49, 52, 0.1);
-					display:inline-block;
-					/*border:solid rgba(34, 49, 52, 0.1) 1px;*/
-					padding-top:10px;
-									
-				}
-				
-				.box:hover{
-					cursor:pointer;
-				}
-				.rating{
-				margin-top:1%;
-				}
-				
-				.box2{
-					box-sizing:border-box;
-					width:66.3%;
-					text-align:center;
-		 			background-color:rgba(34, 49, 52, 0.1);
-					display:inline-block;
-					/*border:solid rgba(34, 49, 52, 0.1) 1px;*/
-					padding-top:2px;
-					float:right;
-					margin-top:1%;
-					margin-right:0.1%;
-				
-				}
+.edit_account_main_confirm_1{
+border:solid rgba(34, 49, 52, 0.3) 1px;
+height:50px;
+width:100%;
+ text-align: left;
+ margin-bottom:10px;
+}
 
-				.box3{
-					box-sizing:border-box;
-					width:100%;
-					height:40px;
-					text-align:center;
-		 			background-color:rgba(34, 49, 52, 0.1);
-
-					/*border:solid rgba(34, 49, 52, 0.1) 1px;*/
-					padding-top:2px;
-					float:right;
-					margin-top:1%;
-					margin-right:0.1%;
-					line-height:40px;
-					
-				}
-
-				.teacher-name{
-				color:#3b5998;
-				font-size:30px;
-				margin-top:5px;
-				}
-				
-				.Num-lesson{
-					margin-top:0px;
-					font-size:17px;
-					color:#b5cd60;
-					width:95%;
-					box-sizing:border-box;
-					height:100px;
-					border-radius: 3px 0px 0px 3px;
-					display:inline-block;
-					border:none;/*solid black 1px;*/
-
-				}
-
-				.lessons{
-					font-size:13px;
-					color:rgba(34, 49, 52, 0.9);
-				}
-				.hour-OWN{
-					margin-top:0;
-					font-size:18px;
-					text-align:center;
-					
-
-				}
-
-				.hour-USD{
-					margin-top:0px;
-					margin-top:0;
-					margin-bottom:0;
-					font-size:17px;
-					color:#b5cd60;
-					width:95%;
-					box-sizing:border-box;
-					height:100px;
-					border-radius: 3px 3px;
-					display:inline-block;
-					border:none;/*solid black 1px;*/
-					margin:0px auto;
-				}
-
-				.min-OWN{
-					margin-top:0;
-					font-size:18px;
-					text-align:center;
-				}
-
-				.min-USD{
-					margin-top:0;
-					margin-bottom:0;
-					margin-right:0;
-					font-size:17px;
-					color:#b5cd60;
-					width:95%;
-					box-sizing:border-box;
-					height:100px;
-					border-radius: 3px 0px 0px 3px;
-					display:inline-block;	
-					border:none;/*solid black 1px;*/
-
-				}
-
-				.evaluation{
-
-					margin-bottom:0;
-					font-size:40px;
-					color:#b5cd60;
-					width:95%;
-					box-sizing:border-box;
-					height:100px;
-					border-radius: 3px 3px;
-					display:inline-block;
-					border:none;/*solid black 1px;*/
-					margin:0px auto;
-					margin-top:10px;
-				}
-
-				.cost{
-				margin-left:5%;
-				}
-				
-				.fa-users,.fa-comments,.fa-clock-o{
-				margin:10px auto;
-				width:100%;
-				}
-				
-				.star{
-				margin-top:0px;
-				margin-bottom:0;
-				height:18px;
-				border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
-				padding-top:0px;
-				}
-				
-				.progress{
-					
-				}
-				
-				.evaluation5, .evaluation4, .evaluation3, .evaluation2, .evaluation1{
-				text-decoration:underline;
-				color:blue;
-				width:10%;
-			    float:left;
-				margin-top:0px;
-				margin-left:2.5%;
-				font-size:13px;
-				margin-bottom:0px;	
-
-				}
-				
-				.evaluation5_right, .evaluation4_right, .evaluation3_right, .evaluation2_right, .evaluation1_right{
-				width:10%;
-			    float:left;
-				margin-top:0px;
-				margin-left:2.5%;
-				font-size:13px;
-				margin-bottom:0px;	
-
-				}
-				
-				.evaluation5, .evaluation4, .evaluation3, .evaluation2, .evaluation1:hover{
-				cursor:pointer;
-				}
-				
-				.outside{
-					border:solid rgba(34, 49, 52, 0.1) 1px;
-					width:65%;
-					height:12px;
-					background-color:white;
-					margin-top:0px;
-					float:left;
-					margin-left:2%;
-					margin-right:0px;
-					margin-bottom:0px;	
-					
-				}
-				.inside5, .inside4, .inside3, .inside2, .inside1 {
-					background-color:#b5cd60;
-					border:solid black 1px;
-					height:12px;
-					margin-top:0px;
-					border:none;
-					margin-bottom:0px;	
-				}
-				
-				.inside5{
-				width:51%;
-				}
-								
-				.inside4{
-				width:28%;
-				}
-								
-				.inside3{
-				width:7%;
-				}
-								
-				.inside2{
-				width:4%;
-				}
-								
-				.inside1{
-				width:10%;
-				}
-				
-				.lessons1{
-					font-size:12px;
-					color:rgba(34, 49, 52, 0.9);
-					margin-bottom:0px;
-					margin-top:0px;
-					}
-					
-				
-				.percentage5, .percentage4, .percentage3, .percentage2, .percentage1{
-				margin-left:0%;
-				font-size:10px;
-
-				}
-				
-				.hitokoto{
+.edit_account_main_confirm_2{
+border:solid rgba(34, 49, 52, 0) 1px;
+height:250px;
+width:85%;
+margin:5px auto;
+}
 
 
-				}
+.edit_account_main_confirm_2_right{
+border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
+height:250px;
+width:32%;
+float:right;
+}
+.edit_account_main_confirm_3{
+border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
+height:100px;
+width:100%;
+ text-align: center;
+}
 
-				/*--profile終了-----------------------------------------------------------------*/   
-				
-				/*--ログインモーダル開始---------------------------------------------------------------------------------*/   
+.edit_account_main_confirm_1 p{
+font-size:20px;
+line-height:50px;
+  padding:0 25px;
+margin-top:0px;
 
-				.profile-photo-modal-wrapper{
-  					position: fixed;
-  					top: 0;
-  					right: 0;
-  					bottom: 0;
-  					left: 0;
-  					background-color: rgba(0, 0, 0, 0.6);
-  					z-index: 100;
-  					/* display: none;を追加してください */
-  					display:none;
-  					  text-align: center;
-					}
+}
 
-					.modal-photo {
- 					 position: absolute;
- 					 top: 10%;
-  					left: 27.5%;
-  					background-color: #e6ecf0;
-  					padding: 20px 0 40px;
-  					border-radius: 10px;
-  					width: 45%;
-  					height: 650px;
-  					text-align: center;
- 					 vertical-align:middle;
+.register{
+border:none;/*solid rgba(34, 49, 52, 0.3) 1px;*/
+height:40px;
+width:100%;
+text-align:left;
+line-height:40px;
+box-sizing:border-box;
+}
+
+
+
+.register-left{
+border:solid rgba(34, 49, 52, 0.1) 1px;
+height:40px;
+width:29%;
+text-align:left;
+line-height:40px;
+box-sizing:border-box;
+float:left;
+margin-left:5%;
+padding-left:3%;
+}
+
+.register-right{
+border:solid rgba(34, 49, 52, 0.1) 1px;
+height:40px;
+width:66%;
+text-align:left;
+box-sizing:border-box;
+float:left;
+margin:0px 0px;
+padding:0px 0px;
+position:relative;
+color:black;
+}
+
+.input{
+height:25px;
+border-radius: 3px  3px;
+line-height:40px;
+margin:0px 0px;
+padding:0px 0px;
+width:45%;
+position:absolute;
+display:inline-block;
+}
+
+.input2{
+height:25px;
+border-radius: 3px  3px;
+line-height:40px;
+margin:0px 0px;
+padding:0px 0px;
+
+
+display:inline-block;
+}
+.input22{
+height:25px;
+border-radius: 3px  3px;
+line-height:40px;
+margin:0px 0px;
+padding:0px 0px;
+
+
+display:inline-block;
+}
+
+.select{
+border-radius: 3px  3px;
+height:25px;
+
+}
+
+
+.btn{
+  padding-top:8px;
+  padding-bottom:8px;
+  padding-left:24px;
   
-					}
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+  width:55%;
+box-sizing:border-box;
+text-align:left;
+display:block;
 
-					.fa-times {
-  					position: absolute;
-  					top: 12px;
-  					right: 12px;
-  					color: rgba(128, 128, 128, 0.46);
-  					cursor: pointer;
-					}
-
-					.profile-photo-modal{
-						width:100%;
-						margin-top:50px;
-					}
-/*--ログインモーダル終了---------------------------------------------------------------------------------*/   
-
-
-				/*--Introduction開始------------------------------------------------------------*/   
-			
-				.teacher-name{
-				color:#3b5998;
-				font-size:30px;
-				margin-top:5px;
-				margin-bottom:1%;
-				margin-left:1%;
-
-				}
-				
-				
-				.title{
-				width:20%;
-				}
-		
-				.table-introduction{
-					margin-left:3%;
-				}
-		
-				.Introduction-title{
-				font-weight:bold;
-				margin-left:1%;
-				}
-				
-				.Introduction-contentes{
-					width:96%;
-					display:block;
-		 			/*border:solid black 1px;*/
-		 			margin:0px auto;
-		 			margin-bottom:10px;
-								
-				}
-		
-				.introduction{
-				width:100%;
-				border:solid rgba(34, 49, 52, 0.1) 1px;
-				margin-top:5px;
-				
-				}
-				/*--Introduction終了------------------------------------------------------------*/
-		
-				.line{
-				margin-top:0px;
-				margin-bottom:0px;
-				
-				}
-				/*--スケジュール開始------------------------------------------------------------*/   
-				.schedule{
-					width:100%;
-					height:800px;
-					border:solid rgba(34, 49, 52, 0.1) 1px;
-				}
-				
-				.schedule-title{
-					width:99%;
-					height:20px;
-					border:none;/*solid rgba(34, 49, 52, 0.9) 1px;	*/			
-					margin-left:1%;	
-					font-weight:bold;
-					box-sizing:border-box;
-					margin-bottom:0px;
-					
-				}
-				
-				.schedule-timeselect{
-					width:95%;
-					height:40px;
-					margin:0 auto;
-					border:none/*solid rgba(34, 49, 52, 0.9) 1px;	*/		
-					
-
-				}
-		
-				.time-all, .time1-btn,.time2-btn,.time3-btn,.time4-btn{
-				margin-left:3%;
-				float:left;
-				width:15%;
-				display:inline-block;
-				text-align:center;
-				border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/	
-				
-				}
-				.time2,.time3,.time4{
-				display:none;
-				
-				}		
-
-				
-				.time1-btn:hover{
-				text-decoration:underline;
-				cursor:pointer;
-				}
-				.time2-btn:hover{
-				text-decoration:underline;
-				cursor:pointer;
-				}
-				.time3-btn:hover{
-				text-decoration:underline;
-				cursor:pointer;
-				}
-				.time4-btn:hover{
-				text-decoration:underline;
-				cursor:pointer;
-				}
-				.time-all:hover{
-				text-decoration:underline;
-				cursor:pointer;
-				}
-				
-				.table-schedule{
-				border:solid rgba(34, 49, 52, 0.9) 1px;
-				width:100%;
-				text-align:center;
-				}
-				.title-schedule{
-				width:12%;	
-				height:30px;
-				background-color:rgba(34, 49, 52, 0.1);			
-				}
-				
-				.lefttop{
-				width:16%;	
-				height:30px;
-				background-color:rgba(34, 49, 52, 0.1);			
-				}
-				
-				.title-schedule-left{
-				width:16%;	
-				height:30px;			
-				}
-
-				.schedule-row-color{
-				background-color:rgba(135, 206, 250, 0.2);
-				height:30px;
-				
-								}
-				.reserved{
-				border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
-				margin: 0px auto; 
-				border-radius: 5px;
-				background-color:rgba(34, 49, 52, 0.6);
-				color:white;
-				padding:1px 1px;	
-				}
-				
-				.available{
-				border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/
-				margin: 0px auto;
-				border-radius: 5px;
-				background-color:#b5cd60;
-				color:rgba(34, 49, 52, 0.9);
-				padding:1px 8px;
-				}				
-				
-				.available:hover{
-				cursor:pointer;
-				
-				}
-				/*--スケジュール終了------------------------------------------------------------*/
-				/*--レビュー開始----------------------------------------------------------------*/   
-				.review{
-					width:100%;
-					height:1000px;
-					border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/	
-
-				 }
-			
-			
-				.reviw-title{
-					width:99%;
-					height:20px;
-					border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/				
-					margin-left:1%;	
-					font-weight:bold;
-					box-sizing:border-box;
-					margin-bottom:5px;
-					
-				}
-				
-				.each-review{
-					width:100%;
-					height:150px;
-					border:solid rgba(34, 49, 52, 0.1) 1px;				
-					margin-top:2px;
-				}
-				
-				.each-review-left{
-					width:20%;
-					height:150px;
-					border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/	
-					text-align:center;
-					vertical-align:middle;
-										float:left;
-					}
-				
-				
-				.students-profile-photo{
-					width:	90%;
-					border-radius:100px;
-					margin-top:5%;
-
-				}
-				
-				
-				.each-review-right1{
-					width:30%;
-					height:30px;
-					border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/	
-					float:left;
-  					margin-top: 0;
-  					padding-top: 0; 
-					font-size:13px;
-  					}
-					
-					.students-evaluation,.students-name{
-					font-size:25px;
-  					margin-top: 0;
-  					padding-top: 0;
-  					}
-					.students-name{
-					font-size:13px;
-  					margin-top: 0;
-  					padding-top: 0;
-  					}					
-					
-/*//レート評価 変数  ←【保留】
-var(starFull)= 16px;//星1個の幅
-$starHalf: $starFull / 2;//星半分（0.5）の幅
-
-$rate1: $starFull;//星1
-$rate1-5: $starFull + $starHalf;//星1.5
-$rate2: $starFull * 2;//星2
-$rate2-5: ($starFull * 2) + $starHalf;//星2.5
-$rate3: $starFull * 3;//星3
-$rate3-5: ($starFull * 3) + $starHalf;//星3.5
-$rate4: $starFull * 4;//星4
-$rate4-5: ($starFull * 4) + $starHalf;//星4.5
-$rate5 :$starFull * 5;//星5
-
-.rate{
-  position: relative;
-  display: inline-block;
-  width: $starFull * 5;
-  height: $starFull;
-  font-size: $starFull;
-  &:before,&:after{
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '★★★★★';
-    display: inline-block;
-    height: $starFull;
-    line-height: $starFull;
-  }
-  &:before{
-  color: #ddd;
-  }
-  &:after{
-  color: #ffa500;
-  overflow: hidden;
-  white-space: nowrap;//これがないと改行されて星の半分（0.5）が表現できなくなる
-  }
 }
-.rate0:after{//星0
-  width: 0;
+
+ .btn:hover{
+  cursor: pointer;
+
 }
-.rate1:after{//星1
-  width: $rate1;
+
+
+.btn:hover{
+  opacity:1
 }
-.rate1-5:after{//星1.5
-  width: $rate1-5;
+
+.fa{
+  font-size:10px;
+  margin-right:5px;
 }
-.rate2:after{//星2
-  width: $rate2;
+
+.explain{
+
+width:96%;
+text-align:left;
+margin-top:0px;
+font-size:12px;
+
 }
-.rate2-5:after{//星2.5
-  width: $rate2-5;
+
+.explain2{
+
+
+margin-top:10px;
+font-size:15px;
+
 }
-.rate3:after{//星3
-  width: $rate3;
+
+.btn1{
+  padding:8px 24px;
+    background-color:#239b76;
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+  width:60%;
+box-sizing:border-box;
+text-align:center;
+  font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+
+
 }
-.rate3-5:after{//星3.5
-  width: $rate3-5;
-}
-.rate4:after{//星4
-  width: $rate4;
-}
-.rate4-5:after{//星4.5
-  width: $rate4-5;
-}
-.rate5:after{//星5
-  width: $rate5;
+
+ .btn1:hover{
+  cursor: pointer;
+
 }
 
 
 
-.wrap{
-  width: 80px;
-  margin: 0 auto;
-  height:20px;
- 					border:solid rgba(34, 49, 52, 0.9) 1px;	 
-}	*/
-					.each-review-right2{
-					width:25%;
-					height:20px;
-					border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/	
-					float:right;
-  					margin-top: 0;
-  					padding-top: 0;
-					font-size:13px;
-					
-  					  					
-  					}
-					.each-review-right3{
-					width:80%;
-					height:100px;
-					border:none;/*solid rgba(34, 49, 52, 0.9) 1px;*/	
-					float:left;
-  					margin-top: 5px;;
-  					padding-top: 0;
-					font-size:13px;
-  					  					
-  					}	
-  					
-  					.read-more{
-						width:100%;
-						height:25px;
-						border:solid rgba(34, 49, 52, 0.1) 1px;	
-						background-color:rgba(34, 49, 52, 0.1);	
-						margin-top:2px;
-						text-align:center;
-						line-height:25px;
-						display:block;
-						margin-:0px;
-					}
-					
-					.read-more:hover{
-						cursor:pointer;
-					}			
-					
-					.review-unit-2, .review-unit-3{
-					display:none;
-					}			
-				/*--レビュー終了----------------------------------------------------------------*/
-		
-		
-		
-		
-		
-		
-			
-		/*--右半分終了-------------------------------------------------------------------------*/	
-			
-		
+
+
 /*--メイン終了---------------------------------------------------------------------------------*/   
 
 
@@ -955,7 +276,7 @@ $rate5 :$starFull * 5;//星5
   transition:all 0.5s;
   margin-top:0px;
   position:absolute;
-  top:4000px;
+  top:700px;
 
 }
 
@@ -978,7 +299,7 @@ footer{
   width:100%;
   color:white;
   position:absolute;
-  top:4050px;
+  top:750px;
   
 }
   

@@ -165,11 +165,11 @@
                 <% if 0 <= t.min && t.min < 15 %>
                             
       		        <tr >
-      		                        <td class="schedule-row-color" ><%= t.hour %>:30 - <%= t.hour + 1 %>:00</td>
+      		                        <td  ><%= t.hour %>:30 - <%= t.hour + 1 %>:00</td>
                     
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td  width="200px"></td>
+                    				<td  width="200px"></td>
+                    				<td  width="200px"></td>
                     				
                     </tr >	
                      <% hour = t.hour + 1 %> 
@@ -178,11 +178,11 @@
                  <% elsif 15 <= t.min && t.min < 45 %>   
                 
         		    <tr >
-      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:00 - <%= t.hour + 1 %>:30</td>
+      		                        <td ><%= t.hour + 1 %>:00 - <%= t.hour + 1 %>:30</td>
                     
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td  width="200px"></td>
+                    				<td  width="200px"></td>
+                    				<td  width="200px"></td>
                     				
                     </tr >	
                     <% hour = t.hour + 1 %> 
@@ -191,11 +191,11 @@
                 <% elsif 45 <= t.min && t.min < 0 %>   
                 
         		    <tr >
-      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:30 - <%= t.hour + 2 %>:00</td>
+      		                        <td><%= t.hour + 1 %>:30 - <%= t.hour + 2 %>:00</td>
                     
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td  width="200px"></td>
+                    				<td  width="200px"></td>
+                    				<td  width="200px"></td>
                     				
                     </tr >
                     
@@ -204,8 +204,8 @@
                     
                 <% end %>
                 
-                <% iteration = 24 - t.hour %>
-    	        <% (0..iteration).each do |num|%>
+                <% iteration = 23 - t.hour %>
+    	        <% (2..iteration).each do |num|%>
       		        <tr >
       		                        <td class="schedule-row-color" ><%= t.hour + num %>:00 - <%= t.hour + num %>:30</td>
                     

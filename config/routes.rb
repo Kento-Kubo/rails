@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'main/index' => "main#index"
   #get 'main/index2' => "main#index2"
   get 'main/mypage_student' => "main#mypage_student"
+  get 'main/mypage_teacher' => "main#mypage_teacher"
   #get 'main/student_profile_edit' => "main#student_profile_edit"
   #get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
 
@@ -44,8 +45,8 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :users
+  get 'users/:id/edit' => 'users#edit'
   post   'users/new' => 'users#new'
-  #post   'users/new2' => 'users#new2'
   post   'users/create2' => 'users#create2'
   root   'users#top'
 
