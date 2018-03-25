@@ -132,13 +132,14 @@ height:165px;
 
 .result-number-left{
 padding-left:50px;
-width:30%;
+width:50%;
 display:inline-block;
 float:left;
 }
 
 .number{
 font-size:20px;
+
 }
 .result-number-right{
 padding-left:0px;
@@ -173,24 +174,62 @@ display:inline-block;
 
 .main-part{
 width:700px;
- margin:0px auto 100px;
+ margin:0 auto;
  border:solid rgba(34, 49, 52, 0.1) 1px;
- 
+ text-align:left;
+
  }
-		
+ 
+ .time-schedule{
+     display:inline-block;
+     width:15%;
+     box-sizing:border-box;
+     border:solid rgba(34, 49, 52, 0.9) 1px; 
+    text-align:center;
+   margin-left:0px;
+    
+    padding: 0px;
+     }
+     
+  .teacher-schedule{
+     display:inline-block;
+     width:27%;
+     box-sizing:border-box;
+     border:solid rgba(34, 49, 52, 0.9) 1px; 
+    
+   
+    
+    padding: 0px;
+     }
+ 
+	
+	
+.blank{
+    width:100%;
+     box-sizing:border-box;
+    height:200px;
+ border:solid rgba(34, 49, 52, 0.9) 1px; 
+    margin-left:0px;
+    display: list-item;
+     width:100%;
+    
+}	
+
+.scroll{
+    width:100%;
+     box-sizing:border-box;
+    height:30px;
+    
+    display: list-item;
+}	
 .Profile-photo{
 width:130px;
 }
 
 .teacher-info{
 text-align:center;
- width:200px;
-}
-
-.blank{
-text-align:center;
- width:74px;
- box-sizing:border-box;
+ width:100%;
+ height:200px;
 }
 
 
@@ -224,6 +263,11 @@ padding:0 0;
 background-color:rgba(135, 206, 250, 0.2);
 
 
+}
+
+.availble:hover{
+    pointer:cursor;
+    
 }
 
 /*検索結果一覧終了--------------------------------------------------------------------------*/
@@ -278,8 +322,7 @@ width:100%;
 margin:0 auto;
 height:20px;
 
-position:absolute;
-top:3340px;
+
 
 }
 
@@ -298,8 +341,7 @@ text-decoration:underline;
 width:100%;
 height:50px;
 background-color:rgba(34, 49, 52, 0.6);
-  position:absolute;
-  top:3400px;
+  
   text-align:center;
   line-height:50px;
     color:white;
@@ -324,8 +366,7 @@ footer{
   height: 270px;
   width:100%;
   color:white;
-  position:absolute;
-  top:3450px;
+  
   
 }
   

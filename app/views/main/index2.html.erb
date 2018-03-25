@@ -94,7 +94,7 @@
         <div class="teacher-list-top">
             <div class="result-number-left">
             
-                <p><span class="number">10</span> teachers have been found</p>
+                <p><span class="number">10</span> teachers have been found for 24th of March</p>
                 
             </div>
             <div class="result-number-right">
@@ -113,7 +113,63 @@
         </div>  
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>           
-        <% n = @teachers.count / 3 + 1 %>
+       <% n = @teachers.count / 3 + 1 %>
+       <% (1..n).each do |x|%> 
+       
+       <div class="main-part">
+            <ul style="list-style:none;" class="time-schedule">
+                <li class="blank"></li>
+                    <% (0..23).each do |num|%>
+                <li class="schedule-row-color scroll" >&nbsp;<%= 0+num %>:00&nbsp;</li>
+                <li class="scroll" >&nbsp;<%=  0+num %>:30&nbsp;</li>
+                    <%end%>
+                
+            </ul>
+            
+            
+                  <% a = 0+3*(x-1)%>
+      			  <% b = 1+3*(x-1)%>
+      			  <% c = 2+3*(x-1)%>
+      			  <% @teachers[a..c].each do |teacher|%>
+            <ul style="list-style:none; "class="teacher-schedule">
+            
+                <li class="teacher-info">
+      			  <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
+      			  <%= link_to teacher.name, "/teachers/#{teacher.id}/show", class: "introduction name" %><br>
+      			  1 lesson:4$<br>
+      			  ★★★★★<br>
+      			  hobby:<%= teacher.hobby %>
+      			  </li>
+      			  
+                <% (0..23).each do |num|%>  
+                <% require "time" %>
+                
+                <% y = "2018" %>
+                <% m = "03" %>
+                <% d = "25" %>
+                <% if num < 10 %>
+                  <% h = "0" + num.to_s %>
+                <% else %>
+                  <% h = num.to_s %>
+                <%end%>
+                
+                <% min1 = "00" %>
+                <% min2 = "30" %>
+                <% s = "00" %>
+                <% t1 = y+m+d+h+min1+s; %>
+                <% t2 = y+m+d+h+min2+s; %>
+                
+                <li class="schedule-row-color scroll" ><%= link_to "available", lessons_new_path(:time => t1, :id => teacher.id) %> </li>
+                <li class="scroll" ><%= link_to "available", lessons_new_path(:time => t2, :id => teacher.id) %> </li>
+                <%end%>
+
+            </ul>
+            <%end%>
+            
+        </div>
+        <%end%>
+        
+       <!-- <% n = @teachers.count / 3 + 1 %>
         <% (1..n).each do |x|%> 
         <div class="main-part">
           <div class="fixed" >
@@ -147,7 +203,7 @@
       			  1 lesson:1$<br>
       			  ★☆☆☆☆<br>
       			  hobby:monkey
-      			  </td>-->
+      			  </td>
       			  <%end%>
       			  <td >   
       			  </td>
@@ -206,12 +262,12 @@
                     
                 <% end %>
                 
-                
+               
     	        <% (0..22).each do |num|%>
       		        <tr >
       		                        <td class="schedule-row-color" ><%= t.hour + num %>:00 - <%= t.hour + num %>:30</td>
                     
-                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"><%= link_to("available", "/lessons/new") %></td>
                     				<td class="schedule-row-color" width="200px"></td>
                     				<td class="schedule-row-color" width="200px"></td>
                     				
@@ -578,13 +634,13 @@
                     				<td></td>
                     				<td></td>
                   				
-                    </tr>   -->  						
+                    </tr>     						
          </table>
         </div>
          
             
         </div>
-        <%end%>
+        <%end%>-->
 <!--検索結果終了----------------------------------------------------------------------------->
 <!--ページ番号開始--------------------------------------------------------------------------->
         <div class="teacher-list-bottom">
