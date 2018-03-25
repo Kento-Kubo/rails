@@ -37,7 +37,7 @@
   						<li><a href="#"><span class="fa fa-bell"></a></li>
   						<li><a href="#"><span class="fa fa-user"></a></li>
   						<!--<li><%= link_to("My page","/main/mypage_student") %></li>----->  
-  					    <li><%if session[:teacher]%>
+  					    <li><%if is_teacher?%>
   					    <%= link_to current_user.name,teacher_path(current_user),class: current_user %>
   					    <%else%>
   					    <%= link_to current_user.name,"/main/mypage_student",class: current_user %>

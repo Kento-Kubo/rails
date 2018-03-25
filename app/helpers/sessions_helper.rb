@@ -17,6 +17,14 @@ module SessionsHelper
     !current_user.nil?
   end
   
+  def is_teacher?
+    if session[:teacher]==1
+      return true
+    else
+      return false
+    end
+  end
+  
   def log_out
     session.delete(:user_id)
     session.delete(:teacher)
