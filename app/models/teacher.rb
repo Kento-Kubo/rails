@@ -2,6 +2,7 @@ class Teacher < ActiveRecord::Base
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     # before_save { self.email = email.downcase }
+    attr_accessor :password_check
 
     validates :name, {presence: true ,uniqueness:true, length: { maximum: 25 }}
     # validates :skype, {presence: true }

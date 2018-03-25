@@ -19,6 +19,7 @@ class TeachersController < ApplicationController
   end
 
   def edit #edit profile
+    @user = current_user
   end
   
   def create #save new teacher
@@ -66,7 +67,7 @@ class TeachersController < ApplicationController
     
     def correct_teacher
       @teacher = Teacher.find(params[:id])
-      if @teacher =! current_teacher
+      if @teacher =! current_user
       flash[:notice] = "You are not allowed to access this page"
       redirect_to(root_url) 
       end
