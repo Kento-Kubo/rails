@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+body {
+  margin: 0;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 6, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+return-top {
+  color: black;
+}
+
+/*
+  header font in users_layout.scss
+
+*/
+/*入力画面開始-----------------------------------------------------------------------------------------------------------------------*/
+/* line 21, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+.logout_main {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 420px;
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 3px  3px;
+  text-align: center;
+}
+
+/* line 32, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+.title {
+  margin-top: 100px;
+}
+
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+.to-top {
+  background-color: #239b76;
+  width: 30%;
+  margin: 30px auto;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* line 45, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+.close {
+  width: 10%;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  text-align: center;
+  color: blue;
+  text-decoration: underline;
+}
+
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+.btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width: 55%;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* line 72, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* line 77, /home/ubuntu/workspace/app/assets/stylesheets/users/logout.scss */
+.close:hover {
+  cursor: pointer;
+}
+
+/*入力画面終了-----------------------------------------------------------------------------------------------------------------------*/

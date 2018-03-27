@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  // font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.top-wrapper-2{
+  padding: 180px 0 100px 0;
+  background-image: url("/teacher_top.jpg");
+  background-size:cover;
+  color:white;
+  height:500px;
+  text-align:center;
+}
+
+.btn{
+  padding:8px 24px;
+  color:white;
+  display:inline-block;
+  opacity:0.8;
+  border-radius:4px;
+  margin-top: 10px;
+  font-size:20px;
+}
+
+
+
+.btn:hover{
+  cursor: pointer;
+
+}
+
+.sign-up{
+  background-color:#239b76;
+}
+
+.log-in{
+  background-color:#239b76;
+ }
+
+.facebook{
+  background-color:#3b5998;
+  margin-right:10px;
+}
+
+.twitter{
+  background-color:#55acee;
+}
+
+.btn:hover{
+  opacity:1
+}
+
+
+.new{
+padding-top:0;
+color:white;
+height:65px;
+}
+
+
+.signup-model-wrapper {
+  display:none;
+}
+
+#signup-form{
+  width: 100%;
+}
+
+#signup-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+#signup-form input{
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+#signup-model-teacher{
+    position:fixed;
+}

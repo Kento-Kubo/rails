@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+body {
+  margin: 0;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 6, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+header {
+  position: static;
+}
+
+/*
+  header font in users_layout.scss
+*/
+/* line 16, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+.inputbox {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 300px;
+  width: 20%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 3px  3px;
+}
+
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+.IDpass_title {
+  width: 75%;
+  font-size: 20px;
+  font-weight: 100;
+  margin: 10px auto;
+  text-align: left;
+}
+
+/* line 37, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+.input-email {
+  height: 30px;
+  width: 75%;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 10px auto;
+  text-align: left;
+  border-radius: 3px  3px;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+.check input {
+  width: 75%;
+  font-size: 20px;
+  font-weight: 100;
+  margin: 10px auto;
+  border-radius: 3px  3px;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  background: #b5cd60;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  height: 35px;
+  color: white;
+}
+
+/* line 64, /home/ubuntu/workspace/app/assets/stylesheets/users/pass_forgot.scss */
+.check input:hover {
+  background: #16aa56;
+}

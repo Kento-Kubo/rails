@@ -2,22 +2,6 @@
 	<%= stylesheet_link_tag "users/top", :media => "all" %>
     <%= javascript_include_tag 'users/top' %>
 <% end %>
-
-	<% if @error_message %>
-		<header2>
-            <div class="form-error">
-                <%= @error_message %>
-            </div>
-        </header2>
-    <% end %>
-		
-   	<% if flash[:notice] %>
-    	<header2>
-            <div class="flash">
-             	<%= flash[:notice] %>
-            </div>
-        </header2>
-    <% end %>
    
 <!--トップ開始-------------------------------------------------------------------------------->
 		
@@ -27,9 +11,13 @@
 			<h1>Learn Japanese</h1>
 			
 			<div class="btn-wrapper">
+				<a class="btn log-in" id="login-show-student">Login</a>
+			</div>
+			<div class="btn-wrapper">
 				<a class="btn sign-up" id="signup-show-student">Sign up</a>
+			
 				
-				<p>or sign up with</p>
+				<!--<p>or sign up with</p>
 				
 				<a class="btn facebook">
 					<span class="fa fa-facebook"></span>facebook
@@ -37,31 +25,34 @@
 				
 				<a class="btn twitter">
 				<span class="fa fa-twitter"></span>twitter
-				</a>
+				</a>-->
 			</div>
 		</div>
 	</div>
 	
-	<div class="top-wrapper-2">
-		<div class="container">
+	<!--<div class="top-wrapper-2">-->
+	<!--	<div class="container">-->
 		
-			<h1>Teach Japanese</h1>
+	<!--		<h1>Teach Japanese</h1>-->
 			
-			<div class="btn-wrapper">
-				<a class="btn sign-up" id="signup-show-teacher">Sign up</a>
+	<!--		<div class="btn-wrapper">-->
+	<!--			<a class="btn login" id="login-show-teacher">Login</a>-->
+	<!--		</div>-->
+	<!--		<div class="btn-wrapper">-->
+	<!--			<a class="btn sign-up" id="signup-show-teacher">Sign up</a>-->
 				
-				<p>or sign up with</p>
+				<!--<p>or sign up with</p>
 				
-				<a class="btn facebook">
-					<span class="fa fa-facebook"></span>facebook
-				</a>
+	<!--			<a class="btn facebook">-->
+	<!--				<span class="fa fa-facebook"></span>facebook-->
+	<!--			</a>-->
 				
-				<a class="btn twitter">
-				<span class="fa fa-twitter"></span>twitter
-				</a>
-			</div>
-		</div>
-	</div>
+	<!--			<a class="btn twitter">-->
+	<!--			<span class="fa fa-twitter"></span>twitter-->
+	<!--			</a>-->-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--</div>-->
 <!--トップ終了-------------------------------------------------------------------------------->	
 
 <!--生徒サインアップモーダル開始---------------------------------------------------->
@@ -81,44 +72,49 @@
 				<% end %>
 
 				
-				<!--<%= form_tag(new_user_path, method: "post") do %>-->
-  		<!--			<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
-  		<!--			<%= submit_tag "メール送信", class:"submit-btn"%>-->
-				<!--<% end %>-->
+				<%#= form_tag(new_user_path, method: "post") do %>
+  					<%#= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>
+  					<%#= submit_tag "メール送信", class:"submit-btn"%>
+				<%# end %>
 				
   			</div>
 		</div>
 	</div>
 <!--生徒サインアップモーダル終了---------------------------------------------------->	
-<!--先生サインアップモーダル開始---------------------------------------------------->
 
-	<div class="signup-model-wrapper" id="signup-model-teacher">
-		<div class="model">
-			<div class="close-model">
-    			<i class="fa fa-2x fa-times"></i>
-  			</div>
-  				
-  			<div id="signup-form">
-				<h2>先生として新規登録</h2>
-				<p class="subtitle">ご入力頂くEメールアドレスに新規登録用のURLをお送り致します。</p>
-				
-                <%= form_tag ("/users/new2") do %>
-	  			
- 					
- 					 <input name="email" value="<%= @user.email %>">
-                     <input type="submit" value="新規登録">
-				<% end %>
-
-				
-				<!--<%= form_tag(new_user_path, method: "post") do %>-->
-  		<!--			<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>-->
-  		<!--			<%= submit_tag "メール送信", class:"submit-btn"%>-->
-				<!--<% end %>-->
-				
-  			</div>
-		</div>
+<!--student ログインモーダル開始------------------------------------------------------>   
+<div class="login-model-wrapper" id="login-model-student">
+	<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
+	<div class="model">
+	 	<div class="close-model">
+			<i class="fa fa-2x fa-times"></i>
+  		</div>
+  	
+  		<div id="login-form">
+			<h2>studentログイン</h2>
+			
+			<!--<%#= form_for(:session, url: login_student_path) do |f| %>-->
+		 <!--   	<%#= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>-->
+		 <!--     	<%#= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>-->
+			<!--	<div class="idpass-forget"> -->
+  	<!--				<%#= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>-->
+  	<!--			</div>-->
+		 <!--     	<%#= f.submit "ログイン", class:"submit-btn" %>-->
+   <!--			<%# end %>-->
+   			
+   			<%= form_tag(login_student_path, method: "post") do %>
+  				<%= text_field_tag :email,nil,{ class:"form-control", placeholder: "メールアドレス"} %>
+				<%= password_field_tag :password,nil,{ class:"form-control", placeholder: "パスワード"} %>
+				<div class="idpass-forget"> 
+  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
+  				</div>
+  				<%= submit_tag "ログイン", class:"submit-btn"%>
+			<% end %>
+			
+  		</div>
 	</div>
-<!--先生サインアップモーダル終了---------------------------------------------------->	
+</div>
+
 	<div class="lesson-wrapper"></div>
 	<div class="message-wrapper"></div>
 	

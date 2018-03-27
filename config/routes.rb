@@ -1,23 +1,24 @@
 Rails.application.routes.draw do
-  get 'lessons/index'
+  #get 'lessons/index'
 
-  get 'class/index'
+  #get 'class/index'
 
-  get 'teacher/index'
+  #get 'teacher/index'
 
-  get 'student/index'
+  #get 'student/index'
 
-  get 'teacher/index'
+  #get 'teacher/index'
 
   get 'password_resets/new'
   get 'password_resets/edit'
 
-  get 'sessions/new'
+  # get 'sessions/new'
 
   # get 'main/index/:id' => "main#index"
   get 'main/index' => "main#index"
-  get 'main/index2' => "main#index2"
+  #get 'main/index2' => "main#index2"
   get 'main/mypage_student' => "main#mypage_student"
+  get 'main/mypage_teacher' => "main#mypage_teacher"
   #get 'main/student_profile_edit' => "main#student_profile_edit"
   #get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
 
@@ -41,18 +42,20 @@ Rails.application.routes.draw do
   # get 'logout' => 'users#logout'
   
   get    '/login' => 'sessions#new'
-  post   '/login' => 'sessions#create'
+  post   '/login_student' => 'sessions#create_student'
+  post   '/login_teacher' => 'sessions#create_teacher'
   delete '/logout' => 'sessions#destroy'
 
   resources :users
+  get 'users/:id/edit' => 'users#edit'
   post   'users/new' => 'users#new'
-  post   'users/new2' => 'users#new2'
   post   'users/create2' => 'users#create2'
   root   'users#top'
 
   resources :teachers
+  get   'teachers_top' => 'teachers#top'
   post   'teachers/new' => 'teachers#new'
-  get    'teachers/:id/show' => 'teachers#show'
+  # get    'teachers/:id/show' => 'teachers#show'
   
 
   # get 'user/edit_info' => "users#edit_info"

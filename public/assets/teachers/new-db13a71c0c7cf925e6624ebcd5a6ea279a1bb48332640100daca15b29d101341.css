@@ -1,0 +1,285 @@
+@charset "UTF-8";
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+body {
+  margin: 0;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* line 9, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 13, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+header2 {
+  margin-left: 380px;
+  height: 30px;
+  width: 55%;
+  color: white;
+  background-color: red;
+  position: fixed;
+  top: 65px;
+  z-index: 10px;
+  text-align: center;
+}
+
+/*
+  header font in users_layout.scss
+*/
+/*入力画面開始-----------------------------------------------------------------------------------------------------------------------*/
+/* line 30, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.signup_main {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 40 0px;
+  width: 85%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 3px  3px;
+  margin-top: 80px;
+}
+
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.signup_main_1 {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 50px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* line 50, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.signup_main_2 {
+  border: solid rgba(34, 49, 52, 0) 1px;
+  height: 600px;
+  width: 100%;
+}
+
+/* line 57, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.signup_main_2_left {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 250px;
+  width: 67%;
+  float: left;
+}
+
+/* line 64, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.signup_main_2_right {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 250px;
+  width: 32%;
+  float: right;
+}
+
+/* line 70, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.signup_main_3 {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 77, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.signup_main_1 p {
+  font-size: 20px;
+  line-height: 50px;
+  padding: 0 25px;
+  margin-top: 0px;
+}
+
+/* line 85, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.register {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+/* line 96, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.register-left {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 40px;
+  width: 29%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+}
+
+/* line 108, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.register-right {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 40px;
+  width: 66%;
+  text-align: left;
+  box-sizing: border-box;
+  float: left;
+  margin: 0px 0px;
+  padding: 0px 10px;
+  position: relative;
+}
+
+/* line 120, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.register-left-profile {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 80px;
+  width: 29%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+}
+
+/* line 132, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.register-right-profile {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 80px;
+  width: 66%;
+  text-align: left;
+  box-sizing: border-box;
+  float: left;
+  margin: 0px 0px;
+  padding: 0px 10px;
+  position: relative;
+}
+
+/* line 144, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.input {
+  height: 25px;
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 45%;
+  position: absolute;
+  top: 5px;
+}
+
+/* line 155, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.textarea {
+  border-radius: 3px 3px;
+  line-height: 1em;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 80%;
+  position: absolute;
+  top: 5px;
+  height: 80%;
+}
+
+/* line 166, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.input_profile {
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 80%;
+  position: absolute;
+  top: 5px;
+}
+
+/* line 179, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.select {
+  border-radius: 3px  3px;
+  height: 25px;
+}
+
+/* line 186, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width: 75%;
+  box-sizing: border-box;
+  text-align: left;
+  display: block;
+}
+
+/* line 202, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* line 207, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 213, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.twitter {
+  background-color: #55acee;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 219, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.btn:hover {
+  opacity: 1;
+}
+
+/* line 223, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 228, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.explain {
+  width: 96%;
+  text-align: left;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+/* line 237, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.explain2 {
+  margin-top: 60px;
+  font-size: 15px;
+}
+
+/* line 245, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.btn1 {
+  padding: 8px 24px;
+  background-color: #239b76;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width: 60%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* line 260, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.btn1:hover {
+  cursor: pointer;
+}
+
+/* line 265, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.contract {
+  text-decoration: underline;
+  color: blue;
+}
+
+/* line 271, /home/ubuntu/workspace/app/assets/stylesheets/teachers/new.scss */
+.contract:hover {
+  cursor: pointer;
+  display: inline-block;
+}

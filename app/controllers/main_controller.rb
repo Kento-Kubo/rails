@@ -1,6 +1,6 @@
 class MainController < ApplicationController
 
-  def index
+  def index3
    #データベースより全先生データ取得
     @users = User.all
     @teachers = User.where(teacher: true)
@@ -9,11 +9,11 @@ class MainController < ApplicationController
     #
     
   end
-   def index2
+   def index
    #データベースより全先生データ取得
     @users = User.all
     #@teachers = Teacher.all
-    @teachers = User.where(teacher: true)
+    @teachers = Teacher.all
     #年齢計算
     
     
@@ -25,7 +25,7 @@ class MainController < ApplicationController
     @user=find_by[id: params[:id]]
   end
  
-      before_action :authenticate_user
+      # before_action :authenticate_user
 
        def student_account_edit
         @user = User.find_by(id:session[:user_id])

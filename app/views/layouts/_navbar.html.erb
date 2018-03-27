@@ -1,5 +1,5 @@
 <header>
-    <% if @current_user %>
+    <% if logged_in? %>
             <div class="container">
                 <div class="header-left">
             
@@ -21,9 +21,19 @@
 						<li><a><span class="fa fa-cog"></a>
   					 		 <ul>
    							   <!--<li><%= link_to("account","/main/student_account/#{current_user.id}") %></li>-->
-     					       <li><%= link_to("account",user_path(current_user)) %></li>
+     					       <li><%if session[:teacher]%>
+     					       <%= link_to("acount",teacher_path(current_user)) %>
+     					       <%else%>
+     					       <%= link_to("account",user_path(current_user)) %>
+     					       <%end%>
+     					       </li>
     					       <!--<li><%= link_to("account edit","/main/student_account_edit/#{current_user.id}") %></li>-->
-       					       <li><%= link_to("account edit",edit_user_path(current_user)) %></li>
+       					       <li><%if session[:teacher]%>
+       					       <%= link_to("account edit",edit_teacher_path(current_user)) %>
+       					       <%else%>
+       					       <%= link_to("account edit",edit_user_path(current_user)) %>
+     					       <%end%>
+       					       </li>
      						   <li><%= link_to("よくあるお問い合わせ","/main/student_faq") %></li>
      						   <!--id="logout-show"-->
      						   <li><%= link_to("ログアウト","/logout",:method => :delete) %></li>
@@ -37,7 +47,15 @@
   						<li><a href="#"><span class="fa fa-bell"></a></li>
   						<li><a href="#"><span class="fa fa-user"></a></li>
   						<!--<li><%= link_to("My page","/main/mypage_student") %></li>----->  
-  					    <li><%= link_to current_user.name,"/main/mypage_student",class: current_user %></li>
+  						
+  					    <li><%if is_teacher?%>
+  					    <%= link_to current_user.name,teacher_path(current_user),class: current_user %>
+
+  					    <%else%>
+  					    
+  					    <%= link_to current_user.name,"/main/mypage_student"%>
+  					    <%end%>
+  					    </li>
 					</ul>
           	     </div>
             </div>
@@ -49,38 +67,26 @@
     		</div>
     		
     		<div class="header-right">
-        		<div class="login1" id="login-show">ログイン</div>
+        		<!--<div class="login1" id="login-show">for Student</div>-->
+   		       <%= link_to("学生の方へ",root_path,{class:'login1'}) %>
+
        		</div>
        		
        		<div class="header-right">
-        		<a class="login">日本語を教える</a>
-       		</div>		
+        		<!--<a class="login">先生の方へ</a>-->
+   		       <%= link_to("先生の方へ",teachers_top_path,{class:'login'}) %>
+       		</div>
+       		
+		
+
+		</div>
+       		<!--<div class="header-right">-->
+        	<!--	<a class="login">for Student</a>-->
+       		<!--</div>	-->
+
     	</div>
     <% end %>
 </header>
-
-<!--ログインモーダル開始------------------------------------------------------>   
-<div class="login-model-wrapper" id="login-model">
-	<!-- ログインのモーダル部分のHTMLを貼り付けてください -->
-	<div class="model">
-	 	<div class="close-model">
-			<i class="fa fa-2x fa-times"></i>
-  		</div>
-  	
-  		<div id="login-form">
-			<h2>Emailログイン</h2>
-			
-			<%= form_for(:session, url: login_path) do |f| %>
-		    	<%= f.email_field :email, {class: "form-control",placeholder:"メールアドレス"}%>
-		      	<%= f.password_field :password, {class: "form-control", placeholder:"パスワード"} %>
-				<div class="idpass-forget"> 
-  					<%= link_to("IDまたはパスワードを忘れた方はこちら","/user/pass_forgot" ,class:"idpass-forget") %>
-  				</div>
-		      	<%= f.submit "ログイン", class:"submit-btn" %>
-   			<% end %>
-  		</div>
-	</div>
-</div>
 		
 		
 <!--ログアウトモーダル開始------------------------------------------------------>   

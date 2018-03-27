@@ -1,0 +1,296 @@
+@charset "UTF-8";
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 9, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+a {
+  text-decoration: none;
+}
+
+/*--完了モーダル開始---------------------------------------------------------------------------------*/
+/* line 16, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.complete-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  /* display: none;を追加してください */
+  display: none;
+}
+
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+#complete-form {
+  width: 100%;
+}
+
+/* line 44, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+#post-ete-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* line 50, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.sentence {
+  font-size: 15px;
+}
+
+/*--完了モーダル終了---------------------------------------------------------------------------------*/
+/*ヘッダー終了（共通　変えないこと）-------------------------------------------------------------------------------------------------*/
+/* line 61, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.edit_account_main_confirm {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 400px;
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 3px  3px;
+  margin-top: 100px;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.edit_account_main_confirm_1 {
+  border: solid rgba(34, 49, 52, 0.3) 1px;
+  height: 50px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.edit_account_main_confirm_2 {
+  border: solid rgba(34, 49, 52, 0) 1px;
+  height: 250px;
+  width: 85%;
+  margin: 5px auto;
+}
+
+/* line 90, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.edit_account_main_confirm_2_right {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 250px;
+  width: 32%;
+  float: right;
+}
+
+/* line 96, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.edit_account_main_confirm_3 {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 103, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.edit_account_main_confirm_1 p {
+  font-size: 20px;
+  line-height: 50px;
+  padding: 0 25px;
+  margin-top: 0px;
+}
+
+/* line 111, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.register {
+  border: none;
+  /*solid rgba(34, 49, 52, 0.3) 1px;*/
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+/* line 122, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.register-left {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 40px;
+  width: 29%;
+  text-align: left;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+}
+
+/* line 134, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.register-right {
+  border: solid rgba(34, 49, 52, 0.1) 1px;
+  height: 40px;
+  width: 66%;
+  text-align: left;
+  box-sizing: border-box;
+  float: left;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  position: relative;
+  color: black;
+}
+
+/* line 147, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.input {
+  height: 25px;
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 45%;
+  position: absolute;
+  display: inline-block;
+}
+
+/* line 158, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.input2 {
+  height: 25px;
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  display: inline-block;
+}
+
+/* line 168, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.input22 {
+  height: 25px;
+  border-radius: 3px  3px;
+  line-height: 40px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  display: inline-block;
+}
+
+/* line 179, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.select {
+  border-radius: 3px  3px;
+  height: 25px;
+}
+
+/* line 186, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width: 55%;
+  box-sizing: border-box;
+  text-align: left;
+  display: block;
+}
+
+/* line 202, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* line 208, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.btn:hover {
+  opacity: 1;
+}
+
+/* line 212, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 217, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.explain {
+  width: 96%;
+  text-align: left;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+/* line 226, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.explain2 {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* line 234, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.btn1 {
+  padding: 8px 24px;
+  background-color: #239b76;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  width: 60%;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+
+/* line 249, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.btn1:hover {
+  cursor: pointer;
+}
+
+/*--メイン終了---------------------------------------------------------------------------------*/
+/*back to top開始（共通：変えないこと）--------------------------------------------------------*/
+/* line 267, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.back-to-top {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(34, 49, 52, 0.6);
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  display: block;
+  transition: all 0.5s;
+  margin-top: 0px;
+  position: absolute;
+  top: 700px;
+}
+
+/* line 283, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.back-to-top:hover {
+  background-color: rgba(34, 49, 52, 0.4);
+}
+
+/* line 287, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+.back-to-top-word {
+  color: white;
+  display: block;
+}
+
+/*back to top終了（共通：変えないこと）--------------------------------------------------------*/
+/*<フッター開始（共通：変えないこと）---------------------------------------------------------*/
+/* line 296, /home/ubuntu/workspace/app/assets/stylesheets/users/show.scss */
+footer {
+  background-color: rgba(34, 49, 52, 0.9);
+  height: 270px;
+  width: 100%;
+  color: white;
+  position: absolute;
+  top: 750px;
+}
+
+/*フッター終了（共通：変えないこと）-------------------------------------------------------*/

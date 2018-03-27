@@ -1,15 +1,10 @@
 class UsersController < ApplicationController
-  # layout "users_layout"
-  # before_action :forbid_login_user, only: [:create, :top]
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  # before_action :set_current_user
 
   def top
       @user = User.new
-      print current_user
-      print "yay"
   end
   
   def index #show all users
@@ -22,21 +17,20 @@ class UsersController < ApplicationController
 
   def new #create registration form
       @user=User.new
-      @user .teacher = false
+      @user.teacher = false
   end
   
-  def new2 #create registration form
-      @user=User.new
-      @user.teacher = true
-  end
+  # def new2 #create registration form
+  #     @user=User.new
+  #     @user.teacher = true
+  # end
 
   def edit #edit profile
-    @user = User.find_by(id:session[:user_id])
+    @user = current_user
   end
   
   def create #save new user
     @user = User.new(user_params)
-    
     if @user.save
       flash[:notice] = "Your account is registered"
       redirect_to root_path
@@ -48,7 +42,6 @@ class UsersController < ApplicationController
   
    
   def update #save edit profile
-      @user = User.find(params[:id])
       #if password_current
         #if password_current != @user.password
             #@error_message = "type correct password first"
@@ -112,8 +105,6 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
     
-    
-    
     def logged_in_user
       unless logged_in?
         flash[:danger] = "Please log in."
@@ -122,7 +113,7 @@ class UsersController < ApplicationController
     end
     
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by(params[:id])
       if @user =! current_user
       flash[:notice] = "You are not allowed to access this page"
       redirect_to(root_url) 

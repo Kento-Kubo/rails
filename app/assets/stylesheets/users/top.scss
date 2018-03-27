@@ -20,14 +20,6 @@ a {
   text-align:center;
 }
 
-.top-wrapper-2{
-  padding: 180px 0 100px 0;
-  background-image: url("/teacher_top.jpg");
-  background-size:cover;
-  color:white;
-  height:500px;
-  text-align:center;
-}
 
 .btn{
   padding:8px 24px;
@@ -35,8 +27,11 @@ a {
   display:inline-block;
   opacity:0.8;
   border-radius:4px;
-
+  margin-top: 10px;
+  font-size:20px;
 }
+
+
 
 .btn:hover{
   cursor: pointer;
@@ -46,6 +41,10 @@ a {
 .sign-up{
   background-color:#239b76;
 }
+
+.log-in{
+  background-color:#239b76;
+ }
 
 .facebook{
   background-color:#3b5998;
@@ -66,6 +65,7 @@ padding-top:0;
 color:white;
 height:65px;
 }
+
 
 .signup-model-wrapper {
   display:none;
@@ -95,6 +95,3 @@ height:65px;
     position:fixed;
 }
 
-#signup-model-teacher{
-    position:fixed;
-}
