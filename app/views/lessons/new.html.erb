@@ -1,0 +1,89 @@
+<% content_for :specific_css_js do %>
+		<%= stylesheet_link_tag "lessons/new", :media => "all" %>
+		<%= javascript_include_tag 'lessons/new' %>
+<% end %>
+
+
+<!--入力画面開始-----------------------------------------------------------------------------------------> 
+
+<div class="main">
+   <h1 class="title">Make a reservation for your lesson.</h1> 
+        <p class="subtitle">Your lesson is shown below, confirm your lesson if there are no problems.</p>
+<hr size="1px">
+    <div class="main-left">
+         <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
+      	<%= @teacher.name %><br>
+      	1 lesson:4$<br>
+      	★★★★★<br>
+      	hobby:<%= @teacher.hobby %>
+    </div>
+
+    <div class="main-right">
+    <% require "time" %>
+    <% t= Time.parse("#{@lesson.time}"); %>
+    <% if t.min==0 %>
+      <% min1 = "00" %>
+      <% min2 = 30 %>
+      <% hour2 = t.hour %>
+    <% else %>
+      <% min1 = "30" %>
+      <% min2 = "00" %>
+      <% hour2 = t.hour+1 %>
+    <% end %> 
+      
+    
+    <p><%= t.year %>.<%= t.month %>.<%= t.day %> <%= t.hour %>:<%= min1 %> - <%= hour2 %>:<%= min2 %></p>
+    <span class="ability">Tell your Japanese ability to your teacher in advance</span>
+    <textarea class="text" name="message"></textarea>
+    <input type="submit" class="btn1" value="make a reservation" id="show-confirmation">
+    </div>
+<!--予約確認用モーダル開始---------------------------------------------------->
+	<div class="confirmation-model-wrapper" id="confirmation-model">
+		<div class="model">
+			<div class="close-model">
+    			<i class="fa fa-2x fa-times"></i>
+  			</div>
+  		
+	        
+  			<div id="confirmation-form">
+				<h2>confirmation</h2>
+				<p class="subtitle2">Schedule : <%= t.year %>.<%= t.month %>.<%= t.day %> <%= t.hour %>:<%= min1 %> - <%= hour2 %>:<%= min2 %></p>
+				<p class="subtitle2">Teacher : <%= @teacher.name %></p>
+				<% @lesson.teacher_id = "#{@teacher.id}" %> 
+				<% @lesson.time = t %> 
+				<input type="submit" value="Confirm my reservation" class="btn2"><br>
+                <%= link_to "Confirm my reservation", lessons_create_path(:time => t, :id => "#{@lesson}"), method: :post %> 
+						
+  			</div>
+  			 
+		</div>
+	
+	</div>
+<!--予約確認用モーダル終了---------------------------------------------------->
+	
+</div>
+
+<!--トップに戻る開始------------------------------------------------------------------------->
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+<!--トップに戻る開始------------------------------------------------------------------------->
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer>
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
