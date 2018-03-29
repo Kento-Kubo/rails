@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # get 'main/index/:id' => "main#index"
   get 'main/index' => "main#index"
-  #get 'main/index2' => "main#index2"
+  get 'main/index2' => "main#index2"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/mypage_teacher' => "main#mypage_teacher"
   #get 'main/student_profile_edit' => "main#student_profile_edit"

@@ -4,6 +4,14 @@
 <% end %>
 
 <!--検索ボックス開始-------------------------------------------------------------------------->
+        <% if flash[:notice] %>
+    		<header2>
+                <div class="flash">
+                    <%= flash[:notice] %>
+                </div>
+            </header2>
+        <% end %>
+        
         <div class="top-wrapper">
             <div class="container-search">
                 
@@ -86,7 +94,7 @@
         <div class="teacher-list-top">
             <div class="result-number-left">
             
-                <p><span class="number">10</span> teachers have been found</p>
+                <p><span class="number">10</span> teachers have been found for 24th of March</p>
                 
             </div>
             <div class="result-number-right">
@@ -105,7 +113,63 @@
         </div>  
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>           
-        <% n = @teachers.count / 3 + 1 %>
+       <% n = @teachers.count / 3 + 1 %>
+       <% (1..n).each do |x|%> 
+       
+       <div class="main-part">
+            <ul style="list-style:none;" class="time-schedule">
+                <li class="blank"></li>
+                    <% (0..23).each do |num|%>
+                <li class="schedule-row-color scroll" >&nbsp;<%= 0+num %>:00&nbsp;</li>
+                <li class="scroll" >&nbsp;<%=  0+num %>:30&nbsp;</li>
+                    <%end%>
+                
+            </ul>
+            
+            
+                  <% a = 0+3*(x-1)%>
+      			  <% b = 1+3*(x-1)%>
+      			  <% c = 2+3*(x-1)%>
+      			  <% @teachers[a..c].each do |teacher|%>
+            <ul style="list-style:none; "class="teacher-schedule">
+            
+                <li class="teacher-info">
+      			  <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
+      			  <%= link_to teacher.name, "/teachers/#{teacher.id}/show", class: "introduction name" %><br>
+      			  1 lesson:4$<br>
+      			  ★★★★★<br>
+      			  hobby:<%= teacher.hobby %>
+      			  </li>
+      			  
+                <% (0..23).each do |num|%>  
+                <% require "time" %>
+                
+                <% y = "2018" %>
+                <% m = "03" %>
+                <% d = "25" %>
+                <% if num < 10 %>
+                  <% h = "0" + num.to_s %>
+                <% else %>
+                  <% h = num.to_s %>
+                <%end%>
+                
+                <% min1 = "00" %>
+                <% min2 = "30" %>
+                <% s = "00" %>
+                <% t1 = y+m+d+h+min1+s; %>
+                <% t2 = y+m+d+h+min2+s; %>
+                
+                <li class="schedule-row-color scroll" ><%= link_to "available", lessons_new_path(:time => t1, :id => teacher.id) %> </li>
+                <li class="scroll" ><%= link_to "available", lessons_new_path(:time => t2, :id => teacher.id) %> </li>
+                <%end%>
+
+            </ul>
+            <%end%>
+            
+        </div>
+        <%end%>
+        
+       <!-- <% n = @teachers.count / 3 + 1 %>
         <% (1..n).each do |x|%> 
         <div class="main-part">
           <div class="fixed" >
@@ -139,7 +203,7 @@
       			  1 lesson:1$<br>
       			  ★☆☆☆☆<br>
       			  hobby:monkey
-      			  </td>-->
+      			  </td>
       			  <%end%>
       			  <td >   
       			  </td>
@@ -151,17 +215,19 @@
             <table rules="all" class="scrolled-table">
                 <% require "date" %>
                 
+
+
                 <% t = DateTime.now %>
                 
-
+                
                 <% if 0 <= t.min && t.min < 15 %>
                             
       		        <tr >
-      		                        <td  ><%= t.hour %>:30 - <%= t.hour + 1 %>:00</td>
+      		                        <td class="schedule-row-color" ><%= t.hour %>:30 - <%= t.hour + 1 %>:00</td>
                     
-                    				<td  width="200px"></td>
-                    				<td  width="200px"></td>
-                    				<td  width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
                     				
                     </tr >	
                      <% hour = t.hour + 1 %> 
@@ -170,11 +236,11 @@
                  <% elsif 15 <= t.min && t.min < 45 %>   
                 
         		    <tr >
-      		                        <td ><%= t.hour + 1 %>:00 - <%= t.hour + 1 %>:30</td>
+      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:00 - <%= t.hour + 1 %>:30</td>
                     
-                    				<td  width="200px"></td>
-                    				<td  width="200px"></td>
-                    				<td  width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
                     				
                     </tr >	
                     <% hour = t.hour + 1 %> 
@@ -183,11 +249,11 @@
                 <% elsif 45 <= t.min && t.min < 0 %>   
                 
         		    <tr >
-      		                        <td><%= t.hour + 1 %>:30 - <%= t.hour + 2 %>:00</td>
+      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:30 - <%= t.hour + 2 %>:00</td>
                     
-                    				<td  width="200px"></td>
-                    				<td  width="200px"></td>
-                    				<td  width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"></td>
                     				
                     </tr >
                     
@@ -196,12 +262,12 @@
                     
                 <% end %>
                 
-                <% iteration = 23 - t.hour %>
-    	        <% (2..iteration).each do |num|%>
+               
+    	        <% (0..22).each do |num|%>
       		        <tr >
       		                        <td class="schedule-row-color" ><%= t.hour + num %>:00 - <%= t.hour + num %>:30</td>
                     
-                    				<td class="schedule-row-color" width="200px"></td>
+                    				<td class="schedule-row-color" width="200px"><%= link_to("available", "/lessons/new") %></td>
                     				<td class="schedule-row-color" width="200px"></td>
                     				<td class="schedule-row-color" width="200px"></td>
                     				
@@ -216,12 +282,365 @@
                     </tr >
                 <% end %>
                 
+                    
+                    
+                    
+                    
+                    <!--<tr >				
+      								<td class="schedule-row-color">1:00 - 1:30</td>
+        							
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                    
+                    <tr >				
+      								<td>1:30 - 2:00</td>
+        							
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    
+                    
+                    
+                    
+                    
+                    <tr >				
+        								
+        							<td class="schedule-row-color">2:00 - 2:30</td>           				
+      								
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >		
+                    
+                    <tr >				
+        								
+        							<td>2:30 - 3:00</td>           				
+      								
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    <tr >			
+      								<td class="schedule-row-color">3:00 - 3:30</td>
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >	
+                    
+                    <tr >			
+      								<td>3:30 - 4:00</td>
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >	
+                    
+                    <tr >			
+      								<td class="schedule-row-color">4:00 - 4:30</td>
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >				
+                    <tr >				
+                    				<td>4:30 - 5:00</td>
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >	
+                    
+                    <tr >				
+                    				<td class="schedule-row-color">5:00 - 5:30</td>
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                    
+                    <tr >				
+                    				<td>5:30 - 6:00</td>
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >	
+                    			
+                    <tr >				
+                    				<td class="schedule-row-color">6:00 - 6:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >				
+                    <tr >				
+                    				<td>6:30 - 7:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >	
+                    <tr >				  
+                    				<td class="schedule-row-color">7:00 - 7:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >							
+                    <tr >				  
+                    				<td>7:30 - 8:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    <tr >				
+                    				<td class="schedule-row-color">8:00 - 8:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >			
+                    
+                    <tr >				
+                    				<td>8:30 - 9:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >
+                    			
+                    <tr >				
+                    				<td class="schedule-row-color">9:00 - 9:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                    
+                    <tr >				
+                    				<td>9:30 - 10:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    				
+                    <tr >				
+                    				<td class="schedule-row-color">10:00 - 10:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >				
+                    
+                    <tr >				
+                    				<td>10:30 - 11:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    
+                    
+                    <tr >				
+                    				<td class="schedule-row-color">11:00 - 11:30</td> 
+                    				
+                    			    <td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>   
+                    </tr >				
+                    <tr >				
+                    				<td>11:30 - 12:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    
+                    <tr >				
+                    				<td class="schedule-row-color">12:00 - 12:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >				
+                    
+                    <tr >				
+                    				<td>12:30 - 13:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+            		<tr >				
+                    				<td class="schedule-row-color">13:00 - 13:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >			
+                    <tr >				
+                    				<td>13:30 - 14:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    <tr >				
+                    				<td class="schedule-row-color">14:00 - 14:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >	
+                    <tr >				
+                    				<td>14:30 - 15:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >					
+                    <tr >				
+                    				<td class="schedule-row-color">15:00 - 15:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >	
+                     <tr >				
+                    				<td>15:30 - 16:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >			
+                     	
+                    <tr >				
+                    				<td class="schedule-row-color">16:00 - 16:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                    
+                     <tr >				
+                    				<td>16:30 - 17:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >						
+                    <tr >				
+                    				<td class="schedule-row-color">17:00 - 17:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                     <tr >				
+                    				<td>17:30 - 18:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    <tr >				
+                    				<td class="schedule-row-color">18:00 - 18:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >	
+                    <tr >				
+                    				<td>18:30 - 19:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    <tr >				
+                    				<td class="schedule-row-color">19:00 - 19:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                    <tr >				
+                    				<td>19:30 - 20:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    <tr >				
+                    				<td class="schedule-row-color">20:00 - 20:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                    <tr >				
+                    				<td>20:30 - 21:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >					
+                    <tr >				
+                    				<td class="schedule-row-color">21:00 - 21:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >
+                    <tr >				
+                    				<td>21:30 - 22:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >				
+                    <tr >				
+                    				<td class="schedule-row-color">22:00 - 22:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    </tr >	
+                    <tr >				
+                    				<td>22:30 - 23:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                    </tr >		
+                    <tr >				
+                    				<td class="schedule-row-color">23:00 - 23:30</td> 
+                    				
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                    				<td class="schedule-row-color"></td>
+                  				
+                    </tr>   		
+                    <tr >				
+                    				<td>23:30 - 24:00</td> 
+                    				
+                    				<td></td>
+                    				<td></td>
+                    				<td></td>
+                  				
+                    </tr>     						
          </table>
         </div>
          
             
         </div>
-        <%end%>
+        <%end%>-->
 <!--検索結果終了----------------------------------------------------------------------------->
 <!--ページ番号開始--------------------------------------------------------------------------->
         <div class="teacher-list-bottom">
