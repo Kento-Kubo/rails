@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # get 'main/index/:id' => "main#index"
   get 'main/index' => "main#index"
-  #get 'main/index2' => "main#index2"
+  get 'main/index2' => "main#index2"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/mypage_teacher' => "main#mypage_teacher"
   #get 'main/student_profile_edit' => "main#student_profile_edit"
@@ -36,9 +36,10 @@ Rails.application.routes.draw do
   #get 'main/student_write_review' => "main#student_write_review" 
   #get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
 
+
   get 'lessons/new' => "lessons#new"
   post 'lessons/create' => "lessons#create"
-  
+
   # post 'login' => "users#login"
   # get 'logout' => 'users#logout'
   

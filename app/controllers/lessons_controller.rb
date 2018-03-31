@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
   end
   
   def new
+
     @teacher = Teacher.find_by(id: params[:id])
     @lesson=Lesson.new
     @lesson.time = params[:time]
@@ -22,4 +23,6 @@ class LessonsController < ApplicationController
   def update
   
   end
+
 end
+
