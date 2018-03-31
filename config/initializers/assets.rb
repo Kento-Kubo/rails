@@ -65,6 +65,7 @@ Rails.application.config.assets.precompile += %w( main/student_write_review.js )
 Rails.application.config.assets.precompile += %w( main/student_write_review_confirm.scss )
 Rails.application.config.assets.precompile += %w( main/student_write_review_confirm.js )
 
-
 Rails.application.config.assets.precompile += %w( lessons/new.css )
 Rails.application.config.assets.precompile += %w( lessons/new.js )
+
+

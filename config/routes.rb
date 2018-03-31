@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'lessons/index'
+
   #get 'lessons/index'
 
   #get 'class/index'
@@ -34,10 +36,10 @@ Rails.application.routes.draw do
   #get 'main/student_write_review' => "main#student_write_review" 
   #get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
 
-#レッスン予約開始------------------------------------------------------------------------------
+
   get 'lessons/new' => "lessons#new"
   post 'lessons/create' => "lessons#create"
-#レッスン予約終了------------------------------------------------------------------------------  
+
   # post 'login' => "users#login"
   # get 'logout' => 'users#logout'
   
