@@ -1,47 +1,17 @@
 Rails.application.routes.draw do
-  get 'lessons/index'
-
-  #get 'lessons/index'
-
-  #get 'class/index'
-
-  #get 'teacher/index'
-
-  #get 'student/index'
-
-  #get 'teacher/index'
-
   get 'password_resets/new'
   get 'password_resets/edit'
 
-  # get 'sessions/new'
-
-  # get 'main/index/:id' => "main#index"
   get 'main/index' => "main#index"
   get 'main/index2' => "main#index2"
   get 'main/mypage_student' => "main#mypage_student"
   get 'main/mypage_teacher' => "main#mypage_teacher"
-  #get 'main/student_profile_edit' => "main#student_profile_edit"
-  #get 'main/student_profile_edit_confirm' => "main#student_profile_edit_confirm"
 
-
-  #get 'main/teacher_profile_edit' => "main#teacher_profile_edit"
-  #get 'main/teacher_profile_edit_confirm' => "main#teacher_profile_edit_confirm"
-  #get 'main/teacher_account_edit' => "main#teacher_account_edit"
   get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
   get 'main/student_account_edit/:id' => "main#student_account_edit"
   get 'main/student_account/:id' => "main#student_account"
-  #get 'main/teacher_faq' => "main#teacher_faq"
   get 'main/student_faq' => "main#student_faq"
-  #get 'main/student_write_review' => "main#student_write_review" 
-  #get 'main/student_write_review_confirm' => "main#student_write_review_confirm" 
 
-
-  get 'lessons/new' => "lessons#new"
-  post 'lessons/create' => "lessons#create"
-
-  # post 'login' => "users#login"
-  # get 'logout' => 'users#logout'
   
   get    '/login' => 'sessions#new'
   post   '/login_student' => 'sessions#create_student'
@@ -57,14 +27,9 @@ Rails.application.routes.draw do
   resources :teachers
   get   'teachers_top' => 'teachers#top'
   post   'teachers/new' => 'teachers#new'
-  # get    'teachers/:id/show' => 'teachers#show'
   
-
-  # get 'user/edit_info' => "users#edit_info"
-  # get 'user/new' => 'users#new'
-  # get 'user/top' => "users#top"
-  # post 'user/pre_login' => "users#pre_login"
-  # post 'user/account_edit/:id' => 'users#account_edit'
+  resources :lessons
+  post 'lessons/create' => "lessons#create"
   
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -52,7 +52,7 @@
 				<% @lesson.teacher_id = "#{@teacher.id}" %> 
 				<% @lesson.time = t %> 
 				<input type="submit" value="Confirm my reservation" class="btn2"><br>
-                <%= link_to "Confirm my reservation", lessons_create_path(:time => t, :id => "#{@lesson}"), method: :post %> 
+                <%= link_to "Confirm my reservation", create_lesson_path(:time => t, :id => "#{@lesson}"), method: :post %> 
 						
   			</div>
   			 

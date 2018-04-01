@@ -159,8 +159,8 @@
                 <% t1 = y+m+d+h+min1+s; %>
                 <% t2 = y+m+d+h+min2+s; %>
                 
-                <li class="schedule-row-color scroll" ><%= link_to "available", lessons_new_path(:time => t1, :id => teacher.id) %> </li>
-                <li class="scroll" ><%= link_to "available", lessons_new_path(:time => t2, :id => teacher.id) %> </li>
+                <li class="schedule-row-color scroll" ><%= link_to "available", new_lesson_path(:time => t1, :id => teacher.id) %> </li>
+                <li class="scroll" ><%= link_to "available", new_lesson_path(:time => t2, :id => teacher.id) %> </li>
                 <%end%>
 
             </ul>

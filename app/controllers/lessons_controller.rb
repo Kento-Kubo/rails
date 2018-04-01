@@ -14,8 +14,6 @@ class LessonsController < ApplicationController
   def create  #make a new reservation
 
     @lesson = Lesson.new(time: params[:time])
-   
-    
     @lesson.save
    
   end

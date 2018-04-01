@@ -12,6 +12,10 @@ class MainController < ApplicationController
   def mypage_teacher
     @teacher = Teacher.find_by(id:session[:user_id])
   end
+  
+  def mypage_student
+    @user = User.find_by(id:session[:user_id])
+  end
  
   
   def teacher_account_edit

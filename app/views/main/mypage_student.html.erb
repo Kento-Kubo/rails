@@ -99,20 +99,25 @@
 					</div>
 					
 					<div class="introduction-right">
-							<p class="teacher-name">Kento Kubo</p>
+							<p class="teacher-name"><%=@user.name%></p>
 							
 							<table class="table-introduction">
   								<tr>
-    								<td class="title">Learning:</td>
-    								<td class="contents">Japanese</td>
-    								<td class="contents">大阪弁</td>
+    								<td class="title">age:</td>
+    								<td class="contents"><%=Date.today.year-@user.birthday.year-1%></td>
+
   								</tr>
   								<tr>
-    								<td class="contents">Country:</td>
-    								<td class="contents">Thailand</td>
+    								<td class="contents">Sex:</td>
+    								<td class="contents"><% if @user.sex %>
+            							 male
+            							<% else %>
+            							 female
+            							<% end %></td>
   								</tr>
-  							    <tr>
-  							        <%= form_tag("/main/student_profile_edit", method: "get") do %>
+  								
+  								<tr>
+  							        <%= form_tag(edit_teacher_path(current_user), method: "get") do %>
   							        <input class="edit_btn" type="submit" value="edit" >
   							        <% end %>
   							    </tr>
