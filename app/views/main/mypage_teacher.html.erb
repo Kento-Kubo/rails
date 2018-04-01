@@ -63,35 +63,7 @@
                     				<div class="star">
                     			    	<p class="evaluation1">1.0</p><div class="outside"><div class="inside1"></div></div><p class="evaluation1_right"><span =class"percentage5">10</span>%</p>
                     				</div>         
-                    				
-                    				           				
-                    				           				                    				                    				                   			
-                    			<!--progress利用（不採用）
-                    			<p class="star">
-                    			                    				<a class="evaluation5" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">5.0</a>
-                    				<label ><progress value="51" max="100" class="progress"><span>51</span>%</progress>（51%）	</label >
-                    			</p>
-                    			
-                    			<p class="star">
-                    				<a class="evaluation4" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">4.0</a>
-                    				<label ><progress value="28" max="100" class="progress"><span>28</span>%</progress>（28%）	</label >
-                    			</p>
-                    			
-                       			<p class="star">
-                    				<a class="evaluation3" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">3.0</a>
-                    				<label ><progress value="4" max="100" class="progress"><span>4</span>%</progress>（4%）	</label >
-                    			</p>
-                    			
-                    			<p class="star">
-                    				<a class="evaluation2" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">2.0</a>
-                    				<label ><progress value="7" max="100" class="progress"><span>7</span>%</progress>（7%）	</label >
-                    			</p>
-   
-                    			<p class="star">
-                    				<a class="evaluation1" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">1.0</a>
-                    				<label ><progress value="10" max="100" class="progress"><span>10</span>%</progress>（10%）	</label >
-                    			</p>   -->    
-                    						               			
+           		       					               			
 							</div>						
 							
 							<div class="box3">
@@ -127,17 +99,17 @@
 				<!--Introduction開始------------------------------------------------------------->   
 				<div class="introduction">
 
-							<p class="teacher-name"><%=current_user.name%></p>
+							<p class="teacher-name"><%=@teacher.name%></p>
 							
 							<table class="table-introduction">
   								<tr>
     								<td class="title">AGE</td>
-    								<td><%=Date.today.year-current_user.birthday.year-1%></td>
+    								<td><%=Date.today.year-@teacher.birthday.year-1%></td>
     							
   								</tr>
   								<tr>
     								<td class="title">SEX</td>
-    								<td><% if current_user.sex %>
+    								<td><% if @teacher.sex %>
             							 male
             							<% else %>
             							 female
@@ -145,17 +117,17 @@
   								</tr>
   								<tr>
     								<td class="title">LANGUAGE</td>
-    								<td><%=current_user.language%></td>
+    								<td><%=@teacher.language%></td>
   								</tr>
   								<tr>
     								<td class="title">HOBBY</td>
-    								<td><%=current_user.hobby%></td>
+    								<td><%=@teacher.hobby%></td>
   								</tr>  
 							</table>
 
 					<hr width=95%>
 					<p class="Introduction-title">INTRODUCTION</p>
-						<p class="Introduction-contentes"><%=current_user.profile%></p>
+						<p class="Introduction-contentes"><%=@teacher.profile%></p>
                     <div id="schedule"></div> <!--マーキング-->
 					<br>
 					<br>
@@ -192,8 +164,9 @@
     	
   								</tr>
   								<tr class="time1">
-  								    <%　time = Time.local(2015,3,14,00,00,00) %>
-    								<td class="title-schedule-left"><%=Time.local(2000,1,01,0,00,00).strftime("%H:%M")%></td>
+  								    <% (0..23).each do |num|%>
+  								    
+    								<td class="title-schedule-left"><%=num%>:00-<%=num%>:30</td>
     								<td></td>
     								<td></td>
     								<td><p class="reserved">reserved</p></td>
@@ -203,7 +176,7 @@
     								<td></td>
   								</tr>
   								<tr class="time1">
-    								<td class="title-schedule-left schedule-row-color">0:30-1:00</td>
+    								<td class="title-schedule-left schedule-row-color"><%=num%>:30-<%=num+1%>:00</td>
     								<td class="schedule-row-color"></td>
     								<td class="schedule-row-color"></td>
     								<td class="schedule-row-color"></td>
@@ -212,6 +185,8 @@
     								<td class="schedule-row-color"></td>
     								<td class="schedule-row-color"></td>
   								</tr>
+  								<% end %>
+  								<!--
   								<tr class="time1">
     								<td class="title-schedule-left">1:00-1:30</td>
     								<td></td>
@@ -672,7 +647,7 @@
     								<td class="schedule-row-color"></td>
     								<td class="schedule-row-color"></td>
     								<td class="schedule-row-color"></td>
-  								</tr> 								  								
+  								</tr> 	-->							  								
   								
   								  								  								
 							</table>

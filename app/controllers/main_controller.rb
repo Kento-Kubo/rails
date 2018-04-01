@@ -1,14 +1,5 @@
 class MainController < ApplicationController
 
-  def index3
-   #データベースより全先生データ取得
-    @users = User.all
-    @teachers = User.where(teacher: true)
-    #年齢計算
-    
-    #
-    
-  end
    def index
    #データベースより全先生データ取得
     @users = User.all
@@ -16,8 +7,10 @@ class MainController < ApplicationController
     @teachers = Teacher.all
     #年齢計算
     
-    
-    
+  end
+  
+  def mypage_teacher
+    @teacher = Teacher.find_by(id:session[:user_id])
   end
  
   
