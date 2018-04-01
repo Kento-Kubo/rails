@@ -92,7 +92,6 @@
     				</div>
 				</div>
 				
-					
 
 
 				<!--profile phot modal終了------------------------------------------------------->   
@@ -105,7 +104,7 @@
   								<tr>
     								<td class="title">AGE</td>
     								<td><%=Date.today.year-@teacher.birthday.year-1%></td>
-    							
+    							    <td><%= link_to("edit your account",edit_user_path(current_user),class:"btn1") %></td>
   								</tr>
   								<tr>
     								<td class="title">SEX</td>
@@ -124,6 +123,7 @@
     								<td><%=@teacher.hobby%></td>
   								</tr>  
 							</table>
+							
 
 					<hr width=95%>
 					<p class="Introduction-title">INTRODUCTION</p>
@@ -145,11 +145,11 @@
 						SCHEDULE &nbsp;&nbsp;&nbsp;&nbsp; (All schedules in the table blow are shown in your time-zone.)
 					</p>
 					<div class="schedule-timeselect">
-						<p class="time-all" id="time-all">all schedule</p>
+						<!--<p class="time-all" id="time-all">all schedule</p>
 						<p class="time1-btn" id="time1">0:00 - 6:00</p>
 						<p class="time2-btn" id="time2">6:00 - 12:00</p>
 						<p class="time3-btn" id="time3">12:00 - 18:00</p>
-						<p class="time4-btn" id="time4">18:00 - 24:00</p>
+						<p class="time4-btn" id="time4">18:00 - 24:00</p>-->
 
 								
 					</div>
@@ -158,7 +158,7 @@
 						<table class="table-schedule"  style="border-color:rgba(34, 49, 52, 0.3)" rules="all">
   								<tr>
     								<td class="title-schedule-left lefttop"></td>
-    								<% (1..7).each do |num|%>
+    								<% (0..6).each do |num|%>
     								<td class="title-schedule"><%=Date.today.day+num%></t>
     								<% end %>
     	

@@ -247,6 +247,26 @@ header{
  }
 				
 				/*--profile開始-----------------------------------------------------------------*/   
+                .btn1{
+                  padding:8px 24px;
+                    background-color:#239b76;
+                  color:white;
+                  display:inline-block;
+                  opacity:0.8;
+                  border-radius:4px;
+                  width:60%;
+                  box-sizing:border-box;
+                  text-align:center;
+                  font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+                
+                
+                }
+                
+                .btn1:hover{
+  cursor: pointer;
+
+}
+
 				.profile{
 				
 					width:100%;
