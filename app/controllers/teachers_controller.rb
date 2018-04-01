@@ -9,6 +9,9 @@ class TeachersController < ApplicationController
   def index #show all teachers
       @teacher = Teacher.all
   end
+   def index2 #show all teachers
+      @teachers = Teacher.all
+  end
   
   def show #show profile
     td = Date.today
