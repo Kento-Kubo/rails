@@ -8,17 +8,17 @@ class LessonsController < ApplicationController
   def new
 
     @teacher = Teacher.find_by(id: params[:id])
-    @lesson=Lesson.new
-    @lesson.time = params[:time]
+    @time= params[:time1]
+    @lesson = Lesson.new
   end
   
   def create  #make a new reservation
     @lesson = Lesson.new(time: params[:time],
                          user_id: current_user.id,
                          teacher_id: params[:teacher_id],
-                         date: params[:time],
-                         condition: "reserved")
-    @lesson.teacher_id = params[:teacher_id]                 
+                         date: params[:date],
+                         condition: 0)
+ 
     @lesson.save
     
     if @lesson.save

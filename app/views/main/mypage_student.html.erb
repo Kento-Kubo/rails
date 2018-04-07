@@ -13,82 +13,6 @@
     
     <body>
     
-<!--ヘッダー開始（共通：変えないこと）------------------------------------------------------------------->   
-<!--        <header>-->
-<!--            <div class="container">-->
-<!--                <div class="header-left">-->
-<!--                    <a class="logout" href="file:///C:/Users/kento/Desktop/our%20servise/main.html">-->
-<!--                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">-->
-<!--                    </a>-->
-                
-<!--                        <input type="text" id="user" placeholder="Username" class="input1">-->
-                        
-<!--                        <span class="fa fa-search fa-2x"></span>-->
-                                        
-<!--                </div>-->
-                
- 
-                
-<!--                 <div class="header-right">-->
-                    
-                
-<!--                	<ul id="normal" class="dropmenu">-->
-
-						
-
-<!--						<li><a href="#"><span class="fa fa-cog"></a>-->
-
-<!--  					 		 <ul>-->
-
-<!--   							   <li><a href="#">プロフィール編集</a></li>-->
-
-<!--    							  <li><a href="#">アカウント情報編集</a></li>-->
-
-<!--     							 <li><a href="#">よくあるお問い合わせ</a></li>-->
-
-<!--     							 <li><a href="#" id="logout-show">ログアウト</a></li>-->
-
-<!--   							 </ul>-->
-
-<!--  						</li>-->
-  						
-<!--  						<li><a href="#"><span class="fa fa-envelope"></a></li>-->
-  						
-<!--  						<li><a href="#"><span class="fa fa-bell"></a></li>-->
-  						
-<!--  						<li><a href="#"><span class="fa fa-user"></a></li>-->
-  						
-<!--  						<li><a href="#">My page</a></li>-->
-<!--					</ul>-->
-                                            
-                   
-<!--          	  </div>-->
-<!--        </header>-->
-        
-        
-        <!--ログアウトモーダル開始------------------------------------------------------>   
-
-<!--        	<div class="logout-modal-wrapper" id="logout-modal">-->
-<!--    			<div class="modal">-->
-<!--    				 <div class="close-modal">-->
-<!--        				<i class="fa fa-2x fa-times"></i>-->
-<!--      			     </div>-->
-      				
-<!--      				 <div id="logout-form">-->
-<!--        				<h2>ログアウトしますか？</h2>-->
-<!--        				<form action="#">-->
-<!--          					<div id="submit-btn1">はい</div>-->
-<!--          					<a id="submit-btn2"  href="#">いいえ</a>-->
-<!--       					 </form>-->
-<!--      				</div>-->
-<!--    			</div>-->
-<!--			</div>-->
-
-        <!--ログアウトモーダル終了------------------------------------------------------>   
-        
-        
-<!--ヘッダー終了（共通：変えないこと）--------------------------------------------------->   
-
 <!--main開始------------------------------------------------------------------------------------->   
 		<div class="main" >
 			
@@ -131,15 +55,17 @@
 				<!--status開始------------------------------------------------------------->   
 				<div class="status">
 					<div class="status-left">
-						<p class="lessons1">You have taken</p>					
-						<p class="lessons-no">154</p>
+						<p class="lessons1">You have taken</p>	
+						<% %>
+						<p class="lessons-no"><%= @count_done %></p>
 						<p class="lessons2">Lessons</p>
 					</div>
 
 					<div class="status-center">
 
-						<p class="lessons1">You have studied for</p>					
-						<p class="lessons-hour">128.5</p>
+						<p class="lessons1">You have studied for</p>
+						<% hour = @count_done * 0.5 %>
+						<p class="lessons-hour"><%= hour %></p>
 						<p class="lessons2">hour</p>
 
 					</div>
@@ -160,70 +86,52 @@
 				
 				</div>
 				
-				<div class="schedule">
+				<% if @count_reserved %>
+				    <% @lessons.each do |lesson|%>
+			        	
+				    <% teacher = @teachers.find_by(id: lesson.teacher_id)%>
+				
+			
+				
+				    
+					<div class="schedule-each">
+						<div class="schedule-each-left">
+							<img class="Profile-photo-teacher" src="profile_pic_temp.png" >
+						</div>
+						
+						<div class="schedule-each-center">
+							<p class="teacher-name"><%= teacher.name %></p>
+							<% d= lesson.date.day.to_s %>
+							<% m= lesson.date.month.to_s %>
+							<% y= lesson.date.year.to_s %>
+							<p class="date"><%= d + "th." + m + "." + y %></p>
+							<% h= lesson.time.hour.to_s %>
+							<% min= lesson.time.min.to_s %>
+							     <% if min == "0" %>
+							     <% min= "00" %>
+						      	 <% end %>
+							<p class="from">From <span class="time"><%= h + ":" + min %></span></p>
+							<p class="note">The time schedule is shown in your time-zone.</p>					
+						</div>
+						
+						<div class="schedule-each-right">
+							<a class="check-teacher btn">Teacher's page</a>  <!-- 保留teacher showは生徒から見たteacherのマイページにすべき？ -->
+							<br>
+							<a class="cancel btn" id="cancel_lesson">cancel this lesson</a>							
+						</div>
+					</div>
+					<% end %>
+					
+				<% else %>
 					<div class="schedule-not">
 						<i class="fa fa-2x fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;<p class="no-lessons">No lessons are scheduled.</p>
 						<br>
 						<a class="lesson-book">Do you want to book new lessons?</a>
 					</div>
+					
 				
-					<div class="schedule-each">
-						<div class="schedule-each-left">
-							<img class="Profile-photo-teacher" src="profile_pic_temp.png" >
-						</div>
-						
-						<div class="schedule-each-center">
-							<p class="teacher-name">Asaki Daisuke</p>
-							<p class="date">2018 February 10th</p>
-							<p class="from">From <span class="time">10:00 am</span></p>
-							<p class="note">The time schedule is shown in your time-zone.</p>					
-						</div>
-						
-						<div class="schedule-each-right">
-							<a class="check-teacher btn">Teacher's page</a>
-							<br>
-							<a class="cancel btn">cancel this lesson</a>							
-						</div>
-					</div>
-					
-					<div class="schedule-each">
-						<div class="schedule-each-left">
-							<img class="Profile-photo-teacher" src="profile_pic_temp.png" >
-						</div>
-						
-						<div class="schedule-each-center">
-							<p class="teacher-name">Asaki Daisuke</p>
-							<p class="date">2018 February 10th</p>
-							<p class="from">From <span class="time">10:00 am</span></p>
-							<p class="note">The time schedule is shown in your time-zone.</p>					
-						</div>
-						
-						<div class="schedule-each-right">
-							<a class="check-teacher btn">Teacher's page</a>
-							<br>
-							<a class="cancel btn">cancel this lesson</a>							
-						</div>
-					</div>
-					
-					<div class="schedule-each">
-						<div class="schedule-each-left">
-							<img class="Profile-photo-teacher" src="/conversation.jpg" >
-						</div>
-						
-						<div class="schedule-each-center">
-							<p class="teacher-name">Asaki Daisuke</p>
-							<p class="date">2018 February 10th</p>
-							<p class="from">From <span class="time">10:00 am</span></p>
-							<p class="note">The time schedule is shown in your time-zone.</p>					
-						</div>
-						
-						<div class="schedule-each-right">
-							<a class="check-teacher btn">Teacher's page</a>
-							<br>
-							<a class="cancel btn">cancel this lesson</a>							
-						</div>
-					</div>
-				</div>				
+				
+				<% end %>	
 				<!--schedule終了------------------------------------------------------------->
 					
 				<!--favorite開始------------------------------------------------------------->
