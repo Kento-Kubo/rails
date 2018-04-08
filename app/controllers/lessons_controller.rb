@@ -17,10 +17,11 @@ class LessonsController < ApplicationController
                          user_id: current_user.id,
                          teacher_id: params[:teacher_id],
                          date: params[:date],
-                         condition: 0)
+                         condition: 2,                                  # 1:done , 2:reserved
+                         Japanese_skill: params[:Japanese_skill])    
  
     @lesson.save
-    
+     
     if @lesson.save
       
       redirect_to("/main/mypage_student")
@@ -32,6 +33,14 @@ class LessonsController < ApplicationController
   end
   
   def update
+  
+  end
+ 
+ 
+ def cancel
+  lesson = Lesson.find_by(id: params[:id])
+  lesson.destroy
+  redirect_to("/main/mypage_student")
   
   end
 
