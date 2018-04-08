@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407173655) do
+ActiveRecord::Schema.define(version: 20180408152000) do
 
   create_table "Lessons", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,7 +23,14 @@ ActiveRecord::Schema.define(version: 20180407173655) do
     t.integer  "condition"
     t.integer  "review_rate"
     t.integer  "review_comment"
-    t.text     "Japanese_skill"
+    t.string   "Japanese_skill"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -39,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180407173655) do
     t.string   "language"
     t.string   "profile"
     t.boolean  "teacher"
+    t.integer  "cost"
   end
 
   create_table "users", force: :cascade do |t|

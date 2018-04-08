@@ -5,6 +5,12 @@ body {
 
 }
 
+
+.invisible{
+    
+    display:none;
+}
+
 a {
   text-decoration: none;
 }
@@ -209,8 +215,13 @@ a {
 					}	
 					
 					.schedule-not{
+					    padding-top:80px;
 					text-align:center;
 					margin:50px 0px;
+					border:solid rgba(34, 49, 52, 0.2) 1px;
+					height:200px;
+					margin-top:0px;
+					margin-bottom:0px;
 					}
 					
 					.fa-calendar{
@@ -326,6 +337,41 @@ a {
 						text-align:center;
 					}
 
+
+                    .cancel_lesson_wrapper {
+                     display:none;
+                    }
+
+                    #cancel_lesson_-form{
+                      width: 100%;
+                    }
+
+                    #cancel_lesson_-form h2 {
+                      color: #5f5d60;
+                      letter-spacing: 1px;
+                      margin-bottom: 40px;
+                    }
+
+                   #cancel_lesson_-form input{
+                      width: 320px;
+                      margin-bottom: 20px;
+                      font-size: 15px;
+                      padding: 12px 12px;
+                      border: 1px solid #d0d5d8;
+                      border-radius: 5px;
+                    }
+
+
+                    #cancel_lesson_modal{
+                       position:fixed;
+                       top:30%;
+                       left:40%;
+                    }
+
+                    .btn:hover{
+                    cursor: pointer;
+
+                    }
 				/*--schedule終了------------------------------------------------------------*/
 
 				/*--favorite開始------------------------------------------------------------*/
@@ -437,6 +483,12 @@ a {
 					.past-schedule-not{
 					text-align:center;
 					margin:50px 0px;
+					border:solid rgba(34, 49, 52, 0.2) 1px;
+					padding-top:80px;
+					
+					height:200px;
+					margin-top:0px;
+					margin-bottom:0px;
 					}
 					
 					.fa-history{

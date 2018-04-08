@@ -86,8 +86,8 @@
 				
 				</div>
 				
-				<% if @count_reserved %>
-				    <% @lessons.each do |lesson|%>
+				<% if @count_reserved>=1 %>
+				    <% @lessons_reserved.each do |lesson|%>
 			        	
 				    <% teacher = @teachers.find_by(id: lesson.teacher_id)%>
 				
@@ -100,7 +100,7 @@
 						</div>
 						
 						<div class="schedule-each-center">
-							<p class="teacher-name"><%= teacher.name %></p>
+							<p class="teacher-name"><%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction name" %></p>
 							<% d= lesson.date.day.to_s %>
 							<% m= lesson.date.month.to_s %>
 							<% y= lesson.date.year.to_s %>
@@ -117,20 +117,46 @@
 						<div class="schedule-each-right">
 							<a class="check-teacher btn">Teacher's page</a>  <!-- 保留teacher showは生徒から見たteacherのマイページにすべき？ -->
 							<br>
-							<a class="cancel btn" id="cancel_lesson">cancel this lesson</a>							
+							<a class="cancel btn" id="cancel_lesson_show">cancel this lesson</a>							
 						</div>
 					</div>
+					
+			    <!--予約キャンセルモーダル開始---------------------------------------------------->
+                	<div class="cancel_lesson_wrapper" id="cancel_lesson_modal">
+                		<div class="model">
+                			<div class="close-model">
+                    			<i class="fa fa-2x fa-times"></i>
+                  			</div>
+  				      <%= form_tag("/lessons/cancel") do %>
+                  			<div id="cancel_lesson_form">
+                				<h2>Are you sure to cancel this lesson?</h2>
+                				<p class="subtitle">Teacher: <%= teacher.name %></p>
+				                <p class="subtitle">Date: <%= d + "th." + m + "." + y %></p>
+				                <p class="subtitle">Time: <%= h + ":" + min %></p>
+                				
+                				<!--情報飛ばす用開始（ほかにいい案があれば変更のこと）---------------------------------------------------->
+                                <textarea class="invisible" name="id"><%= lesson.id %></textarea>
+                        
+                                <!--情報飛ばす用終了（ほかにいい案があれば変更のこと）---------------------------------------------------->
+     
+                                 <input type="submit" value="cancel" class="cancel btn">
+                  			</div>
+                  		<% end %>	
+                		</div>
+                	</div>	               
+	          
+	          
+				<!--予約キャンセルモーダル終了---------------------------------------------------->	
 					<% end %>
 					
-				<% else %>
+				<% elsif @count_reserved==0 %>
+				
 					<div class="schedule-not">
 						<i class="fa fa-2x fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;<p class="no-lessons">No lessons are scheduled.</p>
 						<br>
 						<a class="lesson-book">Do you want to book new lessons?</a>
 					</div>
 					
-				
-				
 				<% end %>	
 				<!--schedule終了------------------------------------------------------------->
 					
@@ -141,54 +167,29 @@
 				</div>
 				
 				<div class="favorite">
-				    <div class="favorite-not">
+				    
+				<% if @count_favorite >=1 %>
+				    <% @favorites.each do |favorite|%>
+			        	
+				    <% teacher = @teachers.find_by(id: favorite.teacher_id)%>
+				
+    				<div class="favorite-each">
+						<img class="Profile-photo-teacher" src="/conversation.jpg">
+						<p class="teacher-name-favorite"><%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction name" %></p>
+						
+						<p class="teacher-lesson-no-favorite"><%= @lessons_done.where(teacher_id: teacher.id).length %><span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
+					    
+					</div>
+					<% end %>
+					
+					<% elsif @count_favorite ==0 %>
+					   <div class="favorite-not">
 						<i class="fa fa-2x fa-heart"></i>&nbsp;&nbsp;&nbsp;&nbsp;
 						<p class="no-favorite">No favorite teachers are found. </p>
 						<br>
 						<a class="favorite-find">Do you want to find new teachers?</a>
 					</div>
-					
-    				<div class="favorite-each">
-						<img class="Profile-photo-teacher" src="/conversation.jpg">
-						<p class="teacher-name-favorite">Asaki Daisuke</p>
-						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
-					    
-					</div>
-					
-					<div class="favorite-each">
-						<img class="Profile-photo-teacher" src="/conversation.jpg">
-						<p class="teacher-name-favorite">Asaki Daisuke</p>
-						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
-					    
-					</div>
-					
-					<div class="favorite-each">
-						<img class="Profile-photo-teacher" src="/conversation.jpg">
-						<p class="teacher-name-favorite">Asaki Daisuke</p>
-						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
-					    
-					</div>
-					
-					<div class="favorite-each">
-						<img class="Profile-photo-teacher" src="/conversation.jpg">
-						<p class="teacher-name-favorite">Asaki Daisuke</p>
-						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
-					    
-					</div>
-					
-					<div class="favorite-each">
-						<img class="Profile-photo-teacher" src="/conversation.jpg">
-						<p class="teacher-name-favorite">Asaki Daisuke</p>
-						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
-					    
-					</div>
-					
-					<div class="favorite-each">
-						<img class="Profile-photo-teacher" src="/conversation.jpg">
-						<p class="teacher-name-favorite">Asaki Daisuke</p>
-						<p class="teacher-lesson-no-favorite">1<span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
-					    
-					</div>
+					<% end %>
 					
 				</div>				
 				<!--favorite終了------------------------------------------------------------->
@@ -198,13 +199,10 @@
 				
 				</div>
 				
-				<div class="past-schedule">
-					<div class="past-schedule-not">
-						<i class="fa fa-2x fa-history"></i>&nbsp;&nbsp;&nbsp;&nbsp;<p class="past-no-lessons">No histories </p>
-						<br>
-						<a class="lesson-book">Do you want to book new lessons?</a>
-					</div>
+				<% if @count_done >= 1 %>
 				
+				<div class="past-schedule">
+									
 					<table class="history-table" rules="all">
                         <tr class="table-top">
                             
@@ -214,55 +212,53 @@
                             <td>Hour</td>
                             <td>cost</td>
                         </tr>
+                        <% cost_total =0 %>
                         
+                    <% @lessons_done.each do |lesson|%>
+			        	
+				    <% teacher = @teachers.find_by(id: lesson.teacher_id)%>
+                    
+                        <% d1= lesson.date.day.to_s %>
+					    <% m1= lesson.date.month.to_s %>
+						<% y1= lesson.date.year.to_s %>
+						
+						<% d2= lesson.created_at.day.to_s %>
+					    <% m2= lesson.created_at.month.to_s %>
+						<% y2= lesson.created_at.year.to_s %>	
                         <tr class="history-data">
                             
-                            <td>2018.Jan.30</td>
-                            <td>2018.2.10</td>
-                            <td>Asaki Daisuke</td>
-                            <td>1.0</td>
-                            <td>8 $</td>
+                            <td><%= d1 + "th." + m1 + "." + y1 %></td>
+                            <td><%= d2 + "th." + m2 + "." + y2 %></td>
+                            <td><%= teacher.name %></td>
+                            <td>0.5</td>
+                            <% cost = teacher.cost %>
+                            <td><%= cost %> $</td>
                         </tr> 
+                        <% cost_total =cost_total+ cost %>
                         
-                        <tr class="history-data">
-                            
-                            <td>2018.Jan.30</td>
-                            <td>2018.2.10</td>
-                            <td>Asaki Daisuke</td>
-                            <td>1.0</td>
-                            <td>8 $</td>
-                        </tr> 
-                        
-                         <tr class="history-data">
-                            
-                            <td>2018.Jan.30</td>
-                            <td>2018.2.10</td>
-                            <td>Asaki Daisuke</td>
-                            <td>1.0</td>
-                            <td>8 $</td>
-                        </tr>  
-                        
-                        <tr class="history-data">
-                            
-                            <td>2018.Jan.30</td>
-                            <td>2018.2.10</td>
-                            <td>Asaki Daisuke</td>
-                            <td>1.0</td>
-                            <td>8 $</td>
-                        </tr> 
+                    <% end %>     
                         
                          <tr class="history-total">
                             
                             <td class="borderless" ></td>
                             <td class="borderless"></td>
-                            <td class="total">Tcopzxl.otal</td>
-                            <td>4.0</td>
-                            <td>32 $</td>
+                            <td class="total">Total</td>
+                            <% hour = @count_done*0.5 %>
+                            <td><%= hour %></td>
+                            
+                            <td><%= cost_total %> $</td>
                         </tr>                        
                     </table>
 					
 					
-				</div>				
+				</div>	
+				<% elsif @count_done == 0 %>
+				<div class="past-schedule-not">
+						<i class="fa fa-2x fa-history"></i>&nbsp;&nbsp;&nbsp;&nbsp;<p class="past-no-lessons">No histories </p>
+						<br>
+						<a class="lesson-book">Do you want to book new lessons?</a>
+				</div>
+				<% end %>
 				<!--受講履歴終了----------------------------------------------------------------->
 		</div>
 <!--main終了------------------------------------------------------------------------------------->   

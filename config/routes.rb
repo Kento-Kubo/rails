@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'main/index' => "main#index"
   get 'main/index2' => "main#index2"
   get 'main/mypage_student' => "main#mypage_student"
-  get 'main/mypage_teacher' => "main#mypage_teacher"
+  get 'main/:id/mypage_teacher' => "main#mypage_teacher"
 
   get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
   get 'main/student_account_edit/:id' => "main#student_account_edit"
@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   post   '/login_teacher' => 'sessions#create_teacher'
   delete '/logout' => 'sessions#destroy'
 
+  post    'favorites/:id/create' => 'favorites#create'
+  post    'favorites/:id/destroy' => 'favorites#destroy'
+  
   resources :users
   get 'users/:id/edit' => 'users#edit'
   post   'users/new' => 'users#new'
@@ -31,7 +34,7 @@ Rails.application.routes.draw do
   
   resources :lessons
   post 'lessons/create' => "lessons#create"
-  
+  post 'lessons/cancel' => "lessons#cancel"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
