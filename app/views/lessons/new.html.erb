@@ -5,7 +5,7 @@
 
 
 <!--入力画面開始-----------------------------------------------------------------------------------------> 
-
+<%= form_tag("/lessons/create") do %>
 <div class="main">
    <h1 class="title">Make a reservation for your lesson.</h1> 
         <p class="subtitle">Your lesson is shown below, confirm your lesson if there are no problems.</p>
@@ -20,7 +20,7 @@
 
     <div class="main-right">
     <% require "time" %>
-    <% t= Time.parse("#{@lesson.time}"); %>
+    <% t= Time.parse("#{@time}"); %>
     <% if t.min==0 %>
       <% min1 = "00" %>
       <% min2 = 30 %>
@@ -30,16 +30,24 @@
       <% min2 = "00" %>
       <% hour2 = t.hour+1 %>
     <% end %> 
-      
     
+    <% time = t.hour+t.min+t.sec %>  
+   
     <p><%= t.year %>.<%= t.month %>.<%= t.day %> <%= t.hour %>:<%= min1 %> - <%= hour2 %>:<%= min2 %></p>
     <span class="ability">Tell your Japanese ability to your teacher in advance</span>
     
-    <textarea class="text" name="message"></textarea>
-    <%= link_to 'Create', lessons_path(lessons: {user_id: current_user.id, teacher_id: @teacher.id, time: t}), method: :post %> 
-   
+    <textarea class="text" name="japanese_skill"><%= @lesson.Japanese_skill %></textarea>
+    
+    <!--情報飛ばす用開始（ほかにいい案があれば変更のこと）---------------------------------------------------->
+     <textarea class="invisible" name="teacher_id"><%= @teacher.id %></textarea>
+     <textarea class="invisible" name="time"><%= t %></textarea>
+     <textarea class="invisible" name="date"><%= t %></textarea>
+     <!--情報飛ばす用終了（ほかにいい案があれば変更のこと）---------------------------------------------------->
+     
+     <input type="submit" value="make a reservation" class="btn1">
+    
     </div>
-  
+  <% end %> 
 <!--予約確認用モーダル開始---------------------------------------------------->
 
 <!--予約確認用モーダル終了---------------------------------------------------->

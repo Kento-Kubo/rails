@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get   'teachers_top' => 'teachers#top'
   post   'teachers/new' => 'teachers#new'
   
+  
   resources :lessons
   post 'lessons/create' => "lessons#create"
   

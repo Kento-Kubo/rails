@@ -91,10 +91,13 @@
         </div>
 <!--検索ボックス終了-------------------------------------------------------------------------->
 <!--検索件数とsort選択開始-------------------------------------------------------------------->       
+        <% require 'date' %>
+        <% date = Date.today %>
+      
         <div class="teacher-list-top">
             <div class="result-number-left">
             
-                <p><span class="number">10</span> teachers have been found for 24th of March</p>
+                <p><span class="number">10</span> teachers have been found for <%= date.day %>th of <%= date.month %></p>
                 
             </div>
             <div class="result-number-right">
@@ -144,9 +147,23 @@
                 <% (0..23).each do |num|%>  
                 <% require "time" %>
                 
-                <% y = "2018" %>
-                <% m = "03" %>
-                <% d = "25" %>
+                <% y = date.year.to_s %>
+                <% m = date.month %>
+                
+                <% if m < 10 %>
+                  <% m = "0" + date.month.to_s %>
+                <% else %>
+                  <% m = date.month.to_s %>                      
+                <%end%>
+                
+                <% d = date.day %>
+                
+                <% if d < 10 %>
+                  <% d = "0" + date.day.to_s %>
+                <% else %>
+                  <% d = date.day.to_s %>                      
+                <%end%>
+                
                 <% if num < 10 %>
                   <% h = "0" + num.to_s %>
                 <% else %>
@@ -155,12 +172,14 @@
                 
                 <% min1 = "00" %>
                 <% min2 = "30" %>
+
                 <% s = "00" %>
-                <% t1 = y+m+d+h+min1+s; %>
-                <% t2 = y+m+d+h+min2+s; %>
-                
-                <li class="schedule-row-color scroll" ><%= link_to "available", new_lesson_path(:time => t1, :id => teacher.id) %> </li>
-                <li class="scroll" ><%= link_to "available", new_lesson_path(:time => t2, :id => teacher.id) %> </li>
+                <% t11 = y + m + d + h + min1 + s; %>
+                <% t22 = y + m + d + h + min2 + s; %>
+                <% require "time" %>
+             
+                <li class="schedule-row-color scroll" ><%= link_to "available", new_lesson_path(:time1 => t11, :id => teacher.id) %> </li>
+                <li class="scroll" ><%= link_to "available", new_lesson_path(:time1 => t22, :id => teacher.id) %> </li>
                 <%end%>
 
             </ul>

@@ -15,6 +15,11 @@ class MainController < ApplicationController
   
   def mypage_student
     @user = User.find_by(id:session[:user_id])
+    @lessons =Lesson.where(user_id: @user.id).where(condition:0)
+    @count_reserved = Lesson.where(user_id: @user.id).where(condition:0).length
+    @count_done = Lesson.where(user_id: @user.id).where(condition:1).length
+    @teachers = Teacher.all
+    
   end
  
   

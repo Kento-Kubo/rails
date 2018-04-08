@@ -177,18 +177,21 @@ width:700px;
  margin:0 auto;
  border:solid rgba(34, 49, 52, 0.1) 1px;
  text-align:left;
+ padding:0px;
+ position:relative;
 
  }
  
  .time-schedule{
      display:inline-block;
-     width:15%;
+     width:12%;
      box-sizing:border-box;
      border:solid rgba(34, 49, 52, 0.9) 1px; 
     text-align:center;
-   margin-left:0px;
-    
+
+
     padding: 0px;
+    margin-left:0px;
      }
      
   .teacher-schedule{
@@ -197,9 +200,7 @@ width:700px;
      box-sizing:border-box;
      border:solid rgba(34, 49, 52, 0.9) 1px; 
     
-   
-    
-    padding: 0px;
+     padding: 0px;
      }
  
 	
