@@ -97,7 +97,7 @@
         <div class="teacher-list-top">
             <div class="result-number-left">
             
-                <p><span class="number">10</span> teachers have been found for <%= date.day %>th of <%= date.month %></p>
+                <p><span class="number"><%= @teachers.length %></span> teachers have been found for <%= date.day %>th of <%= date.month %></p>
                 
             </div>
             <div class="result-number-right">
@@ -115,19 +115,44 @@
             </div>
         </div>  
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
-<!--検索結果開始------------------------------------------------------------------------------>           
+<!--検索結果開始------------------------------------------------------------------------------>  
+    <div class="main-part">
+    <% n = @teachers.count / 3 + 1 %>
+       <% (1..n).each do |x|%> 
+            <div class="profile-zone">
+                <% a = 0+3*(x-1)%>
+      			  <% b = 1+3*(x-1)%>
+      			  <% c = 2+3*(x-1)%>
+      			  <% @teachers[a..c].each do |teacher|%>
+                <div class="blanks"></div>
+                <div class="teacher-info">
+      			  <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
+      			  <%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction name" %><br>
+      			  1 lesson:4$<br>
+      			  ★★★★★<br>
+      			  hobby:<%= teacher.hobby %><br>
+      			 
+      			
+      		   </div>
+                <%end%>
+            </div>
+        <%end%>
+        </div>
+
+         
        <% n = @teachers.count / 3 + 1 %>
        <% (1..n).each do |x|%> 
        
        <div class="main-part">
-            <ul style="list-style:none;" class="time-schedule">
-                <li class="blank"></li>
+            <div style="list-style:none;" class="time-schedule">
+                <div class="blank"></div>
+                <div class="scroll-part">
                     <% (0..23).each do |num|%>
-                <li class="schedule-row-color scroll" >&nbsp;<%= 0+num %>:00&nbsp;</li>
-                <li class="scroll" >&nbsp;<%=  0+num %>:30&nbsp;</li>
+                         <div class="schedule-row-color scroll" >&nbsp;<%= 0+num %>:00&nbsp;</div>
+                         <div class="scroll" >&nbsp;<%=  0+num %>:30&nbsp;</div>
                     <%end%>
-                
-            </ul>
+                </div>
+            </div>
             
             
                   <% a = 0+3*(x-1)%>
@@ -148,8 +173,9 @@
       			  <% else %>
       			  <%= link_to("favorite","/favorites/#{teacher.id}/create",{method:"post"}) %>
       			  <% end %>
-      			  </li>
-      			  
+      		   </li>
+      		   
+      		   <div class="scroll-part">  
                 <% (0..23).each do |num|%>  
                 <% require "time" %>
                 
@@ -187,7 +213,7 @@
                 <li class="schedule-row-color scroll" ><%= link_to "available", new_lesson_path(:time1 => t11, :id => teacher.id) %> </li>
                 <li class="scroll" ><%= link_to "available", new_lesson_path(:time1 => t22, :id => teacher.id) %> </li>
                 <%end%>
-
+                </div>
             </ul>
             <%end%>
             

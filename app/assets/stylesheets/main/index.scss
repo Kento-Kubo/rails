@@ -179,27 +179,28 @@ width:700px;
  text-align:left;
  padding:0px;
  position:relative;
-
  }
  
  .time-schedule{
      display:inline-block;
-     width:12%;
+     width:80px;
      box-sizing:border-box;
      border:solid rgba(34, 49, 52, 0.9) 1px; 
     text-align:center;
 
-
+    position:absolute;
+    left:0;
     padding: 0px;
     margin-left:0px;
      }
      
   .teacher-schedule{
      display:inline-block;
-     width:27%;
+     width:200px;
      box-sizing:border-box;
      border:solid rgba(34, 49, 52, 0.9) 1px; 
-    
+     margin-left:2px;
+     margin-right:auto;
      padding: 0px;
      }
  
@@ -270,7 +271,27 @@ background-color:rgba(135, 206, 250, 0.2);
     pointer:cursor;
     
 }
+/*trial--------------------------------------------------------------------------*/
+.profile-zone{
+    height:100px;
+    
+}
 
+.teacher-info{
+text-align:center;
+ width:25%;
+ height:100%;
+ display:inline-block;
+}
+
+.blanks{
+text-align:center;
+ width:10%;
+ height:100%;
+ display:inline-block;
+}
+
+/*trial--------------------------------------------------------------------------*/
 /*検索結果一覧終了--------------------------------------------------------------------------*/
 /*検索条件一覧開始--------------------------------------------------------------------------*/
 

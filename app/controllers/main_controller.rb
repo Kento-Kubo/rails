@@ -5,7 +5,7 @@ class MainController < ApplicationController
     @users = User.all
     #@teachers = Teacher.all
     @teachers = Teacher.all
-    #年齢計算
+   
     
     
   end
