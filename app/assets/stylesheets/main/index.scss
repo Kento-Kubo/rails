@@ -272,23 +272,98 @@ background-color:rgba(135, 206, 250, 0.2);
     
 }
 /*trial--------------------------------------------------------------------------*/
-.profile-zone{
-    height:100px;
-    
+.main-part-trial{
+width:700px;
+ margin:0 auto;
+ border:none;/*solid rgba(34, 49, 52, 0.9) 1px; */
+ margin-top:10px;
+ }
+ .scroll-part-trial{
+width:100%;
+height:450px;
+overflow-y:scroll;
+ }
+.profile-zone-trial{
+height:200px;
+   border:solid rgba(34, 49, 52, 0.1) 1px; 
+   position:relative;
 }
 
-.teacher-info{
+
+.teacher-info-trial{
 text-align:center;
- width:25%;
- height:100%;
- display:inline-block;
+ width:180px;
+ height:200px;
+display:inline-block;
+ border:solid rgba(34, 49, 52, 0.1) 1px; 
+margin-top:0;
+ margin-bottom:0;
+ margin-right:2px;
+ 
 }
 
-.blanks{
-text-align:center;
+.blank-photo-trial{
+    visibility:hidden;
+}
+
+.blank-trial{
  width:10%;
- height:100%;
+ height:30px;
  display:inline-block;
+ border:none;/*solid rgba(34, 49, 52, 0.9) 1px; */
+ margin-top:0;
+ margin-left:0px;
+}
+.Profile-photo-trial{
+width:150px;
+}
+
+.schedule-row-1-trial{
+    width:10%;
+    height:48px;
+    display:inline-block;
+ border:none;/*solid rgba(34, 49, 52, 0.9) 1px; */
+ line-height: 48px;
+}
+.schedule-row-12-trial{
+     width:10%;
+    height:48px;
+    display:inline-block;
+ border:none;/*solid rgba(34, 49, 52, 0.9) 1px; */  
+    line-height: 48px;
+}
+.schedule-teacher-row-1-trial, .schedule-teacher-row-2-trial, .schedule-teacher-row-3-trial{
+    text-align:center;
+ width:180px;
+ height:50px;
+display:inline-block;
+ border:none;/*solid rgba(34, 49, 52, 0.9) 1px; */
+margin-top:0;
+ margin-right:0;
+ margin-left:0;
+ box-sizing:border-box;
+ background-color:rgba(135, 206, 250, 0.2);
+line-height: 50px;
+}
+.schedule-teacher-row-12-trial, .schedule-teacher-row-22-trial, .schedule-teacher-row-32-trial{
+    text-align:center;
+ width:180px;
+ height:50px;
+display:inline-block;
+ border:none;/*solid rgba(34, 49, 52, 0.9) 1px; */
+margin-top:0;
+ margin-right:0;
+ margin-left:0;
+ box-sizing:border-box;
+ line-height: 50px;
+}
+
+.time1-trial, .time2-trial{
+    padding-top:0px;
+    height:50px;
+    margin-top:0;
+ margin-bottom:0;
+border:solid rgba(34, 49, 52, 0.1) 1px; 
 }
 
 /*trial--------------------------------------------------------------------------*/
