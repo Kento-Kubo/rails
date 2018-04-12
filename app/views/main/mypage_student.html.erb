@@ -172,14 +172,15 @@
 				    <% @favorites.each do |favorite|%>
 			        	
 				    <% teacher = @teachers.find_by(id: favorite.teacher_id)%>
-				
+				    <%= link_to "/main/#{teacher.id}/mypage_teacher", class: "introduction name" do %>
     				<div class="favorite-each">
 						<img class="Profile-photo-teacher" src="/conversation.jpg">
-						<p class="teacher-name-favorite"><%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction name" %></p>
+						<p class="teacher-name-favorite"><%= teacher.name %></p>
 						
 						<p class="teacher-lesson-no-favorite"><%= @lessons_done.where(teacher_id: teacher.id).length %><span class="lessons">&nbsp;lessons with</span><span class="teacher-sex">&nbsp;him</span></p>
 					    
 					</div>
+					<% end %>
 					<% end %>
 					
 					<% elsif @count_favorite ==0 %>

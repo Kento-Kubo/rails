@@ -97,7 +97,7 @@
         <div class="teacher-list-top">
             <div class="result-number-left">
             
-                <p><span class="number">10</span> teachers have been found for <%= date.day %>th of <%= date.month %></p>
+                <p><span class="number"><%= @teachers.length %></span> teachers have been found for <%= date.day %>th of <%= date.month %></p>
                 
             </div>
             <div class="result-number-right">
@@ -115,43 +115,35 @@
             </div>
         </div>  
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
-<!--検索結果開始------------------------------------------------------------------------------>           
-       <% n = @teachers.count / 3 + 1 %>
+<!--検索結果開始------------------------------------------------------------------------------>  
+    <div class="main-part-trial">
+     <% n = @teachers.count / 3 + 1 %>
+    
        <% (1..n).each do |x|%> 
-       
-       <div class="main-part">
-            <ul style="list-style:none;" class="time-schedule">
-                <li class="blank"></li>
-                    <% (0..23).each do |num|%>
-                <li class="schedule-row-color scroll" >&nbsp;<%= 0+num %>:00&nbsp;</li>
-                <li class="scroll" >&nbsp;<%=  0+num %>:30&nbsp;</li>
-                    <%end%>
-                
-            </ul>
-            
-            
+            <ul style="list-style:none; " class="profile-zone-trial">
+                <li class="blank-trial"><br></li>
                   <% a = 0+3*(x-1)%>
       			  <% b = 1+3*(x-1)%>
       			  <% c = 2+3*(x-1)%>
       			  <% @teachers[a..c].each do |teacher|%>
-            <ul style="list-style:none; "class="teacher-schedule">
-            
-                <li class="teacher-info">
-      			  <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
-      			  <%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction name" %><br>
-      			  1 lesson:4$<br>
+                
+                <li class="teacher-info-trial">
+      			  <img class="Profile-photo-trial" src="<%="/conversation.jpg"%>" ><br>
+      			  <%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction-trial name-trial" %><br>
+      			  1 lesson:<%= teacher.cost %>$<br>
       			  ★★★★★<br>
       			  hobby:<%= teacher.hobby %><br>
-      			 
-      			  <% if Favorite.find_by(teacher_id: teacher.id, user_id: current_user.id) %>
+      			 <% if Favorite.find_by(teacher_id: teacher.id, user_id: current_user.id) %>
       			   <%= link_to("unfavorite","/favorites/#{teacher.id}/destroy",{method:"post"}) %>
       			  <% else %>
       			  <%= link_to("favorite","/favorites/#{teacher.id}/create",{method:"post"}) %>
       			  <% end %>
-      			  </li>
-      			  
-                <% (0..23).each do |num|%>  
-                <% require "time" %>
+      			 <%end%>
+      		   </li>
+              </ul> 
+            <div class="scroll-part-trial">
+            <% (0..23).each do |num|%>  
+             <% require "time" %>
                 
                 <% y = date.year.to_s %>
                 <% m = date.month %>
@@ -184,16 +176,32 @@
                 <% t22 = y + m + d + h + min2 + s; %>
                 <% require "time" %>
              
-                <li class="schedule-row-color scroll" ><%= link_to "available", new_lesson_path(:time1 => t11, :id => teacher.id) %> </li>
-                <li class="scroll" ><%= link_to "available", new_lesson_path(:time1 => t22, :id => teacher.id) %> </li>
-                <%end%>
-
-            </ul>
-            <%end%>
             
+               
+            <ul style="list-style:none; " class="time1-trial">
+                <li class="schedule-row-1-trial">&nbsp;<%= 0+num %>:00&nbsp;</li>
+                
+                
+      			<% @teachers[a..c].each do |teacher|%>
+                <li class="schedule-teacher-row-1-trial"><%= link_to "available", new_lesson_path(:time1 => t11, :id => teacher.id) %></li>
+                <%end%>
+              </ul> 
+              
+          <ul style="list-style:none; " class="time2-trial">
+                <li class="schedule-row-12-trial">&nbsp;<%= 0+num %>:30&nbsp;</li>
+                
+                
+      			<% @teachers[a..c].each do |teacher|%>
+                <li class="schedule-teacher-row-12-trial"><%= link_to "available", new_lesson_path(:time1 => t22, :id => teacher.id) %> </li>
+                <%end%>
+            </ul> 
+              
+             
+          <%end%>
+          </div>
+         
+      <%end%>
         </div>
-        <%end%>
-        
        <!-- <% n = @teachers.count / 3 + 1 %>
         <% (1..n).each do |x|%> 
         <div class="main-part">
