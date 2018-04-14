@@ -96,14 +96,62 @@
 					    </div>
 					
 	
-			</div>
+			         </div>
+			         
+			         <div class="register birth">
+					
+						<div class="register-left">
+							skype
+						</div>
+						
+						<div class="register-right">
+							
+                            <div><%= current_user.skype%></div>
+                       
+						
+					    </div>
+					
+	
+			         </div>
+			         
+			         <div class="register birth">
+					
+						<div class="register-left">
+							language
+						</div>
+						
+						<div class="register-right">
+							
+                            <div><%= current_user.language%></div>
+                       
+						
+					    </div>
+					
+	
+			         </div>
+			         
+			         <div class="register birth">
+					
+						<div class="register-left">
+							profile
+						</div>
+						
+						<div class="register-right">
+							
+                            <div><%= current_user.profile%></div>
+                       
+						
+					    </div>
+					
+	
+			         </div>
 			<br>
 			<div class="edit_account_main_confirm_3">
 			
 			
 			<!--<input class="btn1" value="アカウント情報を変更する" id="complete-show">-->
 			<!--<%= link_to("edit your account","/main/student_account_edit/#{current_user.id}" ,class:"btn1") %>-->
-   	       	<%= link_to("edit your account",edit_user_path(current_user),class:"btn1") %>
+   	       	<%= link_to("edit your account",edit_teacher_path(current_user),class:"btn1") %>
 
 			</div>
 		</div>
