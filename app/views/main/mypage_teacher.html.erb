@@ -98,17 +98,17 @@
 				<!--Introduction開始------------------------------------------------------------->   
 				<div class="introduction">
 
-							<p class="teacher-name"><%=@teacher.name%></p>
+							<p class="teacher-name"><%=current_user.name%></p>
 							
 							<table class="table-introduction">
   								<tr>
     								<td class="title">AGE</td>
-    								<td><%=Date.today.year-@teacher.birthday.year-1%></td>
+    								<td><%=Date.today.year-current_user.birthday.year-1%></td>
     							    <td><%= link_to("edit your account",edit_user_path(current_user),class:"btn1") %></td>
   								</tr>
   								<tr>
     								<td class="title">SEX</td>
-    								<td><% if @teacher.sex %>
+    								<td><% if current_user.sex %>
             							 male
             							<% else %>
             							 female
@@ -116,18 +116,18 @@
   								</tr>
   								<tr>
     								<td class="title">LANGUAGE</td>
-    								<td><%=@teacher.language%></td>
+    								<td><%=current_user.language%></td>
   								</tr>
   								<tr>
     								<td class="title">HOBBY</td>
-    								<td><%=@teacher.hobby%></td>
+    								<td><%=current_user.hobby%></td>
   								</tr>  
 							</table>
 							
 
 					<hr width=95%>
 					<p class="Introduction-title">INTRODUCTION</p>
-						<p class="Introduction-contentes"><%=@teacher.profile%></p>
+						<p class="Introduction-contentes"><%=current_user.hobby%></p>
                     <div id="schedule"></div> <!--マーキング-->
 					<br>
 					<br>
@@ -1147,4 +1147,4 @@
 
 		<script src="each_teacher.js"></script>
     </body>
-    </html>
+    </html>cd 

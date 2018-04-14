@@ -11,7 +11,6 @@ class MainController < ApplicationController
   end
   
   def mypage_teacher
-    @teacher = Teacher.find_by(id: params[:id])
   end
   
   def mypage_student
