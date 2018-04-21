@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'main/student_account/:id' => "main#student_account"
   get 'main/student_faq' => "main#student_faq"
 
+  get 'lessons/:id/new' => "lessons#new"
   
   get    '/login' => 'sessions#new'
   post   '/login_student' => 'sessions#create_student'

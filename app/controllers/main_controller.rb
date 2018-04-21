@@ -5,8 +5,10 @@ class MainController < ApplicationController
     @users = User.all
     #@teachers = Teacher.all
     @teachers = Teacher.all
-   
     
+    @schedules =Schedule.all
+    
+    @lessons =Lesson.all
     
   end
   

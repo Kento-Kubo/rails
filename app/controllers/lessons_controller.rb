@@ -6,21 +6,33 @@ class LessonsController < ApplicationController
   end
   
   def new
-
+    
     @teacher = Teacher.find_by(id: params[:id])
     @time= params[:time1]
     @lesson = Lesson.new
   end
-  
+ 
+ 
+ 
   def create  #make a new reservation
-    @lesson = Lesson.new(time: params[:time],
-                         user_id: current_user.id,
-                         teacher_id: params[:teacher_id],
-                         date: params[:date],
-                         condition: 2,                                  # 1:done , 2:reserved
-                         Japanese_skill: params[:Japanese_skill])    
+    aaa = params[:time]
+    countas = aaa.length
+    
+    @lesson = Lesson.new(lesson_params)
+    #time: params[:time],
+                        # teacher_id: current_user.id,
+                        # date: params[:date],
+                        # condition: 3 )                                 # 1:done , 2:reserved, 3:available
+                             
  
     @lesson.save
+    
+   
+    
+    @schedule
+    
+    
+    
      
     if @lesson.save
       
@@ -42,6 +54,10 @@ class LessonsController < ApplicationController
   lesson.destroy
   redirect_to("/main/mypage_student")
   
+  end
+  
+  def lesson_params
+    params.require(:lesson).permit(:time)
   end
 
 end
