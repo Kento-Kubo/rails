@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get 'main/student_faq' => "main#student_faq"
 
   get 'lessons/:id/new' => "lessons#new"
-  
+  get 'lessons/reserve' => "lessons#reserve"
+  post 'lessons/update_reserve' => "lessons#update_reserve"
+   
   get    '/login' => 'sessions#new'
   post   '/login_student' => 'sessions#create_student'
   post   '/login_teacher' => 'sessions#create_teacher'
@@ -34,6 +36,7 @@ Rails.application.routes.draw do
   
   
   resources :lessons
+  get 'lessons/:id/reserve' => "lessons#reserve"
   post 'lessons/create' => "lessons#create"
   post 'lessons/cancel' => "lessons#cancel"
   

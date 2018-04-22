@@ -8,7 +8,7 @@ class MainController < ApplicationController
     
     @schedules =Schedule.all
     
-    @lessons =Lesson.all
+    @lessons =Lesson.where(condition: 3)
     
   end
   
