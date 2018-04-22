@@ -23,6 +23,8 @@ a {
   
 }
 
+
+
   .searchbox{
   border: none;
   border-radius: 3px  3px;
@@ -318,6 +320,12 @@ margin-top:0;
 width:150px;
 }
 
+.invisible{
+   line-height: 48px;  
+    height:48px;
+    margin-top:0;
+    visibility:hidden;
+}
 .schedule-row-1-trial{
     width:10%;
     height:48px;

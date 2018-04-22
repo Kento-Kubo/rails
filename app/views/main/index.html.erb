@@ -116,7 +116,7 @@
         </div>  
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
-    <div class="main-part-trial">
+       <div class="main-part-trial">
      <% n = @teachers.count / 3 + 1 %>
     
        <% (1..n).each do |x|%> 
@@ -175,15 +175,29 @@
                 <% t11 = y + m + d + h + min1 + s; %>
                 <% t22 = y + m + d + h + min2 + s; %>
                 <% require "time" %>
-             
-            
-               
+                <% t111 = y + "-" + m + "-" + d + " " + h  + ":" + min1  + ":" + s; %>
+                <% t222 = y + "-" + m + "-" + d + " " + h  + ":" + min2  + ":" + s; %>
+                <% ttt1= Time.parse(t111) %>
+                <% ttt2= Time.parse(t222) %>
             <ul style="list-style:none; " class="time1-trial">
                 <li class="schedule-row-1-trial">&nbsp;<%= 0+num %>:00&nbsp;</li>
                 
                 
       			<% @teachers[a..c].each do |teacher|%>
-                <li class="schedule-teacher-row-1-trial"><%= link_to "available", new_lesson_path(:time1 => t11, :id => teacher.id) %></li>
+      			<% schedule = Schedule.where(teacher_id: teacher.id) %>
+      			<% t_schedule = schedule.find_by(datetime: ttt1 ) %>
+      			
+      			
+      			
+                <li class="schedule-teacher-row-1-trial">
+                
+                <% if t_schedule %>
+                    <%= link_to "available", new_lesson_path(:time1 => t11, :id => teacher.id) %>
+                <%else%>
+                    <p class="invisible">aaaaa</p>                      
+                <% end %>
+                </li>
+               
                 <%end%>
               </ul> 
               
@@ -192,7 +206,18 @@
                 
                 
       			<% @teachers[a..c].each do |teacher|%>
-                <li class="schedule-teacher-row-12-trial"><%= link_to "available", new_lesson_path(:time1 => t22, :id => teacher.id) %> </li>
+      			<% schedule = Schedule.where(teacher_id: teacher.id) %>
+      			<% t_schedule = schedule.find_by(datetime: ttt2) %>
+      
+                <li class="schedule-teacher-row-12-trial">
+                <% if t_schedule %>
+                    <%= link_to "available", new_lesson_path(:time1 => t22, :id => teacher.id) %> 
+                <% else %>
+                    <p class="invisible">aaaaa</p> 
+                <% end %>
+                
+                </li>
+                
                 <%end%>
             </ul> 
               

@@ -2,58 +2,141 @@
 		<%= stylesheet_link_tag "lessons/new", :media => "all" %>
 		<%= javascript_include_tag 'lessons/new' %>
 <% end %>
-
-
-<!--入力画面開始-----------------------------------------------------------------------------------------> 
-<%= form_tag("/lessons/create") do %>
 <div class="main">
-   <h1 class="title">Make a reservation for your lesson.</h1> 
-        <p class="subtitle">Your lesson is shown below, confirm your lesson if there are no problems.</p>
-<hr size="1px">
-    <div class="main-left">
-         <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
-      	<%= @teacher.name %><br>
-      	1 lesson:<%= @teacher.cost %> $<br>
-      	★★★★★<br>
-      	hobby:<%= @teacher.hobby %>
-      	
-    </div>
+<div class="schedule">
+					<p class="schedule-title">
+						SCHEDULE &nbsp;&nbsp;&nbsp;&nbsp; (授業可能な日時・時間帯にチェックを入れてください。)
+					</p>
+					<div class="schedule-timeselect">
+						
+                    
+								
+					</div>
+		<%= form_for @lesson do |form| %>
+					<div class="schedule-table">
+						<table class="table-schedule"  style="border-color:rgba(34, 49, 52, 0.3)" rules="all">
+  								
+  								<tr>
+    								<td class="title-schedule-left lefttop"></td>
+    								<% d1 = Date.today %>
+    								<% sunday = d1.day.to_i - d1.wday.to_i %>       
+    								<% (0..6).each do |num|%>
+    								<td class="title-schedule"><%=sunday+num%></t>          <!--月の変わり目注意-->
+    								<% end %>
+    	
+  								</tr>
+  								<tr class="time1">
+  								    <% (0..23).each do |num|%>
+  								    
+  								    
+  								    
+    								<td class="title-schedule-left"><%=num%>:00-<%=num%>:30</td>
+    								<% (0..6).each do |number|%>
+    								
+    								
+                                    <% require "time" %>
+                
+                                     <% y = d1.year.to_s %>
+                                      <% m = d1.month %>                        <!--月の変わり目注意 対策考えること-->
+                
+                                      <% if m < 10 %>
+                                        <% m = "0" + d1.month.to_s %>
+                                      <% else %>
+                                        <% m = d1.month.to_s %>                      
+                                      <%end%>
+                
+                                      <% dd = sunday+number %>
+                
+                                       <% if dd < 10 %>
+                                        <% d = "0" + dd.to_s %>
+                                      <% else %>
+                                        <% d = dd.to_s %>                      
+                                       <%end%>
+                
+                                       <% if num < 10 %>
+                                         <% h = "0" + num.to_s %>
+                                       <% else %>
+                                        <% h = num.to_s %>
+                                      <%end%>
+                
+                                     <% min1 = "00" %>
+                                     
 
-    <div class="main-right">
-    <% require "time" %>
-    <% t= Time.parse("#{@time}"); %>
-    <% if t.min==0 %>
-      <% min1 = "00" %>
-      <% min2 = 30 %>
-      <% hour2 = t.hour %>
-    <% else %>
-      <% min1 = "30" %>
-      <% min2 = "00" %>
-      <% hour2 = t.hour+1 %>
-    <% end %> 
-    
-    <% time = t.hour+t.min+t.sec %>  
-   
-    <p><%= t.year %>.<%= t.month %>.<%= t.day %> <%= t.hour %>:<%= min1 %> - <%= hour2 %>:<%= min2 %></p>
-    <span class="ability">Tell your Japanese ability to your teacher in advance</span>
-    
-    <textarea class="text" name="japanese_skill"><%= @lesson.Japanese_skill %></textarea>
-    
-    <!--情報飛ばす用開始（ほかにいい案があれば変更のこと）---------------------------------------------------->
-     <textarea class="invisible" name="teacher_id"><%= @teacher.id %></textarea>
-     <textarea class="invisible" name="time"><%= t %></textarea>
-     <textarea class="invisible" name="date"><%= t %></textarea>
-     <!--情報飛ばす用終了（ほかにいい案があれば変更のこと）---------------------------------------------------->
-     
-     <input type="submit" value="make a reservation" class="btn1">
-    
-    </div>
-  <% end %> 
-<!--予約確認用モーダル開始---------------------------------------------------->
+                                      <% s = "00" %>
+                                      <% t11 = y + m + d + h + min1 + s; %>
+                                      <% t11_1 =t11.to_i %>
+                                      <% require "time" %>
+                                      <% t111 = y + "-" + m + "-" + d + " " + h  + ":" + min1  + ":" + s; %>
+                                    
+                
+                                     <% ttt1= Time.parse(t111) %>
+                                      								
+    								<td><%= form.check_box :time, {multiple: true, include_hidden: false }, t11 %></td>
+    								<% end %>
+    							   			
+    							   			
+  								</tr>
+  								<tr class="time1">
+    								<td class="title-schedule-left schedule-row-color"><%=num%>:30-<%=num+1%>:00</td>
+    								<% (0..6).each do |number|%>
+    								 								
+    								<% require "time" %>
+                
+                                     <% y = d1.year.to_s %>
+                                      <% m = d1.month %>                        <!--月の変わり目注意 対策考えること-->
+                
+                                      <% if m < 10 %>
+                                        <% m = "0" + d1.month.to_s %>
+                                      <% else %>
+                                        <% m = d1.month.to_s %>                      
+                                      <%end%>
+                
+                                      <% dd = sunday+number %>
+                
+                                       <% if dd < 10 %>
+                                        <% d = "0" + dd.to_s %>
+                                      <% else %>
+                                        <% d = dd.to_s %>                      
+                                       <%end%>
+                
+                                       <% if num < 10 %>
+                                         <% h = "0" + num.to_s %>
+                                       <% else %>
+                                        <% h = num.to_s %>
+                                      <%end%>
+                
+                                     
+                                      <% min2 = "30" %>
 
-<!--予約確認用モーダル終了---------------------------------------------------->
-	
+                                      <% s = "00" %>
+                                      
+                                      <% t22 = y + m + d + h + min2 + s; %>
+                                      <% require "time" %>
+                                      
+                                     <% t222 = y + "-" + m + "-" + d + " " + h  + ":" + min2  + ":" + s; %>
+                
+                                     
+                                     <% ttt2= Time.parse(t222) %>    								
+    								<td class="schedule-row-color"><%= form.check_box :time, {multiple: true, include_hidden: false }, t22 %></td>
+    								<% end %>
+    								    								
+  								</tr>
+  								<% end %>
+  															  								
+  								
+  								  								  								
+							</table>
+							<%= form.submit "予定を設定する", class: 'btn1' %>
+							
+							<div id="review"></div> <!--マーキング-->
+					</div>		
+		          <% end %>
+				</div>
+
 </div>
+
+
+
 
 <!--トップに戻る開始------------------------------------------------------------------------->
 		<div class="back-to-top">

@@ -1,0 +1,81 @@
+<% content_for :specific_css_js do %>
+		<%= stylesheet_link_tag "lessons/new", :media => "all" %>
+		<%= javascript_include_tag 'lessons/new' %>
+<% end %>
+
+
+<!--入力画面開始-----------------------------------------------------------------------------------------> 
+<%= form_tag("/lessons/create") do %>
+<div class="main">
+   <h1 class="title">Make a reservation for your lesson.</h1> 
+        <p class="subtitle">Your lesson is shown below, confirm your lesson if there are no problems.</p>
+<hr size="1px">
+    <div class="main-left">
+         <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
+      	<%= @teacher.name %><br>
+      	1 lesson:<%= @teacher.cost %> $<br>
+      	★★★★★<br>
+      	hobby:<%= @teacher.hobby %>
+      	
+    </div>
+
+    <div class="main-right">
+    <% require "time" %>
+    <% t= Time.parse("#{@time}"); %>
+    <% if t.min==0 %>
+      <% min1 = "00" %>
+      <% min2 = 30 %>
+      <% hour2 = t.hour %>
+    <% else %>
+      <% min1 = "30" %>
+      <% min2 = "00" %>
+      <% hour2 = t.hour+1 %>
+    <% end %> 
+    
+    <% time = t.hour+t.min+t.sec %>  
+   
+    <p><%= t.year %>.<%= t.month %>.<%= t.day %> <%= t.hour %>:<%= min1 %> - <%= hour2 %>:<%= min2 %></p>
+    <span class="ability">Tell your Japanese ability to your teacher in advance</span>
+    
+    <textarea class="text" name="japanese_skill"><%= @lesson.Japanese_skill %></textarea>
+    
+    <!--情報飛ばす用開始（ほかにいい案があれば変更のこと）---------------------------------------------------->
+     <textarea class="invisible" name="teacher_id"><%= @teacher.id %></textarea>
+     <textarea class="invisible" name="time"><%= t %></textarea>
+     <textarea class="invisible" name="date"><%= t %></textarea>
+     <!--情報飛ばす用終了（ほかにいい案があれば変更のこと）---------------------------------------------------->
+     
+     <input type="submit" value="make a reservation" class="btn1">
+    
+    </div>
+  <% end %> 
+<!--予約確認用モーダル開始---------------------------------------------------->
+
+<!--予約確認用モーダル終了---------------------------------------------------->
+	
+</div>
+
+<!--トップに戻る開始------------------------------------------------------------------------->
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+<!--トップに戻る開始------------------------------------------------------------------------->
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer>
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
