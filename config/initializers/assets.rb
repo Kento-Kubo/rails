@@ -69,4 +69,5 @@ Rails.application.config.assets.precompile += %w( main/student_write_review_conf
 Rails.application.config.assets.precompile += %w( lessons/new.css )
 Rails.application.config.assets.precompile += %w( lessons/new.js )
 
-
+Rails.application.config.assets.precompile += %w( lessons/reserve.css )
+Rails.application.config.assets.precompile += %w( lessons/reserve.js )
