@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   post   'users/new' => 'users#new'
   post   'users/create2' => 'users#create2'
   root   'users#top'
-
+ 
+  
   resources :teachers
   get   'teachers_top' => 'teachers#top'
   post   'teachers/new' => 'teachers#new'
@@ -39,6 +40,8 @@ Rails.application.routes.draw do
   get 'lessons/:id/reserve' => "lessons#reserve"
   post 'lessons/create' => "lessons#create"
   post 'lessons/cancel' => "lessons#cancel"
+  get 'lessons/:id/review' => 'lessons#review'
+  post 'lessons/:id/review_write' => 'lessons#review_write'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

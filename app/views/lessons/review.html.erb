@@ -1,0 +1,92 @@
+<!--originally "student account edit.erb"-->
+<% content_for :specific_css_js do %>
+	 <%= stylesheet_link_tag "lessons/review", :media => "all" %>
+     <%= javascript_include_tag 'lessons/review' %>
+<% end %>
+<!--main開始------------------------------------------------------------------------------------->   
+	<%= form_tag("/lessons/#{@lesson.id}/review_write") do %>
+	<div class="student_write_review_main">
+			<div class="student_write_review_main_1">
+			
+				<p>Write a review about this teacher</p>
+						
+			</div>
+			
+			<div class="student_write_review_main_2">
+			
+                <div class="student_write_review_main_2_left">
+					<img class="Profile-photo-teacher" src="profile_pic_temp.png" >
+				</div>
+						
+				<div class="student_write_review_main_2_center">
+					<p class="teacher-name"><%= @teacher.name %></p>
+					<p class="date"><%= @lesson.date %></p>
+					<p class="hour">0.5 hour</p>
+					<p class="note">You have taken this teacher's class <span class="class-times"><%= @count_done %></span> times</p>					
+				</div>
+						
+								
+			</div>
+			
+           
+            <table class="student_write_review_main_3" rules="all">
+                <tr>
+                    <td class="table-left"><p class="rating-pointer-1">required</p><p class="rating-pointer-2">OK</p>Rating</td>
+                    <td class="table-right">
+                        
+                        <p class="star-1">★</p>
+                        <p class="star-2">★</p>
+                        <p class="star-3">★</p>
+                        <p class="star-4">★</p>
+                        <p class="star-5">★</p>
+                        
+                        <p class="rating">Click the star and rate this teacher</p>
+                        <p class="rating-1">Disgusting</p>
+                        <p class="rating-2">unsatisfied</p>
+                        <p class="rating-3">Normal</p>
+                        <p class="rating-4">Satisfied</p>
+                        <p class="rating-5">Wanna have sex with</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-left"><p class="rating-pointer-1-">required</p><p class="rating-pointer-2-">OK</p>Comment</td>
+                    <td class="table-right">
+                    <textarea name="review_comment" class="review_honbun" placeholder="Write your review here. How did you feel with this teacher's lesson?" ></textarea>
+                    
+                    <p class="count-words" id="inputlength">0文字</p>
+                    </td>
+                </tr>
+                
+            </table>
+            
+             <input type="submit" value="Submit" class="input3">
+            
+		</div>
+		
+		<% end %>
+<!--トップに戻る開始----------------------------------------------------------------------------->
+		
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+<!--トップに戻る終了（共通：変えないこと）------------------------------------------------------>
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer id="footer">
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
+		<!--<script src="teacher_edit_account.js"></script>-->
