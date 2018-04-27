@@ -18,107 +18,40 @@
   								
   								<tr>
     								<td class="title-schedule-left lefttop"></td>
-    								<% d1 = Date.today %>
-    								<% sunday = d1.day.to_i - d1.wday.to_i %>       
+    								<% today = Date.today %> 
+    								<% baseday = today.day.to_i%>
+    								<% basetime = today.midnight%>
+    								
+    								
     								<% (0..6).each do |num|%>
-    								<td class="title-schedule"><%=sunday+num%></t>          <!--月の変わり目注意-->
+    								<td class="title-schedule"><%=baseday+num%></t>          <!--月の変わり目注意-->
     								<% end %>
     	
   								</tr>
   								<tr class="time1">
-  								    <% (0..23).each do |num|%>
+  								    <% (0..0).each do |num|%>
+  								    <% start_time = basetime + num * 30.minutes %>
+  								    <% end_time = start_time + 30.minutes %>
   								    
   								    
   								    
-    								<td class="title-schedule-left"><%=num%>:00-<%=num%>:30</td>
-    								<% (0..6).each do |number|%>
-    								
-    								
-                                    <% require "time" %>
+    								<td class="title-schedule-left"><%=start_time.hour%>:<%="%02d" % start_time.min%>-<%=end_time.hour%>:<%="%02d" % end_time.min%></td>
+    				
                 
-                                     <% y = d1.year.to_s %>
-                                      <% m = d1.month %>                        <!--月の変わり目注意 対策考えること-->
+                                     <% y = today.year.to_s %>
+                                     <% m = today.month %>                        <!--月の変わり目注意 対策考えること-->
                 
-                                      <% if m < 10 %>
-                                        <% m = "0" + d1.month.to_s %>
-                                      <% else %>
-                                        <% m = d1.month.to_s %>                      
-                                      <%end%>
-                
-                                      <% dd = sunday+number %>
-                
-                                       <% if dd < 10 %>
-                                        <% d = "0" + dd.to_s %>
-                                      <% else %>
-                                        <% d = dd.to_s %>                      
-                                       <%end%>
-                
-                                       <% if num < 10 %>
-                                         <% h = "0" + num.to_s %>
-                                       <% else %>
-                                        <% h = num.to_s %>
-                                      <%end%>
-                
-                                     <% min1 = "00" %>
-                                     
-
-                                      <% s = "00" %>
-                                      <% t11 = y + m + d + h + min1 + s; %>
-                                      <% t11_1 =t11.to_i %>
-                                      <% require "time" %>
-                                      <% t111 = y + "-" + m + "-" + d + " " + h  + ":" + min1  + ":" + s; %>
-                                    
-                
-                                     <% ttt1= Time.parse(t111) %>
+                        
                                       								
-    								<td><%= form.check_box :time, {multiple: true, include_hidden: false }, t11 %></td>
-    								<% end %>
+    								<td><%= form.check_box :time, {multiple: true,include_hidden: false }, start_time %></td>
+    								
+    								
     							   			
     							   			
   								</tr>
-  								<tr class="time1">
-    								<td class="title-schedule-left schedule-row-color"><%=num%>:30-<%=num+1%>:00</td>
-    								<% (0..6).each do |number|%>
-    								 								
-    								<% require "time" %>
-                
-                                     <% y = d1.year.to_s %>
-                                      <% m = d1.month %>                        <!--月の変わり目注意 対策考えること-->
-                
-                                      <% if m < 10 %>
-                                        <% m = "0" + d1.month.to_s %>
-                                      <% else %>
-                                        <% m = d1.month.to_s %>                      
-                                      <%end%>
-                
-                                      <% dd = sunday+number %>
-                
-                                       <% if dd < 10 %>
-                                        <% d = "0" + dd.to_s %>
-                                      <% else %>
-                                        <% d = dd.to_s %>                      
-                                       <%end%>
-                
-                                       <% if num < 10 %>
-                                         <% h = "0" + num.to_s %>
-                                       <% else %>
-                                        <% h = num.to_s %>
-                                      <%end%>
-                
-                                     
-                                      <% min2 = "30" %>
-
-                                      <% s = "00" %>
-                                      
-                                      <% t22 = y + m + d + h + min2 + s; %>
-                                      <% require "time" %>
-                                      
-                                     <% t222 = y + "-" + m + "-" + d + " " + h  + ":" + min2  + ":" + s; %>
-                
-                                     
-                                     <% ttt2= Time.parse(t222) %>    								
-    								<td class="schedule-row-color"><%= form.check_box :time, {multiple: true, include_hidden: false }, t22 %></td>
-    								<% end %>
+  								    								
+    								
+    								
     								    								
   								</tr>
   								<% end %>

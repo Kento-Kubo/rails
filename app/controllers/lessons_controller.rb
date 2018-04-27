@@ -5,8 +5,7 @@ class LessonsController < ApplicationController
   def index
   end
   
-  def new
-    
+  def new  
     @teacher = Teacher.find_by(id: params[:id])
     @time= params[:time1]
     @lesson = Lesson.new
@@ -15,28 +14,17 @@ class LessonsController < ApplicationController
  
  
   def create  #make a new reservation
-    aaa = params[:time]
-    countas = aaa.length
+    shedule = params[:time]
     
     @lesson = Lesson.new(lesson_params)
     #time: params[:time],
                         # teacher_id: current_user.id,
                         # date: params[:date],
                         # condition: 3 )                                 # 1:done , 2:reserved, 3:available
-                             
- 
-    @lesson.save
-    
-   
-    
-    @schedule
-    
-    
-    
      
     if @lesson.save
       
-      redirect_to("/main/mypage_student")
+      redirect_to("/main/mypage_teacher")
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'lessons/new'
@@ -55,7 +43,8 @@ class LessonsController < ApplicationController
   redirect_to("/main/mypage_student")
   
   end
-  
+
+private
   def lesson_params
     params.require(:lesson).permit(:time)
   end
