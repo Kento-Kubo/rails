@@ -26,6 +26,7 @@ Rails.application.config.assets.precompile += %w( users/edit.js )
 Rails.application.config.assets.precompile += %w( users/show.scss )
 Rails.application.config.assets.precompile += %w( users/show.js )
 
+
 Rails.application.config.assets.precompile += %w( teachers/new.scss )
 Rails.application.config.assets.precompile += %w( teachers/show.scss )
 Rails.application.config.assets.precompile += %w( teachers/show.js )
@@ -71,3 +72,6 @@ Rails.application.config.assets.precompile += %w( lessons/new.js )
 
 Rails.application.config.assets.precompile += %w( lessons/reserve.css )
 Rails.application.config.assets.precompile += %w( lessons/reserve.js )
+
+Rails.application.config.assets.precompile += %w( lessons/review.scss )
+Rails.application.config.assets.precompile += %w( lessons/review.js )

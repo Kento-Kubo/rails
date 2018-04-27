@@ -8,8 +8,8 @@ class MainController < ApplicationController
     
     @schedules =Schedule.all
     
-    @lessons =Lesson.where(condition: 3)
-    
+    @lessons_available =Lesson.where(condition: 3)
+    @lessons_reserved =Lesson.where(condition: 2)
   end
   
   def mypage_teacher

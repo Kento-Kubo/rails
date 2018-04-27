@@ -212,6 +212,7 @@
                             <td>Teacher name</td>
                             <td>Hour</td>
                             <td>cost</td>
+                            <td>review</td>
                         </tr>
                         <% cost_total =0 %>
                         
@@ -234,6 +235,7 @@
                             <td>0.5</td>
                             <% cost = teacher.cost %>
                             <td><%= cost %> $</td>
+                            <td><%= link_to("write a reviw","/lessons/#{lesson.id}/review") %></td>
                         </tr> 
                         <% cost_total =cost_total+ cost %>
                         

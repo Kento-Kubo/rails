@@ -22,7 +22,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new
     @lesson.time = times[num].to_s
     @lesson.teacher_id= current_user.id
-    @lesson.condition= 2
+    @lesson.condition= 3
     #time: params[:time],
                         # teacher_id: current_user.id,
                         # date: params[:date],
@@ -58,7 +58,7 @@ class LessonsController < ApplicationController
   
     def update_reserve
     @lesson = Lesson.find_by(id: params[:lesson_id])
- 
+    @lesson.user_id= current_user.id
     @lesson.condition= 2
     @lesson.Japanese_skill = params[:japanese_skill].to_s
     
@@ -82,10 +82,32 @@ class LessonsController < ApplicationController
  
  def cancel
   lesson = Lesson.find_by(id: params[:id])
-  lesson.destroy
+  lesson.condition = 3
+  lesson.user_id = nil
+  lesson.Japanese_skill = nil
+  lesson.save
+  
   redirect_to("/main/mypage_student")
   
   end
+  
+  def review
+    @lesson = Lesson.find_by(id: params[:id])
+    @teacher = Teacher.find_by(id: @lesson.teacher_id)
+    @count_done =Lesson.where(user_id: current_user.id ).where(condition:1).where(teacher_id: @teacher.id).length
+    
+  end
+  
+  def review_write
+    @lesson = Lesson.find_by(id: params[:id])
+    @lesson.review_comment = params[:review_comment].to_s
+    @lesson.review_rate = 5
+    
+    @lesson.save
+    redirect_to("/main/mypage_student")
+    
+  end
+  
   
   def lesson_params
     params.require(:lesson).permit({:time => []})
