@@ -2,8 +2,10 @@
 <% content_for :specific_css_js do %>
 	 <%= stylesheet_link_tag "lessons/review", :media => "all" %>
      <%= javascript_include_tag 'lessons/review' %>
+     <%= javascript_include_tag 'jquery.raty' %> 
 <% end %>
 <!--main開始------------------------------------------------------------------------------------->   
+	
 	<%= form_tag("/lessons/#{@lesson.id}/review_write") do %>
 	<div class="student_write_review_main">
 			<div class="student_write_review_main_1">
@@ -34,18 +36,23 @@
                     <td class="table-left"><p class="rating-pointer-1">required</p><p class="rating-pointer-2">OK</p>Rating</td>
                     <td class="table-right">
                         
-                        <p class="star-1">★</p>
+                       <div id="star_rank" class = "star"></div><div id="hint" class = "rate"></div>
+                        <%= hidden_field_tag :review_rate, @lesson.review_rate %>
+
+
+
+                       <!-- <p class="star-1">★</p> 
                         <p class="star-2">★</p>
                         <p class="star-3">★</p>
                         <p class="star-4">★</p>
-                        <p class="star-5">★</p>
+                        <p class="star-5">★</p>  -->
                         
-                        <p class="rating">Click the star and rate this teacher</p>
+                        <!--<p class="rating">Click the star and rate this teacher</p>
                         <p class="rating-1">Disgusting</p>
                         <p class="rating-2">unsatisfied</p>
                         <p class="rating-3">Normal</p>
                         <p class="rating-4">Satisfied</p>
-                        <p class="rating-5">Wanna have sex with</p>
+                        <p class="rating-5">Wanna have sex with</p>-->
                     </td>
                 </tr>
                 <tr>
@@ -89,4 +96,22 @@
     	</footer>
     	
 <!-- フッター終了（共通：変えないこと）--------------------------------------------------------->
-		<!--<script src="teacher_edit_account.js"></script>-->
+<script type="text/javascript">
+ 
+  $(function(){
+    $('#star_rank').raty({
+     
+      size     : 100,
+      starOff  : '<%= asset_path('star-off.png') %>',
+      starOn   : '<%= asset_path('star-on.png') %>',
+      target    : '#hint',
+      targetType: 'number',
+      targetKeep: true,
+    click: function(score, evt) {
+//	      alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt); //選択時に要素をアラート
+      $("#review_rate").val(score);
+    }
+  });
+  });
+ 
+  </script>
