@@ -206,7 +206,7 @@
 									
 					<table class="history-table" rules="all">
                         <tr class="table-top">
-                            
+                            <td>No.</td>
                             <td>Booking date</td>
                             <td>Lesson date</td>
                             <td>Teacher name</td>
@@ -215,9 +215,9 @@
                             <td>review</td>
                         </tr>
                         <% cost_total =0 %>
-                        
+                        <% num =0 %>
                     <% @lessons_done.each do |lesson|%>
-			        	
+                        <% num =num +1 %>
 				    <% teacher = @teachers.find_by(id: lesson.teacher_id)%>
                     
                         <% d1= lesson.date.day.to_s %>
@@ -228,10 +228,11 @@
 					    <% m2= lesson.created_at.month.to_s %>
 						<% y2= lesson.created_at.year.to_s %>	
                         <tr class="history-data">
-                            
-                            <td><%= d1 + "th." + m1 + "." + y1 %></td>
+                            <td><%= num %></td>
+                         
                             <td><%= d2 + "th." + m2 + "." + y2 %></td>
-                            <td><%= teacher.name %></td>
+                            <td><%= d1 + "th." + m1 + "." + y1 %></td>
+                           <td><%= teacher.name %></td>
                             <td>0.5</td>
                             <% cost = teacher.cost %>
                             <td><%= cost %> $</td>
@@ -242,7 +243,7 @@
                     <% end %>     
                         
                          <tr class="history-total">
-                            
+                            <td class="borderless" ></td>
                             <td class="borderless" ></td>
                             <td class="borderless"></td>
                             <td class="total">Total</td>

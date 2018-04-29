@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428125000) do
+ActiveRecord::Schema.define(version: 20180429162100) do
 
   create_table "Lessons", force: :cascade do |t|
     t.integer  "user_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180428125000) do
     t.boolean  "teacher"
     t.integer  "cost"
     t.decimal  "rate",            precision: 3, scale: 2
+    t.integer  "num"
   end
 
   create_table "users", force: :cascade do |t|

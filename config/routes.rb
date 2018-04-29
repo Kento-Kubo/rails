@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   post 'lessons/cancel' => "lessons#cancel"
   get 'lessons/:id/review' => 'lessons#review'
   post 'lessons/:id/review_write' => 'lessons#review_write'
-  
+  get 'lessons/:id/review_show' => "lessons#review_show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
