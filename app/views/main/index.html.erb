@@ -184,15 +184,19 @@
                 
                 
       			<% @teachers[a..c].each do |teacher|%>
-      			<% schedule = Schedule.where(teacher_id: teacher.id) %>
-      			<% t_schedule = schedule.find_by(datetime: ttt1 ) %>
-      			
+      			<% schedule = @lessons_available.where(teacher_id: teacher.id) %>
+      			<% t_schedule = schedule.find_by(time: ttt1 ) %>
+      			<% schedule_reserved = @lessons_reserved.where(teacher_id: teacher.id) %>
+      			<% t_schedule_reserved = schedule_reserved.find_by(time: ttt1 ) %>
       			
       			
                 <li class="schedule-teacher-row-1-trial">
                 
                 <% if t_schedule %>
-                    <%= link_to "available", new_lesson_path(:time1 => t11, :id => teacher.id) %>
+                    <%= link_to 'available', controller: "lessons", action: "reserve", time: t11, id: teacher.id, lid: t_schedule.id  %>
+                <%elsif t_schedule_reserved %> 
+                  
+                  <p  class="reserved">reserved</p>
                 <%else%>
                     <p class="invisible">aaaaa</p>                      
                 <% end %>
@@ -206,12 +210,17 @@
                 
                 
       			<% @teachers[a..c].each do |teacher|%>
-      			<% schedule = Schedule.where(teacher_id: teacher.id) %>
-      			<% t_schedule = schedule.find_by(datetime: ttt2) %>
+      			<% schedule = @lessons_available.where(teacher_id: teacher.id) %>
+      			<% t_schedule = schedule.find_by(time: ttt2) %>
+                <% schedule_reserved = @lessons_reserved.where(teacher_id: teacher.id) %>
+      			<% t_schedule_reserved = schedule_reserved.find_by(time: ttt2 ) %>
       
                 <li class="schedule-teacher-row-12-trial">
                 <% if t_schedule %>
-                    <%= link_to "available", new_lesson_path(:time1 => t22, :id => teacher.id) %> 
+                   <%= link_to 'available', controller: "lessons", action: "reserve", time: t22, id: teacher.id, lid: t_schedule.id  %>
+                <%elsif t_schedule_reserved %> 
+                  
+                  <p  class="reserved">reserved</p>
                 <% else %>
                     <p class="invisible">aaaaa</p> 
                 <% end %>

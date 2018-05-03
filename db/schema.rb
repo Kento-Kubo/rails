@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416213900) do
+ActiveRecord::Schema.define(version: 20180427231100) do
 
   create_table "Lessons", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180416213900) do
     t.datetime "time"
     t.integer  "condition"
     t.integer  "review_rate"
-    t.integer  "review_comment"
+    t.string   "review_comment"
     t.string   "Japanese_skill"
   end
 

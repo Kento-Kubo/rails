@@ -2,17 +2,17 @@
 		<%= stylesheet_link_tag "lessons/new", :media => "all" %>
 		<%= javascript_include_tag 'lessons/new' %>
 <% end %>
+
 <div class="main">
 <div class="schedule">
 					<p class="schedule-title">
 						SCHEDULE &nbsp;&nbsp;&nbsp;&nbsp; (授業可能な日時・時間帯にチェックを入れてください。)
 					</p>
 					<div class="schedule-timeselect">
-						
-                    
+					
 								
 					</div>
-		<%= form_for @lesson do |form| %>
+		<%= form_tag(lessons_create_path, method: "post") do %>
 					<div class="schedule-table">
 						<table class="table-schedule"  style="border-color:rgba(34, 49, 52, 0.3)" rules="all">
   								
@@ -22,44 +22,45 @@
     								<% baseday = today.day.to_i%>
     								<% basetime = today.midnight%>
     								
-    								
     								<% (0..6).each do |num|%>
-    								<td class="title-schedule"><%=baseday+num%></t>          <!--月の変わり目注意-->
+    								<td class="title-schedule"><%=baseday+num%></td>          <!--月の変わり目注意-->
     								<% end %>
     	
   								</tr>
+  								
   								<tr class="time1">
-  								    <% (0..0).each do |num|%>
+  								    <% (0..47).each do |num|%>
   								    <% start_time = basetime + num * 30.minutes %>
   								    <% end_time = start_time + 30.minutes %>
   								    
   								    
-  								    
-    								<td class="title-schedule-left"><%=start_time.hour%>:<%="%02d" % start_time.min%>-<%=end_time.hour%>:<%="%02d" % end_time.min%></td>
-    				
+  								    <% if start_time.min == 30 %>
+    								    <td class="title-schedule-left"><%=start_time.hour%>:<%="%02d" % start_time.min%>-<%=end_time.hour%>:<%="%02d" % end_time.min%></td>
+    				                <%else%>
+    				                    <td class="schedule-row-color"><%=start_time.hour%>:<%="%02d" % start_time.min%>-<%=end_time.hour%>:<%="%02d" % end_time.min%></td>
+    	                            <%end%>
+    				                <% (0..6).each do |day|%>
                 
-                                     <% y = today.year.to_s %>
-                                     <% m = today.month %>                        <!--月の変わり目注意 対策考えること-->
+                                     <% lesson_time = start_time + day * 1.days %>                      <!--月の変わり目注意 対策考えること-->
                 
-                        
-                                      								
-    								<td><%= form.check_box :time, {multiple: true,include_hidden: false }, start_time %></td>
-    								
+                                    <% if start_time.min == 30 %>
+    								<td class="title-schedule-left"><%= check_box_tag 'time[]', lesson_time %></td>
+                                    <%else%>
+                                    <td class="schedule-row-color"><%= check_box_tag 'time[]', lesson_time %></td>
+                                    <%end%>
+                                    
+                                    <% end %>
     								
     							   			
     							   			
   								</tr>
-  								    								
-    								
-    								
-    								    								
-  								</tr>
+  								 						
   								<% end %>
   															  								
-  								
+  				
   								  								  								
 							</table>
-							<%= form.submit "予定を設定する", class: 'btn1' %>
+							<%= submit_tag "予定を設定する", class: 'btn1' %>
 							
 							<div id="review"></div> <!--マーキング-->
 					</div>		
@@ -67,9 +68,6 @@
 				</div>
 
 </div>
-
-
-
 
 <!--トップに戻る開始------------------------------------------------------------------------->
 		<div class="back-to-top">

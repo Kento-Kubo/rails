@@ -6,29 +6,68 @@ class LessonsController < ApplicationController
   end
   
   def new  
-    @teacher = Teacher.find_by(id: params[:id])
-    @time= params[:time1]
     @lesson = Lesson.new
   end
  
- 
- 
+  
   def create  #make a new reservation
-    shedule = params[:time]
+    #shedule = params[:time]
+    #times = params[:time].inspect
+    #count = times.length
+
+     #(0..count).each do |num|
     
-    @lesson = Lesson.new(lesson_params)
-    #time: params[:time],
-                        # teacher_id: current_user.id,
-                        # date: params[:date],
-                        # condition: 3 )                                 # 1:done , 2:reserved, 3:available
+    Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
+    time = params[:time]
+    if time
+        Rails.logger.debug(time)
+        iteration = time.length-1
+
+        (0..iteration).each do |ite|
+            @lesson = Lesson.new
+            unless time.nil?
+                @lesson.time = DateTime.parse(time[ite].to_s)
+            end
+            @lesson.teacher_id = current_user.id
+            @lesson.condition= 3
+            @lesson.save
+            #time: params[:time],
+                                # teacher_id: current_user.id,
+                                # date: params[:date],
+                                # condition: 3 )                                 # 1:done , 2:reserved, 3:available
+            Rails.logger.debug(@lesson)
+            Rails.logger.debug(iteration)
+        end
+        redirect_to("/main/mypage_teacher")
+     else
+     @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
+      render 'lessons/new'
+    end
+  end
+  
+  def reserve
      
+    @teacher = Teacher.find_by(id: params[:id])
+    @time= params[:time]
+    @lesson = Lesson.find_by(id: params[:id])
+    
+  end
+  
+    def update_reserve
+    @lesson = Lesson.find_by(id: params[:lesson_id])
+    @lesson.user_id= current_user.id
+    @lesson.condition= 2
+    @lesson.Japanese_skill = params[:japanese_skill].to_s
+
+    
     if @lesson.save
       
-      redirect_to("/main/mypage_teacher")
+      redirect_to("/main/mypage_student")
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'lessons/new'
     end
+    
     
   end
   
@@ -39,15 +78,37 @@ class LessonsController < ApplicationController
  
  def cancel
   lesson = Lesson.find_by(id: params[:id])
-  lesson.destroy
+  lesson.condition = 3
+  lesson.user_id = nil
+  lesson.Japanese_skill = nil
+  lesson.save
+  
   redirect_to("/main/mypage_student")
   
   end
 
-private
-  def lesson_params
-    params.require(:lesson).permit(:time)
-  end
 
+  def review
+    @lesson = Lesson.find_by(id: params[:id])
+    @teacher = Teacher.find_by(id: @lesson.teacher_id)
+    @count_done =Lesson.where(user_id: current_user.id ).where(condition:1).where(teacher_id: @teacher.id).length
+    
+  end
+  
+  def review_write
+    @lesson = Lesson.find_by(id: params[:id])
+    @lesson.review_comment = params[:review_comment].to_s
+    @lesson.review_rate = 5
+    @lesson.save
+    redirect_to("/main/mypage_student")
+    
+  end
+  
+  
+  private
+      def lesson_params
+        params.require(:lesson).permit(time: [])
+      end
+ 
 end
 
