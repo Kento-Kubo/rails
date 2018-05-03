@@ -14,6 +14,9 @@ Rails.application.config.assets.precompile += %w( main/index.scss )
 Rails.application.config.assets.precompile += %w( main/index.js )
 Rails.application.config.assets.precompile += %w( main/index2.scss )
 
+
+Rails.application.config.assets.precompile += %w( jquery.raty.js )
+
 Rails.application.config.assets.precompile += %w( main/mypage_student.scss)
 Rails.application.config.assets.precompile += %w( users/top.scss )
 Rails.application.config.assets.precompile += %w( users/pass_forgot.scss )
@@ -75,3 +78,6 @@ Rails.application.config.assets.precompile += %w( lessons/reserve.js )
 
 Rails.application.config.assets.precompile += %w( lessons/review.scss )
 Rails.application.config.assets.precompile += %w( lessons/review.js )
+
+Rails.application.config.assets.precompile += %w( lessons/review_show.scss )
+Rails.application.config.assets.precompile += %w( lessons/review_show.js )

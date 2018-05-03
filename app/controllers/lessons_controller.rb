@@ -97,11 +97,37 @@ class LessonsController < ApplicationController
   
   def review_write
     @lesson = Lesson.find_by(id: params[:id])
+    
     @lesson.review_comment = params[:review_comment].to_s
-    @lesson.review_rate = 5
+
+    @lesson.review_rate = params[:review_rate].to_i
+  
     @lesson.save
+    
+    teacher = Teacher.find_by(id: @lesson.teacher_id)
+    lesson_teachers = Lesson.where(teacher_id: teacher.id).where(condition: 1)
+    count_lesson= Lesson.where(teacher_id: teacher.id).where(condition: 1).length
+    
+    teacher_rate_sum = 0
+    
+   lesson_teachers[0..count_lesson].each do |lesson_teacher|
+    
+    teacher_rate_sum = teacher_rate_sum.to_f + lesson_teacher.review_rate.to_f
+        
+   end
+   
+   teacher.rate = (teacher_rate_sum / count_lesson).to_f
+  
+   teacher.num = count_lesson  
+   teacher.save
+    
     redirect_to("/main/mypage_student")
     
+  end
+  
+  def review_show
+    @lessons = Lesson.where(teacher_id: params[:id]).where(condition: 1)
+    @lessons_count = Lesson.where(teacher_id: params[:id]).where(condition: 1).length
   end
   
   

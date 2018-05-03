@@ -131,7 +131,16 @@
       			  <img class="Profile-photo-trial" src="<%="/conversation.jpg"%>" ><br>
       			  <%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction-trial name-trial" %><br>
       			  1 lesson:<%= teacher.cost %>$<br>
-      			  ★★★★★<br>
+      			 
+      			  
+      			 <% if teacher.num  %>
+      			  <% review_rate = teacher.rate.to_f.to_s + "   (  " + teacher.num.to_s + "  )" %>
+      			 <% else %>
+      			 <% review_rate = teacher.rate.to_f.to_s + "   (  " + "0" + "  )" %>
+      			 <% end %>
+      			  
+      			  <%= link_to(review_rate,"/lessons/#{teacher.id}/review_show") %>
+      			  <br>
       			  hobby:<%= teacher.hobby %><br>
       			 <% if Favorite.find_by(teacher_id: teacher.id, user_id: current_user.id) %>
       			   <%= link_to("unfavorite","/favorites/#{teacher.id}/destroy",{method:"post"}) %>

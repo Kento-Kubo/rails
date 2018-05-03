@@ -1,5 +1,6 @@
 class MainController < ApplicationController
 
+
    def index
    #データベースより全先生データ取得
     @users = User.all
@@ -10,9 +11,11 @@ class MainController < ApplicationController
     
     @lessons_available =Lesson.where(condition: 3)
     @lessons_reserved =Lesson.where(condition: 2)
+    
   end
   
   def mypage_teacher
+    
   end
   
   def mypage_student
