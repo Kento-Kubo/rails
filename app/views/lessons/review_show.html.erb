@@ -1,0 +1,90 @@
+<% content_for :specific_css_js do %>
+		<%= stylesheet_link_tag "lessons/review_show", :media => "all" %>
+		<%= javascript_include_tag 'lessons/review_show' %>
+<% end %>
+
+
+<!--メイン画面開始-----------------------------------------------------------------------------------------> 
+<div class="review">
+					<p class="reviw-title">
+						REVIEWS
+					</p>
+					<% if @lessons_count >= 1 %>
+					
+				  <%= @lessons.each do |lesson| %>
+				   
+				    <% user = User.find_by(id: lesson.user_id) %>
+					<div class="each-review">
+						<div class="each-review-left">
+							<img class="students-profile-photo" src="profile_pic_temp.png">
+							
+						</div>
+						
+						<div class="each-review-right1">
+							<span class="students-evaluation">★★★★★(&nbsp;<%= lesson.review_rate %>&nbsp;)<br></span> by <span class="students-name"> <%= user.name %> </span>
+							
+						</div>	
+						
+						<div class="each-review-right2">
+							Took the class at <%= lesson.date.year %>.<%= lesson.date.month %>.<%= lesson.date.day %>
+							
+						</div>	
+						
+						<div class="each-review-right3">
+							<br><br><%= lesson.review_comment %>
+							
+						</div>						
+					
+					</div>
+				<% end %>										
+								
+					
+				  
+				  
+				 
+				
+					
+					<div class="read-more">
+						Read more reviews
+					</div>
+					
+				<% else %>
+				
+				    no reviews are written for this teacher yet.
+				<% end %>
+				</div>
+				<!--レビュー終了-----------------------------------------------------------------> 
+
+
+
+<!--メイン画面終了-----------------------------------------------------------------------------------------> 
+<!--予約確認用モーダル開始---------------------------------------------------->
+
+<!--予約確認用モーダル終了---------------------------------------------------->
+	
+</div>
+
+<!--トップに戻る開始------------------------------------------------------------------------->
+		<div class="back-to-top">
+		
+			<a class="back-to-top-word" href="#">Back to top</a>
+		
+		</div>
+<!--トップに戻る開始------------------------------------------------------------------------->
+<!-- フッター開始（共通：変えないこと）--------------------------------------------------------->
+         <footer>
+      		
+      		<div class="footer-logo">
+       			 Progate
+      		</div>
+      
+      		<div class="footer-list">
+        		<ul>
+          			<li>会社概要</li>
+          			<li>採用</li>
+          			<li>お問い合わせ</li>
+        		</ul>
+      		</div>
+    	</footer>
+    	
+<!-- フッター終了（共通：変えないこと）--------------------------------------------------------->

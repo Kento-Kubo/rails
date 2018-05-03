@@ -78,3 +78,6 @@ Rails.application.config.assets.precompile += %w( lessons/reserve.js )
 
 Rails.application.config.assets.precompile += %w( lessons/review.scss )
 Rails.application.config.assets.precompile += %w( lessons/review.js )
+
+Rails.application.config.assets.precompile += %w( lessons/review_show.scss )
+Rails.application.config.assets.precompile += %w( lessons/review_show.js )
