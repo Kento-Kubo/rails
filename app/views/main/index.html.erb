@@ -89,6 +89,9 @@
                     <input type="submit" value="Search" class="input3">
             </div>
         </div>
+        
+        
+
 <!--検索ボックス終了-------------------------------------------------------------------------->
 <!--検索件数とsort選択開始-------------------------------------------------------------------->       
         <% require 'date' %>
@@ -97,36 +100,42 @@
         <div class="teacher-list-top">
             <div class="result-number-left">
             
-                <p><span class="number"><%= @teachers.length %></span> teachers have been found for <%= date.day %>th of <%= date.month %></p>
+                <p><span class="number"><%= %><%= @n %></span> teachers have been found for today (<%= date.day %>th of <%= date.month %>)</p>
                 
             </div>
             <div class="result-number-right">
             
                 <p class="sortby">sort by</p>
-                
-                <select class="select3">
-                    <option value="Relevance">Relevance</option>
-                    <option value="Price:Low to high">Price:Low to high</option>
-                    <option value="Price:High to low">Price:High to low</option>
-                    <option value="Avg. customor review">Avg. customor review</option>
-                    <option value="Newest arrival">Newest arrival</option>
+               
+                <select class="select3"> 
+                    <option value="Relevance"><%= link_to 'Price:Low to high', controller: "main", action: "index", order: 1 %></option>
+                    <%= link_to 'Price:Low to high', controller: "main", action: "index", order: 1 %>
+                    <option value="Price:High to low"><%= link_to 'Price:Low to high', controller: "main", action: "index", order: 1 %></option>
+                    
+                    <option value="Newest arrival"><%= link_to 'Price:Low to high', controller: "main", action: "index", order: 1 %></option>
                 </select>
-                
+                <%= link_to '1', controller: "main", action: "index", order: 1 %> <!--cost:low to high-->
+                <%= link_to '2', controller: "main", action: "index", order: 2 %> <!--cost:high to low-->
+                <%= link_to '3', controller: "main", action: "index", order: 3 %> <!--id:low to high-->
+                <%= link_to '0', controller: "main", action: "index", order: 0 %> <!--rate:high to low-->
             </div>
         </div>  
+        
+  
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
        <div class="main-part-trial">
-     <% n = @teachers.count / 3 + 1 %>
-    
-       <% (1..n).each do |x|%> 
+       
+       <% (1..2).each do |x|%> 
             <ul style="list-style:none; " class="profile-zone-trial">
                 <li class="blank-trial"><br></li>
-                  <% a = 0+3*(x-1)%>
-      			  <% b = 1+3*(x-1)%>
-      			  <% c = 2+3*(x-1)%>
+                  <% a = 0+3*(x-1)+@page*6%>
+      			  <% b = 1+3*(x-1)+@page*6%>
+      			  <% c = 2+3*(x-1)+@page*6%>
+      			  
+      			 
       			  <% @teachers[a..c].each do |teacher|%>
-                
+      			                  
                 <li class="teacher-info-trial">
       			  <img class="Profile-photo-trial" src="<%="/conversation.jpg"%>" ><br>
       			  <%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction-trial name-trial" %><br>
@@ -705,23 +714,27 @@
         <%end%>-->
 <!--検索結果終了----------------------------------------------------------------------------->
 <!--ページ番号開始--------------------------------------------------------------------------->
-        <div class="teacher-list-bottom">
+   <% count_page = @teachers.length.div(6)+1 %>
+       <% if count_page <= 1 %>
+       <% else %>
+       <div class="teacher-list-bottom">
         	<p class="nextpages">
-        	
-        		<a class="pagenumber" href="#">2</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">3</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">4</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">5</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">6</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">7</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">8</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">9</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">10</a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">></a>&nbsp;&nbsp;
-        		<a class="pagenumber" href="#">>></a>
+        	   <% if @page >= 1 %>
+        	        <%= link_to "<<", controller: "main", action: "index", page: 0, order: @order  %>
+        	       <%= link_to "<", controller: "main", action: "index", page: @page-1, order: @order  %>&nbsp;&nbsp;
+        	      
+        	   <% end %>
+        	   <% (1..count_page).each do |page| %>
+        		<%= link_to page, controller: "main", action: "index", page: page-1, order: @order  %>&nbsp;&nbsp;
+               <% end %>
+               
+        		<%= link_to ">", controller: "main", action: "index", page: @page+1, order: @order  %>&nbsp;&nbsp;
+        		<%= link_to ">>", controller: "main", action: "index", page: count_page-1, order: @order  %>
         		
         	</p>
+        	
         </div>
+        <% end %>
         
 <!--ページ番号終了--------------------------------------------------------------------------->
 <!--トップに戻る開始------------------------------------------------------------------------->

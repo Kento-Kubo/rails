@@ -49,7 +49,7 @@ class LessonsController < ApplicationController
      
     @teacher = Teacher.find_by(id: params[:id])
     @time= params[:time]
-    @lesson = Lesson.find_by(id: params[:id])
+    @lesson = Lesson.find_by(id: params[:lid])
     
   end
   
