@@ -45,33 +45,39 @@
                 
                                     <% if start_time.min == 30 %>
         								<td class="title-schedule-left">
-        								    <% if @lesson = Lesson.find_by(time:lesson_time) %>
-        								        <%case @lesson.condition %> 
-        								        <%when 1%>
-        								        <p class="reserved">done </p>
-        								        <%when 2%>
-        								        <p class="reserved">reserved </p>
-        								        <%when 3%>
-        								        <%= check_box_tag 'time[]', lesson_time , id='checked'%>
-        								        <% end%>
-        								    <% else %>
-        								        <%= check_box_tag 'time[]', lesson_time %>
-        								    <% end%>
-        								</td>
-                                    <%else%>
-                                        <td class="schedule-row-color">
-                                            <% if @lesson = Lesson.find_by(time:lesson_time) %>
-        								        <%case @lesson.condition %> 
+        								    <%if DateTime.now < lesson_time %>
+    
+            								    <% if @lesson = Lesson.find_by(time:lesson_time) %>
+            								        <%case @lesson.condition %> 
             								        <%when 1%>
             								            <p class="reserved">done </p>
             								        <%when 2%>
             								            <p class="reserved">reserved </p>
             								        <%when 3%>
-            								            <%= check_box_tag 'time[]', lesson_time , id='checked'%>
+            								        <%= check_box_tag 'time[]', lesson_time , id='checked'%>
             								        <% end%>
-        								    <% else %>
-        								        <%= check_box_tag 'time[]', lesson_time %>
-        								    <% end%>
+            								    <% else %>
+            								        <%= check_box_tag 'time[]', lesson_time %>
+            								    <% end%>
+            								<%end%>
+            								    
+        								</td>
+                                    <%else%>
+                                        <td class="schedule-row-color">
+                                            <%if DateTime.now < lesson_time %>
+                                                <% if @lesson = Lesson.find_by(time:lesson_time) %>
+            								        <%case @lesson.condition %> 
+                								        <%when 1%>
+                								            <p class="reserved">done </p>
+                								        <%when 2%>
+                								            <p class="reserved">reserved </p>
+                								        <%when 3%>
+                								            <%= check_box_tag 'time[]', lesson_time , id='checked'%>
+                								        <% end%>
+            								    <% else %>
+            								        <%= check_box_tag 'time[]', lesson_time %>
+            								    <% end%>
+            								  <% end%>
                                         </td>
                                     <% end %>
                                     

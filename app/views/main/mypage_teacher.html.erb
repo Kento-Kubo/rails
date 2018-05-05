@@ -187,30 +187,35 @@
                                             
                                             <% if start_time.min == 30 %>
                 								<td class="title-schedule-left">
-                    								<% if @lesson = Lesson.find_by(time:lesson_time)%>
-                    								    <%case @lesson.condition %> 
-                    								        <%when 1%>
-                    								            <p class="reserved">done </p>
-                    								        <%when 2%>
-                    								            <p class="reserved">reserved </p>
-                    								        <%when 3%>
-                    								            <p class="reserved">available </p>
-                    								        <% end%>
-                    								<% end%>
+                								    <%if DateTime.now < lesson_time %>
+                        								<% if @lesson = Lesson.find_by(time:lesson_time)%>
+                        								    <%case @lesson.condition %> 
+                        								        <%when 1%>
+                        								            <p class="reserved">done </p>
+                        								        <%when 2%>
+                        								            <p class="reserved">reserved </p>
+                        								        <%when 3%>
+                        								            <p class="reserved">available </p>
+                        								        <% end%>
+                        								 <% end%>
+                        							<% end%>
                 								</td>
                 								
                                             <% else%>
                                                 <td class="schedule-row-color">
-                                                    <% if @lesson = Lesson.find_by(time:lesson_time)%>
-                                                        <%case @lesson.condition %> 
-                    								        <%when 1%>
-                    								            <p class="reserved">done </p>
-                    								        <%when 2%>
-                    								            <p class="reserved">reserved </p>
-                    								        <%when 3%>
-                    								            <p class="reserved">available </p>
-                    								        <% end%>
+                                                    <%if DateTime.now < lesson_time %>
+                                                        <% if @lesson = Lesson.find_by(time:lesson_time)%>
+                                                            <%case @lesson.condition %> 
+                        								        <%when 1%>
+                        							                <p class="reserved">done </p>
+                        								        <%when 2%>
+                        								            <p class="reserved">reserved </p>
+                        								        <%when 3%>
+                        								            <p class="reserved">available </p>
+                        								        <% end%>
+                                                        <% end%>
                                                     <% end%>
+                                                
                                                 </td>
                                             <% end %>
         								
