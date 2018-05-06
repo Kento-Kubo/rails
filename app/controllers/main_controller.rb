@@ -11,8 +11,9 @@ def index
      
    #今日の授業取得（ログイン後のデフォルトランディングページは今日授業できる先生を表示するため）  
    @teachers = []
-   td = Date.today.to_s
-   @lessons_td = Lesson.where(date: td).where(condition:[2,3]).pluck(:teacher_id).uniq
+   td = Date.today.midnight.to_s
+   tmr = Date.today.end_of_day.to_s
+   @lessons_td = Lesson.where(time: Date.today.midnight.to_s..Date.today.end_of_day.to_s).where(condition:[2,3]).pluck(:teacher_id).uniq
     
    @n = @lessons_td.length.to_i
         teacher_id=[]
@@ -22,8 +23,10 @@ def index
         @teachers << teachers
     end 
     
-    
-    
+   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
+   Rails.logger.debug(@teachers)
+   Rails.logger.debug(@teachers.nil?)
+   
         #並べ替え情報取得
         @order = params[:order].to_i
           if @order == nil
