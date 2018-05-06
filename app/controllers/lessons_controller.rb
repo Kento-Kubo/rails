@@ -17,7 +17,7 @@ class LessonsController < ApplicationController
 
      #(0..count).each do |num|
     
-    Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
+    #Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
     time = params[:time]
     if time
         Rails.logger.debug(time)
@@ -34,7 +34,7 @@ class LessonsController < ApplicationController
             #time: params[:time],
                                 # teacher_id: current_user.id,
                                 # date: params[:date],
-                                # condition: 3 )                                 # 1:done , 2:reserved, 3:available
+                                # condition: 3 )              # 1:done , 2:reserved, 3:available
             Rails.logger.debug(@lesson)
             Rails.logger.debug(iteration)
         end

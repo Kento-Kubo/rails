@@ -115,7 +115,7 @@
             							 male
             							<% else %>
             							 female
-            							<% end%></td>
+            							<% end %></td>
   								</tr>
   								<tr>
     								<td class="title">LANGUAGE</td>
@@ -157,34 +157,72 @@
 						<table class="table-schedule"  style="border-color:rgba(34, 49, 52, 0.3)" rules="all">
   								<tr>
     								<td class="title-schedule-left lefttop"></td>
+    								<% today = Date.today %> 
+    								<% baseday = today.day.to_i%>
+    								<% basetime = today.midnight%>
+    								
     								<% (0..6).each do |num|%>
-    								<td class="title-schedule"><%=Date.today.day+num%></t>
+    								<td class="title-schedule"><%=baseday+num%></t>
     								<% end %>
     	
   								</tr>
   								<tr class="time1">
-  								    <% (0..23).each do |num|%>
-  								    
-    								<td class="title-schedule-left"><%=num%>:00-<%=num%>:30</td>
-    								<td></td>
-    								<td></td>
-    								<td><p class="reserved">reserved</p></td>
-    								<td></td>
-    								<td></td>
-    								<td></td>
-    								<td></td>
-  								</tr>
-  								<tr class="time1">
-    								<td class="title-schedule-left schedule-row-color"><%=num%>:30-<%=num+1%>:00</td>
-    								<td class="schedule-row-color"></td>
-    								<td class="schedule-row-color"></td>
-    								<td class="schedule-row-color"></td>
-    								<td class="schedule-row-color"><p class="reserved">reserved</p></td>
-    								<td class="schedule-row-color"></td>
-    								<td class="schedule-row-color"></td>
-    								<td class="schedule-row-color"></td>
-  								</tr>
-  								<% end %>
+  								    <% (0..47).each do |num|%>
+      								    <% start_time = basetime + num * 30.minutes %>
+      								    <% end_time = start_time + 30.minutes %>
+      					
+      								    
+      								    
+      								    <% if start_time.min == 30 %>
+        								    <td class="title-schedule-left"><%=start_time.hour%>:<%="%02d" % start_time.min%>-<%=end_time.hour%>:<%="%02d" % end_time.min%></td>
+        				                <%else%>
+        				                    <td class="schedule-row-color"><%=start_time.hour%>:<%="%02d" % start_time.min%>-<%=end_time.hour%>:<%="%02d" % end_time.min%></td>
+        	                            <%end%>
+        				                <% (0..6).each do |day|%>
+                    
+                                            <% lesson_time = start_time + day * 1.days %>                      <!--月の変わり目注意 対策考えること-->
+                                            
+                                            <!--<td class="schedule-row-color"></td>
+            								<td class="schedule-row-color"><p class="reserved">reserved</p></td>-->
+                                            
+                                            <% if start_time.min == 30 %>
+                								<td class="title-schedule-left">
+                								    <%if DateTime.now < lesson_time %>
+                        								<% if @lesson = Lesson.find_by(time:lesson_time)%>
+                        								    <%case @lesson.condition %> 
+                        								        <%when 1%>
+                        								            <p class="reserved">done </p>
+                        								        <%when 2%>
+                        								            <p class="reserved">reserved </p>
+                        								        <%when 3%>
+                        								            <p class="reserved">available </p>
+                        								        <% end%>
+                        								 <% end%>
+                        							<% end%>
+                								</td>
+                								
+                                            <% else%>
+                                                <td class="schedule-row-color">
+                                                    <%if DateTime.now < lesson_time %>
+                                                        <% if @lesson = Lesson.find_by(time:lesson_time)%>
+                                                            <%case @lesson.condition %> 
+                        								        <%when 1%>
+                        							                <p class="reserved">done </p>
+                        								        <%when 2%>
+                        								            <p class="reserved">reserved </p>
+                        								        <%when 3%>
+                        								            <p class="reserved">available </p>
+                        								        <% end%>
+                                                        <% end%>
+                                                    <% end%>
+                                                
+                                                </td>
+                                            <% end %>
+        								
+        							    <% end %> 			
+        							   			
+      								      </tr>
+  								      <% end %>
   															  								
   								
   								  								  								

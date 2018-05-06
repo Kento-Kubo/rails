@@ -6,7 +6,7 @@
 <div class="main">
 <div class="schedule">
 					<p class="schedule-title">
-						SCHEDULE &nbsp;&nbsp;&nbsp;&nbsp; (授業可能な日時・時間帯にチェックを入れてください。)
+						SCHEDULE &nbsp;&nbsp;&nbsp;&nbsp; (授業可能な日時・時間帯にチェックを入れて確定。)、確定、確定。)
 					</p>
 					<div class="schedule-timeselect">
 					
@@ -44,10 +44,42 @@
                                      <% lesson_time = start_time + day * 1.days %>                      <!--月の変わり目注意 対策考えること-->
                 
                                     <% if start_time.min == 30 %>
-    								<td class="title-schedule-left"><%= check_box_tag 'time[]', lesson_time %></td>
+        								<td class="title-schedule-left">
+        								    <%if DateTime.now < lesson_time %>
+    
+            								    <% if @lesson = Lesson.find_by(time:lesson_time) %>
+            								        <%case @lesson.condition %> 
+            								        <%when 1%>
+            								            <p class="reserved">done </p>
+            								        <%when 2%>
+            								            <p class="reserved">reserved </p>
+            								        <%when 3%>
+            								        <%= check_box_tag 'time[]', lesson_time , id='checked'%>
+            								        <% end%>
+            								    <% else %>
+            								        <%= check_box_tag 'time[]', lesson_time %>
+            								    <% end%>
+            								<%end%>
+            								    
+        								</td>
                                     <%else%>
-                                    <td class="schedule-row-color"><%= check_box_tag 'time[]', lesson_time %></td>
-                                    <%end%>
+                                        <td class="schedule-row-color">
+                                            <%if DateTime.now < lesson_time %>
+                                                <% if @lesson = Lesson.find_by(time:lesson_time) %>
+            								        <%case @lesson.condition %> 
+                								        <%when 1%>
+                								            <p class="reserved">done </p>
+                								        <%when 2%>
+                								            <p class="reserved">reserved </p>
+                								        <%when 3%>
+                								            <%= check_box_tag 'time[]', lesson_time , id='checked'%>
+                								        <% end%>
+            								    <% else %>
+            								        <%= check_box_tag 'time[]', lesson_time %>
+            								    <% end%>
+            								  <% end%>
+                                        </td>
+                                    <% end %>
                                     
                                     <% end %>
     								
