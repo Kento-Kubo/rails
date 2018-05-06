@@ -62,7 +62,7 @@ def index
     @users = User.all
     @lessons_available =Lesson.where(condition: 3)
     @lessons_reserved =Lesson.where(condition: 2)
-       
+    @sex = params[:sex]   
 end
 #-------------------------------------------------------------------  
   

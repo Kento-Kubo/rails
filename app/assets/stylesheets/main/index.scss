@@ -10,33 +10,125 @@ a {
   text-decoration: none;
 }
 
+
+/*検索ボックス開始------------------------------------------------------------------------------*/
+.top-wrapper{
+margin:0 auto;
+margin-top:85px;
+
+width:700px;
+
+}
+
 .container-search{
   padding:0 0;
   border: none;
-  margin:10px auto;
-  width:650px;
-  height:165px;
+  margin:0px auto;
+  width:700px;
+  
   text-align:left;
   background-color:rgba(34, 49, 52, 0.9);
-  border-radius: 3px  3px;
+  border-radius: 0 0 3px  3px ;
   position:relative;
   
 }
 
-
-
-  .searchbox{
-  border: none;
-  border-radius: 3px  3px;
-  color: #a9a9a9;
-  width:100px;
-  height: 40px;
-  
-  margin:10px 0 0 0;
+.reservable_teacher{
   box-sizing:border-box;
-  display:inline-block;
+  width:49.65%;
+  height:50px;
+  background-color:rgba(34, 49, 52, 0.9);
+  display:inline-block; 
+   text-align: center;
+   line-height:50px;
+   border: solid rgba(34, 49, 52, 0.5) 1px;
+   margin-bottom:0px;
+   color:white;
 }
 
+.reservable_teacher:hover {
+  cursor:pointer;
+    background-color:rgba(34, 49, 52, 0.4);
+    border: solid rgba(34, 49, 52, 0.1) 1px;
+}
+
+.all_teacher{
+  box-sizing:border-box;
+  width:49.65%;
+  height:50px;
+  background-color:white;
+    display:inline-block;   
+     text-align: center;
+   line-height:50px;
+    border: solid rgba(34, 49, 52, 0.5) 1px;
+}
+
+.all_teacher:hover {
+  cursor:pointer;
+    background-color:rgba(34, 49, 52, 0.4);
+    border: solid rgba(34, 49, 52, 0.1) 1px;
+    color:white;
+}
+
+.dummy{
+width:100%;
+height:8px;    
+    
+}
+
+.date_search_table{
+    border: solid white 1px;
+    width:90%;
+    height:50px;
+    margin: 0 auto; 
+}
+
+.date_search{
+    width:80px;
+    color:white;
+    text-align:center;
+    
+}
+
+.date_search:hover{
+    cursor:pointer;
+    background-color:rgba(255, 255, 255, 0.5);
+    border: solid rgba(34, 49, 52, 0.1) 1px;
+    color:white;
+}
+
+.clicked{
+    cursor:pointer;
+    background-color:rgba(255, 255, 255, 0.5);
+    border: solid rgba(34, 49, 52, 0.1) 1px;
+    color:white;
+}
+  .searchbox{
+  border: none;
+  width:49%;
+  height: 40px;
+  
+  box-sizing:border-box;
+  display:inline-block;
+      line-height:40px;
+}
+
+.searchbox_left{
+    width:30%;
+    height: 40px;
+      display:inline-block; 
+      line-height:40px;
+      color:white;
+      padding-left:10%;
+      box-sizing:border-box;
+}
+.searchbox_right{
+    width:68%;
+    height: 40px;
+      display:inline-block; 
+       line-height:40px;
+      color:white;
+}
 .input2{
   background-color: white;
   border: none;
@@ -57,6 +149,28 @@ a {
   display:inline-block;
 }
 
+.serch_btn{
+    
+    margin-top:4px;
+    margin-bottom:4px;
+    text-align:center;
+    height:50px;
+    
+}
+.serch_clear{
+    
+    margin-top:4px;
+    margin-bottom:4px;
+    text-align:center;
+    height:30px;
+    
+}
+
+.clear_btn {
+    color:white;
+    text-decoration:underline;
+    
+}
 .input3{
   background: #b5cd60;
   border: none;
@@ -66,53 +180,12 @@ a {
   color: white;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
-  position:absolute;
-  top:115px;
-  left:470px;
+
 }
 .input3:hover {
   background: #16aa56;
 }
-.age{
 
-}
-
-.selectschedule{
-  margin-top:0px;
-  margin-bottom:0px;
-  margin-left:10px;
-  position:absolute;
-  top:50px;
-  
-  
-}
-
-.day-chose{
- margin-left:0px;
-  margin-left:10px;
-  margin-bottom:5px;
-}
-
-.time-chose1{
- margin-top:5px;
-  margin-left:10px;
-  margin-bottom:5px;
-}
-.time-chose2{
- margin-top:5px;
-  margin-left:10px;
-  margin-bottom:5px;
-}
-
-.header-left{
-  padding:0 15px;
-  }
-
-.container h1{
-  opacity:0.8;
-  font-size:50px;
-  letter-spacing:5px;
-}
 
 .btn{
   padding:8px 24px;
@@ -127,16 +200,13 @@ a {
   opacity:1
 }
 
-.top-wrapper{
-margin-top:85px;
-height:165px;
-}
+
+/*検索ボックス終了------------------------------------------------------------------------------*/
 
 .result-number-left{
-padding-left:50px;
+
 width:50%;
 display:inline-block;
-float:left;
 }
 
 .number{
@@ -144,14 +214,15 @@ font-size:20px;
 
 }
 .result-number-right{
-padding-left:0px;
-width:30%;
+
+width:40%;
 display:inline-block;
+text-align:right;
 float:right;
 }
 
 .teacher-list-top{
-width:1000px;
+width:700px;
 margin:0 auto;
 height:50px;
 

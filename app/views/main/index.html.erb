@@ -3,6 +3,8 @@
     <%= javascript_include_tag 'main/index' %>
 <% end %>
 
+<% require 'date' %>
+<% date = Date.today %>
 <!--検索ボックス開始-------------------------------------------------------------------------->
         <% if flash[:notice] %>
     		<header2>
@@ -13,89 +15,185 @@
         <% end %>
         
         <div class="top-wrapper">
+        
+            <div class="reservable_teacher">
+                    AVAILABLE TEACHERS 
+            </div>
+            <div class="all_teacher">
+                    ALL TEACHERS
+            </div>
+         
+         <%= form_tag ("/main/index"), method: :get do %>
             <div class="container-search">
+                <div class="dummy"></div>
+                <table class="date_search_table" rules="all">
+                  <tr>
+                     <% (0..7).each do |n| %> 
+                      <% dd=date.wday+n %>
+                        <% if dd == 7 %>
+                        <% dd=date.wday %>
+             			<% end%>                     
+                        
+                        
+                        <% y = date.year.to_s %>
+                        <% m = date.month %>
                 
-                    <div class="searchbox age">
+                            <% if m < 10 %>
+                                <% m = "0" + date.month.to_s %>
+                            <% else %>
+                                <% m = date.month.to_s %>                      
+                            <%end%>
+                
+                        <% d= date.day+n %>
+                
+                            <% if d < 10 %>
+                                <% d = "0" + (date.day+n).to_s %>
+                            <% else %>
+                                <% d = (date.day+n).to_s %>                      
+                            <%end%>
+
+                        <% date_search = y + m + d; %>
+                       
+                
+      			      <td class="date_search" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
+      			        <%case dd %> 
+            			<%when 0%>
+            			 (Sun)
+            			<%when 1%>
+            			 (Mon)
+            			<%when 2%>
+            			 (Tue)
+            			<%when 3%>
+            			 (Wed)
+            			<%when 4%>
+            			 (Thu)
+            			<%when 5%>
+            			 (Fri)
+            			<%when 6%>
+            			 (Sat)
+            			<% end%>
+      			      
+      			      </td>
+      			     <% end %>
+      			  </tr>
+      			</table>
+      			
+                <div class="dummy"></div>   
+                
+                <div class="searchbox">
+                   <div class="searchbox_left"> 
+                        <span class="fa fa-clock-o">&nbsp;&nbsp;time
+                   </div>
+                   <div class="searchbox_right"> 
+                      <select class="select2">
+                            <option value="age">age</option>
+                            <option value="－19">10s</option>
+                            <option value="20－25">Early 20s</option>
+                            <option value="26－30">Late 20s</option>
+                            <option value="31－40">30s</option>
+                            <option value="41－50">40s</option>
+                            <option value="51－">50s</option>
+                            <option value="any">any</option>
+                        </select>
+                        ~
                         <select class="select2">
                             <option value="age">age</option>
-                            <option value="－19">－19</option>
-                            <option value="20－25">20－25</option>
-                            <option value="26－30">26－30</option>
-                            <option value="31－40">31－40</option>
-                            <option value="41－50">41－50</option>
-                            <option value="51－">51－</option>
+                            <option value="－19">10s</option>
+                            <option value="20－25">Early 20s</option>
+                            <option value="26－30">Late 20s</option>
+                            <option value="31－40">30s</option>
+                            <option value="41－50">40s</option>
+                            <option value="51－">50s</option>
                             <option value="any">any</option>
                         </select>
+                   </div>
+                </div>
+                
+                <div class="searchbox hobby">
+                        
+                    <input type="text" id"pass" placeholder=" hobby" class="input2">
+                </div>
+ 
+                <div class="searchbox">    
+                    <div class="searchbox_left"> 
+                        &nbsp;<span class="fa fa-jpy">&nbsp;&nbsp;cost
                     </div>
-                    
-                    <div class="searchbox sex">
+                    <div class="searchbox_right"> 
+                      <select class="select2">
+                            <option value="age">age</option>
+                            <option value="－19">10s</option>
+                            <option value="20－25">Early 20s</option>
+                            <option value="26－30">Late 20s</option>
+                            <option value="31－40">30s</option>
+                            <option value="41－50">40s</option>
+                            <option value="51－">50s</option>
+                            <option value="any">any</option>
+                        </select>
+                        ~
                         <select class="select2">
-                            <option value="sex">sex</option>
+                            <option value="age">age</option>
+                            <option value="－19">10s</option>
+                            <option value="20－25">Early 20s</option>
+                            <option value="26－30">Late 20s</option>
+                            <option value="31－40">30s</option>
+                            <option value="41－50">40s</option>
+                            <option value="51－">50s</option>
+                            <option value="any">any</option>
+                        </select>
+                   </div>
+                 </div>  
+                               
+                 <div class="searchbox hobby">
+                        
+                    <input type="text" id="pass" placeholder=" free word" class="input2">
+                </div>   
+                
+                <div class="searchbox">
+                        <div class="searchbox_left"> 
+                         <span class="fa fa-user">&nbsp;&nbsp;user
+                        </div>
+                        
+                        <div class="searchbox_right"> 
+                          <select class="select2" name="age" placeholder=" free word">
+                            <option value="any">age</option>
+                            <option value="－19">10s</option>
+                            <option value="20－24">Early 20s</option>
+                            <option value="25－29">Late 20s</option>
+                            <option value="30－39">30s</option>
+                            <option value="40－49">40s</option>
+                            <option value="50－">50s</option>
+                            <option value="60－">60s</option>
+                            <option value="70－">70s</option>
+                            <option value="80－">80s</option>
+                            <option value="90－">90s</option>
+                            <option value="100－">100s</option>
+                          </select>&nbsp;&nbsp;&nbsp;
+                          <select class="select2" name="sex">
+                            <option value="any">sex</option>                           
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="any">any</option>
-                        </select>
-                    </div>  
+                          </select>
+                        </div>
+                </div>
                     
-                                
-                    <div class="searchbox cost">
-                        
-                        <select class="select2">
-                            <option value="cost">cost</option>
-                            <option value="－6.0$">－6$</option>
-                            <option value="6.1－7.0$">6.1－7.0$</option>
-                            <option value="7.1－8.0$">7.1－8.0$</option>
-                            <option value="8.1－9.0$">8.1－9.0$</option>
-                            <option value="9.1－10.0$">9.1－10.0$</option>
-                            <option value="10.0$－">10.0$－</option>
-                            <option value="any">any</option>
-                        </select>
-                    </div>  
-                    
-                    <div class="searchbox hobby">
-                        
-                        <input type="text" id"pass" placeholder=" hobby" class="input2">
-                    </div>
-                    
-                    <p class="selectschedule">
-                    	Schedule
-                    </p>
-                    
-                    <p class="day-chose">
-						<input type="checkbox" name="day" value="1">Mon
-						<input type="checkbox" name="day" value="2">Tue
-						<input type="checkbox" name="day" value="3">Wed
-						<input type="checkbox" name="day" value="4">Thu
-						<input type="checkbox" name="day" value="5">Fri
-						<input type="checkbox" name="day" value="6">Sat
-						<input type="checkbox" name="day" value="7">Sun
-						<input type="checkbox" name="day" value="8">Anyday
-					</p>
-					
-					<p class="time-chose1">
-						<input type="checkbox" name="time" value="9" checked="checked">&nbsp;&nbsp;0:00～&nbsp;&nbsp;3:00
-						<input type="checkbox" name="time" value="10">&nbsp;&nbsp;3:00～&nbsp;&nbsp;6:00
-						<input type="checkbox" name="time" value="11">&nbsp;&nbsp;6:00～&nbsp;&nbsp;9:00
-						<input type="checkbox" name="time" value="12">&nbsp;&nbsp;9:00～12:00
-						<input type="checkbox" name="time" value="13">12:00～15:00
-					</p>
-					<p class="time-chose2">
-						<input type="checkbox" name="time" value="14">15:00～18:00
-						<input type="checkbox" name="time" value="15">18:00～21:00
-						<input type="checkbox" name="time" value="15">21:00～24:00
-						<input type="checkbox" name="time" value="16">Anytime
-					</p>
-                    
-                    <input type="submit" value="Search" class="input3">
+                <div class="serch_btn">
+                    <input type="submit" value="Search" class="input3"> 
+                    <input type="hidden" name="date_search_id" id="send_data" >
+                </div>
+                
+                <div class="serch_clear">
+                    <%= link_to 'Clear seaching condition', controller: "main", action: "index", class: "clear_btn" %>
+                </div>
+
+             
             </div>
         </div>
-        
+        <% end %>
         
 
 <!--検索ボックス終了-------------------------------------------------------------------------->
 <!--検索件数とsort選択開始-------------------------------------------------------------------->       
-        <% require 'date' %>
-        <% date = Date.today %>
+        
       
         <div class="teacher-list-top">
             <div class="result-number-left">
