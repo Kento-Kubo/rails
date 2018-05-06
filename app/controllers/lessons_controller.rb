@@ -27,6 +27,7 @@ class LessonsController < ApplicationController
             @lesson = Lesson.new
             unless time.nil?
                 @lesson.time = DateTime.parse(time[ite].to_s)
+                #@lesson.date = DateTime.parse(time[ite].days.to_s)
             end
             @lesson.teacher_id = current_user.id
             @lesson.condition= 3
