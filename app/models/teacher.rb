@@ -16,6 +16,6 @@ class Teacher < ActiveRecord::Base
   
     has_secure_password
     
-    default_scope -> { order(rate: :desc) }
+    #default_scope -> { order(rate: :desc) }
 
 end

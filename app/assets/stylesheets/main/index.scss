@@ -172,6 +172,100 @@ display:inline-block;
   box-sizing:border-box;
 }
 
+/*ソート開始------------------------------------------------------------------------------*/
+
+.dropmenu{
+  *zoom: 1;
+  list-style-type: none;
+  margin: 0px auto 30px;
+  padding: 0;
+  margin-right:0px;
+  position:relative;
+}
+.dropmenu:before, .dropmenu:after{
+  content: "";
+  display: table;
+}
+.dropmenu:after{
+  clear: both;
+}
+.dropmenu li{
+ 
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
+.dropmenu li a{
+  display: block;
+  margin: 0;
+  background: none;
+  color: #fff;
+
+  padding:0 20px;
+  transition:all 0.5s;
+  text-decoration: none;
+  margin-right:0px;
+}
+
+
+
+.current_user{
+  display: inline-block;
+  margin: 0;
+  background: none;
+  color: #fff;
+
+  padding:0 10px;
+  transition:all 0.5s;
+  text-decoration: none;
+  margin-right:0px;
+}
+
+.dropmenu li a:hover{
+  background-color:rgba(255, 255, 255, 0.5);
+
+}
+
+.dropmenu li ul{
+  list-style: none;
+  position: absolute;
+  //top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  overflow:visible;
+}
+.dropmenu li ul li{
+
+  width: 280px;
+}
+.dropmenu li ul li a{
+  padding: 3px 15px;
+  background: rgba(34, 49, 52, 0.9);
+  text-align: left;
+  width: 280px;
+    font-family:"Meiryo UI" , "メイリオ" , Meiryo ,Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" ,  "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+
+}
+
+.dropmenu li ul li:hover{
+  background-color:rgba(34, 49, 52, 0.9);
+}
+
+
+#normal li ul{
+  display: none;
+}
+#normal li:hover ul{
+  display: block;
+}
+
+/*ソート終了------------------------------------------------------------------------------*/
+
+
 /*検索結果開始------------------------------------------------------------------------------*/
 
 .main-part{
@@ -468,7 +562,7 @@ background-color:rgba(34, 49, 52, 0.6);
     display:block;
 
   transition:all 0.5s;
-	
+	margin-top:50px;
 }
 .back-to-top:hover{
   background-color:rgba(34, 49, 52, 0.4);

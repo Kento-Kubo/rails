@@ -33,13 +33,14 @@
            
             <table class="student_write_review_main_3" rules="all">
                 <tr>
-                    <td class="table-left"><p class="rating-pointer-1">required</p><p class="rating-pointer-2">OK</p>Rating</td>
+                    <td class="table-left">Rating</td>
                     <td class="table-right">
                         
                        <div id="star_rank" class = "star"></div><div id="hint" class = "rate"></div>
                         <%= hidden_field_tag :review_rate, @lesson.review_rate %>
 
 
+                        <!--<p class="rating-pointer-1">required</p><p class="rating-pointer-2">OK</p>    必須入力項目の入力有無確認用にのやつ <td class="table-left">Rating</td>のratingの左に入れる -->
 
                        <!-- <p class="star-1">★</p> 
                         <p class="star-2">★</p>
@@ -56,9 +57,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="table-left"><p class="rating-pointer-1-">required</p><p class="rating-pointer-2-">OK</p>Comment</td>
+                    <td class="table-left">Comment</td>
                     <td class="table-right">
-                    <textarea name="review_comment" class="review_honbun" placeholder="Write your review here. How did you feel with this teacher's lesson?" ></textarea>
+                    <textarea name="review_comment" class="review_honbun" placeholder="Write your review here. How did you feel with this teacher's lesson?" ><%= @lesson.review_comment %></textarea>
                     
                     <p class="count-words" id="inputlength">0文字</p>
                     </td>

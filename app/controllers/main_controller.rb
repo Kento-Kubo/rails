@@ -1,18 +1,67 @@
 class MainController < ApplicationController
 
-
-   def index
-   #データベースより全先生データ取得
+#-------------------------------------------------------------------
+def index
+    #ページ数取得
+    @page = params[:page].to_i
+       if @page == nil
+        @page = 0
+       end
+    @page_num = 6
+     
+   #今日の授業取得（ログイン後のデフォルトランディングページは今日授業できる先生を表示するため）  
+   @teachers = []
+   td = Date.today.to_s
+   @lessons_td = Lesson.where(date: td).where(condition:[2,3]).pluck(:teacher_id).uniq
+    
+   @n = @lessons_td.length.to_i
+        teacher_id=[]
+   @lessons_td.each do |id|
+        teacher_id << id
+        teachers=Teacher.find_by(id: id)
+        @teachers << teachers
+    end 
+    
+    
+    
+        #並べ替え情報取得
+        @order = params[:order].to_i
+          if @order == nil
+              @order = 0
+          end
+    
+         if @order == 1
+             @teachers.sort! do |a, b|
+               (a[:cost] <=> b[:cost]).nonzero? || (b[:rate] <=> a[:rate])
+             end
+        
+         elsif @order ==2
+            @teachers.sort! do |a, b|
+                (b[:cost] <=> a[:cost]).nonzero? || (b[:rate] <=> a[:rate])
+            end
+        
+         elsif @order ==3
+            @teachers.sort! do |a, b|
+                (a[:id] <=> b[:id])
+            end
+        
+         elsif @order ==0
+            @teachers.sort! do |a, b|
+                (b[:rate] <=> a[:rate])
+            end
+         end
+       
+      
+    
+   
+    
+   #データベースより全生徒データ取得
     @users = User.all
-    #@teachers = Teacher.all
-    @teachers = Teacher.all
-    
-    @schedules =Schedule.all
-    
     @lessons_available =Lesson.where(condition: 3)
     @lessons_reserved =Lesson.where(condition: 2)
-    
-  end
+       
+end
+#-------------------------------------------------------------------  
   
   def mypage_teacher
     

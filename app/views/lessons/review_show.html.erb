@@ -9,9 +9,11 @@
 					<p class="reviw-title">
 						REVIEWS
 					</p>
+					
+					<hr>
 					<% if @lessons_count >= 1 %>
 					
-				  <%= @lessons.each do |lesson| %>
+				  <% @lessons.each do |lesson| %>
 				   
 				    <% user = User.find_by(id: lesson.user_id) %>
 					<div class="each-review">
@@ -21,12 +23,25 @@
 						</div>
 						
 						<div class="each-review-right1">
-							<span class="students-evaluation">★★★★★(&nbsp;<%= lesson.review_rate %>&nbsp;)<br></span> by <span class="students-name"> <%= user.name %> </span>
+							<span class="students-evaluation"><% if lesson.review_rate == 5 %>
+							     ★★★★★
+							 <% elsif lesson.review_rate == 4 %> 
+							     ★★★★☆
+							 <% elsif lesson.review_rate == 3 %>
+							     ★★★☆☆
+							 <% elsif lesson.review_rate == 2 %>
+							     ★★☆☆☆
+							 <% elsif lesson.review_rate == 1 %>
+							     ★☆☆☆☆
+							 <% end %>	
+							 (&nbsp;<%= lesson.review_rate %>&nbsp;)<br>	
+							 </span>	
+							 by	<span class="students-name"> <%= user.name %> </span>
 							
 						</div>	
 						
 						<div class="each-review-right2">
-							Took the class at <%= lesson.date.year %>.<%= lesson.date.month %>.<%= lesson.date.day %>
+							Took the class at <%= lesson.time.year %>.<%= lesson.time.month %>.<%= lesson.time.day %>
 							
 						</div>	
 						
@@ -44,13 +59,14 @@
 				 
 				
 					
-					<div class="read-more">
-						Read more reviews
-					</div>
+					<!--<div class="read-more">-----> 
+					<!--	Read more reviews-----> 
+					<!--</div>-----> 
 					
 				<% else %>
-				
-				    no reviews are written for this teacher yet.
+				<div class="no-review">
+				    &nbsp;&nbsp;&nbsp;no reviews are written for this teacher yet.
+				</div>
 				<% end %>
 				</div>
 				<!--レビュー終了-----------------------------------------------------------------> 
@@ -62,7 +78,7 @@
 
 <!--予約確認用モーダル終了---------------------------------------------------->
 	
-</div>
+
 
 <!--トップに戻る開始------------------------------------------------------------------------->
 		<div class="back-to-top">
