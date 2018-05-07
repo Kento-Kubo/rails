@@ -29,10 +29,9 @@
                 <table class="date_search_table" rules="all">
                   <tr>
                      <% (0..7).each do |n| %> 
-                      <% dd=date.wday+n %>
-                        <% if dd == 7 %>
-                        <% dd=date.wday %>
-             			<% end%>                     
+                      <% dd=(date.wday+n).modulo(7) %>
+                       
+                                       
                         
                         
                         <% y = date.year.to_s %>
@@ -52,7 +51,7 @@
                                 <% d = (date.day+n).to_s %>                      
                             <%end%>
 
-                        <% date_search = y + m + d; %>
+                        <% date_search = y +"-"+ m +"-"+ d; %>
                        
                 
       			      <td class="date_search" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
@@ -169,9 +168,9 @@
                             <option value="100－">100s</option>
                           </select>&nbsp;&nbsp;&nbsp;
                           <select class="select2" name="sex">
-                            <option value="any">sex</option>                           
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="2">sex</option>                           
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
                           </select>
                         </div>
                 </div>
@@ -185,8 +184,7 @@
                     <%= link_to 'Clear seaching condition', controller: "main", action: "index", class: "clear_btn" %>
                 </div>
 
-             
-            </div>
+             </div>
         </div>
         <% end %>
         
@@ -222,597 +220,153 @@
   
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
+       <% if @teachers == []%>
+       <% count_page = (@teachers.length-1).div(6)+1 %>
+       <div class="noteacher">
+       We are sorry but there is no teacher available right now.
+       </div>
+       <% else %>
+       <!--table content-->
        <div class="main-part-trial">
-       
-       <% (1..2).each do |x|%> 
-            <ul style="list-style:none; " class="profile-zone-trial">
-                <li class="blank-trial"><br></li>
-                  <% a = 0+3*(x-1)+@page*6%>
-      			  <% b = 1+3*(x-1)+@page*6%>
-      			  <% c = 2+3*(x-1)+@page*6%>
-      			  
-      			 
-      			  <% @teachers[a..c].each do |teacher|%>
-      			                  
-                <li class="teacher-info-trial">
-      			  <img class="Profile-photo-trial" src="<%="/conversation.jpg"%>" ><br>
-      			  <%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction-trial name-trial" %><br>
-      			  1 lesson:<%= teacher.cost %>$<br>
-      			 
-      			  
-      			 <% if teacher.num  %>
-      			  <% review_rate = teacher.rate.to_f.to_s + "   (  " + teacher.num.to_s + "  )" %>
-      			 <% else %>
-      			 <% review_rate = teacher.rate.to_f.to_s + "   (  " + "0" + "  )" %>
-      			 <% end %>
-      			  
-      			  <%= link_to(review_rate,"/lessons/#{teacher.id}/review_show") %>
-      			  <br>
-      			  hobby:<%= teacher.hobby %><br>
-      			 <% if Favorite.find_by(teacher_id: teacher.id, user_id: current_user.id) %>
-      			   <%= link_to("unfavorite","/favorites/#{teacher.id}/destroy",{method:"post"}) %>
-      			  <% else %>
-      			  <%= link_to("favorite","/favorites/#{teacher.id}/create",{method:"post"}) %>
-      			  <% end %>
-      			 <%end%>
-      		   </li>
-              </ul> 
-            <div class="scroll-part-trial">
-            <% (0..23).each do |num|%>  
-             <% require "time" %>
-                
-                <% y = date.year.to_s %>
-                <% m = date.month %>
-                
-                <% if m < 10 %>
-                  <% m = "0" + date.month.to_s %>
-                <% else %>
-                  <% m = date.month.to_s %>                      
-                <%end%>
-                
-                <% d = date.day %>
-                
-                <% if d < 10 %>
-                  <% d = "0" + date.day.to_s %>
-                <% else %>
-                  <% d = date.day.to_s %>                      
-                <%end%>
-                
-                <% if num < 10 %>
-                  <% h = "0" + num.to_s %>
-                <% else %>
-                  <% h = num.to_s %>
-                <%end%>
-                
-                <% min1 = "00" %>
-                <% min2 = "30" %>
-
-                <% s = "00" %>
-                <% t11 = y + m + d + h + min1 + s; %>
-                <% t22 = y + m + d + h + min2 + s; %>
-                <% require "time" %>
-                <% t111 = y + "-" + m + "-" + d + " " + h  + ":" + min1  + ":" + s; %>
-                <% t222 = y + "-" + m + "-" + d + " " + h  + ":" + min2  + ":" + s; %>
-                <% ttt1= Time.parse(t111) %>
-                <% ttt2= Time.parse(t222) %>
-            <ul style="list-style:none; " class="time1-trial">
-                <li class="schedule-row-1-trial">&nbsp;<%= 0+num %>:00&nbsp;</li>
-                
-                
-      			<% @teachers[a..c].each do |teacher|%>
-      			<% schedule = @lessons_available.where(teacher_id: teacher.id) %>
-      			<% t_schedule = schedule.find_by(time: ttt1 ) %>
-      			<% schedule_reserved = @lessons_reserved.where(teacher_id: teacher.id) %>
-      			<% t_schedule_reserved = schedule_reserved.find_by(time: ttt1 ) %>
-      			
-      			
-                <li class="schedule-teacher-row-1-trial">
-                
-                <% if t_schedule %>
-                    <%= link_to 'available', controller: "lessons", action: "reserve", time: t11, id: teacher.id, lid: t_schedule.id  %>
-                <%elsif t_schedule_reserved %> 
+       <% count_page = (@teachers.length-1).div(6)+1 %>
+           <% if 1 <= @n.modulo(6) && @n.modulo(6) <= 3 && count_page == @page+1 %>  <!--段の調整-->
+               <% raw = 1%>
+           <% else %>
+               <% raw = 2%>
+            <% end %>
+        
+            <% (1..raw).each do |x|%>
+                <ul style="list-style:none; " class="profile-zone-trial">
+                    <li class="blank-trial"><br></li>
+                      <% a = 0+3*(x-1)+@page*6%>
+          			  <% b = 1+3*(x-1)+@page*6%>
+          			  <% c = 2+3*(x-1)+@page*6%>
+          			  <% @teachers[a..c].each do |teacher|%>
+          		             
+                        <li class="teacher-info-trial">
+              			  <img class="Profile-photo-trial" src="<%="/conversation.jpg"%>" ><br>
+              			  <%= link_to teacher.name, "/main/#{teacher.id}/mypage_teacher", class: "introduction-trial name-trial" %><br>
+              			  1 lesson:<%= teacher.cost %>$<br>
+              			 
+              			　
+              			 <% if teacher.num  %>
+              			   <% review_rate = teacher.rate.to_f.to_s + "   (  " + teacher.num.to_s + "  )" %>
+              			 <% else %>
+              			   <% review_rate = teacher.rate.to_f.to_s + "   (  " + "0" + "  )" %>
+              			 <% end %>
+              			  
+              			 <%= link_to(review_rate,"/lessons/#{teacher.id}/review_show") %>
+              			  <br>
+              			  hobby:<%= teacher.hobby %><br>
+              			 <% if Favorite.find_by(teacher_id: teacher.id, user_id: current_user.id) %>
+              			   <%= link_to("unfavorite","/favorites/#{teacher.id}/destroy",{method:"post"}) %>
+              			 <% else %>
+              			   <%= link_to("favorite","/favorites/#{teacher.id}/create",{method:"post"}) %>
+              			 <% end %>
+              		<%end%>
+          		   </li>
+                  </ul> 
+                <div class="scroll-part-trial">
+                <% (0..23).each do |num|%>  
+                 <% require "time" %>
+                    
+                    <% y = date.year.to_s %>
+                    <% m = date.month %>
+                    
+                    <% if m < 10 %>
+                      <% m = "0" + date.month.to_s %>
+                    <% else %>
+                      <% m = date.month.to_s %>                      
+                    <%end%>
+                    
+                    <% d = date.day %>
+                    
+                    <% if d < 10 %>
+                      <% d = "0" + date.day.to_s %>
+                    <% else %>
+                      <% d = date.day.to_s %>                      
+                    <%end%>
+                    
+                    <% if num < 10 %>
+                      <% h = "0" + num.to_s %>
+                    <% else %>
+                      <% h = num.to_s %>
+                    <%end%>
+                    
+                    <% min1 = "00" %>
+                    <% min2 = "30" %>
+    
+                    <% s = "00" %>
+                    <% t11 = y + m + d + h + min1 + s; %>
+                    <% t22 = y + m + d + h + min2 + s; %>
+                    <% require "time" %>
+                    <% t111 = y + "-" + m + "-" + d + " " + h  + ":" + min1  + ":" + s; %>
+                    <% t222 = y + "-" + m + "-" + d + " " + h  + ":" + min2  + ":" + s; %>
+                    <% ttt1= Time.parse(t111) %>
+                    <% ttt2= Time.parse(t222) %>
+                <ul style="list-style:none; " class="time1-trial">
+                    <li class="schedule-row-1-trial">&nbsp;<%= 0+num %>:00&nbsp;</li>
+                    
+                    
+          			<% @teachers[a..c].each do |teacher|%>
+          			<% schedule = @lessons_available.where(teacher_id: teacher.id) %>
+          			<% t_schedule = schedule.find_by(time: ttt1 ) %>
+          			<% schedule_reserved = @lessons_reserved.where(teacher_id: teacher.id) %>
+          			<% t_schedule_reserved = schedule_reserved.find_by(time: ttt1 ) %>
+          			
+          			
+                    <li class="schedule-teacher-row-1-trial">
+                    
+                    <% if t_schedule %>
+                        <%= link_to 'available', controller: "lessons", action: "reserve", time: t11, id: teacher.id, lid: t_schedule.id  %>
+                    <%elsif t_schedule_reserved %> 
+                      
+                      <p  class="reserved">reserved</p>
+                    <%else%>
+                        <p class="invisible">aaaaa</p>                      
+                    <% end %>
+                    </li>
+                   
+                    <%end%>
+                  </ul> 
                   
-                  <p  class="reserved">reserved</p>
-                <%else%>
-                    <p class="invisible">aaaaa</p>                      
-                <% end %>
-                </li>
-               
-                <%end%>
-              </ul> 
-              
-          <ul style="list-style:none; " class="time2-trial">
-                <li class="schedule-row-12-trial">&nbsp;<%= 0+num %>:30&nbsp;</li>
-                
-                
-      			<% @teachers[a..c].each do |teacher|%>
-      			<% schedule = @lessons_available.where(teacher_id: teacher.id) %>
-      			<% t_schedule = schedule.find_by(time: ttt2) %>
-                <% schedule_reserved = @lessons_reserved.where(teacher_id: teacher.id) %>
-      			<% t_schedule_reserved = schedule_reserved.find_by(time: ttt2 ) %>
-      
-                <li class="schedule-teacher-row-12-trial">
-                <% if t_schedule %>
-                   <%= link_to 'available', controller: "lessons", action: "reserve", time: t22, id: teacher.id, lid: t_schedule.id  %>
-                <%elsif t_schedule_reserved %> 
+              <ul style="list-style:none; " class="time2-trial">
+                    <li class="schedule-row-12-trial">&nbsp;<%= 0+num %>:30&nbsp;</li>
+                    
+                    
+          			<% @teachers[a..c].each do |teacher|%>
+          			<% schedule = @lessons_available.where(teacher_id: teacher.id) %>
+          			<% t_schedule = schedule.find_by(time: ttt2) %>
+                    <% schedule_reserved = @lessons_reserved.where(teacher_id: teacher.id) %>
+          			<% t_schedule_reserved = schedule_reserved.find_by(time: ttt2 ) %>
+          
+                    <li class="schedule-teacher-row-12-trial">
+                    <% if t_schedule %>
+                       <%= link_to 'available', controller: "lessons", action: "reserve", time: t22, id: teacher.id, lid: t_schedule.id  %>
+                    <%elsif t_schedule_reserved %> 
+                      
+                      <p  class="reserved">reserved</p>
+                    <% else %>
+                        <p class="invisible">aaaaa</p> 
+                    <% end %>
+                    
+                    </li>
+                    
+                    <%end%>
+                </ul> 
                   
-                  <p  class="reserved">reserved</p>
-                <% else %>
-                    <p class="invisible">aaaaa</p> 
-                <% end %>
-                
-                </li>
-                
-                <%end%>
-            </ul> 
-              
+                 
+              <%end%>
+              </div>
              
-          <%end%>
-          </div>
-         
-      <%end%>
-        </div>
-       <!-- <% n = @teachers.count / 3 + 1 %>
-        <% (1..n).each do |x|%> 
-        <div class="main-part">
-          <div class="fixed" >
-            <table class="fixed-table" rules="all">
-            
-              <tr>
-      			  <td class="blank">   
-      			  </td>
-      			  <% a = 0+3*(x-1)%>
-      			  <% b = 1+3*(x-1)%>
-      			  <% c = 2+3*(x-1)%>
-      			  <% @teachers[a..c].each do |teacher|%>
-      			  <td class="teacher-info">
-      			  <img class="Profile-photo" src="<%="/conversation.jpg"%>"><br>
-      			  <%= link_to teacher.name, "/teachers/#{teacher.id}/show", class: "introduction name" %><br>
-      			  1 lesson:4$<br>
-      			  ★★★★★<br>
-      			  hobby:<%= teacher.hobby %>
-      			  </td>
-
-      			  <%end%>
-      			  <td >   
-      			  </td>
-      		  </tr>
-      		 </table> 
-      	   </div>
-      	    
-      	   <div class="scrolled" >
-            <table rules="all" class="scrolled-table">
-                <% require "date" %>
-                
-
-
-                <% t = DateTime.now %>
-                
-                
-                <% if 0 <= t.min && t.min < 15 %>
-                            
-      		        <tr >
-      		                        <td class="schedule-row-color" ><%= t.hour %>:30 - <%= t.hour + 1 %>:00</td>
-                    
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				
-                    </tr >	
-                     <% hour = t.hour + 1 %> 
-                     <% min = 0 %>
-                     
-                 <% elsif 15 <= t.min && t.min < 45 %>   
-                
-        		    <tr >
-      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:00 - <%= t.hour + 1 %>:30</td>
-                    
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				
-                    </tr >	
-                    <% hour = t.hour + 1 %> 
-                    <% min = 30 %>
-                    
-                <% elsif 45 <= t.min && t.min < 0 %>   
-                
-        		    <tr >
-      		                        <td class="schedule-row-color" ><%= t.hour + 1 %>:30 - <%= t.hour + 2 %>:00</td>
-                    
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				
-                    </tr >
-                    
-                    <% hour = t.hour + 2 %> 
-                    <% min = 00 %>
-                    
-                <% end %>
-                
-               
-    	        <% (0..22).each do |num|%>
-      		        <tr >
-      		                        <td class="schedule-row-color" ><%= t.hour + num %>:00 - <%= t.hour + num %>:30</td>
-                    
-                    				<td class="schedule-row-color" width="200px"><%= link_to("available", "/lessons/new") %></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				<td class="schedule-row-color" width="200px"></td>
-                    				
-                    </tr >	
-                    <tr >           
-                                    <td ><%= t.hour + num%>:30 - <%= t.hour + 1 + num%>:00</td>
-                    
-                    				<td width="200px"></td>
-                    				<td width="200px"></td>
-                    				<td width="200px"></td>
-                    				
-                    </tr >
-                <% end %>
-                
-                    
-                    
-                    
-                    
-                    <!--<tr >				
-      								<td class="schedule-row-color">1:00 - 1:30</td>
-        							
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                    
-                    <tr >				
-      								<td>1:30 - 2:00</td>
-        							
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    
-                    
-                    
-                    
-                    
-                    <tr >				
-        								
-        							<td class="schedule-row-color">2:00 - 2:30</td>           				
-      								
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >		
-                    
-                    <tr >				
-        								
-        							<td>2:30 - 3:00</td>           				
-      								
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    <tr >			
-      								<td class="schedule-row-color">3:00 - 3:30</td>
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >	
-                    
-                    <tr >			
-      								<td>3:30 - 4:00</td>
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >	
-                    
-                    <tr >			
-      								<td class="schedule-row-color">4:00 - 4:30</td>
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >				
-                    <tr >				
-                    				<td>4:30 - 5:00</td>
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >	
-                    
-                    <tr >				
-                    				<td class="schedule-row-color">5:00 - 5:30</td>
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                    
-                    <tr >				
-                    				<td>5:30 - 6:00</td>
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >	
-                    			
-                    <tr >				
-                    				<td class="schedule-row-color">6:00 - 6:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >				
-                    <tr >				
-                    				<td>6:30 - 7:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >	
-                    <tr >				  
-                    				<td class="schedule-row-color">7:00 - 7:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >							
-                    <tr >				  
-                    				<td>7:30 - 8:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    <tr >				
-                    				<td class="schedule-row-color">8:00 - 8:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >			
-                    
-                    <tr >				
-                    				<td>8:30 - 9:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >
-                    			
-                    <tr >				
-                    				<td class="schedule-row-color">9:00 - 9:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                    
-                    <tr >				
-                    				<td>9:30 - 10:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    				
-                    <tr >				
-                    				<td class="schedule-row-color">10:00 - 10:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >				
-                    
-                    <tr >				
-                    				<td>10:30 - 11:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    
-                    
-                    <tr >				
-                    				<td class="schedule-row-color">11:00 - 11:30</td> 
-                    				
-                    			    <td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>   
-                    </tr >				
-                    <tr >				
-                    				<td>11:30 - 12:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    
-                    <tr >				
-                    				<td class="schedule-row-color">12:00 - 12:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >				
-                    
-                    <tr >				
-                    				<td>12:30 - 13:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-            		<tr >				
-                    				<td class="schedule-row-color">13:00 - 13:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >			
-                    <tr >				
-                    				<td>13:30 - 14:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    <tr >				
-                    				<td class="schedule-row-color">14:00 - 14:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >	
-                    <tr >				
-                    				<td>14:30 - 15:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >					
-                    <tr >				
-                    				<td class="schedule-row-color">15:00 - 15:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >	
-                     <tr >				
-                    				<td>15:30 - 16:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >			
-                     	
-                    <tr >				
-                    				<td class="schedule-row-color">16:00 - 16:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                    
-                     <tr >				
-                    				<td>16:30 - 17:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >						
-                    <tr >				
-                    				<td class="schedule-row-color">17:00 - 17:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                     <tr >				
-                    				<td>17:30 - 18:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    <tr >				
-                    				<td class="schedule-row-color">18:00 - 18:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >	
-                    <tr >				
-                    				<td>18:30 - 19:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    <tr >				
-                    				<td class="schedule-row-color">19:00 - 19:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                    <tr >				
-                    				<td>19:30 - 20:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    <tr >				
-                    				<td class="schedule-row-color">20:00 - 20:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                    <tr >				
-                    				<td>20:30 - 21:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >					
-                    <tr >				
-                    				<td class="schedule-row-color">21:00 - 21:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >
-                    <tr >				
-                    				<td>21:30 - 22:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >				
-                    <tr >				
-                    				<td class="schedule-row-color">22:00 - 22:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    </tr >	
-                    <tr >				
-                    				<td>22:30 - 23:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                    </tr >		
-                    <tr >				
-                    				<td class="schedule-row-color">23:00 - 23:30</td> 
-                    				
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                    				<td class="schedule-row-color"></td>
-                  				
-                    </tr>   		
-                    <tr >				
-                    				<td>23:30 - 24:00</td> 
-                    				
-                    				<td></td>
-                    				<td></td>
-                    				<td></td>
-                  				
-                    </tr>     						
-         </table>
-        </div>
-         
-            
-        </div>
-        <%end%>-->
+            <%end%>
+            </div>
+            <!--table content-->
+            <% end %>
+   
 <!--検索結果終了----------------------------------------------------------------------------->
 <!--ページ番号開始--------------------------------------------------------------------------->
-   <% count_page = @teachers.length.div(6)+1 %>
+   
        <% if count_page <= 1 %>
        <% else %>
        <div class="teacher-list-bottom">

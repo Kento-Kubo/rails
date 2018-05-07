@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180429162100) do
     t.datetime "updated_at",                              null: false
     t.date     "birthday"
     t.string   "email"
-    t.boolean  "sex"
+    t.text     "sex"
     t.string   "skype"
     t.string   "password_digest"
     t.string   "hobby"

@@ -9,10 +9,19 @@ def index
        end
     @page_num = 6
      
-   #今日の授業取得（ログイン後のデフォルトランディングページは今日授業できる先生を表示するため）  
+   #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）  
    @teachers = []
-   td = Date.today.to_s
-   @lessons_td = Lesson.where(date: td).where(condition:[2,3]).pluck(:teacher_id).uniq
+   @date = params[:date_search_id].to_s
+   
+    if @date.empty?
+        @date = Date.today.to_s
+    end
+   #td = Date.today.midnight.to_s
+   #tmr = Date.today.end_of_day.to_s
+   
+  
+   
+   @lessons_td = Lesson.where(date: @date).where(condition:[2,3]).pluck(:teacher_id).uniq
     
    @n = @lessons_td.length.to_i
         teacher_id=[]
@@ -22,8 +31,10 @@ def index
         @teachers << teachers
     end 
     
-    
-    
+   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
+   Rails.logger.debug(@teachers)
+   Rails.logger.debug(@teachers.nil?)
+   
         #並べ替え情報取得
         @order = params[:order].to_i
           if @order == nil
@@ -59,7 +70,7 @@ def index
     @users = User.all
     @lessons_available =Lesson.where(condition: 3)
     @lessons_reserved =Lesson.where(condition: 2)
-    @sex = params[:sex]   
+       
 end
 #-------------------------------------------------------------------  
   
