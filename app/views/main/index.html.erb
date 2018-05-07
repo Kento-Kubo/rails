@@ -29,10 +29,9 @@
                 <table class="date_search_table" rules="all">
                   <tr>
                      <% (0..7).each do |n| %> 
-                      <% dd=date.wday+n %>
-                        <% if dd == 7 %>
-                        <% dd=date.wday %>
-             			<% end%>                     
+                      <% dd=(date.wday+n).modulo(7) %>
+                       
+                                       
                         
                         
                         <% y = date.year.to_s %>
@@ -52,7 +51,7 @@
                                 <% d = (date.day+n).to_s %>                      
                             <%end%>
 
-                        <% date_search = y + m + d; %>
+                        <% date_search = y +"-"+ m +"-"+ d; %>
                        
                 
       			      <td class="date_search" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
@@ -169,9 +168,9 @@
                             <option value="100－">100s</option>
                           </select>&nbsp;&nbsp;&nbsp;
                           <select class="select2" name="sex">
-                            <option value="any">sex</option>                           
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="2">sex</option>                           
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
                           </select>
                         </div>
                 </div>
@@ -185,8 +184,7 @@
                     <%= link_to 'Clear seaching condition', controller: "main", action: "index", class: "clear_btn" %>
                 </div>
 
-             
-            </div>
+             </div>
         </div>
         <% end %>
         
@@ -223,7 +221,10 @@
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
        <% if @teachers == []%>
+       <% count_page = (@teachers.length-1).div(6)+1 %>
+       <div class="noteacher">
        We are sorry but there is no teacher available right now.
+       </div>
        <% else %>
        <!--table content-->
        <div class="main-part-trial">
