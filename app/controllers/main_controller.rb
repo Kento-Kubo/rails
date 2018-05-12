@@ -8,34 +8,58 @@ def index
         @page = 0
        end
     @page_num = 6
-     
+    
    #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）  
-   @teachers = []
    @date = params[:date_search_id].to_s
    
     if @date.empty?
         @date = Date.today.to_s
     end
-   #td = Date.today.midnight.to_s
-   #tmr = Date.today.end_of_day.to_s
-   
-  
    
    @lessons_td = Lesson.where(date: @date).where(condition:[2,3]).pluck(:teacher_id).uniq
+  
+  #性別取得
+  @sex = params[:sex].to_s
+   if @sex == "any"
+    @sex=["male", "female"]
+   end
+   
+   #時給取得
+   @cost1 = params[:cost1]
+    if @cost1 == "any"
+      @cost1 = 0.to_i
+    end
+   
+   @cost2 = params[:cost2]
+    if @cost2 == "any"
+      @cost2 = 100.to_i
+    end 
+   
+   #該当先生取得
+        teacher_searched=Teacher.where(sex: @sex).where("cost > ?", @cost1).where("cost < ?", @cost2)
     
-   @n = @lessons_td.length.to_i
-        teacher_id=[]
+        @teacher = []
+  
    @lessons_td.each do |id|
-        teacher_id << id
-        teachers=Teacher.find_by(id: id)
-        @teachers << teachers
+        teachers=teacher_searched.find_by(id: id)
+        @teacher << teachers
+        @teachers = @teacher.compact
+        
     end 
     
-   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
-   Rails.logger.debug(@teachers)
-   Rails.logger.debug(@teachers.nil?)
+    if @teachers.empty?
+    @n = 0
+    else
+    @n = @teachers.length.to_i
+    end
+    Rails.logger.debug("いいいいいいいい")
+   #Rails.logger.debug(teachers.sex)
+    Rails.logger.debug(@teachers) 
    
+    
+  
         #並べ替え情報取得
+     
         @order = params[:order].to_i
           if @order == nil
               @order = 0
@@ -62,9 +86,6 @@ def index
             end
          end
        
-      
-    
-   
     
    #データベースより全生徒データ取得
     @users = User.all
