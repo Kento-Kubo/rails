@@ -125,18 +125,19 @@
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
        <% if @teachers == []%>
+       <% count_page = 0%>
        We are sorry but there is no teacher available right now.
        <% else %>
        <!--table content-->
        <div class="main-part-trial">
        <% count_page = (@teachers.length-1).div(6)+1 %>
            <% if 1 <= @n.modulo(6) && @n.modulo(6) <= 3 && count_page == @page+1 %>  <!--段の調整-->
-               <% raw = 1%>
+               <% row = 1%>
            <% else %>
-               <% raw = 2%>
+               <% row = 2%>
             <% end %>
         
-            <% (1..raw).each do |x|%>
+            <% (1..row).each do |x|%>
                 <ul style="list-style:none; " class="profile-zone-trial">
                     <li class="blank-trial"><br></li>
                       <% a = 0+3*(x-1)+@page*6%>

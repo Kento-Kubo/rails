@@ -24,8 +24,8 @@ def index
     end 
     
    Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
-   Rails.logger.debug(@teachers)
-   Rails.logger.debug(@teachers.nil?)
+   Rails.logger.debug(@page)
+   Rails.logger.debug(@page.nil?)
    
         #並べ替え情報取得
         @order = params[:order].to_i
