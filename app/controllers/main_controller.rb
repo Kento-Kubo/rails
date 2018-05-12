@@ -8,26 +8,64 @@ def index
         @page = 0
        end
     @page_num = 6
-     
-   #今日の授業取得（ログイン後のデフォルトランディングページは今日授業できる先生を表示するため）  
-   @teachers = []
-   td = Date.today.midnight.to_s
-   tmr = Date.today.end_of_day.to_s
-   @lessons_td = Lesson.where(time: Date.today.midnight.to_s..Date.today.end_of_day.to_s).where(condition:[2,3]).pluck(:teacher_id).uniq
     
-   @n = @lessons_td.length.to_i
-        teacher_id=[]
+   #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）  
+   @date = params[:date_search_id].to_s
+   
+    if @date.empty?
+        @date = Date.today.to_s
+    end
+   
+   @lessons_td = Lesson.where(date: @date).where(condition:[2,3]).pluck(:teacher_id).uniq
+  
+  #性別取得
+  @sex = params[:sex].to_s
+   if @sex == "any"
+    @sex=["male", "female"]
+   end
+   
+   #時給取得
+   @cost1 = params[:cost1]
+    if @cost1 == "any"
+      @cost1 = 0.to_i
+    end
+   
+   @cost2 = params[:cost2]
+    if @cost2 == "any"
+      @cost2 = 100.to_i
+    end 
+   
+   #該当先生取得
+        teacher_searched=Teacher.where(sex: @sex).where("cost > ?", @cost1).where("cost < ?", @cost2)
+    
+        @teacher = []
+  
    @lessons_td.each do |id|
-        teacher_id << id
-        teachers=Teacher.find_by(id: id)
-        @teachers << teachers
+        teachers=teacher_searched.find_by(id: id)
+        @teacher << teachers
+        @teachers = @teacher.compact
+        
     end 
     
+<<<<<<< HEAD
    Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
    Rails.logger.debug(@page)
    Rails.logger.debug(@page.nil?)
+=======
+    if @teachers.empty?
+    @n = 0
+    else
+    @n = @teachers.length.to_i
+    end
+    Rails.logger.debug("いいいいいいいい")
+   #Rails.logger.debug(teachers.sex)
+    Rails.logger.debug(@teachers) 
+>>>>>>> f9e4cf45f198d6f228cec4ce395c5e58fbc8fec9
    
+    
+  
         #並べ替え情報取得
+     
         @order = params[:order].to_i
           if @order == nil
               @order = 0
@@ -54,9 +92,6 @@ def index
             end
          end
        
-      
-    
-   
     
    #データベースより全生徒データ取得
     @users = User.all

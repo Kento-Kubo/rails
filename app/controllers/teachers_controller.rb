@@ -27,6 +27,7 @@ class TeachersController < ApplicationController
   
   def create #save new teacher
     @teacher = Teacher.new(teacher_params)
+    @teacher.age=Date.today.year-@teacher.birthday.year-1
     @teacher.teacher = true
     if @teacher.save
     flash[:notice] = "Your account is registered"
