@@ -118,26 +118,25 @@
                         &nbsp;<span class="fa fa-jpy">&nbsp;&nbsp;cost
                     </div>
                     <div class="searchbox_right"> 
-                      <select class="select2">
-                            <option value="age">age</option>
-                            <option value="－19">10s</option>
-                            <option value="20－25">Early 20s</option>
-                            <option value="26－30">Late 20s</option>
-                            <option value="31－40">30s</option>
-                            <option value="41－50">40s</option>
-                            <option value="51－">50s</option>
+                      <select class="select2" name="cost1">
                             <option value="any">any</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+                            <option value="10">12</option>
                         </select>
                         ~
-                        <select class="select2">
-                            <option value="age">age</option>
-                            <option value="－19">10s</option>
-                            <option value="20－25">Early 20s</option>
-                            <option value="26－30">Late 20s</option>
-                            <option value="31－40">30s</option>
-                            <option value="41－50">40s</option>
-                            <option value="51－">50s</option>
+                        <select class="select2" name="cost2">
                             <option value="any">any</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            
                         </select>
                    </div>
                  </div>  
@@ -153,24 +152,24 @@
                         </div>
                         
                         <div class="searchbox_right"> 
-                          <select class="select2" name="age" placeholder=" free word">
+                          <select class="select2" name="age">
                             <option value="any">age</option>
-                            <option value="－19">10s</option>
-                            <option value="20－24">Early 20s</option>
-                            <option value="25－29">Late 20s</option>
-                            <option value="30－39">30s</option>
-                            <option value="40－49">40s</option>
-                            <option value="50－">50s</option>
-                            <option value="60－">60s</option>
-                            <option value="70－">70s</option>
-                            <option value="80－">80s</option>
-                            <option value="90－">90s</option>
-                            <option value="100－">100s</option>
+                            <option value="1">10s</option>
+                            <option value="E20">Early 20s</option>
+                            <option value="L20">Late 20s</option>
+                            <option value="30s">30s</option>
+                            <option value="40s">40s</option>
+                            <option value="50s">50s</option>
+                            <option value="60">60s</option>
+                            <option value="70">70s</option>
+                            <option value="80">80s</option>
+                            <option value="90">90s</option>
+                            <option value="100">100s</option>
                           </select>&nbsp;&nbsp;&nbsp;
                           <select class="select2" name="sex">
-                            <option value="2">sex</option>                           
-                            <option value="1">Male</option>
-                            <option value="0">Female</option>
+                            <option value="any">sex</option>                           
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
                           </select>
                         </div>
                 </div>
@@ -195,8 +194,10 @@
       
         <div class="teacher-list-top">
             <div class="result-number-left">
-            
-                <p><span class="number"><%= %><%= @n %></span> teachers have been found for today (<%= date.day %>th of <%= date.month %>)</p>
+             
+                    <% require "time" %>
+                    <% searched_date= Time.parse(@date) %>
+                <p><span class="number"><%= %><%= @n %></span> teachers have been found for today (<%= searched_date.day %>th of <%= searched_date.month %>)</p>
                 
             </div>
             <div class="result-number-right">
@@ -220,7 +221,7 @@
   
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
-       <% if @teachers == []%>
+       <% if @teachers.empty? %>
        <% count_page = (@teachers.length-1).div(6)+1 %>
        <div class="noteacher">
        We are sorry but there is no teacher available right now.
