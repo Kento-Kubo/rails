@@ -18,57 +18,57 @@
 						<div class="profile-right-box">
 							
 							<a class="box users" href="#review">						
-								<p class="Num-lesson">154<span class="lessons">&nbsp;&nbsp;Lessons with&nbsp;&nbsp;</span>90<span class="lessons">&nbsp;&nbsp;students</span><i class="fa fa-users fa-2x"></i></p>
+								<p class="Num-lesson"><%= Lesson.where(teacher_id:@teacher.id).where(condition:1).length%><span class="lessons">&nbsp;&nbsp;Lessons with&nbsp;&nbsp;</span><%#= Lesson.where(teacher_id:@teacher.id).where(condition:2).length%><span class="lessons">&nbsp;&nbsp;students</span><i class="fa fa-users fa-2x"></i></p>
 							</a>
                     		
                     		<a class="box comments" href="#schedule">
-                    			<p class="hour-USD"><span class="lessons">Cost for 1 hour &nbsp;&nbsp;</span>7.1<span class="lessons">&nbsp;&nbsp;USD</span><i class="fa fa-comments fa-2x"></i></p>
+                    			<p class="hour-USD"><span class="lessons">Cost for 25 minutes &nbsp;&nbsp;</span><%= @teacher.cost%><span class="lessons">&nbsp;&nbsp;USD</span><i class="fa fa-comments fa-2x"></i></p>
                     		</a>
-                    		<a class="box clock" href="#schedule">
+                    		<!--<a class="box clock" href="#schedule">
                     			<p class="min-USD">
                     				<span class="lessons">Trial (20-30 min)&nbsp;&nbsp;</span>
                     				3.0
                     				<span class="lessons">&nbsp;&nbsp;USD</span>
                     				<i class="fa fa-clock-o fa-2x"></i>
                     			</p>
-							</a>
+							</a>-->
 
-                    		<a class="box rating" href="#review">
+                    		<!--<a class="box rating" href="#review">
                     			<span class="lessons">Evaluation by students</span>
                     			<p class="evaluation">
                     			
-                    				4.1
+                    				
                        			</p>
-							</a>		
+							</a>-->	
 							
 							 <div class="box2 rating2">
-                    			<span class="lessons1">4.1 out of 5 stars</span>
+                    			<span class="lessons1"><%=@mean_rate%> out of 5 stars</span>
                     			
                     				<div class="star">
-                    			    	<p class="evaluation5">5.0</p><div class="outside"><div class="inside5"></div></div><p class="evaluation5_right"><span =class"percentage5">51</span>%</p>
+                    			    	<p class="evaluation5">5.0</p><div class="outside"><div class="inside5"></div></div><p class="evaluation5_right"><span =class"percentage5"><%=@num_rate_5*100/@total_rate%></span>%</p>
                     				</div>
                     				
                     				<div class="star">
-                    			    	<p class="evaluation4">4.0</p><div class="outside"><div class="inside4"></div></div><p class="evaluation4_right"><span =class"percentage5">28</span>%</p>
+                    			    	<p class="evaluation4">4.0</p><div class="outside"><div class="inside4"></div></div><p class="evaluation4_right"><span =class"percentage5"><%=@num_rate_4*100/@total_rate%></span>%</p>
                     				</div>
 
                     				<div class="star">
-                    			    	<p class="evaluation3">3.0</p><div class="outside"><div class="inside3"></div></div><p class="evaluation3_right"><span =class"percentage5">4</span>%</p>
+                    			    	<p class="evaluation3">3.0</p><div class="outside"><div class="inside3"></div></div><p class="evaluation3_right"><span =class"percentage5"><%=@num_rate_3*100/@total_rate%></span>%</p>
                     				</div>
                     				
                     				<div class="star">
-                    			    	<p class="evaluation2">2.0</p><div class="outside"><div class="inside2"></div></div><p class="evaluation2_right"><span =class"percentage5">7</span>%</p>
+                    			    	<p class="evaluation2">2.0</p><div class="outside"><div class="inside2"></div></div><p class="evaluation2_right"><span =class"percentage5"><%=@num_rate_1*100/@total_rate%></span>%</p>
                     				</div>
                     				
                     				<div class="star">
-                    			    	<p class="evaluation1">1.0</p><div class="outside"><div class="inside1"></div></div><p class="evaluation1_right"><span =class"percentage5">10</span>%</p>
+                    			    	<p class="evaluation1">1.0</p><div class="outside"><div class="inside1"></div></div><p class="evaluation1_right"><span =class"percentage5"><%=@num_rate_1*100/@total_rate%></span>%</p>
                     				</div>         
            		       					               			
 							</div>						
 							
-							<div class="box3">
+							<!--<div class="box3">
 									I LOVE ANIME!!! LET'S TALK!!!
-                    		</div>
+                    		</div>-->
                     <!--<div class="exchange-rate">
                     	<p class="exchange-rate-title">EXCAHGE RATE</p>
                     	<p class="exchange-rate-explain">以下の交換レートを用いて計算しています。</p>
@@ -98,20 +98,21 @@
 				<!--Introduction開始------------------------------------------------------------->   
 				<div class="introduction">
 
-							<p class="teacher-name"><%=current_user.name%></p>
+							<p class="teacher-name"><%=@teacher.name%></p>
 							
 							<table class="table-introduction">
   								<tr>
     								<td class="title">AGE</td>
-    								<td><%=Date.today.year-current_user.birthday.year-1%></td>
-    							    <td><%= link_to("edit your account",edit_teacher_path(current_user),class:"btn1") %></td>
-    							    <td><%= link_to "edit your schedule", new_lesson_path(:id => current_user),class:"btn1" %></td>
-    							    
+    								<td><%= Date.today.year-@teacher.birthday.year-1%></td>
+    							    <%if @teacher == current_user%>
+    							    <td><%= link_to("edit your account",edit_teacher_path(@teacher),class:"btn1") %></td>
+    							    <td><%= link_to "edit your schedule", new_lesson_path(:id => @teacher),class:"btn1" %></td>
+    							    <%end%>
   								</tr>
   								
   								<tr>
     								<td class="title">SEX</td>
-    								<td><% if current_user.sex %>
+    								<td><% if @teacher.sex %>
             							 male
             							<% else %>
             							 female
@@ -119,18 +120,18 @@
   								</tr>
   								<tr>
     								<td class="title">LANGUAGE</td>
-    								<td><%=current_user.language%></td>
+    								<td><%=@teacher.language%></td>
   								</tr>
   								<tr>
     								<td class="title">HOBBY</td>
-    								<td><%=current_user.hobby%></td>
+    								<td><%=@teacher.hobby%></td>
   								</tr>  
 							</table>
 							
 
 					<hr width=95%>
 					<p class="Introduction-title">INTRODUCTION</p>
-						<p class="Introduction-contentes"><%=current_user.hobby%></p>
+						<p class="Introduction-contentes"><%=@teacher.hobby%></p>
                     <div id="schedule"></div> <!--マーキング-->
 					<br>
 					<br>
@@ -188,7 +189,7 @@
                                             <% if start_time.min == 30 %>
                 								<td class="title-schedule-left">
                 								    <%if DateTime.now < lesson_time %>
-                        								<% if @lesson = Lesson.find_by(time:lesson_time)%>
+                        								<% if @lesson = Lesson.where(time:lesson_time).where(teacher_id:@teacher.id).first%>
                         								    <%case @lesson.condition %> 
                         								        <%when 1%>
                         								            <p class="reserved">done </p>
@@ -204,7 +205,7 @@
                                             <% else%>
                                                 <td class="schedule-row-color">
                                                     <%if DateTime.now < lesson_time %>
-                                                        <% if @lesson = Lesson.find_by(time:lesson_time)%>
+                                                        <% if @lesson = Lesson.where(time:lesson_time).where(teacher_id:@teacher.id).first%>
                                                             <%case @lesson.condition %> 
                         								        <%when 1%>
                         							                <p class="reserved">done </p>

@@ -221,14 +221,14 @@
   
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
-<<<<<<< HEAD
-       <% if @teachers == []%>
-       <% count_page = 0%>
-=======
+
+       <%# if @teachers == []%>
+       <%# count_page = 0%>
+
        <% if @teachers.empty? %>
        <% count_page = (@teachers.length-1).div(6)+1 %>
        <div class="noteacher">
->>>>>>> f9e4cf45f198d6f228cec4ce395c5e58fbc8fec9
+
        We are sorry but there is no teacher available right now.
        </div>
        <% else %>

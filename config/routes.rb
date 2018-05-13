@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
 
   get 'main/index' => "main#index"
-  get 'main/mypage_student' => "main#mypage_student"
-  get 'main/mypage_teacher' => "main#mypage_teacher"
+  get 'main/:id/mypage_student' => "main#mypage_student"
+  get 'main/:id/mypage_teacher' => "main#mypage_teacher"
 
   get 'main/teacher_account_edit_confirm' => "main#teacher_account_edit_confirm"
   get 'main/student_account_edit/:id' => "main#student_account_edit"
