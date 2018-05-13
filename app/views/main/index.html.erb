@@ -1,6 +1,7 @@
 <% content_for :specific_css_js do %>
     <%= stylesheet_link_tag "main/index", :media => "all" %>
     <%= javascript_include_tag 'main/index' %>
+    
 <% end %>
 
 <% require 'date' %>
@@ -13,17 +14,27 @@
                 </div>
             </header2>
         <% end %>
+
+        <% if @searching_condition == 1 %>
+            <% send_data_1=1 %>
+            <script>$(".seaching_condition_1").addClass('clicked-1');</script>
+        <% elsif @searching_condition == 2 %>
+            <% send_data_1=2 %>
+        <% end %>
         
+
         <div class="top-wrapper">
         
-            <div class="reservable_teacher">
+        <%= form_tag ("/main/index"), method: :get do %>
+        
+            <div class="seaching_condition_1" data-send-id = "1">
                     AVAILABLE TEACHERS 
             </div>
-            <div class="all_teacher">
+            <div class="seaching_condition_2" data-send-id = "2">
                     ALL TEACHERS
             </div>
          
-         <%= form_tag ("/main/index"), method: :get do %>
+         
             <div class="container-search">
                 <div class="dummy"></div>
                 <table class="date_search_table" rules="all">
@@ -154,17 +165,17 @@
                         <div class="searchbox_right"> 
                           <select class="select2" name="age">
                             <option value="any">age</option>
-                            <option value="1">10s</option>
+                            <option value="10s">10s</option>
                             <option value="E20">Early 20s</option>
                             <option value="L20">Late 20s</option>
                             <option value="30s">30s</option>
                             <option value="40s">40s</option>
                             <option value="50s">50s</option>
-                            <option value="60">60s</option>
-                            <option value="70">70s</option>
-                            <option value="80">80s</option>
-                            <option value="90">90s</option>
-                            <option value="100">100s</option>
+                            <option value="60s">60s</option>
+                            <option value="70s">70s</option>
+                            <option value="80s">80s</option>
+                            <option value="90s">90s</option>
+                            <option value="100s">100s</option>
                           </select>&nbsp;&nbsp;&nbsp;
                           <select class="select2" name="sex">
                             <option value="any">sex</option>                           
@@ -177,12 +188,13 @@
                 <div class="serch_btn">
                     <input type="submit" value="Search" class="input3"> 
                     <input type="hidden" name="date_search_id" id="send_data" >
+                    <input type="hidden" name="seaching_condition_id" id="send_data_1" >
                 </div>
                 
                 <div class="serch_clear">
                     <%= link_to 'Clear seaching condition', controller: "main", action: "index", class: "clear_btn" %>
                 </div>
-
+  <%=  @seaching_condition %>
              </div>
         </div>
         <% end %>
@@ -221,14 +233,10 @@
   
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
-<<<<<<< HEAD
-       <% if @teachers == []%>
-       <% count_page = 0%>
-=======
+
        <% if @teachers.empty? %>
-       <% count_page = (@teachers.length-1).div(6)+1 %>
-       <div class="noteacher">
->>>>>>> f9e4cf45f198d6f228cec4ce395c5e58fbc8fec9
+       <% count_page = 0%>
+            
        We are sorry but there is no teacher available right now.
        </div>
        <% else %>

@@ -8,7 +8,15 @@ def index
         @page = 0
        end
     @page_num = 6
-    
+   
+   #検索方法取得（授業可能の先生かすべての先生一覧か）
+    @seaching_condition = params[:seaching_condition_id].to_i
+   if @seaching_condition==0
+    @seaching_condition=1
+   end
+
+Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
+Rails.logger.debug(@seaching_condition)
    #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）  
    @date = params[:date_search_id].to_s
    
@@ -16,8 +24,14 @@ def index
         @date = Date.today.to_s
     end
    
-   @lessons_td = Lesson.where(date: @date).where(condition:[2,3]).pluck(:teacher_id).uniq
-  
+   #検索（授業可能の先生：Lessonからとってくる、すべての先生一覧：Teacherからall）
+   if @seaching_condition ==1
+        @lessons_td = Lesson.where(date: @date).where(condition:[2,3]).pluck(:teacher_id).uniq
+   elsif @seaching_condition ==2
+        @lessons_td = Teacher.all.pluck(:id).uniq
+   end
+
+#↓条件絞込み↓
   #性別取得
   @sex = params[:sex].to_s
    if @sex == "any"
@@ -34,38 +48,70 @@ def index
     if @cost2 == "any"
       @cost2 = 100.to_i
     end 
+    
+   #年齢取得
+   generation = params[:age]
+   case generation
+   when "any"
+      @age1 = 0
+      @age2 = 100000
+   when "10s"
+      @age1 = 0
+      @age2 = 19
+   when "E20"
+      @age1 = 20
+      @age2 = 24
+   when "L20"
+      @age1 = 25
+      @age2 = 29
+   when "30s"
+      @age1 = 30
+      @age2 = 39
+   when "40s"
+      @age1 = 40
+      @age2 = 49
+   when "50s"
+      @age1 = 50
+      @age2 = 59
+   when "60s"
+      @age1 = 60
+      @age2 = 69
+   when "70s"
+      @age1 = 70
+      @age2 = 79
+   when "80s"
+      @age1 = 80
+      @age2 = 89
+   when "90s"
+      @age1 = 90
+      @age2 = 99
+   when "100s"
+      @age1 = 100
+      @age2 = 200
+   end
+   
    
    #該当先生取得
-        teacher_searched=Teacher.where(sex: @sex).where("cost > ?", @cost1).where("cost < ?", @cost2)
+        teacher_searched=Teacher.where(sex: @sex).where("cost >= ?", @cost1).where("cost <= ?", @cost2).where("age >= ?", @age1).where("age <= ?", @age2)
     
-        @teacher = []
+        @teachers = []
   
    @lessons_td.each do |id|
         teachers=teacher_searched.find_by(id: id)
-        @teacher << teachers
-        @teachers = @teacher.compact
+        @teachers << teachers
+        @teachers = @teachers.compact
         
     end 
     
-<<<<<<< HEAD
-   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
-   Rails.logger.debug(@page)
-   Rails.logger.debug(@page.nil?)
-=======
-    if @teachers.empty?
-    @n = 0
-    else
-    @n = @teachers.length.to_i
-    end
-    Rails.logger.debug("いいいいいいいい")
-   #Rails.logger.debug(teachers.sex)
-    Rails.logger.debug(@teachers) 
->>>>>>> f9e4cf45f198d6f228cec4ce395c5e58fbc8fec9
-   
+
+
     
   
         #並べ替え情報取得
-     
+        if @teachers.empty?
+        @n = 0
+        else
+        @n = @teachers.length.to_i
         @order = params[:order].to_i
           if @order == nil
               @order = 0
@@ -91,7 +137,7 @@ def index
                 (b[:rate] <=> a[:rate])
             end
          end
-       
+       end
     
    #データベースより全生徒データ取得
     @users = User.all

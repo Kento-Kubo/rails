@@ -33,40 +33,29 @@ width:700px;
   
 }
 
-.reservable_teacher{
+.seaching_condition_1, .seaching_condition_2{
   box-sizing:border-box;
   width:49.65%;
   height:50px;
-  background-color:rgba(34, 49, 52, 0.9);
+  
   display:inline-block; 
    text-align: center;
    line-height:50px;
    border: solid rgba(34, 49, 52, 0.5) 1px;
    margin-bottom:0px;
-   color:white;
+   
 }
 
-.reservable_teacher:hover {
+.seaching_condition_1:hover , .seaching_condition_2:hover {
   cursor:pointer;
     background-color:rgba(34, 49, 52, 0.4);
     border: solid rgba(34, 49, 52, 0.1) 1px;
 }
 
-.all_teacher{
-  box-sizing:border-box;
-  width:49.65%;
-  height:50px;
-  background-color:white;
-    display:inline-block;   
-     text-align: center;
-   line-height:50px;
-    border: solid rgba(34, 49, 52, 0.5) 1px;
-}
-
-.all_teacher:hover {
-  cursor:pointer;
-    background-color:rgba(34, 49, 52, 0.4);
-    border: solid rgba(34, 49, 52, 0.1) 1px;
+.clicked-1{
+    cursor:pointer;
+    background-color:rgba(34, 49, 52, 0.9);
+     border: solid rgba(34, 49, 52, 0.5) 1px;
     color:white;
 }
 
@@ -74,6 +63,11 @@ width:700px;
 width:100%;
 height:8px;    
     
+}
+
+.none{
+    
+    display:none;
 }
 
 .date_search_table{
