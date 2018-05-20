@@ -49,7 +49,7 @@
   						<!--<li><%= link_to("My page","/main/mypage_student") %></li>----->  
   						
   					    <li><%if is_teacher?%>
-  					    <%= link_to current_user.name,"/main/mypage_teacher",class: current_user %>
+  					    <%= link_to current_user.name,"/main/#{current_user.id}/mypage_teacher",class: current_user %>
 
   					    <%else%>
   					    

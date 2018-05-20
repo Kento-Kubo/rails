@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+ before_action :correct_user,   only: [:edit, :update]
 
   def index
   end
@@ -19,6 +19,7 @@ class LessonsController < ApplicationController
     
     #Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
     time = params[:time]
+    Lesson.where(teacher_id: current_user).where(condition:3).destroy_all
     if time
         Rails.logger.debug(time)
         iteration = time.length-1
@@ -40,7 +41,7 @@ class LessonsController < ApplicationController
             Rails.logger.debug(@lesson)
             Rails.logger.debug(iteration)
         end
-        redirect_to("/main/mypage_teacher")
+        redirect_to("/main/#{current_user.id}/mypage_teacher")
      else
      @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'lessons/new'

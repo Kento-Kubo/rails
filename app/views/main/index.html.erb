@@ -15,28 +15,34 @@
             </header2>
         <% end %>
 
-        <% if @searching_condition == 1 %>
-            <% send_data_1=1 %>
-            <script>$(".seaching_condition_1").addClass('clicked-1');</script>
-        <% elsif @searching_condition == 2 %>
-            <% send_data_1=2 %>
+        <% if @seaching_condition == 2 %>
+        <input type="hidden" value= 2 class= "searching_condition_submit" >
         <% end %>
-        
-
         <div class="top-wrapper">
-        
+     
         <%= form_tag ("/main/index"), method: :get do %>
         
-            <div class="seaching_condition_1" data-send-id = "1">
+        <% if @seaching_condition == 1 then %>
+            <div class="seaching_condition_1 clicked-1" data-send-id = "1">
                     AVAILABLE TEACHERS 
             </div>
             <div class="seaching_condition_2" data-send-id = "2">
                     ALL TEACHERS
             </div>
-         
+            
+         <% elsif @seaching_condition == 2 then %>
+            <div class="seaching_condition_1" data-send-id = "1">
+                    AVAILABLE TEACHERS 
+            </div>
+            <div class="seaching_condition_2 clicked-1" data-send-id = "2">
+                    ALL TEACHERS
+            </div>   
+            
+         <% end %> 
          
             <div class="container-search">
                 <div class="dummy"></div>
+        
                 <table class="date_search_table" rules="all">
                   <tr>
                      <% (0..7).each do |n| %> 
@@ -64,8 +70,12 @@
 
                         <% date_search = y +"-"+ m +"-"+ d; %>
                        
-                
-      			      <td class="date_search" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
+                      <% if @date == date_search %>
+      			           <td class="date_search clicked" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
+      			           <% @date = date_search %>
+      			      <% else %>
+      			           <td class="date_search" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
+      			      <%end%>
       			        <%case dd %> 
             			<%when 0%>
             			 (Sun)
@@ -87,7 +97,7 @@
       			     <% end %>
       			  </tr>
       			</table>
-      			
+      		
                 <div class="dummy"></div>   
                 
                 <div class="searchbox">
@@ -187,14 +197,14 @@
                     
                 <div class="serch_btn">
                     <input type="submit" value="Search" class="input3"> 
-                    <input type="hidden" name="date_search_id" id="send_data" >
+                    <input type="hidden" name="date_search_id" id="send_data">
                     <input type="hidden" name="seaching_condition_id" id="send_data_1" >
                 </div>
                 
                 <div class="serch_clear">
                     <%= link_to 'Clear seaching condition', controller: "main", action: "index", class: "clear_btn" %>
                 </div>
-  <%=  @seaching_condition %>
+<%= @date %>
              </div>
         </div>
         <% end %>
@@ -234,9 +244,13 @@
 <!--検索件数とsort選択終了-------------------------------------------------------------------->
 <!--検索結果開始------------------------------------------------------------------------------>  
 
+
        <% if @teachers.empty? %>
        <% count_page = 0%>
-            
+
+       <div class="noteacher">
+
+
        We are sorry but there is no teacher available right now.
        </div>
        <% else %>
