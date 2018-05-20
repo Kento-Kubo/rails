@@ -104,7 +104,20 @@ Rails.logger.debug(@seaching_condition)
     end 
     
 
+   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
+   Rails.logger.debug(@page)
+   Rails.logger.debug(@page.nil?)
 
+    if @teachers.empty?
+    @n = 0
+    else
+    @n = @teachers.length.to_i
+    end
+    Rails.logger.debug("いいいいいいいい")
+   #Rails.logger.debug(teachers.sex)
+    Rails.logger.debug(@teachers) 
+
+   
     
   
         #並べ替え情報取得
@@ -148,7 +161,20 @@ end
 #-------------------------------------------------------------------  
   
   def mypage_teacher
-    
+    @teacher = Teacher.find_by(id: params[:id])
+        @num_rate_1 = Lesson.where(teacher_id: @teacher.id).where(review_rate:1).length
+        @num_rate_2 = Lesson.where(teacher_id: @teacher.id).where(review_rate:2).length
+        @num_rate_3 = Lesson.where(teacher_id: @teacher.id).where(review_rate:3).length
+        @num_rate_4 = Lesson.where(teacher_id: @teacher.id).where(review_rate:4).length
+        @num_rate_5 = Lesson.where(teacher_id: @teacher.id).where(review_rate:5).length
+        
+        if @num_rate_1+@num_rate_2+@num_rate_3+@num_rate_4+@num_rate_5 !=0 
+            @total_rate = @num_rate_1+@num_rate_2+@num_rate_3+@num_rate_4+@num_rate_5
+            @mean_rate = (1*@num_rate_1+2*@num_rate_2+3*@num_rate_3+4*@num_rate_4+5*@num_rate_5)/(@num_rate_1+@num_rate_2+@num_rate_3+@num_rate_4+@num_rate_5)
+        else
+            @mean_rate = "none"
+            @total_rate = 1
+        end
   end
   
   def mypage_student
