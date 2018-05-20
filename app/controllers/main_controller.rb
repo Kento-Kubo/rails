@@ -109,12 +109,19 @@ def index
     end 
     
 
+<<<<<<< HEAD
+=======
+   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
+   Rails.logger.debug(@page)
+   Rails.logger.debug(@page.nil?)
+>>>>>>> 9c26b57e85b31ec8817b06701828869aa0d391e4
 
     if @teachers.empty?
     @n = 0
     else
     @n = @teachers.length.to_i
     end
+
 
   
         #並べ替え情報取得
