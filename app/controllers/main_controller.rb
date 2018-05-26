@@ -16,10 +16,15 @@ def index
    end
 
 
-   #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）  
-   @date = params[:date_search_id].to_s
-    if @date.empty?
+   #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）
+   @date_1 = params[:date_search_id].to_s
+   @date_2 = params[:date_clicked_before].to_s
+    if @date_1 and @date_2.empty? 
         @date = Date.today.to_s
+    elsif @date_1.empty? and @date_2
+        @date = @date_2
+    else
+        @date = @date_1
     end
     
    
@@ -107,14 +112,7 @@ def index
         @teachers = @teachers.compact
         
     end 
-    
 
-<<<<<<< HEAD
-=======
-   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
-   Rails.logger.debug(@page)
-   Rails.logger.debug(@page.nil?)
->>>>>>> 9c26b57e85b31ec8817b06701828869aa0d391e4
 
     if @teachers.empty?
     @n = 0

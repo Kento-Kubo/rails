@@ -140,24 +140,36 @@
                     </div>
                     <div class="searchbox_right"> 
                       <select class="select2" name="cost1">
-                            <option value="any">any</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                            <option value="10">12</option>
-                        </select>
+                            
+                            <% (0..6).each do |number1| %>
+                                <% aa = number1*2.to_i %>
+                                    <% if aa==0 then %>
+                                        <% aa = "any"%>
+                                    <% end %>
+                                    
+                                    <% if aa == @cost1.to_i then %>
+                                        <option selected="selected" ><%= aa %></option>
+                                    <%else %>
+                                        <option ><%= aa %></option>
+                                    <% end %>
+                            <% end %>
+
+                       </select>
                         ~
                         <select class="select2" name="cost2">
-                            <option value="any">any</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            
+                        
+                            <% (0..7).each do |number1| %>
+                                <% aa = number1*2.to_i %>
+                                    <% if aa==0 then %>
+                                        <% aa = "any"%>
+                                    <% end %>
+                                    
+                                    <% if aa == @cost2.to_i then %>
+                                        <option selected="selected" ><%= aa %></option>
+                                    <%else %>
+                                        <option ><%= aa %></option>
+                                    <% end %>
+                            <% end %>
                         </select>
                    </div>
                  </div>  
@@ -187,10 +199,23 @@
                             <option value="90s">90s</option>
                             <option value="100s">100s</option>
                           </select>&nbsp;&nbsp;&nbsp;
+                          
                           <select class="select2" name="sex">
-                            <option value="any">sex</option>                           
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <% case @sex %>
+                                <%when ["male", "female"] %>
+                                    <option value="any" selected="selected">sex</option>                           
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                <%when "male" %>
+                                    <option value="any">sex</option>                           
+                                    <option value="male" selected="selected">Male</option>
+                                    <option value="female">Female</option>  
+                                <%when "female" %>
+                                    <option value="any">sex</option>                           
+                                    <option value="male">Male</option>
+                                    <option value="female" selected="selected">Female</option>    
+                            <% end %>
+                                    
                           </select>
                         </div>
                 </div>
@@ -199,6 +224,7 @@
                     <input type="submit" value="Search" class="input3"> 
                     <input type="hidden" name="date_search_id" id="send_data">
                     <input type="hidden" name="seaching_condition_id" id="send_data_1" >
+                    <textarea class="invisible" name="date_clicked_before"><%= @date %></textarea>
                 </div>
                 
                 <div class="serch_clear">
