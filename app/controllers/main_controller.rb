@@ -64,48 +64,17 @@ def index
     end 
     
    #年齢取得
-   generation = params[:age]
-   case generation
-   when nil
-      @age1 = 0
-      @age2 = 100000   
-   when "any"
-      @age1 = 0
-      @age2 = 100000
-   when "10s"
-      @age1 = 0
-      @age2 = 19
-   when "E20"
-      @age1 = 20
-      @age2 = 24
-   when "L20"
-      @age1 = 25
-      @age2 = 29
-   when "30s"
-      @age1 = 30
-      @age2 = 39
-   when "40s"
-      @age1 = 40
-      @age2 = 49
-   when "50s"
-      @age1 = 50
-      @age2 = 59
-   when "60s"
-      @age1 = 60
-      @age2 = 69
-   when "70s"
-      @age1 = 70
-      @age2 = 79
-   when "80s"
-      @age1 = 80
-      @age2 = 89
-   when "90s"
-      @age1 = 90
-      @age2 = 99
-   when "100s"
-      @age1 = 100
-      @age2 = 200
-   end
+   @age1 = params[:age1]
+   @age2 = params[:age2]
+   
+    if @age1 == "any" || @age1 == nil
+      @age1 = 0.to_i
+    end
+    
+    if @age2 == "any" || @age2 == nil
+      @age2 = 1000.to_i
+    end 
+   
    
    
    #該当先生取得

@@ -91,9 +91,8 @@
       			     <% end %>
       			  </tr>
       			</table>
-      		
-                <div class="dummy"></div>   
-                
+      		                               
+                <div class="time_search">
                 <div class="searchbox">
                    <div class="searchbox_left"> 
                         <span class="fa fa-clock-o">&nbsp;&nbsp;time
@@ -121,13 +120,11 @@
                             <option value="any">any</option>
                         </select>
                    </div>
+                   </div>
                 </div>
                 
-                <div class="searchbox hobby">
-                        
-                    <input type="text" id"pass" placeholder=" hobby" class="input2">
-                </div>
- 
+             
+                 
                 <div class="searchbox">    
                     <div class="searchbox_left"> 
                         &nbsp;<span class="fa fa-jpy">&nbsp;&nbsp;cost
@@ -167,46 +164,75 @@
                         </select>
                    </div>
                  </div>  
-                               
+                 
                  <div class="searchbox hobby">
                         
-                    <input type="text" id="pass" placeholder=" free word" class="input2">
-                </div>   
-                
+                    <input type="text" id"pass" placeholder=" hobby" class="input2">
+                </div>
+                 
+                            
                 <div class="searchbox">
                         <div class="searchbox_left"> 
                          <span class="fa fa-user">&nbsp;&nbsp;age
                         </div>
                         
                         <div class="searchbox_right"> 
-                          <select class="select2" name="age">
-                            <option value="any">age</option>
-                            <option value="10s">10s</option>
-                            <option value="E20">Early 20s</option>
-                            <option value="L20">Late 20s</option>
-                            <option value="30s">30s</option>
-                            <option value="40s">40s</option>
-                            <option value="50s">50s</option>
-                            <option value="60s">60s</option>
-                            <option value="70s">70s</option>
-                            <option value="80s">80s</option>
-                            <option value="90s">90s</option>
-                            <option value="100s">100s</option>
-                          </select>&nbsp;&nbsp;&nbsp;
-                          
-                          
-                          <select class="select2" name="sex">
+                          <select class="select2" name="age1">
+                          <% (1..10).each do |number| %>
+                                <% bb = number*10.to_i %>
+                                    <% if bb==10 then %>
+                                        <% bb = "any"%>
+                                    <% end %>
+                                    
+                                    <% if bb == @age1.to_i then %>
+                                        <option selected="selected" ><%= bb %></option>
+                                    <%else %>
+                                        <option ><%= bb %></option>
+                                    <% end %>
+                            <% end %>
+                          </select>
+                          ~
+                          <select class="select2" name="age2">
+                            <% (1..10).each do |number| %>
+                                <% bb = number*10.to_i %>
+                                    <% if bb==10 then %>
+                                        <% bb = "any"%>
+                                    <% end %>
+                                    
+                                    <% if bb == @age2.to_i then %>
+                                        <option selected="selected" ><%= bb %></option>
+                                    <%else %>
+                                        <option ><%= bb %></option>
+                                    <% end %>
+                            <% end %>
+                          </select>
+                         
+                        </div>
+                </div>
+                
+                <div class="searchbox hobby">
+                        
+                    <input type="text" id="pass" placeholder=" free word" class="input2">
+                </div>
+                
+                <div class="searchbox">
+                        <div class="searchbox_left"> 
+                         <span class="fa fa-user">&nbsp;&nbsp;sex
+                        </div>
+                        
+                        <div class="searchbox_right">
+                            <select class="select2" name="sex">
                             <% case @sex %>
                                 <%when ["male", "female"] %>
-                                    <option value="any" selected="selected">sex</option>                           
+                                    <option value="any" selected="selected">any</option>                           
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 <%when "male" %>
-                                    <option value="any">sex</option>                           
+                                    <option value="any">any</option>                           
                                     <option value="male" selected="selected">Male</option>
                                     <option value="female">Female</option>  
                                 <%when "female" %>
-                                    <option value="any">sex</option>                           
+                                    <option value="any">any</option>                           
                                     <option value="male">Male</option>
                                     <option value="female" selected="selected">Female</option>    
                             <% end %>
@@ -214,7 +240,8 @@
                           </select>
                         </div>
                 </div>
-                    
+                
+                
                 <div class="serch_btn">
                     <input type="submit" value="Search" class="input3"> 
                     <input type="hidden" name="date_search_id" id="send_data">
