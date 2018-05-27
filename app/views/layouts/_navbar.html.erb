@@ -53,7 +53,7 @@
 
   					    <%else%>
   					    
-  					    <%= link_to current_user.name,"/main/mypage_student"%>
+  					    <%= link_to current_user.name,"/main/#{current_user.id}/mypage_student"%>
   					    <%end%>
   					    </li>
 					</ul>
@@ -62,7 +62,7 @@
     <% else %>
         <div class="container">
     		<div class="header-left">
-    			 <%= link_to image_tag("https://prog-8.com/images/html/advanced/main_logo.png",:class => 'logo'),
+    		   <%= link_to image_tag("https://prog-8.com/images/html/advanced/main_logo.png",:class => 'logo'),
                             {action: 'top', controller: 'users'},{class:'logout'}%>
     		</div>
     		
