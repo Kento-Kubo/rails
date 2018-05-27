@@ -184,6 +184,17 @@ end
             @mean_rate = "none"
             @total_rate = 1
         end
+    
+    @lesson_done = Lesson.where(teacher_id: @teacher.id).where(condition:1).pluck(:review_comment).uniq
+    Rails.logger.debug(@lesson_done)
+    Rails.logger.debug("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    
+    if @lesson_done == []
+        @review = "none"
+    else
+        @review = @lesson_done.first
+    end
+    
   end
   
   def mypage_student
@@ -195,6 +206,7 @@ end
     @teachers = Teacher.all
     @favorites =Favorite.where(user_id:  @user.id)
     @count_favorite = Favorite.where(user_id: @user.id).length
+    
     
   end
  

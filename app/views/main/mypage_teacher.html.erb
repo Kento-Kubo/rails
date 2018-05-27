@@ -159,11 +159,12 @@
   								<tr>
     								<td class="title-schedule-left lefttop"></td>
     								<% today = Date.today %> 
-    								<% baseday = today.day.to_i%>
+    								<%# baseday = today.day.to_i%>
     								<% basetime = today.midnight%>
     								
     								<% (0..6).each do |num|%>
-    								<td class="title-schedule"><%=baseday+num%></t>
+    								<% baseday = today + num%>
+    								<td class="title-schedule"><%=baseday.day.to_i%></t>
     								<% end %>
     	
   								</tr>
@@ -258,12 +259,7 @@
 						</div>	
 						
 						<div class="each-review-right3">
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.
+							<%= @review %>
 							
 						</div>						
 					

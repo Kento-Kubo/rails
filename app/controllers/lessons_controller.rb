@@ -65,7 +65,7 @@ class LessonsController < ApplicationController
     
     if @lesson.save
       
-      redirect_to("/main/mypage_student")
+      redirect_to("/main/#{current_user.id}/mypage_student")
     else
       @error_message = "登録できませんでした。全ての項目を入力されていることを確認してください。"
       render 'lessons/new'
