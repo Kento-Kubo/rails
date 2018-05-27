@@ -181,7 +181,7 @@
                 
                 <div class="searchbox">
                         <div class="searchbox_left"> 
-                         <span class="fa fa-user">&nbsp;&nbsp;user
+                         <span class="fa fa-user">&nbsp;&nbsp;age
                         </div>
                         
                         <div class="searchbox_right"> 
@@ -199,6 +199,7 @@
                             <option value="90s">90s</option>
                             <option value="100s">100s</option>
                           </select>&nbsp;&nbsp;&nbsp;
+                          
                           
                           <select class="select2" name="sex">
                             <% case @sex %>
@@ -225,6 +226,7 @@
                     <input type="hidden" name="date_search_id" id="send_data">
                     <input type="hidden" name="seaching_condition_id" id="send_data_1" >
                     <textarea class="invisible" name="date_clicked_before"><%= @date %></textarea>
+                    <textarea class="invisible" name="seaching_condition_id_clicked_before"><%= @seaching_condition %></textarea>
                 </div>
                 
                 <div class="serch_clear">

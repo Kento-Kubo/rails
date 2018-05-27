@@ -10,11 +10,18 @@ def index
     @page_num = 6
    
    #検索方法取得（授業可能の先生かすべての先生一覧か）
-    @seaching_condition = params[:seaching_condition_id].to_i
+   @seaching_condition_1 = params[:seaching_condition_id].to_i
+   @seaching_condition_2 = params[:seaching_condition_id_clicked_before].to_i
    if @seaching_condition==0 then
     @seaching_condition=1
    end
-
+    if @seaching_condition_1 and @seaching_condition_2==0 then 
+        @seaching_condition=1
+    elsif @seaching_condition_1==0 and @seaching_condition_2
+        @seaching_condition =  @seaching_condition_2
+    else
+         @seaching_condition =  @seaching_condition_1
+    end
 
    #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）
    @date_1 = params[:date_search_id].to_s
