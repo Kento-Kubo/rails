@@ -3,7 +3,7 @@ $(function() {　//←消さないこと
 var condition = $(".searching_condition_submit").val();
 　if (condition == 2) {
    $(".date_search_table").addClass('none'); 
-    
+   $(".time_search").addClass('none');  
 }
 //検索方法選択コード送信終了---------------------------------------------------------
 
@@ -17,6 +17,7 @@ $(".seaching_condition_1").on('click', function() {
   target.addClass('clicked-1');
   
  $(".date_search_table").removeClass('none');
+ $(".time_search").removeClass('none');
  
   // クリックされた要素の指定するIDを取得
   var result = target.data("send-id");
@@ -34,6 +35,8 @@ $(".seaching_condition_2").on('click', function() {
   target.addClass('clicked-1');
   
  $(".date_search_table").addClass('none');
+ $(".time_search").addClass('none');
+ 
   // クリックされた要素の指定するIDを取得
   var result = target.data("send-id");
   
