@@ -10,48 +10,65 @@ def index
     @page_num = 6
    
    #検索方法取得（授業可能の先生かすべての先生一覧か）
-    @seaching_condition = params[:seaching_condition_id].to_i
-   if @seaching_condition==0
+   @seaching_condition_1 = params[:seaching_condition_id].to_i
+   @seaching_condition_2 = params[:seaching_condition_id_clicked_before].to_i
+   if @seaching_condition==0 then
     @seaching_condition=1
    end
-
-Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
-Rails.logger.debug(@seaching_condition)
-   #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）  
-   @date = params[:date_search_id].to_s
-   
-    if @date.empty?
-        @date = Date.today.to_s
+    if @seaching_condition_1 and @seaching_condition_2==0 then 
+        @seaching_condition=1
+    elsif @seaching_condition_1==0 and @seaching_condition_2
+        @seaching_condition =  @seaching_condition_2
+    else
+         @seaching_condition =  @seaching_condition_1
     end
+
+   #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）
+   @date_1 = params[:date_search_id].to_s
+   @date_2 = params[:date_clicked_before].to_s
+    if @date_1 and @date_2.empty? 
+        @date = Date.today.to_s
+    elsif @date_1.empty? and @date_2
+        @date = @date_2
+    else
+        @date = @date_1
+    end
+    
    
    #検索（授業可能の先生：Lessonからとってくる、すべての先生一覧：Teacherからall）
    if @seaching_condition ==1
         @lessons_td = Lesson.where(date: @date).where(condition:[2,3]).pluck(:teacher_id).uniq
    elsif @seaching_condition ==2
         @lessons_td = Teacher.all.pluck(:id).uniq
+   
    end
 
 #↓条件絞込み↓
   #性別取得
-  @sex = params[:sex].to_s
-   if @sex == "any"
+  @sex = params[:sex]#.to_s
+  
+  
+   if @sex == "any"  || @sex == nil
     @sex=["male", "female"]
    end
-   
+ 
    #時給取得
    @cost1 = params[:cost1]
-    if @cost1 == "any"
+    if @cost1 == "any" || @cost1 == nil
       @cost1 = 0.to_i
     end
    
    @cost2 = params[:cost2]
-    if @cost2 == "any"
+    if @cost2 == "any" || @cost2 == nil
       @cost2 = 100.to_i
     end 
     
    #年齢取得
    generation = params[:age]
    case generation
+   when nil
+      @age1 = 0
+      @age2 = 100000   
    when "any"
       @age1 = 0
       @age2 = 100000
@@ -102,23 +119,15 @@ Rails.logger.debug(@seaching_condition)
         @teachers = @teachers.compact
         
     end 
-    
 
-   Rails.logger.debug("ayayayayyayayayayyayayayyayayayayayyayayaya")
-   Rails.logger.debug(@page)
-   Rails.logger.debug(@page.nil?)
 
     if @teachers.empty?
     @n = 0
     else
     @n = @teachers.length.to_i
     end
-    Rails.logger.debug("いいいいいいいい")
-   #Rails.logger.debug(teachers.sex)
-    Rails.logger.debug(@teachers) 
 
-   
-    
+
   
         #並べ替え情報取得
         if @teachers.empty?
