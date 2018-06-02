@@ -154,15 +154,33 @@ end
             @total_rate = 1
         end
     
-    @lesson_done = Lesson.where(teacher_id: @teacher.id).where(condition:1).pluck(:review_comment).uniq
-    Rails.logger.debug(@lesson_done)
+    @comment = Lesson.where(teacher_id: @teacher.id).where(condition:1).pluck(:review_rate,:review_comment,:updated_at,:user_id).uniq
+    num = @comment.length
+    @count = 0
+    if num != 0
+        (0..num-1).each do |n|
+            @count += 1 if @comment[n][1]
+        end
+    end
+    
+    
+    
+    
+    #if @user_id != []    
+        #@comment_name = User.find_by(id:@user_id.last).name
+    #end
+    
+    #if @commnet_done == [] #|| @commnet_rate == [] || @commnet_date == [] || @user_id ==[]|| @comment_name == []
+     #   @review = "none"
+    #else
+     #   @review = [@comment_name,@comment_date.last,@comment_done.last,@comment_rate.last]
+    #end
+    
+    
+    
+    Rails.logger.debug(@comment_number)
     Rails.logger.debug("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     
-    if @lesson_done == []
-        @review = "none"
-    else
-        @review = @lesson_done.first
-    end
     
   end
   
