@@ -99,31 +99,50 @@
       			</table>
       		                               
                 <div class="time_search">
+                <% today = Date.today %> 
+    			<% baseday = today.day.to_i%>
+    			<% basetime = today.midnight%>
                 <div class="searchbox">
                    <div class="searchbox_left"> 
                         <span class="fa fa-clock-o">&nbsp;&nbsp;time
                    </div>
                    <div class="searchbox_right"> 
-                      <select class="select2">
-                            <option value="age">age</option>
-                            <option value="－19">10s</option>
-                            <option value="20－25">Early 20s</option>
-                            <option value="26－30">Late 20s</option>
-                            <option value="31－40">30s</option>
-                            <option value="41－50">40s</option>
-                            <option value="51－">50s</option>
+                      <select class="select2" name="time1">
                             <option value="any">any</option>
+                            
+                            <% (0..47).each do |num| %>
+                                    
+      					
+                                         <% start_time = basetime + num * 30.minutes %>
+      								    <% end_time = start_time + 30.minutes %>
+      					      								    
+      								    
+      								    <% if start_time.min == 30 %>
+        								    <option><%=start_time.hour%>:<%="%02d" % start_time.min%></option>
+        				                <%else%>
+        				                    <option><%=start_time.hour%>:<%="%02d" % start_time.min%></option>
+        	                            <%end%>
+                                   
+                            <% end %>
                         </select>
                         ~
-                        <select class="select2">
-                            <option value="age">age</option>
-                            <option value="－19">10s</option>
-                            <option value="20－25">Early 20s</option>
-                            <option value="26－30">Late 20s</option>
-                            <option value="31－40">30s</option>
-                            <option value="41－50">40s</option>
-                            <option value="51－">50s</option>
+                        <select class="select2" name="time2">
                             <option value="any">any</option>
+                            
+                            <% (0..47).each do |num| %>
+                                    
+      					
+                                         <% start_time = basetime + num * 30.minutes %>
+      								    <% end_time = start_time + 30.minutes %>
+      					      								    
+      								    
+      								    <% if start_time.min == 30 %>
+        								    <option><%=start_time.hour%>:<%="%02d" % start_time.min%></option>
+        				                <%else%>
+        				                    <option><%=start_time.hour%>:<%="%02d" % start_time.min%></option>
+        	                            <%end%>
+                                   
+                            <% end %>
                         </select>
                    </div>
                    </div>
@@ -259,7 +278,7 @@
                 <div class="serch_clear">
                     <%= link_to 'Clear seaching condition', controller: "main", action: "index", class: "clear_btn" %>
                 </div>
-<%= @date %>
+  <%= @datetime1 %>  
              </div>
         </div>
         <% end %>

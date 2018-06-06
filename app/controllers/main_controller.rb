@@ -24,6 +24,7 @@ def index
     end
 
    #該当授業取得（ログイン後のデフォルトランディングページは今日授業できる先生）
+    #日付
    @date_1 = params[:date_search_id].to_s
    @date_2 = params[:date_clicked_before].to_s
     if @date_1 and @date_2.empty? 
@@ -33,11 +34,31 @@ def index
     else
         @date = @date_1
     end
+   
+    #時刻
+
+   @time1 = params[:time1]
+    datetime1 = @date + " " + @time1 + ":00"
+    @datetime1=Time.parse(datetime1)
+
+    if @time1 == "any" || @time1 == nil
+       datetime2 = @date.to_s+" " + "00:00:00"
+       @datetime1=Time.parse(datetime2)
+    end
     
+   @time2 = params[:time2]
+    datetime2 = @date + " " + @time2 + ":00"
+    @datetime2=Time.parse(datetime2)
+    if @time2 == "any" || @time2 == nil
+      datetime2 = @date.to_s+" " + "24:00:00"
+      @datetime2 = Time.parse(datetime2)
+    end 
+       
+    #
    
    #検索（授業可能の先生：Lessonからとってくる、すべての先生一覧：Teacherからall）
    if @seaching_condition ==1
-        @lessons_td = Lesson.where(date: @date).where(condition:[2,3]).pluck(:teacher_id).uniq
+        @lessons_td = Lesson.where(condition:[2,3]).where('time >= ?', @datetime1).where('time <= ?', @datetime2).pluck(:teacher_id).uniq
    elsif @seaching_condition ==2
         @lessons_td = Teacher.all.pluck(:id).uniq
    
