@@ -38,22 +38,24 @@ def index
     #時刻
 
    @time1 = params[:time1]
-    datetime1 = @date + " " + @time1 + ":00"
-    @datetime1=Time.parse(datetime1)
+   
 
     if @time1 == "any" || @time1 == nil
        datetime2 = @date.to_s+" " + "00:00:00"
        @datetime1=Time.parse(datetime2)
+       @time1="00:00"
     end
-    
+     datetime1 = @date + " " + @time1 + ":00"
+    @datetime1=Time.parse(datetime1)
    @time2 = params[:time2]
-    datetime2 = @date + " " + @time2 + ":00"
-    @datetime2=Time.parse(datetime2)
+   
     if @time2 == "any" || @time2 == nil
       datetime2 = @date.to_s+" " + "24:00:00"
       @datetime2 = Time.parse(datetime2)
+      @time2="24:00"
     end 
-       
+       datetime2 = @date + " " + @time2 + ":00"
+    @datetime2=Time.parse(datetime2) 
     #
    
    #検索（授業可能の先生：Lessonからとってくる、すべての先生一覧：Teacherからall）
