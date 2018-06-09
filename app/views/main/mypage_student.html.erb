@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <title>GANJIN</title>
         <link rel="stylesheet" href="each_student.css">
-        <link rel="stylesheet" href="C:\Users\kento\Desktop\our servise/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <%= stylesheet_link_tag "main/mypage_student", :media => "all" %>
         
@@ -41,7 +40,7 @@
   								</tr>
   								
   								<tr>
-  							        <%= form_tag(edit_teacher_path(current_user), method: "get") do %>
+  							        <%= form_tag(edit_user_path(current_user), method: "get") do %>
   							        <input class="edit_btn" type="submit" value="edit" >
   							        <% end %>
   							    </tr>
@@ -115,8 +114,8 @@
 						</div>
 						
 						<div class="schedule-each-right">
-							<a class="check-teacher btn">Teacher's page</a>  <!-- 保留teacher showは生徒から見たteacherのマイページにすべき？ -->
-							<br>
+							<!--<a class="check-teacher btn">Teacher's page</a>  <!-- 保留teacher showは生徒から見たteacherのマイページにすべき？ -->
+							<br>-->
 							<a class="cancel btn" id="cancel_lesson_show">cancel this lesson</a>							
 						</div>
 					</div>

@@ -159,11 +159,12 @@
   								<tr>
     								<td class="title-schedule-left lefttop"></td>
     								<% today = Date.today %> 
-    								<% baseday = today.day.to_i%>
+    								<%# baseday = today.day.to_i%>
     								<% basetime = today.midnight%>
     								
     								<% (0..6).each do |num|%>
-    								<td class="title-schedule"><%=baseday+num%></t>
+    								<% baseday = today + num%>
+    								<td class="title-schedule"><%=baseday.day.to_i%></t>
     								<% end %>
     	
   								</tr>
@@ -235,11 +236,13 @@
 				<!--スケジュール終了------------------------------------------------------------->
 					<hr class="line" width=95%>		
 				<!--レビュー開始----------------------------------------------------------------->   
+				
 				<div class="review">
 					<p class="reviw-title">
 						REVIEWS
 					</p>
-					
+				<%if @count != 0%>	
+				<% (1..@count).each do %>
 				  <div class="review-unit-1">
 					<div class="each-review">
 						<div class="each-review-left">
@@ -248,27 +251,26 @@
 						</div>
 						
 						<div class="each-review-right1">
-							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							
+						  
+							<span class="students-evaluation"><%= "★"*@review[3] %></span> by <span class="students-name"> <%= @review[0] %> </span>
+						  
 						</div>	
 						
 						<div class="each-review-right2">
-							Took the class at 2018.2.4
-							
+						  <%if @review[1]%>
+							Commented at <%= @review[1].year %>.<%= @review[1].month %>.<%= @review[1].day %>
+						  <%end%>
 						</div>	
 						
 						<div class="each-review-right3">
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.I don't like this guy.
-							I don't like this guy.I don't like this guy.I don't like this guy.
-							
+						  <%if @review[2]%>
+							<%= @review[2] %>
+						  <%end%>
 						</div>						
 					
-					</div>
-															
+					   </div>
+					
+				<!--											
 					<div class="each-review">
 						<div class="each-review-left">
 							<img class="students-profile-photo" src="profile_pic_temp.png">
@@ -361,7 +363,7 @@
 						
 						<div class="each-review-right1">
 							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							<!--<div class="wrap">　 ←【保留】
+							<div class="wrap">　 ←【保留】
   								<span class="rate rate0"></span>
   								<span class="rate rate1"></span>
    								<span class="rate rate1-5"></span>
@@ -372,7 +374,7 @@
     							<span class="rate rate4"></span>
     							<span class="rate rate4-5"></span>
     							<span class="rate rate5"></span>
-							</div>---> 
+							</div>
 						</div>	
 						
 						<div class="each-review-right2">
@@ -403,7 +405,7 @@
 						
 						<div class="each-review-right1">
 							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							<!--<div class="wrap">　 ←【保留】
+							<div class="wrap">　 ←【保留】
   								<span class="rate rate0"></span>
   								<span class="rate rate1"></span>
    								<span class="rate rate1-5"></span>
@@ -414,7 +416,7 @@
     							<span class="rate rate4"></span>
     							<span class="rate rate4-5"></span>
     							<span class="rate rate5"></span>
-							</div>---> 
+							</div>
 						</div>	
 						
 						<div class="each-review-right2">
@@ -442,7 +444,7 @@
 						
 						<div class="each-review-right1">
 							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							<!--<div class="wrap">　 ←【保留】
+							<div class="wrap">　 ←【保留】
   								<span class="rate rate0"></span>
   								<span class="rate rate1"></span>
    								<span class="rate rate1-5"></span>
@@ -453,7 +455,7 @@
     							<span class="rate rate4"></span>
     							<span class="rate rate4-5"></span>
     							<span class="rate rate5"></span>
-							</div>---> 
+							</div>
 						</div>	
 						
 						<div class="each-review-right2">
@@ -481,7 +483,7 @@
 						
 						<div class="each-review-right1">
 							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							<!--<div class="wrap">　 ←【保留】
+							<div class="wrap">　 ←【保留】
   								<span class="rate rate0"></span>
   								<span class="rate rate1"></span>
    								<span class="rate rate1-5"></span>
@@ -492,7 +494,7 @@
     							<span class="rate rate4"></span>
     							<span class="rate rate4-5"></span>
     							<span class="rate rate5"></span>
-							</div>---> 
+							</div> 
 						</div>	
 						
 						<div class="each-review-right2">
@@ -520,7 +522,7 @@
 						
 						<div class="each-review-right1">
 							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							<!--<div class="wrap">　 ←【保留】
+							<div class="wrap">　 ←【保留】
   								<span class="rate rate0"></span>
   								<span class="rate rate1"></span>
    								<span class="rate rate1-5"></span>
@@ -531,7 +533,7 @@
     							<span class="rate rate4"></span>
     							<span class="rate rate4-5"></span>
     							<span class="rate rate5"></span>
-							</div>---> 
+							</div>
 						</div>	
 						
 						<div class="each-review-right2">
@@ -559,7 +561,7 @@
 						
 						<div class="each-review-right1">
 							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							<!--<div class="wrap">　 ←【保留】
+							<div class="wrap">　 ←【保留】
   								<span class="rate rate0"></span>
   								<span class="rate rate1"></span>
    								<span class="rate rate1-5"></span>
@@ -570,7 +572,7 @@
     							<span class="rate rate4"></span>
     							<span class="rate rate4-5"></span>
     							<span class="rate rate5"></span>
-							</div>---> 
+							</div> 
 						</div>	
 						
 						<div class="each-review-right2">
@@ -605,7 +607,7 @@
 						
 						<div class="each-review-right1">
 							<span class="students-evaluation">★★★★★</span> by <span class="students-name"> an idiot </span>
-							<!--<div class="wrap">　 ←【保留】
+							<div class="wrap">　 ←【保留】
   								<span class="rate rate0"></span>
   								<span class="rate rate1"></span>
    								<span class="rate rate1-5"></span>
@@ -616,7 +618,7 @@
     							<span class="rate rate4"></span>
     							<span class="rate rate4-5"></span>
     							<span class="rate rate5"></span>
-							</div>---> 
+							</div>
 						</div>	
 						
 						<div class="each-review-right2">
@@ -634,15 +636,20 @@
 							
 						</div>						
 					
-					</div>					
+					</div>		-->			
 		
 				  </div>
+				<%end%>	
+				<%end%>	
+				    <%if @count != 0%>		
+    					<div class="read-more">
+    						Read more reviews
+    					</div>
+    				<%else%>
+    				    There is no commnent.
+    				<%end%>
+				   </div>
 				
-					
-					<div class="read-more">
-						Read more reviews
-					</div>
-				</div>
 				<!--レビュー終了-----------------------------------------------------------------> 
 		
 

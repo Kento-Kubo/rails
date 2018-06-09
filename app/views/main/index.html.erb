@@ -48,9 +48,6 @@
                      <% (0..7).each do |n| %> 
                       <% dd=(date.wday+n).modulo(7) %>
                        
-                                       
-                        
-                        
                         <% y = date.year.to_s %>
                         <% m = date.month %>
                 
@@ -60,21 +57,18 @@
                                 <% m = date.month.to_s %>                      
                             <%end%>
                 
-                        <% d= date.day+n %>
+                        <% d_p = date + n %>
+                        <% d = d_p.day.to_s %>
                 
-                            <% if d < 10 %>
-                                <% d = "0" + (date.day+n).to_s %>
-                            <% else %>
-                                <% d = (date.day+n).to_s %>                      
-                            <%end%>
+                            
 
                         <% date_search = y +"-"+ m +"-"+ d; %>
                        
                       <% if @date == date_search %>
-      			           <td class="date_search clicked" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
+      			           <td class="date_search clicked" data-send-id = "<%= date_search %>"><%= d%> th<br>
       			           <% @date = date_search %>
       			      <% else %>
-      			           <td class="date_search" data-send-id = "<%= date_search %>"><%= date.day+n %> th<br>
+      			           <td class="date_search" data-send-id = "<%= date_search %>"><%= d%> th<br>
       			      <%end%>
       			        <%case dd %> 
             			<%when 0%>
@@ -439,14 +433,14 @@
           			
           			
                     <li class="schedule-teacher-row-1-trial">
-                    
+                    <%if current_user == User.find_by(id:current_user.id)%>
                     <% if t_schedule %>
                         <%= link_to 'available', controller: "lessons", action: "reserve", time: t11, id: teacher.id, lid: t_schedule.id  %>
                     <%elsif t_schedule_reserved %> 
-                      
                       <p  class="reserved">reserved</p>
                     <%else%>
                         <p class="invisible">aaaaa</p>                      
+                    <% end %>
                     <% end %>
                     </li>
                    
@@ -464,6 +458,7 @@
           			<% t_schedule_reserved = schedule_reserved.find_by(time: ttt2 ) %>
           
                     <li class="schedule-teacher-row-12-trial">
+                    <%if current_user == User.find_by(id:current_user.id)%>
                     <% if t_schedule %>
                        <%= link_to 'available', controller: "lessons", action: "reserve", time: t22, id: teacher.id, lid: t_schedule.id  %>
                     <%elsif t_schedule_reserved %> 
@@ -471,6 +466,7 @@
                       <p  class="reserved">reserved</p>
                     <% else %>
                         <p class="invisible">aaaaa</p> 
+                    <% end %>
                     <% end %>
                     
                     </li>
